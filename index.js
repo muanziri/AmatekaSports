@@ -51,10 +51,11 @@ app.get('/auth/google',
       [ 'email', 'profile' ] }
 ));
 app.get( '/google/auth/callback',
-passport.authenticate( 'google', {
-  successRedirect: '/auth/google/success',
-  failureRedirect: '/auth/google/failure'
-}));
+passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 app.get('/auth/google/success',(req,res)=>{
   res.redirect('/')
 })

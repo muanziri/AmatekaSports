@@ -6,7 +6,7 @@ const key= require('../duterestory-ecc42c3b6063.json')
 
 //require('dotenv').config();
 
-const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+const GoogleStrategy = require( 'passport-google-oauth20' ).Strategy;
 
 passport.serializeUser((user1 ,done)=>{
  
