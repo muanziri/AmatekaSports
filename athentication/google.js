@@ -1,19 +1,20 @@
-const passport2=require('passport');
-const key= require('../duterestory-ecc42c3b6063.json')
+const passport=require('passport');
+
 
 const usersClients=require('../model/users');
+const key= require('../duterestory-ecc42c3b6063.json')
 
 //require('dotenv').config();
 
-var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
-passport2.serializeUser((user1 ,done)=>{
+passport.serializeUser((user1 ,done)=>{
  
    done(null,user1.id);
    
 
 })
-passport2.deserializeUser((id,done)=>{
+passport.deserializeUser((id,done)=>{
   
   usersClients.findById(id).then((user)=>{
     
@@ -28,7 +29,7 @@ passport2.deserializeUser((id,done)=>{
 
 var GOOGLE_CLIENT_ID='79374043564-c8luht2492rlm4la2tdpvuv9h5ctcvuk.apps.googleusercontent.com'
 var GOOGLE_CLIENT_SECRET='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'
-passport2.use(new GoogleStrategy({
+passport.use(new GoogleStrategy({
     clientID:     GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
     callbackURL: "https://dutere-story.herokuapp.com/google/auth/callback",
