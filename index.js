@@ -51,12 +51,12 @@ app.get('/auth/google',
       [ 'email', 'profile' ] }
 ));
 app.get( '/google/auth/callback',
-    passport.authenticate( 'google', {
-        successRedirect: '/auth/google/success',
-        failureRedirect: '/auth/google/failure'
+passport.authenticate( 'google', {
+  successRedirect: '/auth/google/success',
+  failureRedirect: '/auth/google/failure'
 }));
 app.get('/auth/google/success',(req,res)=>{
-  res.redirect('https://3300-muanziri-beniradvert-ebb8rrjd9z3.ws-eu47.gitpod.io/')
+  res.redirect('/')
 })
 app.get('/',(req,res)=>{
   userModel.find().then((results)=>{
