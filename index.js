@@ -34,7 +34,7 @@ app.set('view engine','ejs')
 app.use(express.urlencoded({extended:true}))
 app.use(session({
   secret: 'somethingsecretgoeshere',
-  resave: true,
+  resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
 }));
