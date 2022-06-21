@@ -61,7 +61,7 @@ app.get('/auth/google/success',(req,res)=>{
   res.redirect('/')
 })
 app.get('/',(req,res)=>{
-    
+    console.log(req.user)
     res.render('index',{user:req.user})
 
     
