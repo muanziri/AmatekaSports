@@ -71,13 +71,14 @@ const uploadToTheDriveMakeFOlder= (fileMetadata)=>{
             // Handle error
             console.error(err);
           } else {
-             console.log(file)
+            // console.log(file)
             usersClients.findOne({AuthId:profile.id}).then((currentUser)=>{
     
               if(currentUser){
                  console.log('u are loged in as '+currentUser.userName);
                  done(null,currentUser);
               }else{
+                console.log(profile)
                 new usersClients({
                   userName:profile.displayName,
                   Email:profile.email,
