@@ -34,7 +34,7 @@ app.set('view engine','ejs')
 app.use(express.urlencoded({extended:true}))
 app.use(cookieSession({
   name: 'session',
-  keys: [MUNAMUNA],
+  keys: ["MUNAMUNA"],
 
   // Cookie Options
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
