@@ -31,7 +31,7 @@ var GOOGLE_CLIENT_SECRET='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'
 passport2.use(new GoogleStrategy({
     clientID:     GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://3300-muanziri-beniradvert-kdjtvtbmt3b.ws-eu47.gitpod.io/google/auth/callback",
+    callbackURL: "https://dutere-story.herokuapp.com/google/auth/callback",
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
