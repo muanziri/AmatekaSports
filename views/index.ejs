@@ -27,9 +27,25 @@
     }
 
     #BTN2 {
-      position: fixed;
-      bottom: 7%;
-      left: 45%;
+      
+      margin-top: -5%;
+      margin-left: 45%;
+      color:white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display:none;
+      animation-name: example;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+
+    }
+    
+    #BTN7 {
+      
+      margin-top: -5%;
+      margin-left: 45%;
       color:white;
       width: 100px;
       height: 100px;
@@ -42,15 +58,15 @@
 
     }
 
-    #BTN3 {
+    #recordButton {
       position: fixed;
-      bottom: 7%;
-      left: 40%;
+      bottom: 10%;
+      left: 44%;
       width: 100px;
       height: 100px;
       z-index: 1;
       border: none;
-      display: block
+      display: display
     }
 
     #BTN4 {
@@ -108,10 +124,14 @@
     }
 
     @media screen and (max-width:600px) {
-      #BTN2{
-        position: fixed;
-       bottom: 7%;
-       left: 38%;
+      #recordButton {
+      position: fixed;
+      bottom: 7%;
+      left: 36.5%;
+    }
+      #BTN2,#BTN7{
+        margin-top: -10%;
+        margin-left: 37.5%;
       }
       #BTN1 {
         position: inherit;
@@ -213,35 +233,7 @@
 
       </div>
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">16 min</span>
-        <h4>Jane Doe</h4><br>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat.</p>
-        <p type="p" class="w3-p w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</p>
-        <p type="p" class="w3-p w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</p>
-        <p type="p" class="w3-p w3-theme-d2 w3-margin-bottom"><i class="fa fa-money"></i> bid</p>
-
-      </div>
-
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="/w3images/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">32 min</span>
-        <h4>Angie Jane</h4><br>
-        <hr class="w3-clear">
-        <p>Have you seen this?</p>
-        <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat.</p>
-        <p type="p" class="w3-p w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</p>
-        <p type="p" class="w3-p w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</p>
-        <p type="p" class="w3-p w3-theme-d2 w3-margin-bottom"><i class="fa fa-money"></i> bid</p>
-
-      </div>
+      
       </div>
       <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
@@ -262,7 +254,8 @@
   <!-- End Page Container -->
   </div>
   <br>
-  <div id="id01" class="w3-modal">
+  <% if (user.length>0)  {%>
+  <div id="id01"  class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
       <center><h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1></center>
       <center>
@@ -284,6 +277,27 @@
 
     </div>
   </div>
+  <%} else{%>
+    <div id="id01" style="display: block;" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <center><h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1></center>
+        <center>
+          <h2 style="color:rgb(0, 68, 68)"><b>Komeza Na </b></h2>
+        </center>
+        <div>
+          <center>
+
+            <br>
+           <a href="/auth/google"> <i style="font-size: 10vw; color:teal; " class="fa fa-google w3-hover-opacity"></i></a>
+            <br>
+            <br>
+          </center>
+        </div>
+  
+  
+      </div>
+    </div>
+    <%}%>
   <div id="id03" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
       <span
@@ -338,14 +352,10 @@
 
   <!-- Footer -->
 
-  <button id="BTN3" onclick="document.getElementById('id01').style.display='block'" class="w3-card w3-circle w3-teal">
+  <button id="recordButton"  class="w3-card w3-circle w3-teal">
     <b>KANDA UTUBWIRE</b>
   </button>
-  <button id="BTN2" onclick="document.getElementById('id02').style.display='block'" class="w3-card w3-circle">
-    <b>TURIKUMVA</b>
-  
-    <b>00:00</b>
-  </button>
+
   <button id="BTN4" onclick="document.getElementById('id03').style.display='block'" class="w3-card w3-circle w3-teal">
     <b>BIKUZA</b>
     
@@ -359,10 +369,32 @@
     </p>
   </button>
 
-  <footer style="position: fixed;bottom:0;width:100%;height:15%;border-radius: 20px 20px 0 0 ;"
-    class="w3-cardw3-container w3-theme-d3 w3-padding-16">
-    <i id="ReacorderBTN" style="color:rgb(1, 218, 218);position:inherit;left:22%; bottom:8%;font-size: 40px; display:none" class="fa fa-stop"></i>
-    <i id="ReacorderBTN" style="color:rgb(1, 218, 218);position:inherit;right:22%; bottom:8%;font-size: 40px; display:none" class="fa fa-pause"></i>
+  <footer style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ;"
+    class="w3-card w3-container w3-theme-d3 ">
+  
+    <button id="BTN2" onclick="document.getElementById('id02').style.display='block'" class="w3-card w3-circle w3-animate-zoom">
+      <b>TURIKUMVA</b>
+      <b  id="time67"></b>
+    </button>
+    <button id="BTN7"  class="w3-card w3-circle w3-animate-zoom">
+      <b>Upload</b>
+    </button>
+    
+    <br>
+    <p >
+    <center>
+     <ul style="padding-bottom: 30px; display:none;list-style: none;"  id="recordingsList">
+   
+     </ul>
+    </center>
+ 
+    </p>
+   
+    <div style="display:none ;width:100%" id="ReacorderBTN">
+    <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; top:3%;font-size: 40px; " class="fa fa-stop"></i>
+    <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:3%;font-size: 40px; " class="fa fa-pause"></i>
+    <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:3%;font-size: 40px;display:none; " class="fa fa-play"></i>
+    </div>
     <div style="display:none" id="KashHeading">
     <h4  style="color:rgb(251, 253, 253);position:inherit;left:2%; bottom:9%;font-size: 110%; " >clicks wabonye:</h4>
     <h4  style="color:rgb(255, 255, 255);position:inherit;left:2%; bottom:5%;font-size: 110%; " >amafaranga ugeje:</h4>
@@ -370,6 +402,8 @@
 
     <h4 style="position: fixed;bottom:0.2%;left:1%;"><b>DutereStory.Com</b></h4>
   </footer>
+  <script src="../static/recorder/app.js"></script>
+  <script src="../static/recorder/recorder.js"></script>
   <script>
 // Accordion
 

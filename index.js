@@ -7,6 +7,8 @@ const multer=require('multer')
 const upload=multer();
 const Readable = require('stream').Readable; 
 const {totheDrivers}=require('./googleDrive')
+const userModel=require('./model/users');
+require('./athentication/google')
 
 
 const DB="mongodb+srv://DutereStory:DutereStory@cluster0.zo6ti8b.mongodb.net/DutereStory1?retryWrites=true&w=majority";
@@ -53,9 +55,17 @@ app.get( '/auth/google/callback',
         successRedirect: '/auth/google/success',
         failureRedirect: '/auth/google/failure'
 }));
-
+app.get('/auth/google/success',(req,res)=>{
+  res.redirect('https://3300-muanziri-beniradvert-ebb8rrjd9z3.ws-eu47.gitpod.io/')
+})
 app.get('/',(req,res)=>{
-    res.render('index')
+  userModel.find().then((results)=>{
+    console.log(results)
+    res.render('index',{user:results})
+  }).catch((err)=>{
+    if(err) throw err
+  })
+    
 })
 app.post('/ToTheDrive',upload.any(), (req,res)=>{
     
@@ -73,75 +83,75 @@ app.post('/ToTheDrive',upload.any(), (req,res)=>{
             mimeType: 'audio/aac',
            body: bufferToStream(req.file.buffer)
           };  
-          
+    
    totheDrivers(fileMetadata,media,stringedFilePath,user,folderId)
     
     
 })
 
-app.post('/PodcastControl',(req,res)=>{
-  var jwToken = new google.auth.JWT(
-      key.client_email,
-      null,
-      key.private_key, ["https://www.googleapis.com/auth/drive"],
-      null
-    );
-    jwToken.authorize((authErr) => {
-      if (authErr) {
-        console.log("error : " + authErr);
-        return;
-      } 
-    });
+// app.post('/PodcastControl',(req,res)=>{
+//   var jwToken = new google.auth.JWT(
+//       key.client_email,
+//       null,
+//       key.private_key, ["https://www.googleapis.com/auth/drive"],
+//       null
+//     );
+//     jwToken.authorize((authErr) => {
+//       if (authErr) {
+//         console.log("error : " + authErr);
+//         return;
+//       } 
+//     });
 
-    const uploadToTheDriveMakeFOlder= (fileMetadata)=>{
-      drive.files.create({
-        auth: jwToken,
-        resource: fileMetadata,
-        fields: 'id'
-      }, function(err, file) {
-        if (err) {
-          // Handle error
-          console.error(err);
-        } else {
-          let fileId=file.data.id
-          req.flash('message','Now Record the first espode');
-          req.flash('Id',fileId);
-          req.flash('playName',req.body.PlayName);
-          let name=req.body.PlayName;
-          let Season=req.body.Season;
-          let discrition=req.body.SeasonDiscription
-         new genesis({
-           PlayNames:name,
-           seasonNumber:Season,
-           PlayDiscription:discrition,
-           FolderId:fileId
-         }).save().then((results)=>{
-         }).catch((err)=>{
-             if (err) throw err;
-         })
-          res.redirect('/PodcastControl')
+//     const uploadToTheDriveMakeFOlder= (fileMetadata)=>{
+//       drive.files.create({
+//         auth: jwToken,
+//         resource: fileMetadata,
+//         fields: 'id'
+//       }, function(err, file) {
+//         if (err) {
+//           // Handle error
+//           console.error(err);
+//         } else {
+//           let fileId=file.data.id
+//           req.flash('message','Now Record the first espode');
+//           req.flash('Id',fileId);
+//           req.flash('playName',req.body.PlayName);
+//           let name=req.body.PlayName;
+//           let Season=req.body.Season;
+//           let discrition=req.body.SeasonDiscription
+//          new genesis({
+//            PlayNames:name,
+//            seasonNumber:Season,
+//            PlayDiscription:discrition,
+//            FolderId:fileId
+//          }).save().then((results)=>{
+//          }).catch((err)=>{
+//              if (err) throw err;
+//          })
+//           res.redirect('/PodcastControl')
           
           
-        }
-      });
-      }
+//         }
+//       });
+//       }
   
 
 
-var folderId = "1WFFcWOU-EvMGWhp7_SSlsaXdp-e5dSEs";
-var folderName=req.body.PlayName+" S "+req.body.Season   
-var fileMetadata = {
-      'name': folderName,
-      'mimeType': 'application/vnd.google-apps.folder',
-      parents: [folderId]
-     };
-     function funct(fileId){
-      console.log(fileId)
-     }
-    })
+// var folderId = "1WFFcWOU-EvMGWhp7_SSlsaXdp-e5dSEs";
+// var folderName=req.body.PlayName+" S "+req.body.Season   
+// var fileMetadata = {
+//       'name': folderName,
+//       'mimeType': 'application/vnd.google-apps.folder',
+//       parents: [folderId]
+//      };
+//      function funct(fileId){
+//       console.log(fileId)
+//      }
+//     })
 
 
-uploadToTheDriveMakeFOlder(fileMetadata) 
+
 const port= process.env.port||3300
 app.listen(port,()=>{
     console.log('heard from port')

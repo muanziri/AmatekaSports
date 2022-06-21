@@ -75,8 +75,13 @@ class Timer {
 	  return this.overallTime;
 	}
   }
-  const timer = new Timer();  
+  const timer = new Timer(); 
+ 
 function startRecording() {
+	document.getElementById('BTN2').style.display="block";
+	document.getElementById('recordButton').style.display="none";
+	document.getElementById('ReacorderBTN').style.display="block";
+	
 	console.log("recordButton clicked");
 
 	/*
@@ -100,6 +105,7 @@ function startRecording() {
 	*/
 
 	navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
+		 
 		console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
 
 		/*
@@ -111,14 +117,14 @@ function startRecording() {
 		audioContext = new AudioContext();
 
 		//update the format 
-		document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz"
+		
 
 		/*  assign to gumStream for later use  */
 		gumStream = stream;
 		
 		/* use the stream */
 		input = audioContext.createMediaStreamSource(stream);
-
+       
 		/* 
 			Create the Recorder object and configure to record mono sound (1 channel)
 			Recording 2 channels  will double the file size
@@ -130,9 +136,10 @@ function startRecording() {
 		  
 		  
 		  timer.start();
+		
 		  setInterval(() => {
 			const timeInSeconds = Math.round(timer.getTime() / 1000);
-			document.getElementById('time').innerText = timeInSeconds;
+			document.getElementById('time67').innerText = timeInSeconds;
 		  }, 100)
 		//start the recording process
 		rec.record()
@@ -155,25 +162,28 @@ function pauseRecording(){
 		timer.stop();
 		//pause
 		rec.stop();
-		pauseButton.innerHTML="Resume";
+	
 	}else{
 		//resume
+		timer.start();
 		rec.record()
-		pauseButton.innerHTML="Pause";
+	
 
 	}
 }
 
 function stopRecording() {
 	console.log("stopButton clicked");
-
+    document.getElementById("recordingsList").style.display="block";
+	document.getElementById('ReacorderBTN').style.display="none";
+	document.getElementById('BTN7').style.display="block";
+	document.getElementById('BTN2').style.display="none";
 	//disable the stop button, enable the record too allow for new recordings
 	stopButton.disabled = true;
 	recordButton.disabled = false;
 	pauseButton.disabled = true;
 
-	//reset button just in case the recording is stopped while paused
-	pauseButton.innerHTML="Pause";
+	
 	//timmer stop
 	timer.reset();
 	timer.stop();
@@ -183,7 +193,7 @@ function stopRecording() {
 	//stop microphone access
 	gumStream.getAudioTracks()[0].stop();
    // change the animation
-   document.getElementById('imageRecoding').setAttribute('src','../static/img/gifs/NoAnimatio.jpg')
+   
 	//create the wav blob and pass it on to createDownloadLink
 	rec.exportWAV(createDownloadLink);
 }
@@ -193,7 +203,7 @@ function createDownloadLink(blob) {
 	//console.log(blob)
 
     
-
+   var recordingsList=document.getElementById("recordingsList")
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
 	var li = document.createElement('li');
@@ -201,7 +211,7 @@ function createDownloadLink(blob) {
 	
 	//name of .wav file to use during upload and download (without extendion)
 	var filename = Date.now();
-
+    au.style.color='teal'
 	//add controls to the <audio> element
 	au.controls = true;
 	au.src = url;
@@ -215,7 +225,7 @@ function createDownloadLink(blob) {
 	li.appendChild(au);
 	
 	//add the filename to the li
-	li.appendChild(document.createTextNode(filename+".wav "))
+	
 
 	//add the save to disk link to li
 	li.appendChild(link);
@@ -223,51 +233,9 @@ function createDownloadLink(blob) {
 	comfirmHeader.innerHTML = "uploaded";
 	comfirmHeader.style.display='none'
 	//upload link
-    var progress = document.createElement('progress');
-	progress.id="progressBar"
-	progress.value='0'
-	progress.max='50'
-	progress.style.display='none'
-    li.appendChild(progress)
-
-	var progress2 = document.createElement('progress');
-	progress2.id="progressBar2"
-	progress2.value='0'
-	progress2.max='50'
-	progress2.style.display='none'
-    li.appendChild(progress2)
-
-	var timeleft = 50;
-	var timeleft2 = 50;
-	
-	function startProgressBar(){
-
-    var downloadTimer = setInterval(function(){
-      if(timeleft <= 0 ){
-        clearInterval(downloadTimer);
-		uploadButton.style.display = "block";
-		progress.style.display='none';
-      }
-      document.getElementById("progressBar").value = 50 - timeleft;
-      timeleft -= 1;
-     
-    }, 1000);
+    
    
-       }
-	   function startProgressBar2(){
-
-		var downloadTimer = setInterval(function(){
-		  if(timeleft2 <= 0 ){
-			clearInterval(downloadTimer);
-			comfirmHeader.style.display = "block";
-			progress2.style.display='none';
-		  }
-		  document.getElementById("progressBar2").value = 90 - timeleft2;
-		  timeleft2 -= 1;
-		 
-		}, 1000);
-	   
-		   }  
+    
 
 	var uploadButton = document.createElement('button');
 
@@ -280,8 +248,8 @@ function createDownloadLink(blob) {
 	uploadButtonId=document.getElementById('uploadButtonId')
      uploadButton.addEventListener('click',function (events) {
 		uploadButton.style.display = "none";
-	    document.getElementById('progressBar2').style.display='block'
-		startProgressBar2()
+	   
+		
 	 	var xhr=new XMLHttpRequest();
 	 	xhr.onload=function(e) {
 	 		if(this.readyState === 4) {
@@ -296,30 +264,10 @@ function createDownloadLink(blob) {
 	
 	li.appendChild(uploadButton)
     
-	var innitiate = document.createElement('button');
 
-	innitiate.href="#";
-	innitiate.id="innitiateId"
-	innitiate.setAttribute("class", "innitiate");
-	innitiate.innerHTML = "innitiate";
-	innitiateId=document.getElementById('innitiateId')
-	innitiate.addEventListener('click',function (events) {
-		document.getElementById('progressBar').style.display='block'
-		startProgressBar();
-		innitiate.style.display='none'
-		var xhr=new XMLHttpRequest();
-		xhr.onload=function(e) {
-			if(this.readyState === 4) {
-				console.log("Server returned: ",e.target.responseText);
-			}
-		};
-		var fd=new FormData();
-		fd.append("audio_data",blob, filename);
-		xhr.open("POST","ToTheDrive",true);
-		xhr.send(fd);
-	})
+
 	li.appendChild(document.createTextNode (" "))//add a space in between
-	li.appendChild(innitiate)//add the upload link to li
+	//li.appendChild(innitiate)//add the upload link to li
 
 	//add the li element to the ol
 	recordingsList.appendChild(li)

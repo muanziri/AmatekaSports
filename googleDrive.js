@@ -21,7 +21,13 @@ var jwToken = new google.auth.JWT(
      auth: jwToken,
      resource: fileMetadata,
      media: media,
-     fields: 'id'
+     fields: 'id',
+     onUploadProgress: evt => {
+      const progress = (evt.bytesRead / fileSize) * 100;
+      readline.clearLine(process.stdout, 0);
+      readline.cursorTo(process.stdout, 0);
+      process.stdout.write(`${Math.round(progress)}% complete`);
+    },
    }, function(err, file) {
      if (err) {
        // Handle error
@@ -30,7 +36,6 @@ var jwToken = new google.auth.JWT(
       
        console.log('File Id: ', file.data.id);
        new UserRecording({
-         AudioId:file.data.id,
          UserName:user.userName,
          ProfilePic:user.ProfilePhotoUrl,
          FolderId:folderId
