@@ -62,12 +62,9 @@ app.get('/auth/google/success',(req,res)=>{
   res.redirect('/')
 })
 app.get('/',(req,res)=>{
-  userModel.find().then((results)=>{
-    console.log(results)
-    res.render('index',{user:results})
-  }).catch((err)=>{
-    if(err) throw err
-  })
+    console.log(req.user)
+    res.render('index',{user:req.user})
+
     
 })
 app.post('/ToTheDrive',upload.any(), (req,res)=>{
