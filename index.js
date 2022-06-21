@@ -1,6 +1,6 @@
 const express=require('express')
 const mongoose=require('mongoose')
-const cookieSession=require('cookie-session')
+const session=require('express-session')
 const flash=require('flash')
 const passport=require('passport')
 const multer=require('multer')
@@ -32,13 +32,12 @@ function bufferToStream(buffer) {
 const app=express()
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended:true}))
-app.use(cookieSession({
-    name: 'session',
-    keys: ['MUNAMUNAMUNA'],
-  
-    // Cookie Options
-    maxAge: 24 * 60 * 60 * 1000 // 24 hours
-  }))
+app.use(session({
+  secret: 'somethingsecretgoeshere',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
   app.use(flash())
 app.set('view engine','ejs');
 app.use('/static',express.static(__dirname+'/static'))
@@ -62,7 +61,7 @@ app.get('/auth/google/success',(req,res)=>{
   res.redirect('/')
 })
 app.get('/',(req,res)=>{
-    console.log(req.user)
+    
     res.render('index',{user:req.user})
 
     
