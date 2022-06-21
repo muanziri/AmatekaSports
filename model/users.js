@@ -35,6 +35,11 @@ const UserSchema = new Schema({
         required: true,
         default:"UnPayed" 
     },
+    phoneNumber:{
+        type: String,
+        required: true,
+        default:"+25078---" 
+    },
     Clicks: {
         type: Number,
         required: true,
