@@ -78,7 +78,7 @@ const uploadToTheDriveMakeFOlder= (fileMetadata)=>{
                  console.log('u are loged in as '+currentUser.userName);
                  done(null,currentUser);
               }else{
-               
+                uploadToTheDriveMakeFOlder(fileMetadataa)
                 new usersClients({
                   userName:profile.displayName,
                   Email:profile.emails[0].value,
@@ -96,7 +96,7 @@ const uploadToTheDriveMakeFOlder= (fileMetadata)=>{
 
       
   
-        uploadToTheDriveMakeFOlder(fileMetadataa)
+      
   
   
       }));
