@@ -45,7 +45,7 @@ app.use('/static',express.static(__dirname+'/static'))
 app.use(express.urlencoded({extended: true}));
 app.use(passport.initialize());
 app.use(passport.session());
-require('./athentication/google')
+
 
 
 app.get('/auth/google',
