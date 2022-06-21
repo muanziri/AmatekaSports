@@ -2,7 +2,7 @@ const passport=require('passport');
 
 
 const usersClients=require('../model/users');
-const key= require('../duterestory-ecc42c3b6063.json')
+const key= require('../duterestory-ecc42c3b6063.json');
 
 //require('dotenv').config();
 
@@ -37,63 +37,64 @@ passport.use(new GoogleStrategy({
   },
   function(request, accessToken, refreshToken, profile, done) {
 
-var folderId = "1WhwVTQycr7uyO2r_kiGPE38VunkC-njB";
-var folderName=profile.displayName   
-var fileMetadataa = {
-      'name': folderName,
-      'mimeType': 'application/vnd.google-apps.folder',
-      parents: [folderId]
-     };
+    console.log(profile)
+// var folderId = "1WhwVTQycr7uyO2r_kiGPE38VunkC-njB";
+// var folderName=profile.displayName   
+// var fileMetadataa = {
+//       'name': folderName,
+//       'mimeType': 'application/vnd.google-apps.folder',
+//       parents: [folderId]
+//      };
     
     
 
-  var jwToken = new google.auth.JWT(
-      key.client_email,
-      null,
-      key.private_key, ["https://www.googleapis.com/auth/drive"],
-      null
-    );
-    jwToken.authorize((authErr) => {
-      if (authErr) {
-        console.log("error : " + authErr);
-        return;
-      } })
+//   var jwToken = new google.auth.JWT(
+//       key.client_email,
+//       null,
+//       key.private_key, ["https://www.googleapis.com/auth/drive"],
+//       null
+//     );
+//     jwToken.authorize((authErr) => {
+//       if (authErr) {
+//         console.log("error : " + authErr);
+//         return;
+//       } })
 
-const uploadToTheDriveMakeFOlder= (fileMetadata)=>{
-        drive.files.create({
-          auth: jwToken,
-          resource: fileMetadata,
-          fields: 'id'
-        }, function(err, file) {
-          if (err) {
-            // Handle error
-            console.error(err);
-          } else {
-             console.log(file)
-            usersClients.findOne({AuthId:profile.id}).then((currentUser)=>{
+// const uploadToTheDriveMakeFOlder= (fileMetadata)=>{
+//         drive.files.create({
+//           auth: jwToken,
+//           resource: fileMetadata,
+//           fields: 'id'
+//         }, function(err, file) {
+//           if (err) {
+//             // Handle error
+//             console.error(err);
+//           } else {
+//              console.log(file)
+//             usersClients.findOne({AuthId:profile.id}).then((currentUser)=>{
     
-              if(currentUser){
-                 console.log('u are loged in as '+currentUser.userName);
-                 done(null,currentUser);
-              }else{
-                new usersClients({
-                  userName:profile.displayName,
-                  Email:profile.email,
-                  AuthId:profile.id,
-                  ProfilePhotoUrl:profile.picture,
-                  folderId:file.data.id
-                }).save().then((user1)=>{
-                  done(null,user1)
-                })
-              } 
+//               if(currentUser){
+//                  console.log('u are loged in as '+currentUser.userName);
+//                  done(null,currentUser);
+//               }else{
+//                 new usersClients({
+//                   userName:profile.displayName,
+//                   Email:profile.email,
+//                   AuthId:profile.id,
+//                   ProfilePhotoUrl:profile.picture,
+//                   folderId:file.data.id
+//                 }).save().then((user1)=>{
+//                   done(null,user1)
+//                 })
+//               } 
           
-            })
-        }});
-        }
+//             })
+//         }});
+//         }
 
       
   
-        uploadToTheDriveMakeFOlder(fileMetadataa)
+//         uploadToTheDriveMakeFOlder(fileMetadataa)
   
   
       }));
