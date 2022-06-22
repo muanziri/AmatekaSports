@@ -1,6 +1,6 @@
 const express=require('express')
 const mongoose=require('mongoose')
-const cookieSession=require('cookie-session')
+const session= require('cookie-session')
 const flash=require('flash')
 const passport=require('passport')
 const multer=require('multer')
@@ -32,12 +32,11 @@ function bufferToStream(buffer) {
 const app=express()
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended:true}))
-app.use(cookieSession({
-  name: 'session',
-  keys: ["MUNAMUNA"],
-
-  // Cookie Options
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+app.use(session({
+  secret: 'keyboard.com',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge:1000*60*60*24 }
 }))
   app.use(flash())
 app.set('view engine','ejs');
