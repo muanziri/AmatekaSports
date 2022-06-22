@@ -71,14 +71,15 @@
     }
 
     #BTN4 {
-      position: fixed;
-      bottom: 7%;
-      right: 20%;
+      margin-top: -5%;
+      margin-left: 45%;
+      color:white;
       width: 100px;
       height: 100px;
       z-index: 1;
       border: none;
-      display: none;
+      display:none;
+     
     }
 
 
@@ -397,8 +398,12 @@
     <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:3%;font-size: 40px;display:none; " class="fa fa-play"></i>
     </div>
     <div style="display:none" id="KashHeading">
-    <h2  >clicks wabonye:</h2>
-    <h2  >amafaranga ugeje:</h2>
+    <h4 >clicks wabonye:</h4>
+    <h4  >amafaranga ugeje:</h4>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 
     <h4 style="position: fixed;bottom:0.2%;left:1%;"><b>DutereStory.Com</b></h4>
@@ -418,7 +423,7 @@
     document.getElementById('stories').style.display='none'
     document.getElementById('ReacorderBTN').style.display='none'
     document.getElementById('BTN2').style.display='none'
-    document.getElementById('BTN3').style.display='none'
+    document.getElementById('recordButton').style.display='none'
     document.getElementById('MENU').style.display='none'
   }
   function ChangeToStories(){
@@ -431,7 +436,7 @@
     document.getElementById('stories').style.display='block'
     document.getElementById('ReacorderBTN').style.display='none'
     document.getElementById('BTN2').style.display='none'
-    document.getElementById('BTN3').style.display='block'
+    document.getElementById('recordButton').style.display='block'
     document.getElementById('MENU').style.display='none'
   }
   </script>
