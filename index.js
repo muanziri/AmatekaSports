@@ -1,6 +1,6 @@
 const express=require('express')
 const mongoose=require('mongoose')
-const session= require('cookie-session')
+const session= require('express-session')
 const flash=require('flash')
 const passport=require('passport')
 const multer=require('multer')
@@ -61,7 +61,7 @@ app.get('/auth/google/success',(req,res)=>{
   res.redirect('/')
 })
 app.get('/',(req,res)=>{
-    // console.log(req.user)
+     console.log(req.user)
     res.render('index',{user:req.user})
 
     
