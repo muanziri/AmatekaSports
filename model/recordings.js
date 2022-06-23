@@ -12,7 +12,7 @@ const UserSchema = new Schema({
         required: true,
          default:0
     },
-   likes:[string],
+   likes:[String],
     Date:{
         type: Date,
         required: true,
