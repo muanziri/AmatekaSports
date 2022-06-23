@@ -241,7 +241,7 @@ function createDownloadLink(blob) {
 
 
 	 uploadButton.addEventListener('click',function (events) {
-		uploadButton.style.display = "none";
+		
 	   
 		
 	 	var xhr=new XMLHttpRequest();
@@ -256,7 +256,7 @@ function createDownloadLink(blob) {
 	 	xhr.send(fd);
 	 })
 	
-	li.appendChild(uploadButton)
+	
     
 
 
