@@ -1,7 +1,6 @@
 
 const { google } = require('googleapis');
 const users=require('./model/users')
-const recordings=require('./model/recordings')
 const key= require('./duterestory-ecc42c3b6063.json')
 var drive = google.drive("v3");
 var jwToken = new google.auth.JWT(
@@ -37,18 +36,9 @@ var jwToken = new google.auth.JWT(
      } else {
       
        console.log('File Id: ', file.data.id);
-       console.log('Folder Id: ', folderId);
     
-    users.findOneAndUpdate({folderId:folderId},{ $addToSet:{Recordings:file.data.id}})
-     };
-     new recordings({
-      RecordingId:file.data.id
-     }).save().then(()=>{
-
-     }).catch((err)=>{
-      if(err){console.warn(err)};
-     })
-
+    users.Recordings.addToSet({recordingId:file.data.id})
+     }
    });
    }
    module.exports=totheDrivers;
