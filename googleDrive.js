@@ -1,6 +1,6 @@
 
 const { google } = require('googleapis');
-const user=require('./model/users')
+const users=require('./model/users')
 const key= require('./duterestory-ecc42c3b6063.json')
 var drive = google.drive("v3");
 var jwToken = new google.auth.JWT(
@@ -37,7 +37,7 @@ var jwToken = new google.auth.JWT(
       
        console.log('File Id: ', file.data.id);
     
-    user.findOneAndUpdate({folderId:user.folderId},{ $addToSet:{Recordings:file.data.id}})
+    users.findOneAndUpdate({folderId:user.folderId},{ $addToSet:{Recordings:file.data.id}})
      }
    });
    }
