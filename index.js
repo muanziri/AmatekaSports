@@ -6,7 +6,7 @@ const passport=require('passport')
 const multer=require('multer')
 const upload=multer();
 const Readable = require('stream').Readable; 
-const {totheDrivers}=require('./googleDrive')
+const totheDrivers=require('./googleDrive')
 const userModel=require('./model/users');
 require('./athentication/google')
 
