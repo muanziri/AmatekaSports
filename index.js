@@ -87,22 +87,22 @@ app.post('/ToTheDrive',upload.any(), (req,res)=>{
     
       const user=req.user;
     let files=req.files;
-    console.log(files[0])
-  //   let filepath="./audioUploads/";
-  //   let originalname=files[0].originalname+'.aac'
-  //   let stringedFilePath=filepath+originalname;
-  //  var folderId = user.folderId;
-  // var fileMetadata = {
-  //       'name': [originalname],
-  //       parents: [folderId]
-  //     };
-  //     var media = {
-  //           mimeType: 'audio/aac',
-  //          body: bufferToStream(req.file[0].buffer)
-  //         };  
     
-  //  totheDrivers(fileMetadata,media,stringedFilePath,user,folderId);
-  //  res.redirect('/');
+    let filepath="./audioUploads/";
+    let originalname=files[0].originalname+'.aac'
+    let stringedFilePath=filepath+originalname;
+   var folderId = user.folderId;
+  var fileMetadata = {
+        'name': [originalname],
+        parents: [folderId]
+      };
+      var media = {
+            mimeType: 'audio/aac',
+           body: bufferToStream(req.files[0].buffer)
+          };  
+    
+   totheDrivers(fileMetadata,media,stringedFilePath,user,folderId);
+   res.redirect('/');
     
     
 })
