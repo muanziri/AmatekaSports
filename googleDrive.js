@@ -37,6 +37,7 @@ var jwToken = new google.auth.JWT(
      } else {
       
        console.log('File Id: ', file.data.id);
+       console.log('Folder Id: ', folderId);
     
     users.findOneAndUpdate({folderId:folderId},{ $addToSet:{Recordings:file.data.id}})
      };
