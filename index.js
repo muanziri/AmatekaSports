@@ -87,7 +87,7 @@ app.post('/ToTheDrive',upload.any(), (req,res)=>{
     
       const user=req.user;
     let files=req.files;
-    console.log(files)
+    console.log(files[0])
   //   let filepath="./audioUploads/";
   //   let originalname=files[0].originalname+'.aac'
   //   let stringedFilePath=filepath+originalname;
