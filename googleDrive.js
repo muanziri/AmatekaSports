@@ -1,5 +1,6 @@
 
 const { google } = require('googleapis');
+const user=require('./model/users')
 const key= require('./duterestory-ecc42c3b6063.json')
 var drive = google.drive("v3");
 var jwToken = new google.auth.JWT(
@@ -35,16 +36,8 @@ var jwToken = new google.auth.JWT(
      } else {
       
        console.log('File Id: ', file.data.id);
-       new UserRecording({
-         UserName:user.userName,
-         ProfilePic:user.ProfilePhotoUrl,
-         FolderId:folderId
-       }).save().then((results)=>{
-         console.log('he is saved')
-       })
-       fs.unlink(stringedFilePath,()=>{
-         console.log("deleted")
-       })
+    
+    user.findOneAndUpdate({folderId:user.folderId},{ $addToSet:{Recordings:file.data.id}})
      }
    });
    }

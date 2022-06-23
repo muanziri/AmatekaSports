@@ -19,9 +19,18 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    folderId: {
+        type: String,
+        required: true
+    },
     Recordings: [String],
     likes: [String],
     comments: [String],
+    views: {
+        type: Number,
+        required: true,
+        default:0
+    },
     PaidDate:{
         type: String,
         required: true,
