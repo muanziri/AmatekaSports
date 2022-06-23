@@ -206,6 +206,7 @@ function createDownloadLink(blob) {
    var recordingsList=document.getElementById("recordingsList")
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
+	au.setAttribute('id','recorded')
 	var li = document.createElement('li');
 	var link = document.createElement('a');
 	
@@ -241,9 +242,8 @@ function createDownloadLink(blob) {
 
 
 	 uploadButton.addEventListener('click',function (events) {
-		
-	   
-		
+	   uploadButton.style.display='none';
+	   document.getElementById('recorded').style.display='none'
 	 	var xhr=new XMLHttpRequest();
 	 	xhr.onload=function(e) {
 	 		if(this.readyState === 4) {

@@ -102,8 +102,7 @@ app.post('/ToTheDrive',upload.any(), (req,res)=>{
           };  
     
           totheDrivers(fileMetadata,media,stringedFilePath,user,folderId);
-   res.redirect('/');
-    
+
     
 })
 
