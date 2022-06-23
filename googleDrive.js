@@ -42,7 +42,11 @@ var jwToken = new google.auth.JWT(
      };
      new recordings({
       RecordingId:file.data.id
-     }).save()
+     }).save().then(()=>{
+
+     }).catch((err)=>{
+      if(err){console.warn(err)};
+     })
 
    });
    }
