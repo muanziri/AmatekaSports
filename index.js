@@ -100,7 +100,8 @@ app.post('/ToTheDrive',upload.any(), (req,res)=>{
            body: bufferToStream(req.file[0].buffer)
           };  
     
-   totheDrivers(fileMetadata,media,stringedFilePath,user,folderId)
+   totheDrivers(fileMetadata,media,stringedFilePath,user,folderId);
+   res.redirect('/');
     
     
 })

@@ -237,16 +237,10 @@ function createDownloadLink(blob) {
    
     
 
-	var uploadButton = document.createElement('button');
+	var uploadButton = document.getElementById('BTN7');
 
 
-	uploadButton.href="#";
-	uploadButton.id="uploadButtonId"
-	uploadButton.setAttribute("class", "uploadButton");
-	uploadButton.style.display = "none";
-	uploadButton.innerHTML = "upload";
-	uploadButtonId=document.getElementById('uploadButtonId')
-     uploadButton.addEventListener('click',function (events) {
+	 uploadButton.addEventListener('click',function (events) {
 		uploadButton.style.display = "none";
 	   
 		
