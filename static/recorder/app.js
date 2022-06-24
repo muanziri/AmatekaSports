@@ -244,6 +244,7 @@ function createDownloadLink(blob) {
 	 uploadButton.addEventListener('click',function (events) {
 	   uploadButton.style.display='none';
 	   document.getElementById('recorded').style.display='none'
+	   document.getElementById('recordButton').style.display='block'
 	 	var xhr=new XMLHttpRequest();
 	 	xhr.onload=function(e) {
 	 		if(this.readyState === 4) {

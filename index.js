@@ -7,7 +7,8 @@ const multer=require('multer')
 const upload=multer();
 const Readable = require('stream').Readable; 
 const totheDrivers=require('./googleDrive')
-const userModel=require('./model/users');
+const recordings=require('./model/recordings');
+const UserModel=require('./model/users');
 require('./athentication/google')
 
 
@@ -67,20 +68,41 @@ app.get('/',(req,res)=>{
     
 })
 app.post('/addLikes',(req,res)=>{
-  
- 
+ let userID=req.user.id
+ let id=req.body.id
+ recordings.findOneAndUpdate({userId:id},{$addToSet:{likes:userID}},function (err, docs) {
+  if (err){
+      console.log(err)
+  }
+})
+
 })
 app.post('/addClicks',(req,res)=>{
 
  
 })
 app.post('/addComments',(req,res)=>{
- 
+  
+ let id=req.body.id
+ let userComment=[req.user.userName,req.user.ProfilePhotoUrl,req.body.comment]
+ recordings.findOneAndUpdate({userId:id},{$addToSet:{comments:userComment}},function (err, docs) {
+  if (err){
+      console.log(err)
+  }
+})
 
  
 })
 app.post('/addViews',(req,res)=>{
- 
+  let id=req.body.id
+  recordings.findOne({userId:id}).then((results)=>{
+    let newViews=results.views++
+    recordings.findOneAndUpdate({userId:id},{views:newViews},function (err, docs) {
+      if (err){
+          console.log(err)
+      }
+    })
+  })
  
 })
 app.post('/ToTheDrive',upload.any(), (req,res)=>{

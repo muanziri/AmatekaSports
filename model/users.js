@@ -24,8 +24,6 @@ const UserSchema = new Schema({
         required: true
     },
     Recordings: [String],
-    likes: [String],
-    comments: [String],
     views: {
         type: Number,
         required: true,

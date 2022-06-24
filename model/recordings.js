@@ -18,6 +18,7 @@ const UserSchema = new Schema({
          default:0
     },
    likes:[String],
+   comments:[String],
     Date:{
         type: Date,
         required: true,

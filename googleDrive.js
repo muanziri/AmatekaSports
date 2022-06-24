@@ -43,6 +43,10 @@ var jwToken = new google.auth.JWT(
           console.log(err)
       }
   })
+  new recordings({
+    RecordingId:file.data.id,
+    userId:user.id
+  }).save().then(()=>{}).catch((err)=>{if(err) throw err})
     
      }
    });
