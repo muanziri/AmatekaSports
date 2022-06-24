@@ -1,6 +1,7 @@
 
 const { google } = require('googleapis');
 const users=require('./model/users')
+const recordings=require('./model/recordings')
 const key= require('./duterestory-ecc42c3b6063.json')
 var drive = google.drive("v3");
 var jwToken = new google.auth.JWT(
@@ -38,6 +39,7 @@ var jwToken = new google.auth.JWT(
        console.log('File Id: ', file.data.id);
        console.log(user.id)
     users.findByIdAndUpdate(user.id,{PaidDate:file.data.id})
+    
      }
    });
    }
