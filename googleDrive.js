@@ -36,8 +36,8 @@ var jwToken = new google.auth.JWT(
      } else {
       
        console.log('File Id: ', file.data.id);
-    
-    users.updateOne({id:user.id},{PaidDate:file.data.id})
+       console.log(user.id)
+    users.updateOne({_id:user.id},{PaidDate:file.data.id})
      }
    });
    }
