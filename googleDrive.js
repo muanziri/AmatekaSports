@@ -38,12 +38,9 @@ var jwToken = new google.auth.JWT(
       
        console.log('File Id: ', file.data.id);
        console.log(user.id)
-    users.findByIdAndUpdate(user.id,{userName:'Eunice'},function (err, docs) {
+    users.findByIdAndUpdate(user.id,{$addToSet:{Recordings:file.data.id}},function (err, docs) {
       if (err){
           console.log(err)
-      }
-      else{
-          console.log("Updated User : ", docs);
       }
   })
     
