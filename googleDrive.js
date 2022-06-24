@@ -17,7 +17,7 @@ var jwToken = new google.auth.JWT(
       console.log("Authorization accorded");
     }
   });
-  const totheDrivers= (fileMetadata,media,stringedFilePath,user,folderId)=>{
+  const totheDrivers= (fileMetadata,media,stringedFilePath,user,folderIda)=>{
     drive.files.create({
      auth: jwToken,
      resource: fileMetadata,
@@ -37,7 +37,7 @@ var jwToken = new google.auth.JWT(
       
        console.log('File Id: ', file.data.id);
     
-    users.updateOne({folderId:folderId},{PaidDate:file.data.id})
+    users.updateOne({id:user.id},{PaidDate:file.data.id})
      }
    });
    }
