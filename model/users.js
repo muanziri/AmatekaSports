@@ -28,14 +28,14 @@ const UserSchema = new Schema({
         required: true,
         default:0
     },
-    subscription:[{
+    subscription:{
         createdAt: { type: Date, expires: '2m', default: Date.now },
         status:{
             type:String,
             default:'payed'
         }
    
-       }],
+       },
     balance:{
         type: Number
     },
