@@ -36,7 +36,7 @@ const UserSchema = new Schema({
         required: true,
         default:0
     },
-    subscription:{payement},
+    subscription:[payement],
     balance:{
         type: Number
     },
