@@ -82,7 +82,7 @@ passport.use(new GoogleStrategy({
                     console.error(err);
                   } else {
                
-                new usersClients({
+                new UserModel({
                   userName:profile.displayName,
                   Email:profile.emails[0].value,
                   AuthId:profile.id,
