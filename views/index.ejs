@@ -176,6 +176,7 @@
       <!-- Left Column -->
       <div id="MENU" class="w3-card w3-col m3 w3-teal w3-animate-left">
         <!-- Profile -->
+        <% if(user){%>
         <span
           onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
           class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -183,6 +184,7 @@
 
         <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
           class=" w3-card w3-white w3-round w3-margin ">
+         
           <h4>Story Zawe ni <%=user.Recordings.length%></h4>
           <br>
         </div>
@@ -218,7 +220,7 @@
         </div>
 
 
-
+       <% } %> 
       </div>
 
 
