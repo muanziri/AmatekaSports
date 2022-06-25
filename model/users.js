@@ -1,13 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
-const subPayment=new Schema({
-        createdAt: { type: Date, expires: '2m', default: Date.now },
-        status:{
-            type:String,
-            default:'payed'
-        }
-   
-})
 const UserSchema = new Schema({
 
     userName: {
@@ -36,7 +28,14 @@ const UserSchema = new Schema({
         required: true,
         default:0
     },
-    subscription:[subPayment],
+    subscription:[{
+        createdAt: { type: Date, expires: '2m', default: Date.now },
+        status:{
+            type:String,
+            default:'payed'
+        }
+   
+       }],
     balance:{
         type: Number
     },
