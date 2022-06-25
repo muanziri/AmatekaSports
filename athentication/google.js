@@ -2,7 +2,7 @@ const passport=require('passport');
 const { google } = require('googleapis');
 var drive = google.drive("v3");
 
-const usersClients=require('../model/users');
+const {UserModel}=require('../model/users');
 const key= require('../duterestory-ecc42c3b6063.json');
 var jwToken = new google.auth.JWT(
   key.client_email,
@@ -27,7 +27,7 @@ passport.serializeUser((user1 ,done)=>{
 })
 passport.deserializeUser((id,done)=>{
   
-  usersClients.findById(id).then((user)=>{
+  UserModel.findById(id).then((user)=>{
     
     done(null,user);
   })
@@ -54,7 +54,7 @@ passport.use(new GoogleStrategy({
     
 
  
-     usersClients.findOne({AuthId:profile.id}).then((currentUser)=>{
+    UserModel.findOne({AuthId:profile.id}).then((currentUser)=>{
       if(currentUser){
         console.log('u are loged in as '+currentUser.userName);
         done(null,currentUser);

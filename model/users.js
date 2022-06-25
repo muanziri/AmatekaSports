@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 const subPayment=new Schema({
-    
-        createdAt: { type: Date, expires: '2m', default: Date.now },
+        createdAt: { type: Date, expires: 120, default: Date.now },
         status:{
             type:String,
             default:'payed'
-        }
-    
+        }   
 })
 const UserSchema = new Schema({
 
@@ -61,5 +59,5 @@ const UserSchema = new Schema({
 })
 
 const UserModel=mongoose.model('users',UserSchema);
-
-module.exports=UserModel;
+const payment=mongoose.model('paymentStatus',subPayment);
+module.exports={UserModel,payment};
