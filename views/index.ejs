@@ -73,7 +73,7 @@
     #BTN4 {
       position:absolute;
       left: 3%;
-      margin-top: -8%;
+      margin-top: -4%;
 
       color:white;
       width: 100px;
@@ -86,7 +86,7 @@
     #BTN8 {
       position:absolute;
       right: 3%;
-      margin-top: -8%;
+      margin-top: -4%;
   
       color:white;
       width: 100px;
@@ -141,6 +141,9 @@
     }
 
     @media screen and (max-width:600px) {
+      #BTN8,#BTN4{
+        margin-top: -8;
+      }
       #recordButton {
       position: fixed;
       bottom: 7%;
@@ -176,11 +179,11 @@
         <span
           onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
           class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-        <img src="img_avatar4.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+        <img src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
 
         <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
           class=" w3-card w3-white w3-round w3-margin ">
-          <h4>Story Zawe</h4>
+          <h4>Story Zawe ni <%=user.Recordings.length%></h4>
           <br>
         </div>
         <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
