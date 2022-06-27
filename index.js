@@ -66,15 +66,7 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
-  //console.log(req.user)
-  payment.findOne({PhoneNumber:req.user.phoneNumber}).then((results)=>{
-    res.render('index', { user: req.user ,paymentStatus:results})
-  }).catch((err)=>{
-    if(err) throw err
-  })
-  
-
-
+    res.render('index', { user: req.user,paymentStatusNumber:req.user.phoneNumber})
 })
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
