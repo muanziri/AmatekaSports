@@ -297,16 +297,16 @@
               <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
             </center>
             <center>
-            <form  class="w3-container w3-margin">
+            <form method="post" id="formPayment" class="w3-container w3-margin">
               <div class="w3-section">
              <b> <lable>Phone yawe</lable></b>
               <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="078(MTN GUSA)-----"/>
               <br>
               <b><label>hitamo package wishyura</label></b>
-              <select class="w3-input w3-border w3-teal"  name="package" id="selectionOfPackage">
-                <option value="1000">1500 RWF  kucyumweru</option>
-                <option value="3000">5000 RWF  kukwezi</option>
-                <option value="3000">50000 RWF  Kumwaka</option>
+              <select onchange="myFunction()" id="select" class="w3-input w3-border w3-teal"  name="package" id="selectionOfPackage">
+                <option value="1500">1500 RWF  kucyumweru</option>
+                <option value="5000">5000 RWF  kukwezi</option>
+                <option value="50000">50000 RWF  Kumwaka</option>
               </select>
             </div>
             <button class="w3-button w3-block w3-teal w3-section w3-padding" >ISHYURA</button>
@@ -315,7 +315,7 @@
       
           </div>
         </div>
-        <% if(user.phoneNumber='+250780000000') {%> 
+        <% if(user.paymentStatus=="innitailPayment") {%> 
         <div  id="id04" style="display:'block'" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <center>
@@ -327,6 +327,18 @@
           </div>
         </div>
         <%}else{%>
+          <% if(user.paymentStatus=="expiredPayment") {%> 
+            <div  id="id04" style="display:'block'" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                <center>
+                  <h5 style="color:rgb(0, 68, 68)"><b>Gura indi Subscription</b></h5>
+                  <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano wishyura indi</button>
+                </center>
+               
+          
+              </div>
+            </div>
+            <% } else{ %> 
             <div  id="id04" class="w3-modal">
               <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                 <center>
@@ -337,6 +349,7 @@
           
               </div>
             </div>
+            <% } %> 
          
           <% } %> 
         <div  id="id06"  class="w3-modal w3-padding">
@@ -532,6 +545,17 @@
   <script src="../static/recorder/recorder.js"></script>
   <script>
 // Accordio
+  function myFunction(){
+    var x = document.getElementById("select").value;
+    var y=document.getElementById("formPayment")
+    if(x === 1500 ){
+    y.setAttribute("action","/flutterWaveSubWeek");
+    }else if(x === 3000 ){
+      y.setAttribute("action","/flutterWaveSubMonth");
+    }else if(x === 50000 ){
+      y.setAttribute("action","/flutterWaveSubYear");
+    }
+  }
    let whatssapMoney=document.getElementById('whatssapMoney');
    whatssapMoney.addEventListener('click',()=>{
       document.getElementById('id07').style.display='block';
