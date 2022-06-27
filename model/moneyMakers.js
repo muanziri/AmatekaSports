@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
-    PhonrNumber:{
+    PhoneNumber:{
         type: String,
         required: true,
         default:"payed"
