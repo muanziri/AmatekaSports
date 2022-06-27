@@ -256,7 +256,9 @@
            <b> 
             <%if(user){%>
             <input style="display: block;" value='<%=user.id%>' class="w3-input w3-border w3-margin-bottom" type="text" name="id" placeholder="078(MTN GUSA)-----"/>
-            <%}%>
+            <%} else{%>
+              <input style="display: block;"class="w3-input w3-border w3-margin-bottom" type="text" name="id" placeholder="078(MTN GUSA)-----"/>
+            <%}%>  
             <br>
             <b><label>Comment Yawe</label></b>
             <textarea style="background-color: rgb(169, 224, 224);" class="w3-input w3-border w3-margin-bottom" type="text" name="comment" placeholder="----"></textarea>
