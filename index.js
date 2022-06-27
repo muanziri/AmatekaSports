@@ -67,7 +67,7 @@ app.get('/auth/google/success', (req, res) => {
 })
 app.get('/', (req, res) => {
   //console.log(req.user)
-  payment.findOne({PhonrNumber:user.phoneNumber}).then((results)=>{
+  payment.findOne({PhonrNumber:req.user.phoneNumber}).then((results)=>{
     res.render('index', { user: req.user ,paymentStatus:results})
   }).catch((err)=>{
     if(err) throw err
