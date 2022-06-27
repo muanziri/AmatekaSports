@@ -315,45 +315,35 @@
       
           </div>
         </div>
-        <% if (user) {%> 
+       
+        <div  id="id04"  class="w3-modal">
+           <% if (user) {%> 
         <% if(user.paymentStatus=="innitailPayment") {%> 
-        <div  id="id04" style="display:'block'" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <center>
               <h5 style="color:rgb(0, 68, 68)"><b>Gura Subscription</b></h5>
               <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano wishyura indi</button>
             </center>
+            </div>
            
-      
+      <%}else{%>
+          <% if(user.paymentStatus=="expiredPayment") {%> 
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+              <center>
+                <h5 style="color:rgb(0, 68, 68)"><b>Gura indi Subscription</b></h5>
+                <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano wishyura indi</button>
+              </center>
+             
+        
+            </div>
+            
+         
+              <% } %> 
+              <%}%>
+              <% } %> 
           </div>
         </div>
-        <%}else{%>
-          <% if(user.paymentStatus=="expiredPayment") {%> 
-            <div  id="id04" style="display:'block'" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <center>
-                  <h5 style="color:rgb(0, 68, 68)"><b>Gura indi Subscription</b></h5>
-                  <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano wishyura indi</button>
-                </center>
-               
-          
-              </div>
-            </div>
-            <% } else{ %> 
-            <div  id="id04" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <center>
-                  <h5 style="color:rgb(0, 68, 68)"><b>Subscription</b></h5>
-                  <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano wishyura indi</button>
-                </center>
-               
-          
-              </div>
-            </div>
-            <% } %> 
-         
-          <% } %> 
-          <%}%>
+           
         <div  id="id06"  class="w3-modal w3-padding">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <center>
@@ -564,6 +554,13 @@
       document.getElementById('id06').style.display='block';
    })
   function ChangeToKash(){
+     if (user) {
+      if(user.paymentStatus=="innitailPayment") { 
+        document.getElementById('id04').style.display='block'
+      }else{
+        document.getElementById('id04').style.display='none'
+      }}
+
     document.getElementById('KashHeading').style.display='block'
     document.getElementById('BTN4').style.display='block'
     document.getElementById('BTN8').style.display='block'
