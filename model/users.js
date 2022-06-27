@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
-const payement=new Schema({
-    status:{
-        type:String,
-        default:'payed'
-    }
 
-   })
 const UserSchema = new Schema({
 
     userName: {
@@ -35,7 +29,6 @@ const UserSchema = new Schema({
         required: true,
         default:0
     },
-    subscription:[payement],
     balance:{
         type: Number
     },
