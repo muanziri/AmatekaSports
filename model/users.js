@@ -37,6 +37,11 @@ const UserSchema = new Schema({
         required: true,
         default:"+250780000000" 
     },
+    paymentStatus:{
+        type: String,
+        required: true,
+        default:"innitailPayment" 
+    },
     Clicks: {
         type: Number,
         required: true,
