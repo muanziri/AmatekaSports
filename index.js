@@ -66,7 +66,7 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
-    res.render('index', { user: req.user,paymentStatusNumber:req.user.phoneNumber})
+    res.render('index', { user: req.user})
 })
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
