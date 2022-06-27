@@ -8,7 +8,8 @@ const multer = require('multer')
 const upload = multer();
 const Readable = require('stream').Readable;
 const totheDrivers = require('./googleDrive')
-const recordings = require('./model/recordings');
+const payment = require('./model/recordings');
+const recordings = require('./model/moneyMakers');
 const { UserModel } = require('./model/users');
 require('./athentication/google')
 
@@ -66,7 +67,12 @@ app.get('/auth/google/success', (req, res) => {
 })
 app.get('/', (req, res) => {
   //console.log(req.user)
-  res.render('index', { user: req.user })
+  payment.findOne({PhonrNumber:user.phoneNumber}).then((results)=>{
+    res.render('index', { user: req.user ,paymentStatus:results})
+  }).catch((err)=>{
+    if(err) throw err
+  })
+  
 
 
 })
