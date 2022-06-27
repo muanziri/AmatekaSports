@@ -164,7 +164,7 @@
     }
   </style>
 </head>
-<% if(user){%>
+
 <body class="w3-theme-l5">
 
 
@@ -176,7 +176,7 @@
       <!-- Left Column -->
       <div id="MENU" class="w3-card w3-col m3 w3-teal w3-animate-left">
         <!-- Profile -->
-     
+        <% if(user){%>
         <span
           onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
           class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -225,8 +225,8 @@
 
 
 
-
-
+    
+      <% } %> 
       <!-- End Left Column -->
     </div>
 
@@ -254,11 +254,9 @@
           <form id="commentForm"  class="w3-container w3-margin">
             <div class="w3-section">
            <b> 
-            <%if(user){%>
-            <input style="display: block;" value='<%=user.id%>' class="w3-input w3-border w3-margin-bottom" type="text" name="id" placeholder="078(MTN GUSA)-----"/>
-            <%} else{%>
-              <input style="display: block;"class="w3-input w3-border w3-margin-bottom" type="text" name="id" placeholder="078(MTN GUSA)-----"/>
-            <%}%>  
+            
+            <input style="display: block;"  class="w3-input w3-border w3-margin-bottom" type="text" name="id" placeholder="078(MTN GUSA)-----"/>
+           
             <br>
             <b><label>Comment Yawe</label></b>
             <textarea style="background-color: rgb(169, 224, 224);" class="w3-input w3-border w3-margin-bottom" type="text" name="comment" placeholder="----"></textarea>
@@ -585,6 +583,5 @@
   </script>
 
 </body>
-<%}%>
 
 </html>
