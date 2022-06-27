@@ -35,7 +35,7 @@ const UserSchema = new Schema({
     phoneNumber:{
         type: String,
         required: true,
-        default:"+25078---" 
+        default:"+250780000000" 
     },
     Clicks: {
         type: Number,
