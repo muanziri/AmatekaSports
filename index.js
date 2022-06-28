@@ -71,6 +71,7 @@ app.get('/', (req, res) => {
       paymentWeek.find().then((paymentres3)=>{
       res.render('index', { user: req.user/*,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3*/})
    }) })})
+   console.log(paymentYear);
      
 })
 app.post('/addLikes', (req, res) => {
