@@ -8,7 +8,7 @@ const multer = require('multer')
 const upload = multer();
 const Readable = require('stream').Readable;
 const totheDrivers = require('./googleDrive')
-const {paymentWeek,paymentMonth,paymentYear} = require('./model/recordings');
+const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/moneyMakers');
 const { UserModel } = require('./model/users');
 require('./athentication/google')
