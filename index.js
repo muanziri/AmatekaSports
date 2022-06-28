@@ -101,6 +101,7 @@ app.post('/addComments', (req, res) => {
     }
   })
   app.post('/flutterWaveSubWeek', (req, res) => {
+    console.log(req.body)
     // var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
     // var mystr = mykey.update('abc', 'utf8', 'hex')
     // mystr += mykey.final('hex');
@@ -131,6 +132,7 @@ app.post('/addComments', (req, res) => {
     }
   })
   app.post('/flutterWaveSubMonth', (req, res) => {
+    console.log(req.body)
     // var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
     // var mystr = mykey.update('abc', 'utf8', 'hex')
     // mystr += mykey.final('hex');
@@ -161,6 +163,7 @@ app.post('/addComments', (req, res) => {
     }
   })
   app.post('/flutterWaveSubYear', (req, res) => {
+    console.log(req.body)
     // var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
     // var mystr = mykey.update('abc', 'utf8', 'hex')
     // mystr += mykey.final('hex');
