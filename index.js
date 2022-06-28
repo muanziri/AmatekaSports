@@ -8,7 +8,7 @@ const multer = require('multer')
 const upload = multer();
 const Readable = require('stream').Readable;
 const totheDrivers = require('./googleDrive')
-const payment = require('./model/recordings');
+const {paymentWeek,paymentMonth,paymentYear} = require('./model/recordings');
 const recordings = require('./model/moneyMakers');
 const { UserModel } = require('./model/users');
 require('./athentication/google')
@@ -66,8 +66,12 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
-  
-      res.render('index', { user: req.user})
+  paymentYear.findOne({PhoneNumber:req.user.PhoneNumber}).then((paymentres)=>{
+    paymentMonth.findOne({PhoneNumber:req.user.PhoneNumber}).then((paymentres2)=>{
+      paymentWeek.findOne({PhoneNumber:req.user.PhoneNumber}).then((paymentres3)=>{
+    res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
+   }) })})
+     
 })
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id

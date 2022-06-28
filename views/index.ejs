@@ -339,7 +339,7 @@
        
         <div  id="id04"  class="w3-modal">
            <% if (user) {%> 
-        <% if(user.paymentStatus=="innitailPayment") {%> 
+        <% if(paymentYear.PaymentStatus=="undefined"||paymentWeek.PaymentStatus=="undefined"||paymentMonth.PaymentStatus=="undefined") {%> 
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <center>
               <h5 style="color:rgb(0, 68, 68)"><b>Gura Subscription</b></h5>
@@ -348,7 +348,7 @@
             </div>
            
       <%}else{%>
-          <% if(user.paymentStatus=="expiredPayment") {%> 
+          <% if(paymentYear.PaymentStatus=="payed"||paymentWeek.PaymentStatus=="payed"||paymentMonth.PaymentStatus=="payed") {%> 
             <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
               <center>
                 <h5 style="color:rgb(0, 68, 68)"><b>Gura indi Subscription</b></h5>
