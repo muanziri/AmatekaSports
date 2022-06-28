@@ -69,7 +69,7 @@ app.get('/', (req, res) => {
   paymentYear.find().then((paymentres)=>{
     paymentMonth.find().then((paymentres2)=>{
       paymentWeek.find().then((paymentres3)=>{
-    res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
+      res.render('index', { user: req.user/*,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3*/})
    }) })})
      
 })
