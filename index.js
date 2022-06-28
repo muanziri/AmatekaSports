@@ -66,9 +66,9 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
-  paymentYear.find({PhoneNumber}).then((paymentres)=>{
-    paymentMonth.find({PhoneNumber}).then((paymentres2)=>{
-      paymentWeek.find({PhoneNumber}).then((paymentres3)=>{
+  paymentYear.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres)=>{
+    paymentMonth.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres2)=>{
+      paymentWeek.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres3)=>{
       res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
    }) })})
 
