@@ -314,6 +314,9 @@
         </div>
         <div  id="id02" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <span
+            onclick="ChangeToStories()"
+            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
             <center>
               <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
             </center>
@@ -342,7 +345,7 @@
         <% if(!paymentYear.PaymentStatus||!paymentWeek.PaymentStatus||!paymentMonth.PaymentStatus) {%> 
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <center>
-              <h5 style="color:rgb(0, 68, 68)"><b><%=paymentYear.PaymentStatus%></b></h5>
+              <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
               <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
             </center>
             </div>
@@ -351,7 +354,7 @@
          
                 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                   <center>
-                    <h5 style="color:rgb(0, 68, 68)"><b><%=paymentYear.PaymentStatus%></h5>
+                    <h5 style="color:rgb(0, 68, 68)"><b>Murakaza neza Kuri <h2>Korera Cash</h2></b></h5>
                     <button onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza</button>
                   </center>
                  
@@ -363,6 +366,10 @@
         </div>
            
         <div  id="id06"  class="w3-modal w3-padding">
+          <span
+            onclick="document.getElementById('id06').style.display='none'"
+            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+           
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <center>
               <h5 style="color:rgb(0, 68, 68)"><b>korera whatsapp shares</b></h5>
@@ -392,6 +399,8 @@
           </div>
         </div>
         <div  id="id07"  class="w3-modal w3-padding">
+        
+           
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
            <center> <img style="width:100%;height:300px;" src="" alt=""></center>
              <button class="w3-button w3-teal w3-margin-bottom">share</button> 
@@ -603,6 +612,7 @@
     document.getElementById('BTN8').style.display='none'
     document.getElementById('recordButton').style.display='block'
     document.getElementById('MENU').style.display='none'
+    document.getElementById('id02').style.display='none'
   }
   </script>
 
