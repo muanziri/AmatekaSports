@@ -338,7 +338,11 @@
             </div>
             
          
-              <% } %> 
+              <% }else{ %>
+                <script>
+                  document.getElementById('id04').style.display='none'
+                </script>
+                <% } %> 
               <%}%>
               <% } %> 
           </div>
@@ -554,13 +558,8 @@
       document.getElementById('id06').style.display='block';
    })
   function ChangeToKash(){
-     if (user) {
-      if(user.paymentStatus=="innitailPayment") { 
-        document.getElementById('id04').style.display='block'
-      }else{
-        document.getElementById('id04').style.display='none'
-      }}
-
+    
+    document.getElementById('id04').style.display='block'
     document.getElementById('KashHeading').style.display='block'
     document.getElementById('BTN4').style.display='block'
     document.getElementById('BTN8').style.display='block'
