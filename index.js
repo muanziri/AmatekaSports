@@ -8,7 +8,7 @@ const multer = require('multer')
 const upload = multer();
 const Readable = require('stream').Readable;
 const totheDrivers = require('./googleDrive')
-const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
+const {paymentWeek,paymentMonth,paymentYear} = require('./model/recordings');
 const recordings = require('./model/moneyMakers');
 const { UserModel } = require('./model/users');
 require('./athentication/google')
@@ -66,19 +66,12 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
-  paymentYear.find().then((res1)=>{
-    paymentMonth.find().then((res2)=>{
-      paymentWeek.find().then((res3)=>{
-        if(!res1.length==0&&!res2.length==0&&!res3.length==0){
-        paymentYear.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres)=>{
-          paymentMonth.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres2)=>{
-            paymentWeek.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres3)=>{
+  paymentYear.find({PhoneNumber}).then((paymentres)=>{
+    paymentMonth.find({PhoneNumber}).then((paymentres2)=>{
+      paymentWeek.find({PhoneNumber}).then((paymentres3)=>{
       res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
-   }) })})}else{
-    res.render('index',{user:req.user});
-   }
-  }) })})
-   
+   }) })})
+
      
 })
 app.post('/addLikes', (req, res) => {
