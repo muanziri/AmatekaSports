@@ -570,14 +570,17 @@
 // Accordio
   function myFunction(){
     var x = document.getElementById("select").value;
-    console.log(x);
-    var y=document.getElementById("formPayment")
+   
+    const y=document.getElementById("formPayment")
     if(x === 1500 ){
     y.action="/flutterWaveSubWeek";
+    console.log(x);
     }else if(x === 3000 ){
       y.action="/flutterWaveSubMonth";
+      console.log(x);
     }else if(x === 50000 ){
       y.action="/flutterWaveSubYear";
+      console.log(x);
     }
   }
    let whatssapMoney=document.getElementById('whatssapMoney');
