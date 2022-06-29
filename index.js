@@ -174,7 +174,7 @@ app.post('/flutterWaveSubMonth', (req, res) => {
     
     "tx_ref": mykey, 
     "order_id":mykey,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-    "amount": "5000",
+    "amount": "500",
     "currency": "RWF",
     "email":"munaziribnm@gmail.com",
     "phone_number": req.body.phone,
