@@ -5,6 +5,7 @@ const flash = require('flash')
 const crypto = require('crypto')
 const passport = require('passport')
 const multer = require('multer')
+let uniqid = require('uniqid'); 
 const upload = multer();
 const Readable = require('stream').Readable;
 const totheDrivers = require('./googleDrive')
@@ -105,12 +106,10 @@ app.post('/addComments', (req, res) => {
 })
 app.post('/flutterWaveSubWeek', (req, res) => {
   
-  var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
-  var mystr = mykey.update('abc', 'utf8', 'hex')
-  mystr += mykey.final('hex');
+  var mykey = uniqid()
   let payload = {
 
-    "tx_ref": mystr, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "tx_ref": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "1500",
     "currency": "RWF",
     "email": user.email,
@@ -123,12 +122,10 @@ app.post('/flutterWaveSubWeek', (req, res) => {
 
 app.post('/flutterWaveSubMonth', (req, res) => {
 
-  var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
-  var mystr = mykey.update('abc', 'utf8', 'hex')
-  mystr += mykey.final('hex');
+  var mykey = uniqid()
   let payload = {
 
-    "tx_ref": mystr, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "tx_ref": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "5000",
     "currency": "RWF",
     "email": user.email,
@@ -141,12 +138,10 @@ app.post('/flutterWaveSubMonth', (req, res) => {
 
 app.post('/flutterWaveSubYear', (req, res) => {
 
-  var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
-  var mystr = mykey.update('abc', 'utf8', 'hex')
-  mystr += mykey.final('hex');
+  var mykey = uniqid()
   let payload = {
 
-    "tx_ref": mystr, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "tx_ref": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "50000",
     "currency": "RWF",
     "email": user.email,
