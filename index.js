@@ -10,6 +10,7 @@ const Readable = require('stream').Readable;
 const totheDrivers = require('./googleDrive')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/moneyMakers');
+const {rw_mobile_money,transferTobeneficiary} = require('./model/moneyMakers');
 const { UserModel } = require('./model/users');
 require('./athentication/google')
 
@@ -103,22 +104,7 @@ app.post('/addComments', (req, res) => {
 
 })
 app.post('/flutterWaveSubWeek', (req, res) => {
-  console.log(req.body)
-  // var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
-  // var mystr = mykey.update('abc', 'utf8', 'hex')
-  // mystr += mykey.final('hex');
-  // let payload = {
-
-  //   "tx_ref": mystr, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-  //   "amount": "1500",
-  //   "currency": "RWF",
-  //   "email": user.email,
-  //   "phone_number": req.body.phone,
-  //   "fullname": user.userName
-
-  // }
-})
-app.post('/flutterWaveConfbWeek', (req, res) => {
+  
   var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
   var mystr = mykey.update('abc', 'utf8', 'hex')
   mystr += mykey.final('hex');
@@ -132,24 +118,11 @@ app.post('/flutterWaveConfbWeek', (req, res) => {
     "fullname": user.userName
 
   }
+  rw_mobile_money(payload)
 })
+
 app.post('/flutterWaveSubMonth', (req, res) => {
-  console.log(req.body)
-  // var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
-  // var mystr = mykey.update('abc', 'utf8', 'hex')
-  // mystr += mykey.final('hex');
-  // let payload = {
 
-  //   "tx_ref": mystr, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-  //   "amount": "5000",
-  //   "currency": "RWF",
-  //   "email": user.email,
-  //   "phone_number": req.body.phone,
-  //   "fullname": user.userName
-
-  // }
-})
-app.post('/flutterWaveConfMonth', (req, res) => {
   var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
   var mystr = mykey.update('abc', 'utf8', 'hex')
   mystr += mykey.final('hex');
@@ -163,24 +136,11 @@ app.post('/flutterWaveConfMonth', (req, res) => {
     "fullname": user.userName
 
   }
+  rw_mobile_money(payload)
 })
+
 app.post('/flutterWaveSubYear', (req, res) => {
-  console.log(req.body)
-  // var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
-  // var mystr = mykey.update('abc', 'utf8', 'hex')
-  // mystr += mykey.final('hex');
-  // let payload = {
 
-  //   "tx_ref": mystr, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-  //   "amount": "50000",
-  //   "currency": "RWF",
-  //   "email": user.email,
-  //   "phone_number": req.body.phone,
-  //   "fullname": user.userName
-
-  // }
-})
-app.post('/flutterWaveConfbYear', (req, res) => {
   var mykey = crypto.createHmac('aes-128-cbc', 'mypassword');
   var mystr = mykey.update('abc', 'utf8', 'hex')
   mystr += mykey.final('hex');
@@ -194,7 +154,9 @@ app.post('/flutterWaveConfbYear', (req, res) => {
     "fullname": user.userName
 
   }
+  rw_mobile_money(payload)
 })
+
 app.post('/addViews', (req, res) => {
   let id = req.body.id
   recordings.findOne({ userId: id }).then((results) => {
