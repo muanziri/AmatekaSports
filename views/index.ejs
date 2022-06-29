@@ -327,10 +327,10 @@
               <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="078(MTN GUSA)-----"/>
               <br>
               <b><label>hitamo package wishyura</label></b>
-              <select  id="select" class="w3-input w3-border w3-teal"  name="package" id="selectionOfPackage">
-                <option  value="1500"><a onclick="myFunction()">1500 RWF  kucyumweru</a></option>
-                <option  value="5000"><a onclick="myFunction()">5000 RWF  kukwezi</a></option>
-                <option  value="50000"><a onclick="myFunction()">50000 RWF  Kumwaka</a></option>
+              <select onchange="myFunction(this.value)" id="select" class="w3-input w3-border w3-teal"  name="package" id="selectionOfPackage">
+                <option value="1500">1500 RWF  kucyumweru</option>
+                <option value="5000">5000 RWF  kukwezi</option>
+                <option value="50000">50000 RWF  Kumwaka</option>
               </select>
             </div>
             <button class="w3-button w3-block w3-teal w3-section w3-padding" >ISHYURA</button>
@@ -568,7 +568,9 @@
   <script src="../static/recorder/recorder.js"></script>
   <script>
 // Accordio
-var x = document.getElementById("select").value;
+
+  function myFunction(){
+    var x = document.getElementById("select").value;
 let y;
   if (x==1500){
     y='payment'
@@ -577,8 +579,6 @@ let y;
   }else if(x==50000){
      y='/payment2';
   }
-  function myFunction(){
-    
     document.getElementById("formPayment").action=y;
 
   }
