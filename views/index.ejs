@@ -571,18 +571,7 @@
   function myFunction(){
     var x = document.getElementById("select").value;
    
-    let y=document.getElementById("formPayment")
-    switch (x) {
-      case 1500:
-      y.action="/flutterWaveSubWeek";
-      break;
-        case 5000:
-      y.action="/flutterWaveSubMonth";
-        break;
-        case 50000:
-      y.action="/flutterWaveSubYear";
-        break;
-    }
+    let y=document.getElementById("formPayment").action='/payment'
 
   }
    let whatssapMoney=document.getElementById('whatssapMoney');
