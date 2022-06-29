@@ -568,11 +568,23 @@
   <script src="../static/recorder/recorder.js"></script>
   <script>
 // Accordio
+var x = document.getElementById("select").value;
+  if (x==1500){
   function myFunction(){
-    var x = document.getElementById("select").value;
-   
-    let y=document.getElementById("formPayment").action='/payment'
+    
+    document.getElementById("formPayment").action='/payment'
 
+  }}else if(x==5000){
+    function myFunction(){
+    
+    document.getElementById("formPayment").action='/payment1'
+
+  }}else if(x==50000){
+    function myFunction(){
+    
+    document.getElementById("formPayment").action='/payment2'
+
+  }
   }
    let whatssapMoney=document.getElementById('whatssapMoney');
    whatssapMoney.addEventListener('click',()=>{
