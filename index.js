@@ -109,10 +109,11 @@ app.post('/flutterWaveSubWeek', (req, res) => {
   var mykey = uniqid()
   let payload = {
 
-    "tx_ref": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "tx_ref": mykey,
+    "order_id": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "1500",
     "currency": "RWF",
-    "email": req.user.email,
+    "email": "munaziribnm@gmail.com",
     "phone_number": req.body.phone,
     "fullname": req.user.userName
 
@@ -124,11 +125,12 @@ app.post('/flutterWaveSubMonth', (req, res) => {
 
   var mykey = uniqid()
   let payload = {
-
-    "tx_ref": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    
+    "tx_ref": mykey, 
+    "order_id":mykey,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "5000",
     "currency": "RWF",
-    "email": req.user.email,
+    "email":"munaziribnm@gmail.com",
     "phone_number": req.body.phone,
     "fullname": req.user.userName
 
@@ -141,10 +143,11 @@ app.post('/flutterWaveSubYear', (req, res) => {
   var mykey = uniqid()
   let payload = {
 
-    "tx_ref": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "tx_ref": mykey, 
+    "order_id":mykey,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "50000",
     "currency": "RWF",
-    "email": req.user.email,
+    "email": "munaziribnm@gmail.com",
     "phone_number": req.body.phone,
     "fullname": req.user.userName
 
