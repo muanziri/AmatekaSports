@@ -11,7 +11,7 @@ const Readable = require('stream').Readable;
 const totheDrivers = require('./googleDrive')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/moneyMakers');
-const {rw_mobile_money,transferTobeneficiary} = require('./model/moneyMakers');
+const {rw_mobile_money,transferTobeneficiary} = require('./flutterWave');
 const { UserModel } = require('./model/users');
 require('./athentication/google')
 
