@@ -321,7 +321,7 @@
               <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
             </center>
             <center>
-            <form method="post" action="/flutterWaveSubYear" id="formPayment"  class="w3-container w3-margin">
+            <form method="post"  id="formPayment"  class="w3-container w3-margin">
               <div class="w3-section">
              <b> <lable>Phone yawe</lable></b>
               <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="078(MTN GUSA)-----"/>
@@ -569,19 +569,19 @@
   <script>
 // Accordio
 
-//   function myFunction(){
-//     var x = document.getElementById("select").value;
-// let y;
-//   if (x==1500){
-//     y='/flutterWaveSubWeek'
-//   }else if(x==5000){
-//    y='/flutterWaveSubMonth';
-//   }else if(x==50000){
-//      y='/flutterWaveSubYear';
-//   }
-//     document.getElementById("formPayment").action=y;
+  function myFunction(){
+    var x = document.getElementById("select").value;
+let y;
+  if (x==1500){
+    y='/flutterWaveSubWeek'
+  }else if(x==5000){
+   y='/flutterWaveSubMonth';
+  }else if(x==50000){
+     y='/flutterWaveSubYear';
+  }
+    document.getElementById("formPayment").action=y;
 
-//   }
+  }
    let whatssapMoney=document.getElementById('whatssapMoney');
    whatssapMoney.addEventListener('click',()=>{
       document.getElementById('id07').style.display='block';
