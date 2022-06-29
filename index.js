@@ -106,6 +106,28 @@ app.post('/addComments', (req, res) => {
 })
 app.post('/flutterWaveSubWeek', (req, res) => {
   
+const rw_mobile_money =  async (payload)=>{
+ 
+  try {
+
+      // const payload = {
+      //     "tx_ref": "MC-158523s09v5050e8", //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+      //     "order_id": "USS_URG_893982923s2323", //Unique ref for the mobilemoney transaction to be provided by the merchant
+      //     "amount": "1500",
+      //     "currency": "RWF",
+      //     "email": "olufemi@flw.com",
+      //     "phone_number": "054709929220",
+      //     "fullname": "John Madakin"
+      // }
+
+     const response =  await flw.MobileMoney.rwanda(payload)
+     console.log(response);
+     res.redirect(response.meta.authorization.redirect)
+  } catch (error) {
+      console.log(error)
+  }                            
+ 
+}
   var mykey = uniqid()
   let payload = {
 
@@ -123,6 +145,28 @@ app.post('/flutterWaveSubWeek', (req, res) => {
 
 app.post('/flutterWaveSubMonth', (req, res) => {
 
+  const rw_mobile_money =  async (payload)=>{
+ 
+    try {
+
+        // const payload = {
+        //     "tx_ref": "MC-158523s09v5050e8", //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+        //     "order_id": "USS_URG_893982923s2323", //Unique ref for the mobilemoney transaction to be provided by the merchant
+        //     "amount": "1500",
+        //     "currency": "RWF",
+        //     "email": "olufemi@flw.com",
+        //     "phone_number": "054709929220",
+        //     "fullname": "John Madakin"
+        // }
+
+       const response =  await flw.MobileMoney.rwanda(payload)
+       console.log(response);
+       res.redirect(response.meta.authorization.redirect)
+    } catch (error) {
+        console.log(error)
+    }                            
+   
+}
   var mykey = uniqid()
   let payload = {
     
@@ -140,6 +184,28 @@ app.post('/flutterWaveSubMonth', (req, res) => {
 
 app.post('/flutterWaveSubYear', (req, res) => {
 
+  const rw_mobile_money =  async (payload)=>{
+ 
+    try {
+
+        // const payload = {
+        //     "tx_ref": "MC-158523s09v5050e8", //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+        //     "order_id": "USS_URG_893982923s2323", //Unique ref for the mobilemoney transaction to be provided by the merchant
+        //     "amount": "1500",
+        //     "currency": "RWF",
+        //     "email": "olufemi@flw.com",
+        //     "phone_number": "054709929220",
+        //     "fullname": "John Madakin"
+        // }
+
+       const response =  await flw.MobileMoney.rwanda(payload)
+       console.log(response);
+       res.redirect(response.meta.authorization.redirect);
+    } catch (error) {
+        console.log(error)
+    }                            
+   
+}
   var mykey = uniqid()
   let payload = {
 
