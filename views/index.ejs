@@ -571,17 +571,19 @@
   function myFunction(){
     var x = document.getElementById("select").value;
    
-    const y=document.getElementById("formPayment")
-    if(x === 1500 ){
-    y.action="/flutterWaveSubWeek";
-    console.log(x);
-    }else if(x === 3000 ){
+    let y=document.getElementById("formPayment")
+    switch (x) {
+      case 1500:
+      y.action="/flutterWaveSubWeek";
+      break;
+        case 5000:
       y.action="/flutterWaveSubMonth";
-      console.log(x);
-    }else if(x === 50000 ){
+        break;
+        case 50000:
       y.action="/flutterWaveSubYear";
-      console.log(x);
+        break;
     }
+
   }
    let whatssapMoney=document.getElementById('whatssapMoney');
    whatssapMoney.addEventListener('click',()=>{
