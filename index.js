@@ -112,9 +112,9 @@ app.post('/flutterWaveSubWeek', (req, res) => {
     "tx_ref": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "1500",
     "currency": "RWF",
-    "email": user.email,
+    "email": req.user.email,
     "phone_number": req.body.phone,
-    "fullname": user.userName
+    "fullname": req.user.userName
 
   }
   rw_mobile_money(payload)
@@ -128,9 +128,9 @@ app.post('/flutterWaveSubMonth', (req, res) => {
     "tx_ref": mykey, //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "5000",
     "currency": "RWF",
-    "email": user.email,
+    "email": req.user.email,
     "phone_number": req.body.phone,
-    "fullname": user.userName
+    "fullname": req.user.userName
 
   }
   rw_mobile_money(payload)
@@ -146,7 +146,7 @@ app.post('/flutterWaveSubYear', (req, res) => {
     "currency": "RWF",
     "email": user.email,
     "phone_number": req.body.phone,
-    "fullname": user.userName
+    "fullname": req.user.userName
 
   }
   rw_mobile_money(payload)
