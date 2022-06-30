@@ -2,7 +2,6 @@ const express = require('express')
 const mongoose = require('mongoose')
 const session = require('express-session')
 const flash = require('flash')
-const open = require('open');
 const Flutterwave = require('flutterwave-node-v3');
 const flw = new Flutterwave("FLWPUBK_TEST-f0e7f1c175bcc3c18e4064c7f6059909-X", "FLWSECK_TEST-00086f26dcd12bdd8c5790068bce4456-X"  );
 const passport = require('passport')
