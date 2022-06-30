@@ -141,7 +141,16 @@ app.post('/flutterWaveSubMonth', (req, res) => {
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
        console.log(response);
-        req.flash('redirectUrl',`${response.meta.authorizationedirect}`)
+       (async () => {
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto(response.meta.authorizationedirect , {
+          waitUntil: 'networkidle2',
+        });
+        await page.pdf({path: 'hn.pdf', format: 'a4'});
+      
+        await browser.close();
+      })();
     } catch (error) {
         console.log(error)
     }                            
