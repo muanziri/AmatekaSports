@@ -370,7 +370,7 @@
         </div>
         <div  id="id09"  class="w3-modal">
           <% if (user){%>
-          <% if (messages.redirectUrl=='undefined') {%> 
+          <% if (messages) {%> 
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <a href="/payment_callback_Month/<%=user.userName%>"><button class="w3-button w3-teal w3-margin-bottom"><%=message.info%></button></a>
            </div> 
