@@ -4,7 +4,6 @@ const session = require('express-session')
 const flash = require('flash')
 const Flutterwave = require('flutterwave-node-v3');
 const flw = new Flutterwave("FLWPUBK_TEST-f0e7f1c175bcc3c18e4064c7f6059909-X", "FLWSECK_TEST-00086f26dcd12bdd8c5790068bce4456-X"  );
-const crypto = require('crypto')
 const passport = require('passport')
 const multer = require('multer')
 let uniqid = require('uniqid'); 
@@ -12,8 +11,7 @@ const upload = multer();
 const Readable = require('stream').Readable;
 const totheDrivers = require('./googleDrive')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
-const recordings = require('./model/moneyMakers');
-const {rw_mobile_money,transferTobeneficiary} = require('./flutterWave');
+const recordings = require('./model/recordings');
 const { UserModel } = require('./model/users');
 require('./athentication/google')
 
@@ -112,16 +110,6 @@ const rw_mobile_money =  async (payload)=>{
  
   try {
 
-      // const payload = {
-      //     "tx_ref": "MC-158523s09v5050e8", //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-      //     "order_id": "USS_URG_893982923s2323", //Unique ref for the mobilemoney transaction to be provided by the merchant
-      //     "amount": "1500",
-      //     "currency": "RWF",
-      //     "email": "olufemi@flw.com",
-      //     "phone_number": "054709929220",
-      //     "fullname": "John Madakin"
-      // }
-
      const response =  await flw.MobileMoney.rwanda(payload)
      console.log(response);
      res.redirect(response.meta.authorization.redirect)
@@ -150,17 +138,6 @@ app.post('/flutterWaveSubMonth', (req, res) => {
   const rw_mobile_money =  async (payload)=>{
  
     try {
-
-        // const payload = {
-        //     "tx_ref": "MC-158523s09v5050e8", //This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-        //     "order_id": "USS_URG_893982923s2323", //Unique ref for the mobilemoney transaction to be provided by the merchant
-        //     "amount": "1500",
-        //     "currency": "RWF",
-        //     "email": "olufemi@flw.com",
-        //     "phone_number": "054709929220",
-        //     "fullname": "John Madakin"
-        // }
-
        const response =  await flw.MobileMoney.rwanda(payload)
        console.log(response);
        res.redirect(response.meta.authorization.redirect)
@@ -183,21 +160,59 @@ app.post('/flutterWaveSubMonth', (req, res) => {
   }
   rw_mobile_money(payload)
 })
-app.get('/payment-callback', async (req, res) => {
-  if (req.query.status === 'successful') {
-      const transactionDetails = await Transaction.find({ref: req.query.tx_ref});
-      const response = await flw.Transaction.verify({id: req.query.transaction_id});
-      if (
-          response.data.status === "successful"
-          && response.data.amount === transactionDetails.amount
-          && response.data.currency === "RWF") {
-          // Success! Confirm the customer's payment
-      } else {
-          // Inform the customer their payment was unsuccessful
-      }
-  }
+app.get('/payment_callback_Week/:userName', async (req, res) => {
+  let userNAME=req.params.userName;
+  const transactionDetails = await paymentYear.findOne({userName:userNAME});
+  const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
+  console.log(response);
+  // let userNAME=req.params.userName
+  // if (req.query.status === 'successful') {
+  //     const transactionDetails = await paymentWeek.find({userName:userNAME});
+  //     const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
+  //     if (
+  //         response.data.status === "successful"
+  //         && response.data.currency === "RWF") {
+  //         // Success! Confirm the customer's payment
+  //     } else {
+  //         // Inform the customer their payment was unsuccessful
+  //     }
+  // }
 });
-
+app.get('/payment_callback_Month/:userName', async (req, res) => {
+  let userNAME=req.params.userName;
+  const transactionDetails = await paymentYear.findOne({userName:userNAME});
+  const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
+  console.log(response);
+  // let userNAME=req.params.userName
+  // if (req.query.status === 'successful') {
+  //     const transactionDetails = await paymentMonth.find({userName:userNAME});
+  //     const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
+  //     if (
+  //         response.data.status === "successful"
+  //         && response.data.currency === "RWF") {
+  //         Success! Confirm the customer's payment
+  //     } else {
+  //         Inform the customer their payment was unsuccessful
+  //     }
+  // }
+});
+app.get('/payment_callback_Year/:userName', async (req, res) => {
+  let userNAME=req.params.userName;
+  const transactionDetails = await paymentYear.findOne({userName:userNAME});
+  const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
+  console.log(response);
+  // if (req.query.status === 'successful') {
+  //     const transactionDetails = await paymentYear.findOne({userName:userNAME});
+  //     const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
+  //     if (
+  //         response.data.status === "successful"
+  //         && response.data.currency === "RWF") {
+  //         // Success! Confirm the customer's payment
+  //     } else {
+  //         // Inform the customer their payment was unsuccessful
+  //     }
+  // }
+});
 app.post('/flutterWaveSubYear', (req, res) => {
 
   const rw_mobile_money =  async (payload)=>{

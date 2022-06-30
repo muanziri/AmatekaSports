@@ -321,7 +321,7 @@
               <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
             </center>
             <center>
-            <form method="post"  id="formPayment"  class="w3-container w3-margin">
+            <form method="post" onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'" id="formPayment"  class="w3-container w3-margin">
               <div class="w3-section">
              <b> <lable>Phone yawe</lable></b>
               <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="078(MTN GUSA)-----"/>
@@ -368,7 +368,13 @@
               <% } %> 
           </div>
         </div>
-           
+        <div  id="id09"  class="w3-modal">
+          <% if (user) {%> 
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <a href="/payment_callback_Month/<%=user.userName%>"><button class="w3-button w3-teal w3-margin-bottom">kanda Hano Ukomeze</button></a>
+           </div> 
+          <%}%> 
+          </div>
         <div  id="id06"  class="w3-modal w3-padding">
           <span
             onclick="document.getElementById('id06').style.display='none'"
