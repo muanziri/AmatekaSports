@@ -2,51 +2,79 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
+    userName:{
+        type: String,
+
+    },
     PhoneNumber:{
         type: String,
         required: true,
         default:"+250780000000"
 
     },
+    tx_ref:{
+        type: String,
+        
+
+    },
     PaymentStatus:{
         type: String,
         required: true,
-        default:"payed"
+        default:"pending"
 
     },
     createdAt: { type: Date, expires: '7d', default: Date.now }
 
 })
 const UserSchema2 = new Schema({
+    userName:{
+        type: String,
+        
+
+    },
     PhoneNumber:{
         type: String,
         required: true,
         default:"+250780000000"
 
     },
+    tx_ref:{
+        type: String,
+        
+
+    },
     PaymentStatus:{
         type: String,
         required: true,
-        default:"payed"
+        default:"pending"
 
     },
     createdAt: { type: Date, expires: '30d', default: Date.now }
 
 })
 const UserSchema3 = new Schema({
+    userName:{
+        type: String,
+      
+
+
+    },
     PhoneNumber:{
         type: String,
         required: true,
         default:"+250780000000"
 
     },
+    tx_ref:{
+        type: String,
+    },
     PaymentStatus:{
         type: String,
         required: true,
-        default:"payed"
+        default:"pending"
 
     },
-    createdAt: { type: Date, expires: '1y', default: Date.now }
+     createdAt: { type: Date, expires: '1y', default: Date.now }
 
 })
 
