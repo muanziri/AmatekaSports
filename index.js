@@ -113,7 +113,7 @@ const rw_mobile_money =  async (payload)=>{
      const response =  await flw.MobileMoney.rwanda(payload)
      console.log(response);
     
-      res.redirect(response.meta.authorizationresponse.meta.authorization.r)
+      res.redirect(response.meta.authorizationresponse.meta.authorization)
   } catch (error) {
       console.log(error)
   }                            
@@ -141,7 +141,7 @@ app.post('/flutterWaveSubMonth', (req, res) => {
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
        console.log(response);
-        req.flash('redirectUrl',`${response.meta.authorization.redirect}`)
+        req.flash('redirectUrl',`${response.meta.authorizationedirect}`)
     } catch (error) {
         console.log(error)
     }                            
@@ -238,7 +238,7 @@ app.post('/flutterWaveSubYear', (req, res) => {
 
        const response =  await flw.MobileMoney.rwanda(payload)
        console.log(response);
-        res.redirect( response.meta.authorization.redirect )
+        res.redirect( response.meta.authorizationedirect )
     } catch (error) {
         console.log(error)
     }                            
