@@ -368,18 +368,20 @@
               <% } %> 
           </div>
         </div>
-        <div  id="id09"   class="w3-modal">
-          <% if (user){%>
-            <% if (messages){%>
+        <% if (user){%>
+          <% if (messages){%>
+        <div  id="id09" style="display: block;"  class="w3-modal">
+        
               <!-- <script>
                  window.open("", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=600,height=600");
               </script> -->
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <center></center><a href="/payment_callback_Month/"><button class="w3-button w3-teal w3-margin-bottom"><%=messages.messageURL%></button></a></center>
            </div> 
-           <%}%> 
-          <%}%> 
+          
           </div>
+          <%}%> 
+          <%}%> 
         <div  id="id06"  class="w3-modal w3-padding">
           <span
             onclick="document.getElementById('id06').style.display='none'"
