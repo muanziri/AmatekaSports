@@ -68,7 +68,7 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
-  if(req.user){
+  if(!req.user==null){
   paymentYear.findOne({userName:req.user.userName}).then((paymentres)=>{
     paymentMonth.findOne({userName:req.user.userName}).then((paymentres2)=>{
       paymentWeek.findOne({userName:req.user.userName}).then((paymentres3)=>{
@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
       res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
    }) })})
   }else{
-    res.render('index')
+    res.render('index',{user:req.user})
   }
      
 })
