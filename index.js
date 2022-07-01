@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
       res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
    }) })})
   }else{
-    res.render('index',{user:req.user})
+    res.render('index')
   }
      
 })
