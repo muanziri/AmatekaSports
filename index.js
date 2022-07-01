@@ -80,7 +80,7 @@ app.get('/', (req, res) => {
     // }else if(paymentres3==null){
     //   res.render('index', { user: req.user,payment:paymentres3})
     // }
-    res.render('index',{user:req.user,payment:paymentres2})
+    res.render('index',{user:req.user,payment:paymentres2[0]})
     console.log(paymentres2)
    }) })})
   }else{
