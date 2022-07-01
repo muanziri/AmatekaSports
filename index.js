@@ -79,6 +79,8 @@ app.get('/', (req, res) => {
      
     }else if(paymentres3.length >0){
       res.render('index', { user: req.user,payment:paymentres3[0]})
+    }else{
+      res.render('index', { user: req.user,payment:null})
     }
    
    }) })})
