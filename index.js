@@ -69,9 +69,9 @@ app.get('/auth/google/success', (req, res) => {
 })
 app.get('/', (req, res) => {
   if(req.user){
-  paymentYear.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres)=>{
-    paymentMonth.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres2)=>{
-      paymentWeek.find({PhoneNumber:req.user.PhoneNumber}).then((paymentres3)=>{
+  paymentYear.find({userName:req.user.userName}).then((paymentres)=>{
+    paymentMonth.find({userName:req.user.userName}).then((paymentres2)=>{
+      paymentWeek.find({userName:req.user.userName}).then((paymentres3)=>{
       res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
    }) })})
   }else{
