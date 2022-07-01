@@ -14,8 +14,9 @@ const UserSchema = new Schema({
     },
     tx_ref:{
         type: String,
-        
-
+    },
+    Oder_Id:{
+        type: String,
     },
     PaymentStatus:{
         type: String,
@@ -40,8 +41,9 @@ const UserSchema2 = new Schema({
     },
     tx_ref:{
         type: String,
-        
-
+    },
+    Oder_Id:{
+        type: String,
     },
     PaymentStatus:{
         type: String,
@@ -66,6 +68,9 @@ const UserSchema3 = new Schema({
 
     },
     tx_ref:{
+        type: String,
+    },
+    Oder_Id:{
         type: String,
     },
     PaymentStatus:{
