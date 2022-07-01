@@ -371,8 +371,10 @@
         <% if (user){%>
           <% if (messages.messageURL){%>
         <div  id="id09" style="display: block;"  class="w3-modal">
-          <iframe src="<%=messages.messageURL%>" style="height:200px;width:300px;border:none" ></iframe>
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+          <iframe src="<%=messages.messageURL%>" style="height:800px;width:500px;border:none; background-color: aliceblue;" ></iframe>
           </div>
+         </div>
           <%}%> 
           <%}%> 
         <div  id="id06"  class="w3-modal w3-padding">
