@@ -72,7 +72,6 @@ app.get('/', (req, res) => {
   paymentYear.find({userName:req.user.userName}).then((paymentres)=>{
     paymentMonth.find({userName:req.user.userName}).then((paymentres2)=>{
       paymentWeek.find({userName:req.user.userName}).then((paymentres3)=>{
-       console.log(paymentres2)
       res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
    }) })})
   }else{
