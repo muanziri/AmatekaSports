@@ -156,6 +156,12 @@ app.post('/flutterWaveSubMonth', (req, res) => {
 }
   var mykey = uniqid()
   var mykey2 = uniqid()
+  new paymentMonth({
+    userName:req.user.userName,
+    tx_ref:mykey,
+    Oder_Id:mykey2,
+    PhoneNumber:req.body.phone
+  }).save()
   let payload = {
     
     "tx_ref": mykey, 
@@ -244,6 +250,12 @@ app.post('/flutterWaveSubYear', (req, res) => {
 }
   var mykey = uniqid()
   var mykey2 = uniqid()
+  new paymentYear({
+    userName:req.user.userName,
+    tx_ref:mykey,
+    Oder_Id:mykey2,
+    PhoneNumber:req.body.phone
+  }).save()
   let payload = {
     
     "tx_ref": mykey, 
