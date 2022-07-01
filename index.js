@@ -72,8 +72,13 @@ app.get('/', (req, res) => {
   paymentYear.findOne({userName:req.user.userName}).then((paymentres)=>{
     paymentMonth.findOne({userName:req.user.userName}).then((paymentres2)=>{
       paymentWeek.findOne({userName:req.user.userName}).then((paymentres3)=>{
-        console.log(paymentres2)
-      res.render('index', { user: req.user,paymentYear:paymentres,paymentMonth:paymentres2,paymentWeek:paymentres3})
+       if (paymentres.length >=0){
+      res.render('index', { user: req.user,payment:paymentres})
+    }else if(paymentres2.length >=0){
+      res.render('index', { user: req.user,payment:paymentres2})
+    }else if(paymentres3.length >=0){
+      res.render('index', { user: req.user,payment:paymentres3})
+    }
    }) })})
   }else{
     res.render('index',{user:req.user})
