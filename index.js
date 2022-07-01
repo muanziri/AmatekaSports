@@ -195,18 +195,17 @@ app.get('/payment_callback_Week/:userName', async (req, res) => {
 });
 app.get('/payment_callback_Month/:userName', async (req, res) => {
   let userNAME=req.params.userName;
-  const transactionDetailsW = await paymentWeek.findOne({userName:userNAME});
+ // const transactionDetailsW = await paymentWeek.findOne({userName:userNAME});
   const transactionDetailsM = await paymentMonth.findOne({userName:userNAME});
-  const transactionDetailsY = await paymentYear.findOne({userName:userNAME});
-  console.log(transactionDetailsW)
-  console.log(transactionDetailsM)
-  console.log(transactionDetailsY)
+  //const transactionDetailsY = await paymentYear.findOne({userName:userNAME});
+  const responseM = await flw.Transaction.verify({id:transactionDetailsM.tx_ref});
+  console.log(responseM);
   res.redirect('/')
   // const responseW = await flw.Transaction.verify({id:transactionDetailsW.tx_ref});
-  // const responseM = await flw.Transaction.verify({id:transactionDetailsM.tx_ref});
+   
   // const responseY = await flw.Transaction.verify({id:transactionDetailsY.tx_ref});
   // console.log(responseW);
-  // console.log(responseM);
+
   // console.log(responseY);
   // let userNAME=req.params.userName
   // if (req.query.status === 'successful') {
