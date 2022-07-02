@@ -194,7 +194,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
   const transactionDetailsY=await paymentYear.find({userName:userNAME});
   if (transactionDetailsM.length >0){
      const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
-     if(responseM.message=="No transaction was found for this id" && responseM.status=="failed"){
+     if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
@@ -208,7 +208,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
     }
   }else if(transactionDetailsW.length >0){
     const responseW = await flw.Transaction.verify({id:transactionDetailsW[0].tx_ref});
-    if(responseM.message=="No transaction was found for this id" && responseW.status=="failed"){
+    if(responseM.message=="No transaction was found for this id" || responseW.status=="failed"){
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
@@ -222,7 +222,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
     }
   }else if(transactionDetailsY.length >0){
     const responseY = await flw.Transaction.verify({id:transactionDetailsY[0].tx_ref});
-    if(responseM.message=="No transaction was found for this id" && responseY.status=="failed"){
+    if(responseM.message=="No transaction was found for this id" ||responseY.status=="failed"){
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
