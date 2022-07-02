@@ -12,6 +12,7 @@ const UserSchema = new Schema({
         default:"+250780000000"
 
     },
+    WhatsappScreenShotPosts:[],    
     tx_ref:{
         type: String,
     },
@@ -39,6 +40,7 @@ const UserSchema2 = new Schema({
         default:"+250780000000"
 
     },
+    WhatsappScreenShotPosts:[],    
     tx_ref:{
         type: String,
     },
@@ -67,6 +69,7 @@ const UserSchema3 = new Schema({
         default:"+250780000000"
 
     },
+    WhatsappScreenShotPosts:[],
     tx_ref:{
         type: String,
     },

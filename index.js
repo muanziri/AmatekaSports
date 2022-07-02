@@ -9,7 +9,7 @@ const multer = require('multer')
 let uniqid = require('uniqid'); 
 const upload = multer();
 const Readable = require('stream').Readable;
-const totheDrivers = require('./googleDrive')
+const {totheDrivers,totheDriversWhatsapp} = require('./googleDrive')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/recordings');
 const { UserModel } = require('./model/users');
@@ -185,7 +185,24 @@ app.post('/flutterWaveSubMonth', (req, res) => {
   }
   rw_mobile_money(payload)
 })
+app.post('/FromWhatsapp',upload.any(),async(req,res)=>{
+  let views=req.body.Views;
+  let screenShot=req.files
+  const user = req.user;
+  let originalname = screenShot[0].originalname +" "+views+""+Date.now()+'.png'
+  var folderId = user.folderId;
+  var fileMetadata = {
+    'name': [originalname],
+    parents: [folderId]
+  };
+  var media = {
+    mimeType: 'image/png',
+    body: bufferToStream(req.files[0].buffer)
+  };
+ 
+  totheDriversWhatsapp(fileMetadata, media, stringedFilePath, user, folderId);
 
+})
 app.get('/payment_callback/:userName', async (req, res) => {
   let userNAME=req.params.userName;
  

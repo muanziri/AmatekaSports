@@ -3,6 +3,7 @@ const { google } = require('googleapis');
 const users=require('./model/users')
 const recordings=require('./model/recordings')
 const key= require('./duterestory-ecc42c3b6063.json')
+const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 var drive = google.drive("v3");
 var jwToken = new google.auth.JWT(
     key.client_email,
@@ -51,4 +52,45 @@ var jwToken = new google.auth.JWT(
      }
    });
    }
-   module.exports=totheDrivers;
+   const totheDriversWhatsapp= (fileMetadata,media,stringedFilePath,user,folderIda)=>{
+    drive.files.create({
+     auth: jwToken,
+     resource: fileMetadata,
+     media: media,
+     fields: 'id',
+  
+   },async function(err, file) {
+     if (err) {
+       // Handle error
+       console.error(err);
+     } else {
+      
+       console.log('File Id: ', file.data.id);
+       const transactionDetailsM =await paymentMonth.find({userName:user.userName});
+       const transactionDetailsW=await  paymentWeek.find({userName:user.userName});
+       const transactionDetailsY=await  paymentYear.find({userName:user.userName});
+    
+       if (transactionDetailsM.length >0){
+        transactionDetailsM.findOneAndUpdate({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: user.userName } }, function (err, docs) {
+          if (err) {
+            console.log(err)
+          }
+        })
+       }else if(transactionDetailsW.length >0){
+        transactionDetailsW.findOneAndUpdate({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: user.userName } }, function (err, docs) {
+          if (err) {
+            console.log(err)
+          }
+        })
+       }else if(transactionDetailsY.length >0){
+        transactionDetailsY.findOneAndUpdate({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: user.userName } }, function (err, docs) {
+          if (err) {
+            console.log(err)
+          }
+        })
+       } 
+    
+     }
+   });
+   }
+   module.exports={totheDrivers,totheDriversWhatsapp};
