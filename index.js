@@ -185,68 +185,58 @@ app.post('/flutterWaveSubMonth', (req, res) => {
   }
   rw_mobile_money(payload)
 })
-app.get('/payment_callback_Week/:userName', async (req, res) => {
-  let userNAME=req.params.userName;
-  const transactionDetails = await paymentYear.findOne({userName:userNAME});
-  const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
-  console.log(response);
-  // let userNAME=req.params.userName
-  // if (req.query.status === 'successful') {
-  //     const transactionDetails = await paymentWeek.find({userName:userNAME});
-  //     const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
-  //     if (
-  //         response.data.status === "successful"
-  //         && response.data.currency === "RWF") {
-  //         // Success! Confirm the customer's payment
-  //     } else {
-  //         // Inform the customer their payment was unsuccessful
-  //     }
-  // }
-});
-app.get('/payment_callback_Month/:userName', async (req, res) => {
-  let userNAME=req.params.userName;
- // const transactionDetailsW = await paymentWeek.findOne({userName:userNAME});
-  const transactionDetailsM = await paymentMonth.findOne({userName:userNAME});
-  //const transactionDetailsY = await paymentYear.findOne({userName:userNAME});
-  const responseM = await flw.Transaction.verify({id:transactionDetailsM.tx_ref});
-  console.log(responseM);
-  res.redirect('/')
-  // const responseW = await flw.Transaction.verify({id:transactionDetailsW.tx_ref});
-   
-  // const responseY = await flw.Transaction.verify({id:transactionDetailsY.tx_ref});
-  // console.log(responseW);
 
-  // console.log(responseY);
-  // let userNAME=req.params.userName
-  // if (req.query.status === 'successful') {
-  //     const transactionDetails = await paymentMonth.find({userName:userNAME});
-  //     const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
-  //     if (
-  //         response.data.status === "successful"
-  //         && response.data.currency === "RWF") {
-  //         Success! Confirm the customer's payment
-  //     } else {
-  //         Inform the customer their payment was unsuccessful
-  //     }
-  // }
-});
-app.get('/payment_callback_Year/:userName', async (req, res) => {
+app.get('/payment_callback/:userName', async (req, res) => {
   let userNAME=req.params.userName;
-  const transactionDetails = await paymentYear.findOne({userName:userNAME});
-  const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
-  console.log(response);
-  // if (req.query.status === 'successful') {
-  //     const transactionDetails = await paymentYear.findOne({userName:userNAME});
-  //     const response = await flw.Transaction.verify({id:transactionDetails.tx_ref});
-  //     if (
-  //         response.data.status === "successful"
-  //         && response.data.currency === "RWF") {
-  //         // Success! Confirm the customer's payment
-  //     } else {
-  //         // Inform the customer their payment was unsuccessful
-  //     }
-  // }
+ 
+  const transactionDetailsM = await paymentMonth.find({userName:userNAME});
+  const transactionDetailsW= await paymentWeek.find({userName:userNAME});
+  const transactionDetailsY=await paymentYear.find({userName:userNAME});
+  if (transactionDetailsM.length >0){
+     const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
+     if(responseM.message=="No transaction was found for this id" && responseM.status=="failed"){
+      req.flash('message1','Ntiwishyuye')
+      res.redirect('/')
+    }else{
+      paymentMonth.findOneAndUpdate({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+        if (err) {
+          console.log(err)
+        }
+        req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+        res.redirect('/')
+      })
+    }
+  }else if(transactionDetailsW.length >0){
+    const responseW = await flw.Transaction.verify({id:transactionDetailsW[0].tx_ref});
+    if(responseM.message=="No transaction was found for this id" && responseW.status=="failed"){
+      req.flash('message1','Ntiwishyuye')
+      res.redirect('/')
+    }else{
+      paymentWeek.findOneAndUpdate({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+        if (err) {
+          console.log(err)
+        }
+        req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+        res.redirect('/')
+      })
+    }
+  }else if(transactionDetailsY.length >0){
+    const responseY = await flw.Transaction.verify({id:transactionDetailsY[0].tx_ref});
+    if(responseM.message=="No transaction was found for this id" && responseY.status=="failed"){
+      req.flash('message1','Ntiwishyuye')
+      res.redirect('/')
+    }else{
+      paymentYear.findOneAndUpdate({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+        if (err) {
+          console.log(err)
+        }
+        req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash Za Shares')
+        res.redirect('/')
+      })
+    }
+  }  
 });
+
 app.post('/flutterWaveSubYear', (req, res) => {
 
   const rw_mobile_money =  async (payload)=>{
