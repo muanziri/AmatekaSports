@@ -12,6 +12,25 @@ const UserSchema = new Schema({
         default:"+250780000000"
 
     },
+    views:{
+        type: String,
+        required: true,
+        default:"0"
+
+    },
+    clicks:{
+        type: Number,
+        required: true,
+        default:"0"
+
+    },
+    CashLeft:{
+        type: Number,
+        required: true,
+        default:"0"
+
+    },
+
     WhatsappScreenShotPosts:[],    
     tx_ref:{
         type: String,
