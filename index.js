@@ -201,6 +201,8 @@ app.post('/FromWhatsapp',upload.any(),(req,res)=>{
   };
  
   totheDriversWhatsapp(fileMetadata, media, user);
+  req.flash('message1','Yoherejwe tegereza iminsi itatu')
+  res.redirect('/')
 
 })
 app.get('/payment_callback/:userName', async (req, res) => {
