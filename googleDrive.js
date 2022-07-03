@@ -39,7 +39,7 @@ var jwToken = new google.auth.JWT(
       
        console.log('File Id: ', file.data.id);
        console.log(user.id)
-    users.findByIdAndUpdate(user.id,{$addToSet:{Recordings:file.data.id}},function (err, docs) {
+    users.findByIdAndupdateOne(user.id,{$addToSet:{Recordings:file.data.id}},function (err, docs) {
       if (err){
           console.log(err)
       }
@@ -71,19 +71,19 @@ var jwToken = new google.auth.JWT(
        const transactionDetailsY=await  paymentYear.find({userName:user.userName});
     
        if (transactionDetailsM.length >0){
-        transactionDetailsM.findOneAndUpdate({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: user.userName } }, function (err, docs) {
+        transactionDetailsM.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, function (err, docs) {
           if (err) {
             console.log(err)
           }
         })
        }else if(transactionDetailsW.length >0){
-        transactionDetailsW.findOneAndUpdate({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: user.userName } }, function (err, docs) {
+        transactionDetailsW.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, function (err, docs) {
           if (err) {
             console.log(err)
           }
         })
        }else if(transactionDetailsY.length >0){
-        transactionDetailsY.findOneAndUpdate({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: user.userName } }, function (err, docs) {
+        transactionDetailsY.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, function (err, docs) {
           if (err) {
             console.log(err)
           }

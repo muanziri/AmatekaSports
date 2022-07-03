@@ -92,7 +92,7 @@ app.get('/', (req, res) => {
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
   let id = req.body.id
-  recordings.findOneAndUpdate({ userId: id }, { $addToSet: { likes: userID } }, function (err, docs) {
+  recordings.updateOne({ userId: id }, { $addToSet: { likes: userID } }, function (err, docs) {
     if (err) {
       console.log(err)
     }
@@ -107,7 +107,7 @@ app.post('/addComments', (req, res) => {
 
   let id = req.body.id
   let userComment = [req.user.userName, req.user.ProfilePhotoUrl, req.body.comment]
-  recordings.findOneAndUpdate({ userId: id }, { $addToSet: { comments: userComment } }, function (err, docs) {
+  recordings.updateOne({ userId: id }, { $addToSet: { comments: userComment } }, function (err, docs) {
     if (err) {
       console.log(err)
     }
@@ -189,7 +189,9 @@ app.post('/FromWhatsapp',upload.any(),(req,res)=>{
   console.log(req.files)
   let views=req.body.Views;
   const user = req.user;
-  let originalname = user.userName+" "+views+" "+Date.now()+'.png'
+  const d = new Date();
+let text = d.toISOString();
+  let originalname = user.userName+" "+views+" "+text+'.png'
   var folderId = user.folderId;
   var fileMetadata = {
     'name': [originalname],
@@ -217,7 +219,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
-      paymentMonth.findOneAndUpdate({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+      paymentMonth.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
         if (err) {
           console.log(err)
         }
@@ -231,7 +233,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
-      paymentWeek.findOneAndUpdate({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+      paymentWeek.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
         if (err) {
           console.log(err)
         }
@@ -245,7 +247,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
-      paymentYear.findOneAndUpdate({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+      paymentYear.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
         if (err) {
           console.log(err)
         }
@@ -296,7 +298,7 @@ app.post('/addViews', (req, res) => {
   let id = req.body.id
   recordings.findOne({ userId: id }).then((results) => {
     let newViews = results.views++
-    recordings.findOneAndUpdate({ userId: id }, { views: newViews }, function (err, docs) {
+    recordings.updateOne({ userId: id }, { views: newViews }, function (err, docs) {
       if (err) {
         console.log(err)
       }
