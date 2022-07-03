@@ -187,9 +187,8 @@ app.post('/flutterWaveSubMonth', (req, res) => {
 })
 app.post('/FromWhatsapp',upload.any(),async(req,res)=>{
   let views=req.body.Views;
-  let screenShot=req.files
   const user = req.user;
-  let originalname = screenShot[0].originalname +" "+views+""+Date.now()+'.png'
+  let originalname = user.userName+" "+views+" "+Date.now()+'.png'
   var folderId = user.folderId;
   var fileMetadata = {
     'name': [originalname],
