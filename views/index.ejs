@@ -337,8 +337,9 @@
             <form method="post" onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'" id="formPayment"  class="w3-container w3-margin">
               <div class="w3-section">
              <b> <lable>Phone yawe</lable></b>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="078(MTN GUSA)-----"/>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="ViewsWagize"/>
               <br>
+              
               <b><label>hitamo package wishyura</label></b>
               <select onchange="myFunction(this.value)" id="select" class="w3-input w3-border w3-teal"  name="package" id="selectionOfPackage">
                 <option value="1500">1500 RWF  kucyumweru</option>
@@ -346,13 +347,35 @@
                 <option value="50000">50000 RWF  Kumwaka</option>
               </select>
             </div>
+
             <button class="w3-button w3-block w3-teal w3-section w3-padding" >ISHYURA</button>
             </form>
            </center>
       
           </div>
         </div>
-       
+        <div  id="id11" class="w3-modal">
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <span
+            onclick="document.getElementById('id11').style.display='none'"
+            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+            <center>
+              <h5 style="color:rgb(0, 68, 68)"><b>Uzuzamo Views wagize na screenshot</b></h5>
+            </center>
+            <center>
+            <form method="post" onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'" id="formPayment"  class="w3-container w3-margin">
+              <div class="w3-section">
+             <b> <lable>Views wagize</lable></b>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" name="Views" placeholder="078(MTN GUSA)-----"/>
+              <br>
+              
+            </div>
+            <button class="w3-button w3-block w3-teal w3-section w3-padding" >ISHYURA</button>
+            </form>
+           </center>
+      
+          </div>
+        </div>
         <div  id="id04"  class="w3-modal">
           <span
             onclick="ChangeToStories();document.getElementById(id04).style.display='none'"
