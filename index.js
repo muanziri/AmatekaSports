@@ -196,11 +196,11 @@ app.post('/FromWhatsapp',upload.any(),(req,res)=>{
     parents: [folderId]
   };
   var media = {
-    mimeType: 'image/png',
+    mimeType: req.files[0].mimetype,
     body: bufferToStream(req.files[0].buffer)
   };
  
-  totheDriversWhatsapp(fileMetadata, media, stringedFilePath, user, folderId);
+  totheDriversWhatsapp(fileMetadata, media, user);
 
 })
 app.get('/payment_callback/:userName', async (req, res) => {
