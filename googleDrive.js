@@ -71,18 +71,18 @@ var jwToken = new google.auth.JWT(
        const transactionDetailsY=await  paymentYear.find({userName:user.userName});
     
        if (transactionDetailsM.length >0){
-        transactionDetailsM.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, 
+        paymentMonth.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, 
           function (err, docs) {
           if (err) throw err
         })
        }else if(transactionDetailsW.length >0){
-        transactionDetailsW.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, function (err, docs) {
+        paymentWeek.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, function (err, docs) {
           if (err) {
             console.log(err)
           }
         })
        }else if(transactionDetailsY.length >0){
-        transactionDetailsY.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, function (err, docs) {
+        paymentYear.updateOne({userName:user.userName}, { $addToSet: { WhatsappScreenShotPosts: file.data.id } }, function (err, docs) {
           if (err) {
             console.log(err)
           }
