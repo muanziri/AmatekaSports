@@ -24,29 +24,14 @@ const UserSchema = new Schema({
         required: true
     },
     Recordings: [String],
-    views: {
-        type: Number,
-        required: true,
-        default:0
-    },
-    balance:{
-        type: Number
-    },
+   
     phoneNumber:{
         type: String,
         required: true,
         default:"+250780000000" 
     },
-    paymentStatus:{
-        type: String,
-        required: true,
-        default:"innitailPayment" 
-    },
-    Clicks: {
-        type: Number,
-        required: true,
-        default:0
-    },
+    
+    
     Date:{
         type: Date,
         required: true,
