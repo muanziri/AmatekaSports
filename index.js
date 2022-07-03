@@ -186,7 +186,7 @@ app.post('/flutterWaveSubMonth', (req, res) => {
   rw_mobile_money(payload)
 })
 app.post('/FromWhatsapp',upload.any(),async(req,res)=>{
-  console
+  console.log(req.files)
   let views=req.body.Views;
   const user = req.user;
   let originalname = user.userName+" "+views+" "+Date.now()+'.png'
