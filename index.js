@@ -98,14 +98,14 @@ app.get('/Advertiser',(req,res)=>{
       paymentMonthAdvert.find({userName:req.user.userName}).then((paymentres2)=>{
         paymentWeekAdvert.find({userName:req.user.userName}).then((paymentres3)=>{
          if (paymentres.length >0){
-          res.render('Advertiser', { user: req.user,payment:paymentres[0]})
+          res.render('Advertiser', { user: req.user,paymentAD:paymentres[0]})
       }else if(paymentres2.length >0){
-        res.render('Advertiser', { user: req.user,payment:paymentres2[0]})
+        res.render('Advertiser', { user: req.user,paymentAD:paymentres2[0]})
        
       }else if(paymentres3.length >0){
-        res.render('Advertiser', { user: req.user,payment:paymentres3[0]})
+        res.render('Advertiser', { user: req.user,paymentAD:paymentres3[0]})
       }else{
-        res.render('Advertiser', { user: req.user,payment:{PaymentStatus:"unpayed"}})
+        res.render('Advertiser', { user: req.user,paymentAD:{PaymentStatus:"unpayed"}})
       }
      
      }) })})
