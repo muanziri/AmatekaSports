@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const flash = require('express-flash')
 const Flutterwave = require('flutterwave-node-v3');
-const flw = new Flutterwave("FLWPUBK_TEST-f0e7f1c175bcc3c18e4064c7f6059909-X", "FLWSECK_TEST-00086f26dcd12bdd8c5790068bce4456-X"  );
+const flw = new Flutterwave("FLWPUBK-b4e832dd01b49344a60f28cf46da952e-X", "FLWSECK-1f684f97b874e18903f92bfd5ac5ed98-X"  );
 const passport = require('passport')
 const multer = require('multer')
 let uniqid = require('uniqid'); 
@@ -177,7 +177,7 @@ app.post('/flutterWaveSubMonth', (req, res) => {
     
     "tx_ref": mykey, 
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-    "amount": "500",
+    "amount": "1000",
     "currency": "RWF",
     "email":"munaziribnm@gmail.com",
     "phone_number": req.body.phone,
