@@ -293,7 +293,25 @@ app.post('/flutterWaveSubYear', (req, res) => {
   }
   rw_mobile_money(payload)
 })
+app.post('/flutterWaveWithDraw', (req, res) => {
 
+  
+ 
+  let payload = {
+    
+     account_bank: "MPS",
+        account_number: "250788868615",
+        amount: 1200,
+        currency: "RWF",
+        beneficiary_name: "Mugeni Victoire",
+        meta: {
+          "sender": "DutereStory Developers",
+          "sender_country": "RWA",
+          "mobile_number": "250790457824"
+        }
+  }
+  transferTobeneficiary(payload)
+})
 app.post('/addViews', (req, res) => {
   let id = req.body.id
   recordings.findOne({ userId: id }).then((results) => {
