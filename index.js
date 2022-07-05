@@ -10,6 +10,7 @@ let uniqid = require('uniqid');
 const upload = multer();
 const Readable = require('stream').Readable;
 const {totheDrivers,totheDriversWhatsapp} = require('./googleDrive')
+const {transferTobeneficiary} = require('./flutterWave')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/recordings');
 const { UserModel } = require('./model/users');
