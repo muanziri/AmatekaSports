@@ -23,15 +23,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    views:{
+    paymentId: {
         type: String,
-        required: true,
-        default:"0" 
     },
-    clicks:{
+    paymentIdAdvert: {
         type: String,
-        required: true,
-        default:"0" 
     },
     Recordings: [String],
    

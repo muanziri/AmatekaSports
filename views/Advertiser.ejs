@@ -10,8 +10,8 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" type="image/ico" href="../static/image/favicon.ico">
-  <style>
-    html,
+<style>
+   html,
     body,
     h1,
     h2,
@@ -21,169 +21,7 @@
       font-family: "Open Sans", sans-serif
     }
 
-    #BTN1 {
-      position: inherit;
-      bottom: 5%;
-      left: 1%
-    }
-
-    #BTN2 {
-      
-      margin-top: -5%;
-      margin-left: 45%;
-      color:white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display:none;
-      animation-name: example;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-
-    }
-    
-    #BTN7 {
-      
-      margin-top: -5%;
-      margin-left: 45%;
-      color:white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display:none;
-      animation-name: example;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-
-    }
-
-    #recordButton {
-      position: fixed;
-      bottom: 10%;
-      left: 44%;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display: display
-    }
-
-    #BTN4 {
-      position:absolute;
-      left: 3%;
-      margin-top: -4%;
-
-      color:white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display:none;
-     
-    }
-    #BTN8 {
-      position:absolute;
-      right: 3%;
-      margin-top: -4%;
-  
-      color:white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display:none;
-     
-    }
-
-
-    #MENU {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 20%;
-      height: 100%;
-      display: none;
-      z-index: 2;
-    }
-
-    centering body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    @keyframes example {
-      0% {
-        background-color: rgb(1, 54, 54)
-      }
-
-      20% {
-        background-color: teal;
-      }
-
-      40% {
-        background-color: rgb(1, 54, 54);
-      }
-
-      60% {
-        background-color: teal;
-      }
-
-      80% {
-        background-color: rgb(1, 54, 54);
-      }
-      100% {
-        background-color: teal;
-      }
-    }
-
-    @media screen and (max-width:600px) {
-      #BTN8{
-        position:absolute;
-      right: 2%;
-      margin-top: -15%;
-  
-      color:white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display:none;
-      }
-      #BTN4{
-        position:absolute;
-      right: 2%;
-      margin-top: -15%;
-  
-      color:white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display:none;
-      }
-      #recordButton {
-      position: fixed;
-      bottom: 7%;
-      left: 36.5%;
-    }
-      #BTN2,#BTN7{
-        margin-top: -10%;
-        margin-left: 37.5%;
-      }
-      #BTN1 {
-        position: inherit;
-        left: 0;
-      }
-
-      #MENU {
-        width: 41%
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body class="w3-theme-l5">
@@ -205,10 +43,11 @@
       <!-- Left Column -->
       <div id="MENU" class="w3-card w3-col m3 w3-teal w3-animate-left">
         <!-- Profile -->
-        <% if(user){%>
         <span
-          onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
-          class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+        onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
+        class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+        <% if(user){%>
+       
         <img src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
 
         <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
@@ -245,14 +84,24 @@
       <% } %> 
       <!-- End Left Column -->
     </div>
+    <% if (user){%>
+      <% if (messages.messageURL2){%>
+    <div  id="id09" style="display: block;"  class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:450px">
+      <iframe src="<%=messages.messageURL2%>" style="height:500px;width:450px;border:none; background-color: aliceblue;" ></iframe>
+     <center> <a href="/payment_callback/<%=user.userName%> "><button class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza Niba Wishyuye</button></a> </center>
+      </div>
+     </div>
+      <%}%> 
+      <%}%> 
 
     <!-- Middle Column -->
     <div style="width:100%" class="w3-col m7">
        
       
-        <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <div id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
           <center><h1>Advertise with Us</h1></center>
-          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <br>
            <center><h3>Advertise your youtube links with us (submit the link bellow)</h3></center>
            <div class="w3-container w3-card w3-teal w3-round w3-margin"><br>
             <form action="">
@@ -260,7 +109,8 @@
                 <b><label>Your link</label></b>
                 <input class="w3-input w3-border w3-margin-bottom" type="text" name="link" placeholder="https://www.youtube.com/watch?v=-----"/>
               </div>
-              <button class="w3-button w3-block w3-teal w3-section w3-padding" >kanda gukomeza</button>
+              <br>
+              <button class="w3-button w3-block w3-white  w3-margin-bottom">kanda gukomeza</button>
               
             </form>
           </div>
@@ -271,30 +121,78 @@
               <b><label>Your image</label></b>
               <input class="w3-input w3-border w3-margin-bottom" type="file" name="link" placeholder="https://www.youtube.com/watch?v=-----"/>
             </div>
-            <button class="w3-button w3-block w3-teal w3-section w3-padding" >kanda gukomeza</button>
+            <br>
+            <button class="w3-button w3-block w3-white w3-margin-bottom">kanda gukomeza</button>
             
           </form>
            </div>
+         
           </div>
-          </div>
-       
+          <div  id="id04"  class="w3-modal">
+            <a href="/"><span
+              class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span></a>
+             
+             <% if (user) {%> 
+          <% if(paymentAD.PaymentStatus=="payed") {%> 
+           
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                <center>
+                  <h5 style="color:rgb(0, 68, 68)"><b>Murakaza neza Kuri <h2>Korera Cash</h2></b></h5>
+                  <button onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza</button>
+                </center>
+               
+          
+              </div>
+             
+        <%}else{%>
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <center>
+              <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
+              <button onclick="document.getElementById('id22').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
+            </center>
+            </div>
+                  
+                  <% } %> 
+                <% } %> 
+            </div>
        
       </div>
+      <div  id="id22" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+          <span
+          onclick="ChangeToStories()"
+          class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+          <center>
+            <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
+          </center>
+          <center>
+          <form method="post" onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'" id="formPayment"  class="w3-container w3-margin">
+            <div class="w3-section">
+           <b> <lable>Phone yawe</lable></b>
+            <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="078(MTN GUSA)-----"/>
+            <br>
+            
+            <b><label>hitamo package wishyura</label></b>
+            <select onchange="myFunction(this.value)" id="select" class="w3-input w3-border w3-teal"  name="package" id="selectionOfPackage">
+              <option value="1500">15000 RWF  kucyumweru</option>
+              <option value="5000">50000 RWF  kukwezi</option>
+              <option value="50000">500000 RWF  Kumwaka</option>
+            </select>
+          </div>
+
+          <button class="w3-button w3-block w3-teal w3-section w3-padding" >ISHYURA</button>
+          </form>
+         </center>
+    
+        </div>
+      </div>
+
 
       <!-- End Middle Column -->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      
     </div>
 
-    <!-- Right C
+    <!-- Right C--->
     
   <!-- End Grid -->
   </div>
@@ -302,6 +200,16 @@
   <!-- End Page Container -->
   </div>
   <br>
+  <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
   <button id="MENUBTN"
     onclick="document.getElementById('MENU').style.display='block';document.getElementById('MENUBTN').style.display='none'"
@@ -322,7 +230,19 @@
   <script>
 // Accordio
 
-  
+function myFunction(){
+    var x = document.getElementById("select").value;
+let y;
+  if (x==1500){
+    y='/flutterWaveSubWeekAdvert'
+  }else if(x==5000){
+   y='/flutterWaveSubMonthAdvert';
+  }else if(x==50000){
+     y='/flutterWaveSubYearAdvert';
+  }
+    document.getElementById("formPayment").action=y;
+
+  }
   
   </script>
 
