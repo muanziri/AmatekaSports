@@ -23,6 +23,16 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    views:{
+        type: String,
+        required: true,
+        default:"0" 
+    },
+    clicks:{
+        type: String,
+        required: true,
+        default:"0" 
+    },
     Recordings: [String],
    
     phoneNumber:{

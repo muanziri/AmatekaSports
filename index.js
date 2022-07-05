@@ -90,6 +90,9 @@ app.get('/', (req, res) => {
   }
      
 })
+app.get('/Advertiser',(req,res)=>{
+  res.render('Advertiser',{user:req.user})
+})
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
   let id = req.body.id

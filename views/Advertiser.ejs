@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DutereStory</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/ico" href="../static/image/favicon.ico">
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Open Sans", sans-serif
+    }
+
+    #BTN1 {
+      position: inherit;
+      bottom: 5%;
+      left: 1%
+    }
+
+    #BTN2 {
+      
+      margin-top: -5%;
+      margin-left: 45%;
+      color:white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display:none;
+      animation-name: example;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+
+    }
+    
+    #BTN7 {
+      
+      margin-top: -5%;
+      margin-left: 45%;
+      color:white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display:none;
+      animation-name: example;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+
+    }
+
+    #recordButton {
+      position: fixed;
+      bottom: 10%;
+      left: 44%;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display: display
+    }
+
+    #BTN4 {
+      position:absolute;
+      left: 3%;
+      margin-top: -4%;
+
+      color:white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display:none;
+     
+    }
+    #BTN8 {
+      position:absolute;
+      right: 3%;
+      margin-top: -4%;
+  
+      color:white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display:none;
+     
+    }
+
+
+    #MENU {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 20%;
+      height: 100%;
+      display: none;
+      z-index: 2;
+    }
+
+    centering body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    @keyframes example {
+      0% {
+        background-color: rgb(1, 54, 54)
+      }
+
+      20% {
+        background-color: teal;
+      }
+
+      40% {
+        background-color: rgb(1, 54, 54);
+      }
+
+      60% {
+        background-color: teal;
+      }
+
+      80% {
+        background-color: rgb(1, 54, 54);
+      }
+      100% {
+        background-color: teal;
+      }
+    }
+
+    @media screen and (max-width:600px) {
+      #BTN8{
+        position:absolute;
+      right: 2%;
+      margin-top: -15%;
+  
+      color:white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display:none;
+      }
+      #BTN4{
+        position:absolute;
+      right: 2%;
+      margin-top: -15%;
+  
+      color:white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display:none;
+      }
+      #recordButton {
+      position: fixed;
+      bottom: 7%;
+      left: 36.5%;
+    }
+      #BTN2,#BTN7{
+        margin-top: -10%;
+        margin-left: 37.5%;
+      }
+      #BTN1 {
+        position: inherit;
+        left: 0;
+      }
+
+      #MENU {
+        width: 41%
+      }
+    }
+  </style>
+</head>
+
+<body class="w3-theme-l5">
+
+
+
+  <!-- Page Container -->
+  <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <% if(messages.message2) {%> 
+    <div id="message1Id" style="width:50%;position:absolute;right:2%; top:5%" class="w3-panel w3-teal w3-card w3-animate-right ">
+      <span
+          onclick="document.getElementById('message1Id').style.display='none';"
+          class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+       <h3><%=messages.message2%></h3>
+      </div>
+     <% }%>
+    <div class="w3-row">
+      <!-- Left Column -->
+      <div id="MENU" class="w3-card w3-col m3 w3-teal w3-animate-left">
+        <!-- Profile -->
+        <% if(user){%>
+        <span
+          onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
+          class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+        <img src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+
+        <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
+          class=" w3-card w3-white w3-round w3-margin ">
+         
+          <h6>Link Clicks  <%=user.clicks%></h6>
+          <br>
+        </div>
+        <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
+        class=" w3-card w3-white w3-round w3-margin ">
+       
+        <h6>Status total Views  <%=user.views%></h6>
+        <br>
+      </div>
+       
+        
+
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <button onclick="ChangeToStories()" id="BTN5" style="background-color: rgb(0, 77, 77); display:none" class="w3-center w3-button ">
+            <b>Umva Stories</b>
+          </button>
+
+
+       
+      </div>
+
+
+
+    
+      <% } %> 
+      <!-- End Left Column -->
+    </div>
+
+    <!-- Middle Column -->
+    <div style="width:100%" class="w3-col m7">
+       
+      
+        <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <center><h1>Advertise with Us</h1></center>
+          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+           <center><h3>Advertise your youtube links with us (submit the link bellow)</h3></center>
+           <div class="w3-container w3-card w3-teal w3-round w3-margin"><br>
+            <form action="">
+                <div class="w3-section">
+                <b><label>Your link</label></b>
+                <input class="w3-input w3-border w3-margin-bottom" type="text" name="link" placeholder="https://www.youtube.com/watch?v=-----"/>
+              </div>
+              <button class="w3-button w3-block w3-teal w3-section w3-padding" >kanda gukomeza</button>
+              
+            </form>
+          </div>
+           <center><h3>Advertise On Whatsapp statuses of Our Traffic(upload your image)</h3></center>
+           <div class="w3-container w3-card w3-teal w3-round w3-margin"><br>
+            <form action="">
+              <div class="w3-section">
+              <b><label>Your image</label></b>
+              <input class="w3-input w3-border w3-margin-bottom" type="file" name="link" placeholder="https://www.youtube.com/watch?v=-----"/>
+            </div>
+            <button class="w3-button w3-block w3-teal w3-section w3-padding" >kanda gukomeza</button>
+            
+          </form>
+           </div>
+          </div>
+          </div>
+       
+       
+      </div>
+
+      <!-- End Middle Column -->
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <!-- Right C
+    
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+  </div>
+  <br>
+
+  <button id="MENUBTN"
+    onclick="document.getElementById('MENU').style.display='block';document.getElementById('MENUBTN').style.display='none'"
+    style="border:none;position:fixed;top:2%;left:2%;width:60px;height:60px; z-index:1;"
+    class="w3-card w3-circle w3-teal  w3-animate-zoom">
+    <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
+    </p>
+  </button>
+
+  <footer style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ;"
+    class="w3-card w3-container w3-theme-d3 ">
+   
+
+    <h4 style="position: fixed;bottom:0.2%;left:1%;"><b>DutereStory.Com</b></h4>
+  </footer>
+  <script src="../static/recorder/app.js"></script>
+  <script src="../static/recorder/recorder.js"></script>
+  <script>
+// Accordio
+
+  
+  
+  </script>
+
+</body>
+
+</html>
