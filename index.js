@@ -301,10 +301,10 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   let payload = {
     
      account_bank: "MPS",
-        account_number: "250788868615",
-        amount: 1200,
+        account_number: req.body.phoneN,
+        amount: req.body.Amount,
         currency: "RWF",
-        beneficiary_name: "Mugeni Victoire",
+        beneficiary_name: req.user.userName,
         meta: {
           "sender": "DutereStory Developers",
           "sender_country": "RWA",
