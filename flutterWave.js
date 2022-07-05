@@ -41,7 +41,7 @@ const transferTobeneficiary =  async (details)=>{
         //   "mobile_number": "23457558595"
         // }
 
-        await flw.Transfer.initiate(details)
+        const response =  await flw.Transfer.initiate(details)
        console.log(response);
     } catch (error) {
         console.log(error)
