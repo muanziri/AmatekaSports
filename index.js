@@ -70,10 +70,11 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
+  let user=req.user
   if(req.user){
-  paymentYear.find({userName:req.user.userName}).then((paymentres)=>{
-    paymentMonth.find({userName:req.user.userName}).then((paymentres2)=>{
-      paymentWeek.find({userName:req.user.userName}).then((paymentres3)=>{
+  paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
+    paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
+      paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
        if (paymentres.length >0){
       res.render('index', { user: req.user,payment:paymentres[0]})
     }else if(paymentres2.length >0){
@@ -259,47 +260,7 @@ app.post('/flutterWaveSubMonth', (req, res) => {
   }
   rw_mobile_money(payload)
 })
-app.post('/paymentMonthAdvert', (req, res) => {
 
-  let user=req.user
-  const rw_mobile_money =  async (payload)=>{
- 
-    try {
-       const response =  await flw.MobileMoney.rwanda(payload)
-       console.log(response);
-     req.flash('messageURL2',`${response.meta.authorization.redirect}`)
-     res.redirect('/Advertiser')
-    } catch (error) {
-        console.log(error)
-    }                            
-   
-}
-  var mykey = uniqid()
-  var mykey2 = uniqid()
-  new paymentMonthAdvert({
-    userName:req.user.userName,
-    tx_ref:mykey,
-    Oder_Id:mykey2,
-    PhoneNumber:req.body.phone
-  }).save()
-  UserModel.updateOne({ userName: user.userName }, { paymentIdAdvert:mykey }, function (err, docs) {
-    if (err) {
-      console.log(err)
-    }
-  })
-  let payload = {
-    
-    "tx_ref": mykey, 
-    "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-    "amount": "50000",
-    "currency": "RWF",
-    "email":"munaziribnm@gmail.com",
-    "phone_number": req.body.phone,
-    "fullname": req.user.userName
-
-  }
-  rw_mobile_money(payload)
-})
 app.post('/FromWhatsapp',upload.any(),(req,res)=>{
   console.log(req.files)
   let views=req.body.Views;
@@ -334,7 +295,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
-      paymentMonth.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+      paymentMonth.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
         if (err) {
           console.log(err)
         }
@@ -348,7 +309,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
-      paymentWeek.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+      paymentWeek.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
         if (err) {
           console.log(err)
         }
@@ -362,7 +323,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
       req.flash('message1','Ntiwishyuye')
       res.redirect('/')
     }else{
-      paymentYear.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+      paymentYear.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
         if (err) {
           console.log(err)
         }
@@ -378,16 +339,16 @@ app.get('/payment_callback/:userName', async (req, res) => {
 app.get('/payment_callback_Advert/:userName', async (req, res) => {
 
   let user=req.user
-   const transactionDetailsM = await paymentMonthAdvert.find({tx_ref:user.paymentId});
-   const transactionDetailsW= await paymentWeekAdvert.find({tx_ref:user.paymentId});
-   const transactionDetailsY=await paymentYearAdvert.find({tx_ref:user.paymentId});
+   const transactionDetailsM = await paymentMonthAdvert.find({tx_ref:user.paymentIdAdvert});
+   const transactionDetailsW= await paymentWeekAdvert.find({tx_ref:user.paymentIdAdvert});
+   const transactionDetailsY=await paymentYearAdvert.find({tx_ref:user.paymentIdAdvert});
    if (transactionDetailsM.length >0){
       const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
       if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
        req.flash('message1','Ntiwishyuye')
        res.redirect('/')
      }else{
-      paymentMonthAdvert.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+      paymentMonthAdvert.updateOne({ tx_ref: user.paymentIdAdvert }, { PaymentStatus:"payed" }, function (err, docs) {
          if (err) {
            console.log(err)
          }
@@ -401,7 +362,7 @@ app.get('/payment_callback_Advert/:userName', async (req, res) => {
        req.flash('message1','Ntiwishyuye')
        res.redirect('/')
      }else{
-      paymentWeekAdvert.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+      paymentWeekAdvert.updateOne({ tx_ref: user.paymentIdAdvert }, { PaymentStatus:"payed" }, function (err, docs) {
          if (err) {
            console.log(err)
          }
@@ -415,7 +376,7 @@ app.get('/payment_callback_Advert/:userName', async (req, res) => {
        req.flash('message1','Ntiwishyuye')
        res.redirect('/')
      }else{
-       paymentYear.updateOne({ userName: userNAME }, { PaymentStatus:"payed" }, function (err, docs) {
+       paymentYear.updateOne({ tx_ref: user.paymentIdAdvert }, { PaymentStatus:"payed" }, function (err, docs) {
          if (err) {
            console.log(err)
          }
@@ -469,46 +430,7 @@ app.post('/flutterWaveSubYear', (req, res) => {
   }
   rw_mobile_money(payload)
 })
-app.post('/paymentYearAdvert', (req, res) => {
-  let user=req.user
-   const rw_mobile_money =  async (payload)=>{
-  
-     try {
-        const response =  await flw.MobileMoney.rwanda(payload)
-        console.log(response);
-      req.flash('messageURL2',`${response.meta.authorization.redirect}`)
-      res.redirect('/Advertiser')
-     } catch (error) {
-         console.log(error)
-     }                            
-    
- }
-   var mykey = uniqid()
-   var mykey2 = uniqid()
-   new paymentYearAdvert({
-     userName:req.user.userName,
-     tx_ref:mykey,
-     Oder_Id:mykey2,
-     PhoneNumber:req.body.phone
-   }).save()
-   UserModel.updateOne({ userName: user.userName }, { paymentIdAdvert:mykey }, function (err, docs) {
-     if (err) {
-       console.log(err)
-     }
-   })
-   let payload = {
-     
-     "tx_ref": mykey, 
-     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-     "amount": "50000",
-     "currency": "RWF",
-     "email":"munaziribnm@gmail.com",
-     "phone_number": req.body.phone,
-     "fullname": req.user.userName
- 
-   }
-   rw_mobile_money(payload)
- })
+
 
 app.post('/flutterWaveWithDraw', (req, res) => {
 
@@ -530,6 +452,18 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   transferTobeneficiary(payload)
 })
 app.post('/addViews', (req, res) => {
+  let id = req.body.id
+  recordings.findOne({ userId: id }).then((results) => {
+    let newViews = results.views++
+    recordings.updateOne({ userId: id }, { views: newViews }, function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+    })
+  })
+
+})
+app.post('/addViewsStatus', (req, res) => {
   let id = req.body.id
   recordings.findOne({ userId: id }).then((results) => {
     let newViews = results.views++

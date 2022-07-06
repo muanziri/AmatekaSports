@@ -13,21 +13,21 @@ const UserSchema = new Schema({
 
     },
     views:{
-        type: String,
+        type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
     clicks:{
         type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
     CashLeft:{
         type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
 
@@ -59,21 +59,21 @@ const UserSchema2 = new Schema({
 
     },
     views:{
-        type: String,
+        type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
     clicks:{
         type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
     CashLeft:{
         type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
 
@@ -105,21 +105,21 @@ const UserSchema3 = new Schema({
 
     },
     views:{
-        type: String,
+        type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
     clicks:{
         type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
     CashLeft:{
         type: Number,
         required: true,
-        default:"0"
+        default:0
 
     },
 
