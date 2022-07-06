@@ -92,7 +92,6 @@ app.get('/', (req, res) => {
      
 })
 app.get('/Advertiser',(req,res)=>{
-  res.render('Advertiser',{user:req.user})
   if(req.user){
     paymentYearAdvert.find({userName:req.user.userName}).then((paymentres)=>{
       paymentMonthAdvert.find({userName:req.user.userName}).then((paymentres2)=>{
