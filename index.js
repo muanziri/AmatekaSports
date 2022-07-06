@@ -71,26 +71,27 @@ app.get('/auth/google/success', (req, res) => {
 })
 app.get('/', (req, res) => {
   let user=req.user
+  recordings.find().then((recordings)=>{
   if(req.user){
   paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
     paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
       paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
        if (paymentres.length >0){
-      res.render('index', { user: req.user,payment:paymentres[0]})
+      res.render('index', { user: req.user,payment:paymentres[0],stories:recordings})
     }else if(paymentres2.length >0){
-      res.render('index', { user: req.user,payment:paymentres2[0]})
+      res.render('index', { user: req.user,payment:paymentres2[0],stories:recordings})
      
     }else if(paymentres3.length >0){
-      res.render('index', { user: req.user,payment:paymentres3[0]})
+      res.render('index', { user: req.user,payment:paymentres3[0],stories:recordings})
     }else{
-      res.render('index', { user: req.user,payment:{PaymentStatus:"unpayed"}})
+      res.render('index', { user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
     }
    
    }) })})
   }else{
-    res.render('index',{user:req.user})
+    res.render('index',{user:req.user,stories:recordings})
   }
-     
+})    
 })
 app.get('/Advertiser',(req,res)=>{
   if(req.user){
