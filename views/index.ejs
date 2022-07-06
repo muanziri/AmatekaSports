@@ -261,13 +261,17 @@
     <!-- Middle Column -->
     <div style="width:100%" class="w3-col m7">
        <div style="display:block" id="stories">
+        <%if (stories.length>0){%>
+          <%stories.array.forEach(element => {%>
+            
+         
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <img src="<%=element.UserProfile%> " alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
-        <h4>John Doe</h4><br>
+        <h4><%=element.UserName%></h4><br>
         <hr class="w3-clear">
         <br>
-        <audio data-role="audio-player"  data-src="https://drive.google.com/uc?export=download&id=12-hV-FbLGr0Eel8IScauErAdCpuT36up"></audio>
+        <audio data-role="audio-player"  data-src="https://drive.google.com/uc?export=<%=element.RecordingId%>"></audio>
        <br> 
         <div style=" width: 100%;">
        <button type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
@@ -310,7 +314,8 @@
       </div>
 
       </div>
-      
+      <% });%>
+        <%}%>
       
       </div>
       <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
