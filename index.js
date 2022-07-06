@@ -123,10 +123,7 @@ app.post('/addLikes', (req, res) => {
   })
 
 })
-app.post('/addClicks', (req, res) => {
 
-
-})
 app.post('/addComments', (req, res) => {
 
   let id = req.body.id

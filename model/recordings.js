@@ -7,6 +7,16 @@ const UserSchema = new Schema({
         required: true
 
     },
+    UserProfile:{
+        type: String,
+        required: true
+
+    },
+    UserName:{
+        type: String,
+        required: true
+
+    },
     RecordingId:{
         type: String,
         required: true
