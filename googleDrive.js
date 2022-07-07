@@ -39,7 +39,7 @@ var jwToken = new google.auth.JWT(
       
        console.log('File Id: ', file.data.id);
        console.log(user.id)
-    users.findByIdAndupdateOne(user.id,{$addToSet:{Recordings:file.data.id}},function (err, docs) {
+    users.findByIdAndUpdate(user.id,{$addToSet:{Recordings:file.data.id}},function (err, docs) {
       if (err){
           console.log(err)
       }
