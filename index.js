@@ -116,7 +116,8 @@ app.get('/Advertiser',(req,res)=>{
 })
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
-  recordings.updateOne({ UserName: req.user.userName }, { $addToSet: { likes: userID } }, function (err, docs) {
+  let d=req.body.identity
+  recordings.updateOne({userId:d}, { $addToSet: { likes: userID } }, function (err, docs) {
     if (err) {
       console.log(err)
     }else{console.log(docs)}
