@@ -120,14 +120,14 @@ app.post('/addLikes', (req, res) => {
   recordings.updateOne({userId:d}, { $addToSet: { likes: userID } }, function (err, docs) {
     if (err) {
       console.log(err)
-    }else{console.log(docs)}
+    }
   })
 
 })
 
 app.post('/addComments', (req, res) => {
 
-  let id = req.body.id
+  let id = req.body.identity
   let userComment = [req.user.userName, req.user.ProfilePhotoUrl, req.body.comment]
   recordings.updateOne({ userId: id }, { $addToSet: { comments: userComment } }, function (err, docs) {
     if (err) {

@@ -292,10 +292,11 @@
           onclick="document.getElementById('CommentSect').style.display='none'"
           class="w3-button  w3-transparent " title="Close Modal">×</button>
         <center>
-          <form id="commentForm<%=element.id%> "  class="w3-container w3-margin">
+          <form id="commentForm<%=element.id%>" action="/addComments" method="post" class="w3-container w3-margin">
             <div class="w3-section">
            <b> 
             <br>
+            <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text" name="identity" value="<%=element.userId%>"/>
             <b><label>Comment Yawe</label></b>
             <textarea style="background-color: rgb(169, 224, 224);" class="w3-input w3-border w3-margin-bottom" type="text" name="comment" placeholder="----"></textarea>
           </div>
