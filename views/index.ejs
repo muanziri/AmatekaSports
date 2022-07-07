@@ -266,7 +266,7 @@
             
          
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="<%=element.UserProfile%> " alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <img src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
         <h4><%=element.UserName%></h4><br>
         <hr class="w3-clear">
@@ -274,7 +274,7 @@
         <audio style="z-index:0" data-role="audio-player"  data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
        <br>
         <div style=" width: 100%;">
-       <button  onclick=" let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x;submitLikes();" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
+       <button  onclick=" let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
         <button onclick="document.getElementById('CommentSect').style.display='block'" type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment  <%=element.comments.length%></button>
         <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i> Yumvishwe <%=element.views%> </div>
       </div>
@@ -284,7 +284,7 @@
           onclick="document.getElementById('CommentSect').style.display='none'"
           class="w3-button  w3-transparent " title="Close Modal">×</button>
         <center>
-          <form id="commentForm"  class="w3-container w3-margin">
+          <form id="commentForm<%=element.id%> "  class="w3-container w3-margin">
             <div class="w3-section">
            <b> 
             
@@ -296,7 +296,7 @@
           </div>
           <button class="w3-button  w3-teal " >Tera comment</button>
           </form>
-          <form id="likeForm" method="post" action="/addLikes"  class="w3-container w3-margin">
+          <form id="likeForm" method="post" action="/addLikes<%=element.id%>"  class="w3-container w3-margin">
             <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text" name="id" value="<%=element.id%>"/>
           </form>
         </center>
