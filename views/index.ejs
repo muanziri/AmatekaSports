@@ -274,7 +274,7 @@
         <audio style="z-index:0" data-role="audio-player"  data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
        <br>
         <div style=" width: 100%;">
-       <button  onclick="document.getElementById(likeForm).submit();let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x;" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
+       <button  onclick="let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x;" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
         <button onclick="document.getElementById('CommentSect').style.display='block'" type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment  <%=element.comments.length%></button>
         <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i> Yumvishwe <%=element.views%> </div>
       </div>
