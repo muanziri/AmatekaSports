@@ -271,7 +271,7 @@
         <h4><%=element.UserName%></h4><br>
         <hr class="w3-clear">
         <br>
-        <audio data-role="audio-player"  data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+        <audio  data-role="audio-player"  data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
        <br>
         <div style=" width: 100%;">
        <button type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
@@ -627,7 +627,7 @@
  
     </p>
    
-    <div style="display:none ;width:100%" id="ReacorderBTN">
+    <div style="display:none ;width:100%; z-index:1" id="ReacorderBTN">
     <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; top:3%;font-size: 40px; " class="fa fa-stop"></i>
     <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:3%;font-size: 40px; " class="fa fa-pause"></i>
     <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:3%;font-size: 40px;display:none; " class="fa fa-play"></i>
