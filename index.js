@@ -117,10 +117,11 @@ app.get('/Advertiser',(req,res)=>{
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
   let id = req.body.id
+  console.log(id)
   recordings.updateOne({ userId: id }, { $addToSet: { likes: userID } }, function (err, docs) {
     if (err) {
       console.log(err)
-    }
+    }else{console.log(docs)}
   })
 
 })
