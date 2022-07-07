@@ -274,9 +274,9 @@
         <audio style="z-index:0" data-role="audio-player"  data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
        <br>
         <div style=" width: 100%;">
-       <button  onclick="let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x;" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
+       <button  onclick="document.getElementById(likeForm).submit();let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x;" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
         <button onclick="document.getElementById('CommentSect').style.display='block'" type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment  <%=element.comments.length%></button>
-        <div onclick="document.getElementById('CommentSect').style.display='block'" type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa-solid fa-ear-listen"></i> Yumvishwe <%=element.views%> </div>
+        <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i> Yumvishwe <%=element.views%> </div>
       </div>
       <div style="display: none;" id="CommentSect" class="w3-card">
         <button
@@ -296,8 +296,8 @@
           </div>
           <button class="w3-button  w3-teal " >Tera comment</button>
           </form>
-          <form id="likeForm" style="display: none;" class="w3-container w3-margin">
-            <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text" name="id" placeholder="078(MTN GUSA)-----"/>
+          <form id="likeForm" method="post" action="/addLikes" style="display: none;" class="w3-container w3-margin">
+            <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text" name="id" value="<%=element.id%>"/>
           </form>
         </center>
         <center> <button id="somaCommentBTN" onclick="document.getElementById('SomaCommnent').style.display='block';document.getElementById('commentForm').style.display='none';document.getElementById('somaCommentBTN').style.display='none';" class="w3-button  w3-teal w3-margin-bottom" >Somma comment</button></center>
