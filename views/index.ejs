@@ -274,7 +274,7 @@
         <audio style="z-index:0" data-role="audio-player"  data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
        <br>
         <div style=" width: 100%;">
-       <button  onclick="let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x;" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
+       <button  onclick=" submitLikes();let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x;" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
         <button onclick="document.getElementById('CommentSect').style.display='block'" type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment  <%=element.comments.length%></button>
         <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i> Yumvishwe <%=element.views%> </div>
       </div>
@@ -296,7 +296,7 @@
           </div>
           <button class="w3-button  w3-teal " >Tera comment</button>
           </form>
-          <form id="likeForm" method="post" action="/addLikes" style="display: none;" class="w3-container w3-margin">
+          <form id="likeForm" method="post" action="/addLikes"  class="w3-container w3-margin">
             <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text" name="id" value="<%=element.id%>"/>
           </form>
         </center>
@@ -651,6 +651,9 @@
 
   <script>
 // Accordio
+ function submitLikes(){
+  document.getElementById('likeForm').submit();
+ }
 
   function myFunction(){
     var x = document.getElementById("select").value;
