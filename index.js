@@ -127,8 +127,8 @@ app.post('/addLikes', (req, res) => {
 
 app.post('/addComments', (req, res) => {
 
-  let id = req.body.identity
-  let userComment = [[req.user.userName], [req.user.ProfilePhotoUrl], [req.body.comment]]
+  let id = req.body.identit
+  let userComment = {name:req.user.userName, profile:req.user.ProfilePhotoUrl, realcomment:req.body.comment}
   recordings.updateOne({ userId: id }, { $addToSet: { comments: userComment } }, function (err, docs) {
     if (err) {
       console.log(err)
