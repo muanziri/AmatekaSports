@@ -295,9 +295,6 @@
           <form id="commentForm<%=element.id%> "  class="w3-container w3-margin">
             <div class="w3-section">
            <b> 
-            
-            <input style="display: block;"  class="w3-input w3-border w3-margin-bottom" type="text" name="id" placeholder="078(MTN GUSA)-----"/>
-           
             <br>
             <b><label>Comment Yawe</label></b>
             <textarea style="background-color: rgb(169, 224, 224);" class="w3-input w3-border w3-margin-bottom" type="text" name="comment" placeholder="----"></textarea>
@@ -308,9 +305,9 @@
             <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text" name="identity" value="<%=element.userId%>"/>
           </form>
         </center>
-        <center> <button id="somaCommentBTN" onclick="document.getElementById('SomaCommnent').style.display='block';document.getElementById('commentForm').style.display='none';document.getElementById('somaCommentBTN').style.display='none';" class="w3-button  w3-teal w3-margin-bottom" >Somma comment</button></center>
+        <center> <button id="somaCommentBTN" onclick="document.getElementById('SomaCommnent').style.display='block';" class="w3-button  w3-teal w3-margin-bottom" >Somma comment</button></center>
         <div id="SomaCommnent" style="display: none;" class="w3-container w3-card w3-margin-bottom">
-          <center> <button id="somaCommentBTN" onclick="document.getElementById('SomaCommnent').style.display='none';document.getElementById('commentForm').style.display='block';document.getElementById('somaCommentBTN').style.display='block';" class="w3-button  w3-teal w3-margin-top " >Kora comment</button></center>
+  
           <img src="" alt="Avatar" class="w3-left w3-circle w3-margin-left" style="width:60px">
           <h6 class="w3-right w3-margin-right">Izina</h6>    
           <br>
