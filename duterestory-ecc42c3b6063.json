@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "duterestory",
+  "private_key_id": "ecc42c3b6063593b4757f37495944d91690298c9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDN/5UEkv43FiNm\nhbdLmH7jr3rkn7I0+p5mWsbDKZTm60CmS0e/Ue6MNMA+nWt6ObkF2e2DHY2VuIV2\nUubWmLzCjc+rSMXHXyG4qDlH1y507CDRx7NA3C3t5pP6hVUa/C3NmddtkseFJVY+\nOtl2VgCIY6+AqpLUVCQNBCwE/gc2+6Nsv/NlWZukDiZQwokDbp4DJvLiK+cn8iPW\nTxzVK0kMePVbocBo0Aw5YTVgkt0XPsZjZY6MrTKNrJ9hAyt4hvGSXCNw55KOLVIv\n778P31pyDw6JLwEORWg5P/28CDvUaUS02VvkjaRsX6S4WkjfCuluTcVFmldJ5EWa\naNOt7HoPAgMBAAECggEAE9/rzbQs6L2vDq4qABYnb+o3TiWGOQxRCgkKEjxJzHm4\nFBNBSdkqzcYtIh1oCDPXgRQEkVjhlydlYQQgl2XHGHI8LgdoZZLtGvbICAFfzxIV\nHIhK6CAWIlTTxCDnFCJufN6x5TV7IIJ4rqpY3szvYjlT7nMGlYvEqqjTYmvr4Eb8\nfJvI679oyXKMWpa4oDFqHrrNHO59EM1ouMrb+yjUaFpQznzwJBqccsOxNiv6vCp6\nzlq8S1olvmhZYwqmWq552FdMnYsSiBjE0D3EtWfh53aalmninjf+RHYREad4m0oq\niDOuR2k46h8nJHH5gxbgREktccwmoobGslw8Eh6u6QKBgQD8NywZLBk0FgW/cwa8\ny9+MiNRZrd/N/5HruhH+HQzycTnF0ewCJOVFEjcsVsaCSnq6S9dmdfMoFyPOMtdz\n+ZUC0eNjZEZUzAMeOHe835tC3O5Pg2JQ7XzxCHDIAsIBsJ/u1u2S9uzZrH3FDSQE\n1dtZzeksM0cHwWn76if+Dq16CwKBgQDRFuCYNUU9xyWFJRv8hYkQQeMFuHacHyqD\nFZNJJiEwn0QovnmYKkx90MysSa3fJXbhQ2vg0/ISNs3Qwnk7y1nh2AeCbzAoX9mY\nx3fO4mKluAHaOrJzeWJ1eMgvIriscdB35tHQK/U8I9eeqasxu62AhK6Jzxe8k/Wa\nQJezzQwGjQKBgQCnwPKd04z37eXoztMeY+POj3veIh4H4ALobRxmjl/8KX8pqlR1\noKC17kWwQg9Kvcsfei5Mwgr3EV0JWxue0dRgycWaaCm3YPJ5+Uj64Sdds6D2Vgbg\nmPVPRDPvdJYhlZ7qtx3RcFdc+LO2iuT4Kl35P1Hlyj1mVSjvG3F6M70CvQKBgF0N\nH1rdqjj6HbqJb1EMZJk1mUD8fNyyCgtYWLnfHDo1RvITAq4zdOMxP0UVbSm31JYf\nmSzvZfWxKhtT0PxJXXDi4UStEvOE5KPXcXxCx8AUic6C/NPjG2xIGl7PxvwHks0p\njgpk5bikAtt7itKRQX/GjJ6L6XZlKpJBWMIN6OIpAoGBAJATfIaKV28T3IP70u4u\nPXD0chU150safxkqWAZL4eIwGjdQXGT4FgB00eSrd+rWlwAkYPKv8ElKF75/SvN3\n+F269/PuH9Z/I/KB8pDKY/luldrljYjP9rhU6rN+IjPGLJWQZZttyNQDSRNf2vzZ\nWbTS9bgmS/A9i9vmf30hpPMO\n-----END PRIVATE KEY-----\n",
+  "client_email": "duterestori@duterestory.iam.gserviceaccount.com",
+  "client_id": "105999141379984960746",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/duterestori%40duterestory.iam.gserviceaccount.com"
+}

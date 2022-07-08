@@ -1,0 +1,35 @@
+{
+  "name": "mvugisha",
+  "version": "1.0.0",
+  "description": "inspired by benir",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muanziri/BenirAdvert.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muanziri/BenirAdvert/issues"
+  },
+  "homepage": "https://github.com/muanziri/BenirAdvert#readme",
+  "dependencies": {
+    "cookie-session": "^2.0.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "flutterwave-node-v3": "^1.0.9",
+    "googleapis": "^100.0.0",
+    "mongoose": "^6.3.4",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.16",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
+    "uniqid": "^5.4.0"
+  }
+}
