@@ -114,6 +114,9 @@ app.get('/Advertiser',(req,res)=>{
       res.render('Advertiser',{user:req.user})
     }
 })
+app.get('/refferal',(req,res)=>{
+  res.render('Refferal',{user:req.user})
+})
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
   let d=req.body.identity
