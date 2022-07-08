@@ -194,14 +194,14 @@ const shareData = {
   text: 'Mfasha Dukorere cash Clickinga kwiyi link ufungure account Nawe Ukorere Cash',
   url: 'https://google.com'
 }
-function sharelink(){
+document.getElementById('recordButton').addEventListener('click',()=>{
   try {
     await navigator.share(shareData)
-   alert("MDN shared successfully")
+     alert('MDN shared successfully')
   } catch(err) {
     alert(err)
   }
-}
+})
 
 function myFunction(){
     var x = document.getElementById("select").value;
