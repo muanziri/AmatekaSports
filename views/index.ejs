@@ -272,20 +272,26 @@
         <%if (stories.length>0){%>
           <%stories.forEach(element => {%>
             
-         <div  id="id0222" class="w3-modal">
+         <div  id="id0222<%=element.UserName%>" class="w3-modal">
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <span
+            onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none'"
+            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+            <center>
           <h1>Stories by <%=element.UserName%></h1>
           <div>
            <h6>espode 1  Umujinya Wumurandura Nzuzi</h6>
+          </div>
           </div>
          </div>
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <img src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
-        <h4 onclick="document.getElementById('id0222').style.display='block'"><%=element.UserName%></h4><br>
+        <h4 onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'"><%=element.UserName%></h4><br>
         <hr class="w3-clear">
         <h6>Title</h6>
         <br>
-        <audio style="z-index:0" controls width="150" src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+        <audio style="z-index:0" controls width="100%" src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
        <br>
         <div style=" width: 100%;">
        <button  onclick=" let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
