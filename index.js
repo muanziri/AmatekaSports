@@ -115,6 +115,7 @@ app.get('/Advertiser',(req,res)=>{
     }
 })
 app.get('/refferal',(req,res)=>{
+  let user=req.user
   if(req.user){
     paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
       paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{

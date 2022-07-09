@@ -245,9 +245,9 @@
         <div id="BTN1">
           
 
-          <button onclick="ChangeToKash()" id="BTN6" style="background-color: rgb(0, 77, 77); " class="w3-center w3-button ">
+         <a href="/refferal"> <button  id="BTN6" style="background-color: rgb(0, 77, 77); " class="w3-center w3-button ">
             <b>KORERA CASH</b>
-          </button>
+          </button></a>
           <button onclick="ChangeToStories()" id="BTN5" style="background-color: rgb(0, 77, 77); display:none" class="w3-center w3-button ">
             <b>Umva Stories</b>
           </button>
@@ -272,14 +272,20 @@
         <%if (stories.length>0){%>
           <%stories.forEach(element => {%>
             
-         
+         <div  id="id0222" class="w3-modal">
+          <h1>Stories by <%=element.UserName%></h1>
+          <div>
+           <h6>espode 1  Umujinya Wumurandura Nzuzi</h6>
+          </div>
+         </div>
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <img src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
-        <h4><%=element.UserName%></h4><br>
+        <h4 onclick="document.getElementById('id0222').style.display='block'"><%=element.UserName%></h4><br>
         <hr class="w3-clear">
+        <h6>Title</h6>
         <br>
-        <audio style="z-index:0" data-role="audio-player"  data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+        <audio style="z-index:0" controls width="150" src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
        <br>
         <div style=" width: 100%;">
        <button  onclick=" let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
@@ -635,9 +641,9 @@
     </p>
    
     <div style="display:none ;width:100%;" id="ReacorderBTN">
-    <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; top:3%;font-size: 40px; " class="fa fa-stop"></i>
-    <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:3%;font-size: 40px; " class="fa fa-pause"></i>
-    <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:3%;font-size: 40px;display:none; " class="fa fa-play"></i>
+    <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; top:0%;font-size: 40px; " class="fa fa-stop"></i>
+    <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:0%;font-size: 40px; " class="fa fa-pause"></i>
+    <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:0%;font-size: 40px;display:none; " class="fa fa-play"></i>
     </div>
     <div style="display:none" id="KashHeading">
       <center>

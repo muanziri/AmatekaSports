@@ -29,7 +29,7 @@ const UserSchema = new Schema({
     paymentIdAdvert: {
         type: String,
     },
-    Recordings: [String],
+    titleRecordings: [String],
    
     phoneNumber:{
         type: String,
