@@ -292,7 +292,7 @@
         <hr class="w3-clear">
         <h6>Title</h6>
         <br>
-        <audio style="z-index:0" controls width="100%" src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+        <audio id="audio" style="z-index:0" controls width="100%" src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
        <br>
         <div style=" width: 100%;">
        <button  onclick=" let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
@@ -672,7 +672,7 @@
 
   <script>
 // Accordio
-setInterval(function() {document.getElementsByTagName('audio').load()}, 120000);
+setInterval(function() {document.querySelector('#audio').load()}, 120000);
  function submitLikes(){
   document.getElementById('likeForm').submit();
  }
