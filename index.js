@@ -500,7 +500,7 @@ app.post('/ToTheDrive', upload.any(), (req, res) => {
 
   const user = req.user;
   let files = req.files;
-
+  let RecordTitle=req.body.Title;
   let filepath = "./audioUploads/";
   let originalname = files[0].originalname + '.aac'
   let stringedFilePath = filepath + originalname;
@@ -514,7 +514,7 @@ app.post('/ToTheDrive', upload.any(), (req, res) => {
     body: bufferToStream(req.files[0].buffer)
   };
 
-  totheDrivers(fileMetadata, media, stringedFilePath, user, folderId);
+  totheDrivers(fileMetadata, media,RecordTitle, stringedFilePath, user, folderId);
 
 
 })

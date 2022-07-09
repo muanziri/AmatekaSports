@@ -30,6 +30,10 @@ const UserSchema = new Schema({
         type: String,
     },
     titleRecordings: [String],
+    Recordings: [String],
+    profileComment:[String],
+    Comment:[String],
+    NameComment:[String],
    
     phoneNumber:{
         type: String,
