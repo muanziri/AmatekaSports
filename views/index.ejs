@@ -675,7 +675,7 @@
 setInterval(function() {document.querySelectorAll('#audio').load()}, 120000);
  function submitLikes(e){
   document.getElementById('likeForm').submit();
-  setTimeout(()=>{ e.preventDefault(); alert('stopped')},2000)
+  setTimeout(()=>{ window.stop(); alert('stopped')},2000)
  }
  
 
