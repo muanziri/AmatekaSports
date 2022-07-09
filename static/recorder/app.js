@@ -204,6 +204,7 @@ function createDownloadLink(blob) {
 
     
    var recordingsList=document.getElementById("recordingsList")
+   var Title=document.getElementById("Title");
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
 	au.setAttribute('id','recorded')
@@ -253,6 +254,7 @@ function createDownloadLink(blob) {
 	 	};
 	 	var fd=new FormData();
 	 	fd.append("audio_data",blob, filename);
+		 fd.append(Title);
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
 	 })

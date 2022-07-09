@@ -497,24 +497,24 @@ app.post('/addViewsStatus', (req, res) => {
 
 })
 app.post('/ToTheDrive', upload.any(), (req, res) => {
+   console.log(req.body)
+  // const user = req.user;
+  // let files = req.files;
+  // let RecordTitle=req.body.Title;
+  // let filepath = "./audioUploads/";
+  // let originalname = files[0].originalname + '.aac'
+  // let stringedFilePath = filepath + originalname;
+  // var folderId = user.folderId;
+  // var fileMetadata = {
+  //   'name': [originalname],
+  //   parents: [folderId]
+  // };
+  // var media = {
+  //   mimeType: 'audio/aac',
+  //   body: bufferToStream(req.files[0].buffer)
+  // };
 
-  const user = req.user;
-  let files = req.files;
-  let RecordTitle=req.body.Title;
-  let filepath = "./audioUploads/";
-  let originalname = files[0].originalname + '.aac'
-  let stringedFilePath = filepath + originalname;
-  var folderId = user.folderId;
-  var fileMetadata = {
-    'name': [originalname],
-    parents: [folderId]
-  };
-  var media = {
-    mimeType: 'audio/aac',
-    body: bufferToStream(req.files[0].buffer)
-  };
-
-  totheDrivers(fileMetadata, media,RecordTitle, stringedFilePath, user, folderId);
+  // totheDrivers(fileMetadata, media,RecordTitle, stringedFilePath, user, folderId);
 
 
 })
