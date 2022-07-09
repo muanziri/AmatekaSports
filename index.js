@@ -137,6 +137,10 @@ app.get('/refferal',(req,res)=>{
     }
 
 })
+app.get('/refferal/:userName',(req,res)=>{
+  userName=req.params.userName;
+     
+})
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
   let d=req.body.identity
