@@ -267,13 +267,13 @@
     </div>
 
     <!-- Middle Column -->
-    <div style="width:100%" class="w3-col m7">
+    <div style="width:100%;" class="w3-col m7">
        <div style="display:block" id="stories">
         <%if (stories.length>0){%>
           <%stories.forEach(element => {%>
             
          <div  id="id0222<%=element.UserName%>" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px max-width:600px:">
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
             <span
             onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none'"
             class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -286,7 +286,7 @@
           </center>
          </div>
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'" src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'" src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
         <h4 ><%=element.UserName%></h4><br>
         <hr class="w3-clear">
@@ -648,9 +648,9 @@
     </p>
    
     <div style="display:none ;width:100%;" id="ReacorderBTN">
-    <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:5%;font-size: 40px; " class="fa fa-stop"></i>
-    <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:5%;font-size: 40px; " class="fa fa-pause"></i>
-    <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:5%;font-size: 40px;display:none; " class="fa fa-play"></i>
+    <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:9%;font-size: 40px; " class="fa fa-stop"></i>
+    <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:9%;font-size: 40px; " class="fa fa-pause"></i>
+    <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:9%;font-size: 40px;display:none; " class="fa fa-play"></i>
     </div>
     <div style="display:none" id="KashHeading">
       <center>
