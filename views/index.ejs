@@ -673,13 +673,11 @@
   <script>
 // Accordio
 setInterval(function() {document.querySelectorAll('#audio').load()}, 120000);
- function submitLikes(){
+ function submitLikes(e){
   document.getElementById('likeForm').submit();
-  
+  setTimeout(()=>{ e.preventDefault(); alert('stopped')},2000)
  }
- document.getElementById('likeForm').addEventListener('submit',(event)=>{
-  setTimeout(()=>{ event.preventDefault(); alert('stopped')},60000)
- });
+ 
 
   function myFunction(){
     var x = document.getElementById("select").value;
