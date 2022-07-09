@@ -210,7 +210,7 @@ function createDownloadLink(blob) {
 	au.setAttribute('id','recorded')
 	var li = document.createElement('li');
 	var link = document.createElement('a');
-	
+	Title.style.display='block';
 	//name of .wav file to use during upload and download (without extendion)
 	var filename = Date.now();
     au.style.color='teal'
