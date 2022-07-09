@@ -673,9 +673,9 @@
   <script>
 // Accordio
 setInterval(function() {document.querySelectorAll('#audio').load()}, 120000);
- function submitLikes(e){
+ function submitLikes(){
   document.getElementById('likeForm').submit();
-  setTimeout(()=>{ window.stop(); alert('stopped')},2000)
+  setTimeout(window.stop(),2000)
  }
  
 
