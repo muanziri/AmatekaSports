@@ -286,9 +286,9 @@
           </center>
          </div>
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'" src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
-        <h4 onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'"><%=element.UserName%></h4><br>
+        <h4 ><%=element.UserName%></h4><br>
         <hr class="w3-clear">
         <h6>Title</h6>
         <br>
@@ -648,9 +648,9 @@
     </p>
    
     <div style="display:none ;width:100%;" id="ReacorderBTN">
-    <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; top:0%;font-size: 40px; " class="fa fa-stop"></i>
-    <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:0%;font-size: 40px; " class="fa fa-pause"></i>
-    <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; top:0%;font-size: 40px;display:none; " class="fa fa-play"></i>
+    <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:5%;font-size: 40px; " class="fa fa-stop"></i>
+    <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:5%;font-size: 40px; " class="fa fa-pause"></i>
+    <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:5%;font-size: 40px;display:none; " class="fa fa-play"></i>
     </div>
     <div style="display:none" id="KashHeading">
       <center>
