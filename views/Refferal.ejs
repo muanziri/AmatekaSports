@@ -143,7 +143,20 @@
           
        
       </div>
-      <button  id="recordButton" class="w3-card w3-circle w3-teal">
+      <button onclick="
+      function xl (){
+        let shareData = {
+       title: 'DutereStori',
+       text: 'Mfasha Dukorere cash Clickinga kwiyi link ufungure account Nawe Ukorere Cash',
+       url: 'https://google.com'
+         }
+        try {
+          await navigator.share(shareData)
+           alert('MDN shared successfully')
+        } catch(err) {
+          alert(err)
+        }
+      };xl();" id="recordButton" class="w3-card w3-circle w3-teal">
         <b>KORA SHARE</b>
       </button>
  
@@ -194,14 +207,6 @@ const shareData = {
   text: 'Mfasha Dukorere cash Clickinga kwiyi link ufungure account Nawe Ukorere Cash',
   url: 'https://google.com'
 }
-document.getElementById('recordButton').addEventListener('click',()=>{
-  try {
-    await navigator.share(shareData)
-     alert('MDN shared successfully')
-  } catch(err) {
-    alert(err)
-  }
-})
 
 function myFunction(){
     var x = document.getElementById("select").value;
