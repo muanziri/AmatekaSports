@@ -139,7 +139,7 @@ app.get('/refferal',(req,res)=>{
 })
 app.get('/refferal/:userName',(req,res)=>{
   userName=req.params.userName;
-     
+
 })
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
@@ -246,7 +246,7 @@ app.post('/paymentWeekAdvert', (req, res) => {
 })
 
 app.post('/flutterWaveSubMonth', (req, res) => {
-
+  let user=req.user
   const rw_mobile_money =  async (payload)=>{
  
     try {
