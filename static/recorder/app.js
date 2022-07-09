@@ -243,6 +243,7 @@ function createDownloadLink(blob) {
 
 
 	 uploadButton.addEventListener('click',function (events) {
+		document.getElementById("Title").style.display='none';
 	   uploadButton.style.display='none';
 	   document.getElementById('recorded').style.display='none'
 	   document.getElementById('recordButton').style.display='block'
@@ -254,7 +255,7 @@ function createDownloadLink(blob) {
 	 	};
 	 	var fd=new FormData();
 	 	fd.append("audio_data",blob, filename);
-		 fd.append(Title);
+		 fd.append("Title",Title);
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
 	 })
