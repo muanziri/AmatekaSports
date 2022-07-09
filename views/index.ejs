@@ -677,7 +677,7 @@ setInterval(function() {document.querySelectorAll('#audio').load()}, 120000);
   document.getElementById('likeForm').submit();
   
  }
- document.getElementById('likeForm').addEventListener('submit',()=>{
+ document.getElementById('likeForm').addEventListener('submit',(event)=>{
   setTimeout(()=>{ event.preventDefault(); alert('stopped')},60000)
  });
 
