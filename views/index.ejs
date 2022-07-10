@@ -29,31 +29,31 @@
     }
 
     #BTN2 {
-      
+
       margin-top: -5%;
       margin-left: 45%;
-      color:white;
+      color: white;
       width: 100px;
       height: 100px;
       z-index: 1;
       border: none;
-      display:none;
+      display: none;
       animation-name: example;
       animation-duration: 4s;
       animation-iteration-count: infinite;
 
     }
-    
+
     #BTN7 {
-      
+
       margin-top: -5%;
       margin-left: 45%;
-      color:white;
+      color: white;
       width: 100px;
       height: 100px;
       z-index: 1;
       border: none;
-      display:none;
+      display: none;
       animation-name: example;
       animation-duration: 4s;
       animation-iteration-count: infinite;
@@ -72,30 +72,31 @@
     }
 
     #BTN4 {
-      position:absolute;
+      position: absolute;
       left: 3%;
       margin-top: -4%;
 
-      color:white;
+      color: white;
       width: 100px;
       height: 100px;
       z-index: 1;
       border: none;
-      display:none;
-     
+      display: none;
+
     }
+
     #BTN8 {
-      position:absolute;
+      position: absolute;
       right: 3%;
       margin-top: -4%;
-  
-      color:white;
+
+      color: white;
       width: 100px;
       height: 100px;
       z-index: 1;
       border: none;
-      display:none;
-     
+      display: none;
+
     }
 
 
@@ -136,6 +137,7 @@
       80% {
         background-color: rgb(1, 54, 54);
       }
+
       100% {
         background-color: teal;
       }
@@ -143,53 +145,59 @@
 
     @media screen and (max-width:600px) {
       #MENU {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 40%;
-      height: 100%;
-      display: none;
-      z-index: 2;
-    }
-      #BTN8{
-        position:absolute;
-      right: 2%;
-      margin-top: -15%;
-  
-      color:white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display:none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 40%;
+        height: 100%;
+        display: none;
+        z-index: 2;
       }
-      #BTN4{
-        position:absolute;
-      right: 2%;
-      margin-top: -15%;
-  
-      color:white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display:none;
+
+      #BTN8 {
+        position: absolute;
+        right: 2%;
+        margin-top: -15%;
+
+        color: white;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+        border: none;
+        display: none;
       }
+
+      #BTN4 {
+        position: absolute;
+        right: 2%;
+        margin-top: -15%;
+
+        color: white;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+        border: none;
+        display: none;
+      }
+
       #recordButton {
-      position: fixed;
-      bottom: 7%;
-      left: 36.5%;
-    }
-      #BTN2,#BTN7{
+        position: fixed;
+        bottom: 7%;
+        left: 36.5%;
+      }
+
+      #BTN2,
+      #BTN7 {
         margin-top: -10%;
         margin-left: 37.5%;
       }
+
       #BTN1 {
         position: inherit;
         left: 0;
       }
 
-     }
+    }
   </style>
 </head>
 
@@ -200,332 +208,386 @@
   <!-- Page Container -->
   <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
     <!-- The Grid -->
-    <% if(messages.message1) {%> 
-    <div id="message1Id" style="width:50%;position:absolute;right:2%; top:5%" class="w3-panel w3-teal w3-card w3-animate-right ">
-      <span
-          onclick="document.getElementById('message1Id').style.display='none';"
+    <% if(messages.message1) {%>
+      <div id="message1Id" style="width:50%;position:absolute;right:2%; top:5%"
+        class="w3-panel w3-teal w3-card w3-animate-right ">
+        <span onclick="document.getElementById('message1Id').style.display='none';"
           class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-       <h3><%=messages.message1%></h3>
+        <h3>
+          <%=messages.message1%>
+        </h3>
       </div>
-     <% }%>
-    <div class="w3-row">
-      <!-- Left Column -->
-      <div id="MENU" class="w3-card w3-col m3 w3-teal w3-animate-left">
-        <!-- Profile -->
-        <% if(user){%>
-        <span
-          onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
-          class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-        <img src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      <% }%>
+        <div class="w3-row">
+          <!-- Left Column -->
+          <div id="MENU" class="w3-card w3-col m3 w3-teal w3-animate-left">
+            <!-- Profile -->
+            <% if(user){%>
+              <span
+                onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+              <img src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
 
-        <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
-          class=" w3-card w3-white w3-round w3-margin ">
-         
-          <h6>Story Zawe </h6>
-          <br>
-        </div>
-        <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-          class=" w3-card w3-white w3-round w3-margin ">
-          <h6>Zumvishwe</h6>
-          <br>
-        </div>
-        <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-          class=" w3-card w3-white w3-round w3-margin ">
-          <h6>Zakunzwe</h6>
-          <br>
-        </div>
-        
+              <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
+                class=" w3-card w3-white w3-round w3-margin ">
 
-        <a></a>
-        <a></a>
-        <a></a>
-        <a></a>
-        <a></a>
-
-        <div id="BTN1">
-          
-
-         <a href="/refferal"> <button  id="BTN6" style="background-color: rgb(0, 77, 77); " class="w3-center w3-button ">
-            <b>KORERA CASH</b>
-          </button></a>
-          <button onclick="ChangeToStories()" id="BTN5" style="background-color: rgb(0, 77, 77); display:none" class="w3-center w3-button ">
-            <b>Umva Stories</b>
-          </button>
-
-
-        </div>
-
-
-       
-      </div>
-
-
-
-    
-      <% } %> 
-      <!-- End Left Column -->
-    </div>
-
-    <!-- Middle Column -->
-    <div style="width:100%;" class="w3-col m7">
-       <div style="display:block" id="stories">
-        <%if (stories.length>0){%>
-          <%stories.forEach(element => {%>
-            
-         <div  id="id0222<%=element.UserName%>" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
-            <span
-            onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none'"
-            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-            <center>
-          <h3 >Stories by <%=element.UserName%></h3>
-          <div>
-           <h6>espode 1  Umujinya Wumurandura Nzuzi</h6>
-          </div>
-          </div>
-          </center>
-         </div>
-        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'" src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor" style="width:60px">
-        <span class="w3-right w3-opacity">1 min</span>
-        <h4 ><%=element.UserName%></h4><br>
-        <hr class="w3-clear">
-        <h6>Title</h6>
-        <br>
-        <audio id="audio" style="z-index:0" controls width="100%" src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
-       <br>
-        <div style=" width: 100%;">
-       <button  onclick=" let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();" type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i id="<%=element.id%>"><%=element.likes.length%></i></button>
-        <button onclick="document.getElementById('CommentSect').style.display='block'" type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment  <%=element.comments.length%></button>
-        <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i> Yumvishwe <%=element.views%> </div>
-      </div>
-      <div style="display: none;" id="CommentSect" class="w3-card">
-        <button
-          style="margin-left: 90%;margin-top: 2%;"
-          onclick="document.getElementById('CommentSect').style.display='none'"
-          class="w3-button  w3-transparent " title="Close Modal">×</button>
-        <center>
-          <form id="commentForm<%=element.id%>" action="/addComments" method="post" class="w3-container w3-margin">
-            <div class="w3-section">
-           <b> 
-            <br>
-            <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text" name="identity" value="<%=element.userId%>"/>
-            <b><label>Comment Yawe</label></b>
-            <textarea style="background-color: rgb(169, 224, 224);" class="w3-input w3-border w3-margin-bottom" type="text" name="comment" placeholder="----"></textarea>
-          </div>
-          <button class="w3-button  w3-teal " >Tera comment</button>
-          </form>
-          <form id="likeForm<%=element.id%>" method="post" action="/addLikes"  class="w3-container w3-margin">
-            <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text" name="identity" value="<%=element.userId%>"/>
-          </form>
-        </center>
-        <center> <button id="somaCommentBTN" onclick="document.getElementById('SomaCommnent').style.display='block';" class="w3-button  w3-teal w3-margin-bottom" >Somma comment</button></center>
-        <div id="SomaCommnent" style="display: none;" class="w3-container w3-card w3-margin-bottom">
-  
-          <img src="" alt="Avatar" class="w3-left w3-circle w3-margin-left" style="width:60px">
-          <h6 class="w3-right w3-margin-right">Izina</h6>    
-          <br>
-          <br>
-          <center><p class="w3-p">
-            comment
-          </p></center> 
-         
-         </div> 
-      </div>
-
-      </div>
-      <% });%>
-        <%}%>
-      
-      </div>
-      <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
-
-        <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
-        <p>Ubwishyu Bwa Subscription :<b style="color:red">Nturishyura</b></p>
-        <div class="w3-card w3-round w3-margin w3-teal">
-          <b>Link</b>
-        </div>
-        <button onclick="document.getElementById('id11').style.display='block'" style="position:absolute;top:2%;right:2%" class="w3-button w3-card w3-round w3-margin w3-teal">
-         Ohereza whatsapp views
-        </button>
-
-        <div  id="id02" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <span
-            onclick="ChangeToStories()"
-            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-            <center>
-              <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
-            </center>
-            <center>
-            <form method="post" onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'" id="formPayment"  class="w3-container w3-margin">
-              <div class="w3-section">
-             <b> <lable>Phone yawe</lable></b>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="078(MTN GUSA)-----"/>
-              <br>
-              
-              <b><label>hitamo package wishyura</label></b>
-              <select onchange="myFunction(this.value)" id="select" class="w3-input w3-border w3-teal"  name="package" id="selectionOfPackage">
-                <option value="1500">1500 RWF  kucyumweru</option>
-                <option value="5000">5000 RWF  kukwezi</option>
-                <option value="50000">50000 RWF  Kumwaka</option>
-              </select>
-            </div>
-
-            <button class="w3-button w3-block w3-teal w3-section w3-padding" >ISHYURA</button>
-            </form>
-           </center>
-      
-          </div>
-        </div>
-        <div  id="id11" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <span
-            onclick="document.getElementById('id11').style.display='none'"
-            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-            <center>
-              <h5 style="color:rgb(0, 68, 68)"><b>Uzuzamo Views wagize na screenshot</b></h5>
-            </center>
-            <center>
-            <form enctype="multipart/form-data"  method="post" action="/FromWhatsapp"  id="formPaymentW"  class="w3-container w3-margin">
-              <div class="w3-section">
-             <b> <lable>Views wagize</lable></b>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" name="Views" placeholder="Views Wagize" />
-              <br>
-              <b> <lable>ScreenShot</lable></b>
-              <input class="w3-input w3-border w3-margin-bottom" name="image" type="file"/>
-              <br>
-              
-            </div>
-            <button class="w3-button w3-block w3-teal w3-section w3-padding" >Komeza</button>
-            </form>
-           </center>
-      
-          </div>
-        </div>
-        <div  id="id04"  class="w3-modal">
-          <span
-            onclick="ChangeToStories();document.getElementById(id04).style.display='none'"
-            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-           
-           <% if (user) {%> 
-        <% if(payment.PaymentStatus=="payed") {%> 
-         
-            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-              <center>
-                <h5 style="color:rgb(0, 68, 68)"><b>Murakaza neza Kuri <h2>Korera Cash</h2></b></h5>
-                <button onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza</button>
-              </center>
-             
-        
-            </div>
-           
-      <%}else{%>
-        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-          <center>
-            <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
-            <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
-          </center>
-          </div>
-                
-                <% } %> 
-              <% } %> 
-          </div>
-        </div>
-        <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
-          <center><h1>Advertise with Us</h1></center>
-          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-           <center><h3>Advertise your youtube links with us (submit the link bellow)</h3></center>
-           <div class="w3-container w3-card w3-teal w3-round w3-margin"><br>
-            <form action="">
-                <div class="w3-section">
-                <b><label>Your link</label></b>
-                <input class="w3-input w3-border w3-margin-bottom" type="text" name="link" placeholder="https://www.youtube.com/watch?v=-----"/>
+                <h6>Story Zawe </h6>
+                <br>
               </div>
-              <button class="w3-button w3-block w3-teal w3-section w3-padding" >kanda gukomeza</button>
-              
-            </form>
+              <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
+                class=" w3-card w3-white w3-round w3-margin ">
+                <h6>Zumvishwe</h6>
+                <br>
+              </div>
+              <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
+                class=" w3-card w3-white w3-round w3-margin ">
+                <h6>Zakunzwe</h6>
+                <br>
+              </div>
+
+
+              <a></a>
+              <a></a>
+              <a></a>
+              <a></a>
+              <a></a>
+
+              <div id="BTN1">
+
+
+                <a href="/refferal"> <button id="BTN6" style="background-color: rgb(0, 77, 77); "
+                    class="w3-center w3-button ">
+                    <b>KORERA CASH</b>
+                  </button></a>
+                <button onclick="ChangeToStories()" id="BTN5" style="background-color: rgb(0, 77, 77); display:none"
+                  class="w3-center w3-button ">
+                  <b>Umva Stories</b>
+                </button>
+
+
+              </div>
+
+
+
           </div>
-           <center><h3>Advertise On Whatsapp statuses of Our Traffic(upload your image)</h3></center>
-           <div class="w3-container w3-card w3-teal w3-round w3-margin"><br>
-            <form action="">
-              <div class="w3-section">
-              <b><label>Your image</label></b>
-              <input class="w3-input w3-border w3-margin-bottom" type="file" name="link" placeholder="https://www.youtube.com/watch?v=-----"/>
-            </div>
-            <button class="w3-button w3-block w3-teal w3-section w3-padding" >kanda gukomeza</button>
-            
-          </form>
-           </div>
-          </div>
-          </div>
-        <% if (user){%>
-          <% if (messages.messageURL){%>
-        <div  id="id09" style="display: block;"  class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:450px">
-          <iframe src="<%=messages.messageURL%>" style="height:500px;width:450px;border:none; background-color: aliceblue;" ></iframe>
-         <center> <a href="/payment_callback/<%=user.userName%> "><button class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza Niba Wishyuye</button></a> </center>
-          </div>
-         </div>
-          <%}%> 
-          <%}%> 
-        <div  id="id06"  class="w3-modal w3-padding">
-          <span
-            onclick="document.getElementById('id06').style.display='none'"
-            class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-           
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <center>
-              <h5 style="color:rgb(0, 68, 68)"><b>korera whatsapp shares</b></h5>
-           <form id="phoneWhatsapp" action="">
-            <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="Nimero iri kuri whatsapp gusa-----"/>
-           </form>
-           <button id="whatssapMoney" class="w3-button w3-teal">next</button>
-              <p><b>uko bakorera whatsapp  shares</b>:
-                <ol>
-                  <li>shyiramo nimero haruguru</li>
-                  <li>kanda ahanditse 'next'</li>
-                  <li>kanda ahanditse share kugirango usharinge ifoto ubona</li> 
-                  <li>shyira ifoto kuri status</li>
-                  <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button yanditseho "ohereza views"</li>
-                  <li>buri foto iri kuri status  view yayo ibarirwa amafaranga 1 gusa</li>
-                </ol>
-                <p>
-                <p>
-                  <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
+
+
+
+
+          <% } %>
+            <!-- End Left Column -->
+        </div>
+
+        <!-- Middle Column -->
+        <div style="width:100%;" class="w3-col m7">
+          <div style="display:block" id="stories">
+            <%if (stories.length>0){%>
+              <%stories.forEach(element=> {%>
+
+                <div id="id0222<%=element.UserName%>" class="w3-modal">
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
+                    <span onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none'"
+                      class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                    <center>
+                      <h3>Stories by <%=element.UserName%>
+                      </h3>
+                      <div>
+                        <h6>espode 1 Umujinya Wumurandura Nzuzi</h6>
+                      </div>
+                  </div>
+                  </center>
+                </div>
+                <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                  <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'"
+                    src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
+                    style="width:60px">
+                  <span class="w3-right w3-opacity">1 min</span>
+                  <h4>
+                    <%=element.UserName%>
+                  </h4><br>
+                  <hr class="w3-clear">
+                  <h6>Title</h6>
                   <br>
-                  <b>Views Mwagize zemezwa nyuma yi cyumweru</b>
-                </p>  
-  
+                  <audio id="audio" style="z-index:0" controls width="100%"
+                    src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+                  <br>
+                  <div style=" width: 100%;">
+                    <button
+                      onclick=" let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
+                      type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i
+                        id="<%=element.id%>">
+                        <%=element.likes.length%>
+                      </i></button>
+                    <button onclick="document.getElementById('CommentSect').style.display='block'" type="p"
+                      class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment
+                      <%=element.comments.length%></button>
+                    <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
+                      Yumvishwe <%=element.views%>
+                    </div>
+                  </div>
+                  <div style="display: none;" id="CommentSect" class="w3-card">
+                    <button style="margin-left: 90%;margin-top: 2%;"
+                      onclick="document.getElementById('CommentSect').style.display='none'"
+                      class="w3-button  w3-transparent " title="Close Modal">×</button>
+                    <center>
+                      <form id="commentForm<%=element.id%>" action="/addComments" method="post"
+                        class="w3-container w3-margin">
+                        <div class="w3-section">
+                          <b>
+                            <br>
+                            <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text"
+                              name="identity" value="<%=element.userId%>" />
+                            <b><label>Comment Yawe</label></b>
+                            <textarea style="background-color: rgb(169, 224, 224);"
+                              class="w3-input w3-border w3-margin-bottom" type="text" name="comment"
+                              placeholder="----"></textarea>
+                        </div>
+                        <button class="w3-button  w3-teal ">Tera comment</button>
+                      </form>
+                      <form id="likeForm<%=element.id%>" onsubmit="setTimeout(()=>{
+            window.stop()
+            alert('like yabaye')
+           },6000)" method="post" action="/addLikes" class="w3-container w3-margin">
+                        <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text"
+                          name="identity" value="<%=element.userId%>" />
+                      </form>
+                    </center>
+                    <center> <button id="somaCommentBTN"
+                        onclick="document.getElementById('SomaCommnent').style.display='block';"
+                        class="w3-button  w3-teal w3-margin-bottom">Somma comment</button></center>
+                    <div id="SomaCommnent" style="display: none;" class="w3-container w3-card w3-margin-bottom">
+
+                      <img src="" alt="Avatar" class="w3-left w3-circle w3-margin-left" style="width:60px">
+                      <h6 class="w3-right w3-margin-right">Izina</h6>
+                      <br>
+                      <br>
+                      <center>
+                        <p class="w3-p">
+                          comment
+                        </p>
+                      </center>
+
+                    </div>
+                  </div>
+
+                </div>
+                <% });%>
+                  <%}%>
+
+          </div>
+          <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
+
+            <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
+            <p>Ubwishyu Bwa Subscription :<b style="color:red">Nturishyura</b></p>
+            <div class="w3-card w3-round w3-margin w3-teal">
+              <b>Link</b>
+            </div>
+            <button onclick="document.getElementById('id11').style.display='block'"
+              style="position:absolute;top:2%;right:2%" class="w3-button w3-card w3-round w3-margin w3-teal">
+              Ohereza whatsapp views
+            </button>
+
+            <div id="id02" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                <span onclick="ChangeToStories()" class="w3-button w3-xlarge w3-transparent w3-display-topright"
+                  title="Close Modal">×</span>
+                <center>
+                  <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
+                </center>
+                <center>
+                  <form method="post"
+                    onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'"
+                    id="formPayment" class="w3-container w3-margin">
+                    <div class="w3-section">
+                      <b>
+                        <lable>Phone yawe</lable>
+                      </b>
+                      <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                        placeholder="078(MTN GUSA)-----" />
+                      <br>
+
+                      <b><label>hitamo package wishyura</label></b>
+                      <select onchange="myFunction(this.value)" id="select" class="w3-input w3-border w3-teal"
+                        name="package" id="selectionOfPackage">
+                        <option value="1500">1500 RWF kucyumweru</option>
+                        <option value="5000">5000 RWF kukwezi</option>
+                        <option value="50000">50000 RWF Kumwaka</option>
+                      </select>
+                    </div>
+
+                    <button class="w3-button w3-block w3-teal w3-section w3-padding">ISHYURA</button>
+                  </form>
+                </center>
+
+              </div>
+            </div>
+            <div id="id11" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                <span onclick="document.getElementById('id11').style.display='none'"
+                  class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                <center>
+                  <h5 style="color:rgb(0, 68, 68)"><b>Uzuzamo Views wagize na screenshot</b></h5>
+                </center>
+                <center>
+                  <form enctype="multipart/form-data" method="post" action="/FromWhatsapp" id="formPaymentW"
+                    class="w3-container w3-margin">
+                    <div class="w3-section">
+                      <b>
+                        <lable>Views wagize</lable>
+                      </b>
+                      <input class="w3-input w3-border w3-margin-bottom" type="text" name="Views"
+                        placeholder="Views Wagize" />
+                      <br>
+                      <b>
+                        <lable>ScreenShot</lable>
+                      </b>
+                      <input class="w3-input w3-border w3-margin-bottom" name="image" type="file" />
+                      <br>
+
+                    </div>
+                    <button class="w3-button w3-block w3-teal w3-section w3-padding">Komeza</button>
+                  </form>
+                </center>
+
+              </div>
+            </div>
+            <div id="id04" class="w3-modal">
+              <span onclick="ChangeToStories();document.getElementById(id04).style.display='none'"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+
+              <% if (user) {%>
+                <% if(payment.PaymentStatus=="payed" ) {%>
+
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                    <center>
+                      <h5 style="color:rgb(0, 68, 68)"><b>Murakaza neza Kuri <h2>Korera Cash</h2></b></h5>
+                      <button onclick="document.getElementById('id04').style.display='none'"
+                        class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza</button>
+                    </center>
+
+
+                  </div>
+
+                  <%}else{%>
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                      <center>
+                        <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
+                        <button
+                          onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'"
+                          class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
+                      </center>
+                    </div>
+
+                    <% } %>
+                      <% } %>
+            </div>
+          </div>
+          <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
+            <center>
+              <h1>Advertise with Us</h1>
             </center>
-           
-      
-          </div>
-        </div>
-        <div  id="id07"  class="w3-modal w3-padding">
-        
-           
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-           <center> <img style="width:100%;height:300px;" src="" alt=""></center>
-             <button class="w3-button w3-teal w3-margin-bottom">share</button> 
-          </div>
-        </div>
-      </div>
+            <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+              <center>
+                <h3>Advertise your youtube links with us (submit the link bellow)</h3>
+              </center>
+              <div class="w3-container w3-card w3-teal w3-round w3-margin"><br>
+                <form action="">
+                  <div class="w3-section">
+                    <b><label>Your link</label></b>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="link"
+                      placeholder="https://www.youtube.com/watch?v=-----" />
+                  </div>
+                  <button class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
 
-      <!-- End Middle Column -->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </div>
+                </form>
+              </div>
+              <center>
+                <h3>Advertise On Whatsapp statuses of Our Traffic(upload your image)</h3>
+              </center>
+              <div class="w3-container w3-card w3-teal w3-round w3-margin"><br>
+                <form action="">
+                  <div class="w3-section">
+                    <b><label>Your image</label></b>
+                    <input class="w3-input w3-border w3-margin-bottom" type="file" name="link"
+                      placeholder="https://www.youtube.com/watch?v=-----" />
+                  </div>
+                  <button class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
 
-    <!-- Right C
+                </form>
+              </div>
+            </div>
+          </div>
+          <% if (user){%>
+            <% if (messages.messageURL){%>
+              <div id="id09" style="display: block;" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:450px">
+                  <iframe src="<%=messages.messageURL%>"
+                    style="height:500px;width:450px;border:none; background-color: aliceblue;"></iframe>
+                  <center> <a href="/payment_callback/<%=user.userName%> "><button
+                        class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza Niba Wishyuye</button></a>
+                  </center>
+                </div>
+              </div>
+              <%}%>
+                <%}%>
+                  <div id="id06" class="w3-modal w3-padding">
+                    <span onclick="document.getElementById('id06').style.display='none'"
+                      class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                      <center>
+                        <h5 style="color:rgb(0, 68, 68)"><b>korera whatsapp shares</b></h5>
+                        <form id="phoneWhatsapp" action="">
+                          <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                            placeholder="Nimero iri kuri whatsapp gusa-----" />
+                        </form>
+                        <button id="whatssapMoney" class="w3-button w3-teal">next</button>
+                        <p><b>uko bakorera whatsapp shares</b>:
+                        <ol>
+                          <li>shyiramo nimero haruguru</li>
+                          <li>kanda ahanditse 'next'</li>
+                          <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
+                          <li>shyira ifoto kuri status</li>
+                          <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button
+                            yanditseho "ohereza views"</li>
+                          <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
+                        </ol>
+                        <p>
+                        <p>
+                          <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
+                          <br>
+                          <b>Views Mwagize zemezwa nyuma yi cyumweru</b>
+                        </p>
+
+                      </center>
+
+
+                    </div>
+                  </div>
+                  <div id="id07" class="w3-modal w3-padding">
+
+
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                      <center> <img style="width:100%;height:300px;" src="" alt=""></center>
+                      <button class="w3-button w3-teal w3-margin-bottom">share</button>
+                    </div>
+                  </div>
+        </div>
+
+        <!-- End Middle Column -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+  </div>
+
+  <!-- Right C
     
   <!-- End Grid -->
   </div>
@@ -533,210 +595,225 @@
   <!-- End Page Container -->
   </div>
   <br>
-  <% if (user)  {%>
-  <div id="id01"  class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-      <center><h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1></center>
-      <center>
-        <h2 style="color:rgb(0, 68, 68)"><b>Komeza Na </b></h2>
-      </center>
-      <div>
-        <center>
-          <i style="font-size: 10vw; color:teal; " class="fa fa-facebook-official w3-hover-opacity"></i>
-          <br>
-          <h2 style="color:rgb(0, 68, 68)"><b>CYANGWA NA </b>
-          </h2>
-          <br>
-          <i style="font-size: 10vw; color:teal; " class="fa fa-google w3-hover-opacity"></i>
-          <br>
-          <br>
-        </center>
-      </div>
-
-
-    </div>
-  </div>
-  <%} else{%>
-    <div id="id01" style="display: block;" class="w3-modal">
+  <% if (user) {%>
+    <div id="id01" class="w3-modal">
       <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-        <center><h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1></center>
+        <center>
+          <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
+        </center>
         <center>
           <h2 style="color:rgb(0, 68, 68)"><b>Komeza Na </b></h2>
         </center>
         <div>
           <center>
-
+            <i style="font-size: 10vw; color:teal; " class="fa fa-facebook-official w3-hover-opacity"></i>
             <br>
-           <a href="/auth/google"> <i style="font-size: 10vw; color:teal; " class="fa fa-google w3-hover-opacity"></i></a>
+            <h2 style="color:rgb(0, 68, 68)"><b>CYANGWA NA </b>
+            </h2>
+            <br>
+            <i style="font-size: 10vw; color:teal; " class="fa fa-google w3-hover-opacity"></i>
             <br>
             <br>
           </center>
         </div>
-  
-  
+
+
       </div>
     </div>
-    <%}%>
-  <div id="id03" class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-      <span
-      onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block'"
-      class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-      <center>
-        <h2 style="color:rgb(0, 68, 68)"><b>Bikuza</b></h2>
-      </center>
-      <div>
-        <center>
-          <form method="post" action="/flutterWaveWithDraw"  class="w3-container w3-margin">
-            <div class="w3-section">
-           <b> <lable>Phone yawe</lable></b>
-            <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN" placeholder="078(MTN GUSA)-----"/>
-            <br>
-            <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
-            <input class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----"/>
+    <%} else{%>
+      <div id="id01" style="display: block;" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+          <center>
+            <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
+          </center>
+          <center>
+            <h2 style="color:rgb(0, 68, 68)"><b>Komeza Na </b></h2>
+          </center>
+          <div>
+            <center>
+
+              <br>
+              <a href="/auth/google"> <i style="font-size: 10vw; color:teal; "
+                  class="fa fa-google w3-hover-opacity"></i></a>
+              <br>
+              <br>
+            </center>
           </div>
-          <button class="w3-button w3-block w3-teal w3-section w3-padding" >kanda gukomeza</button>
-          </form>
-        </center>
+
+
+        </div>
       </div>
+      <%}%>
+        <div id="id03" class="w3-modal">
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <span
+              onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block'"
+              class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+            <center>
+              <h2 style="color:rgb(0, 68, 68)"><b>Bikuza</b></h2>
+            </center>
+            <div>
+              <center>
+                <form method="post" action="/flutterWaveWithDraw" class="w3-container w3-margin">
+                  <div class="w3-section">
+                    <b>
+                      <lable>Phone yawe</lable>
+                    </b>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
+                      placeholder="078(MTN GUSA)-----" />
+                    <br>
+                    <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
+                  </div>
+                  <button class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
+                </form>
+              </center>
+            </div>
 
 
-    </div>
-  </div>
- 
+          </div>
+        </div>
 
-  <!-- Footer -->
 
-  <button id="recordButton"  class="w3-card w3-circle w3-teal">
-    <b>KANDA UTUBWIRE</b>
-  </button>
+        <!-- Footer -->
 
-  
-    
+        <button id="recordButton" class="w3-card w3-circle w3-teal">
+          <b>KANDA UTUBWIRE</b>
+        </button>
 
-  </button>
-  <button id="MENUBTN"
-    onclick="document.getElementById('MENU').style.display='block';document.getElementById('MENUBTN').style.display='none'"
-    style="border:none;position:fixed;top:2%;left:2%;width:60px;height:60px; z-index:1;"
-    class="w3-card w3-circle w3-teal  w3-animate-zoom">
-    <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
-    </p>
-  </button>
 
-  <footer style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
-    class="w3-card w3-container w3-theme-d3 ">
-    <button id="BTN4" onclick="document.getElementById('id03').style.display='block'" class="w3-card w3-circle w3-teal">
-      <b>BIKUZA</b></button>
-    <button id="BTN8" onclick="document.getElementById('id06').style.display='block'" class="w3-card w3-circle w3-teal">
-        <b>Korera whatsapp shares</b> </button>  
-    <button id="BTN2"  class="w3-card w3-circle w3-animate-zoom">
-      <b>TURIKUMVA</b>
-      <b  id="time67"></b>
-    </button>
-    <button id="BTN7"  class="w3-card w3-circle w3-animate-zoom">
-      <b>Upload</b>
-    </button>
-    
-    <br>
-    <p >
-      <br>
-     <center> <input style="display:none;width:80%" placeholder="Umutwe wa episode na nimero yayo" type="text" name="Title" id="Title"/></center>
-    <center>
-     <ul style="padding-bottom: 30px; display:none;list-style: none;"  id="recordingsList">
-   
-     </ul>
-    </center>
- 
-    </p>
-   
-    <div style="display:none ;width:100%;position:absolute;top:0;" id="ReacorderBTN">
-    <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:4%;font-size: 40px; " class="fa fa-stop"></i>
-    <i id="pauseButton" onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';" style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px; " class="fa fa-pause"></i>
-    <i id="pauseButton2" onclick="pauseRecording()" style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px;display:none; " class="fa fa-play"></i>
-    </div>
-    <div style="display:none" id="KashHeading">
-      <center>
-    <h4 >clicks wabonye:</h4>
-    <h4 >Views zawe zemewe wabonye:</h4>
-    <h4  >amafaranga ugeje:</h4>
-  </center>
 
-    
-    <br>
-  </div>
 
-    <h4 style="position: fixed;bottom:0.2%;left:1%;"><b>DutereStory.Com</b></h4>
-  </footer>
-  <script src="../static/recorder/app.js"></script>
-  <script src="../static/recorder/recorder.js"></script>
+        </button>
+        <button id="MENUBTN"
+          onclick="document.getElementById('MENU').style.display='block';document.getElementById('MENUBTN').style.display='none'"
+          style="border:none;position:fixed;top:2%;left:2%;width:60px;height:60px; z-index:1;"
+          class="w3-card w3-circle w3-teal  w3-animate-zoom">
+          <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
+          </p>
+        </button>
 
-  <script>
-// Accordio
-setInterval(function() {document.querySelectorAll('#audio').load()}, 120000);
- function submitLikes(){
-  setTimeout(()=>{
-  window.stop()
-  alert('like yabaye')
- },6000)
-  document.getElementById('likeForm').submit();
- 
+        <footer
+          style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
+          class="w3-card w3-container w3-theme-d3 ">
+          <button id="BTN4" onclick="document.getElementById('id03').style.display='block'"
+            class="w3-card w3-circle w3-teal">
+            <b>BIKUZA</b></button>
+          <button id="BTN8" onclick="document.getElementById('id06').style.display='block'"
+            class="w3-card w3-circle w3-teal">
+            <b>Korera whatsapp shares</b> </button>
+          <button id="BTN2" class="w3-card w3-circle w3-animate-zoom">
+            <b>TURIKUMVA</b>
+            <b id="time67"></b>
+          </button>
+          <button id="BTN7" class="w3-card w3-circle w3-animate-zoom">
+            <b>Upload</b>
+          </button>
 
- }
- 
-  function myFunction(){
-    var x = document.getElementById("select").value;
-let y;
-  if (x==1500){
-    y='/flutterWaveSubWeek'
-  }else if(x==5000){
-   y='/flutterWaveSubMonth';
-  }else if(x==50000){
-     y='/flutterWaveSubYear';
-  }
-    document.getElementById("formPayment").action=y;
+          <br>
+          <p>
+            <br>
+            <center> <input style="display:none;width:80%" placeholder="Umutwe wa episode na nimero yayo" type="text"
+                name="Title" id="Title" /></center>
+            <center>
+              <ul style="padding-bottom: 30px; display:none;list-style: none;" id="recordingsList">
 
-  }
-   let whatssapMoney=document.getElementById('whatssapMoney');
-   whatssapMoney.addEventListener('click',()=>{
-      document.getElementById('id07').style.display='block';
-      document.getElementById('id06').style.display='block';
-   })
-  function ChangeToKash(){
-    
-    document.getElementById('id04').style.display='block'
-    document.getElementById('KashHeading').style.display='block'
-    document.getElementById('BTN4').style.display='block'
-    document.getElementById('BTN8').style.display='block'
-    document.getElementById('KORERAKASH').style.display='block'
-    document.getElementById('BTN5').style.display='block'
-    document.getElementById('MENUBTN').style.display='block'
-    document.getElementById('BTN6').style.display='none'
-    document.getElementById('stories').style.display='none'
-    document.getElementById('ReacorderBTN').style.display='none'
-    document.getElementById('BTN2').style.display='none'
-    document.getElementById('recordButton').style.display='none'
-    document.getElementById('MENU').style.display='none'
-    document.getElementById('recorded').style.display='none'
-    document.getElementById('BTN7').style.display='none'
+              </ul>
+            </center>
 
-  }
-  function ChangeToStories(){
-    document.getElementById('KashHeading').style.display='none'
-    document.getElementById('BTN4').style.display='none'
-    document.getElementById('KORERAKASH').style.display='none'
-    document.getElementById('BTN5').style.display='none'
-    document.getElementById('MENUBTN').style.display='block'
-    document.getElementById('BTN6').style.display='block'
-    document.getElementById('stories').style.display='block'
-    document.getElementById('ReacorderBTN').style.display='none'
-    document.getElementById('BTN2').style.display='none'
-    document.getElementById('BTN8').style.display='none'
-    document.getElementById('recordButton').style.display='block'
-    document.getElementById('MENU').style.display='none'
-    document.getElementById('id02').style.display='none'
-  }
-  </script>
-    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+          </p>
+
+          <div style="display:none ;width:100%;position:absolute;top:0;" id="ReacorderBTN">
+            <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:4%;font-size: 40px; "
+              class="fa fa-stop"></i>
+            <i id="pauseButton"
+              onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';"
+              style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px; "
+              class="fa fa-pause"></i>
+            <i id="pauseButton2" onclick="pauseRecording()"
+              style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px;display:none; "
+              class="fa fa-play"></i>
+          </div>
+          <div style="display:none" id="KashHeading">
+            <center>
+              <h4>clicks wabonye:</h4>
+              <h4>Views zawe zemewe wabonye:</h4>
+              <h4>amafaranga ugeje:</h4>
+            </center>
+
+
+            <br>
+          </div>
+
+          <h4 style="position: fixed;bottom:0.2%;left:1%;"><b>DutereStory.Com</b></h4>
+        </footer>
+        <script src="../static/recorder/app.js"></script>
+        <script src="../static/recorder/recorder.js"></script>
+
+        <script>
+          // Accordio
+          setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
+          function submitLikes() {
+
+            document.getElementById('likeForm').submit();
+
+
+          }
+
+          function myFunction() {
+            var x = document.getElementById("select").value;
+            let y;
+            if (x == 1500) {
+              y = '/flutterWaveSubWeek'
+            } else if (x == 5000) {
+              y = '/flutterWaveSubMonth';
+            } else if (x == 50000) {
+              y = '/flutterWaveSubYear';
+            }
+            document.getElementById("formPayment").action = y;
+
+          }
+          let whatssapMoney = document.getElementById('whatssapMoney');
+          whatssapMoney.addEventListener('click', () => {
+            document.getElementById('id07').style.display = 'block';
+            document.getElementById('id06').style.display = 'block';
+          })
+          function ChangeToKash() {
+
+            document.getElementById('id04').style.display = 'block'
+            document.getElementById('KashHeading').style.display = 'block'
+            document.getElementById('BTN4').style.display = 'block'
+            document.getElementById('BTN8').style.display = 'block'
+            document.getElementById('KORERAKASH').style.display = 'block'
+            document.getElementById('BTN5').style.display = 'block'
+            document.getElementById('MENUBTN').style.display = 'block'
+            document.getElementById('BTN6').style.display = 'none'
+            document.getElementById('stories').style.display = 'none'
+            document.getElementById('ReacorderBTN').style.display = 'none'
+            document.getElementById('BTN2').style.display = 'none'
+            document.getElementById('recordButton').style.display = 'none'
+            document.getElementById('MENU').style.display = 'none'
+            document.getElementById('recorded').style.display = 'none'
+            document.getElementById('BTN7').style.display = 'none'
+
+          }
+          function ChangeToStories() {
+            document.getElementById('KashHeading').style.display = 'none'
+            document.getElementById('BTN4').style.display = 'none'
+            document.getElementById('KORERAKASH').style.display = 'none'
+            document.getElementById('BTN5').style.display = 'none'
+            document.getElementById('MENUBTN').style.display = 'block'
+            document.getElementById('BTN6').style.display = 'block'
+            document.getElementById('stories').style.display = 'block'
+            document.getElementById('ReacorderBTN').style.display = 'none'
+            document.getElementById('BTN2').style.display = 'none'
+            document.getElementById('BTN8').style.display = 'none'
+            document.getElementById('recordButton').style.display = 'block'
+            document.getElementById('MENU').style.display = 'none'
+            document.getElementById('id02').style.display = 'none'
+          }
+        </script>
+        <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 
 </body>
 
