@@ -313,7 +313,7 @@
                   <br>
                   <div style=" width: 100%;">
                     <button
-                      onclick=" setTimeout((e)=>{ alert('like yabaye')},6000); let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
+                      onclick=" setTimeout((e)=>{ Window.stop()},6000); let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
                       type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i
                         id="<%=element.id%>">
                         <%=element.likes.length%>
