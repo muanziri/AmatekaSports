@@ -344,8 +344,7 @@
                         </div>
                         <button class="w3-button  w3-teal ">Tera comment</button>
                       </form>
-                      <form id="likeForm<%=element.id%>" onsubmit="setTimeout(()=>{
-            window.stop()
+                      <form id="likeForm<%=element.id%>" onsubmit="setTimeout((e)=>{
             alert('like yabaye')
            },6000)" method="post" action="/addLikes" class="w3-container w3-margin">
                         <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text"
