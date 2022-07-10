@@ -313,7 +313,7 @@
                   <br>
                   <div style=" width: 100%;">
                     <button
-                      onclick=" let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
+                      onclick=" setTimeout((e)=>{ alert('like yabaye')},6000); let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
                       type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i
                         id="<%=element.id%>">
                         <%=element.likes.length%>
@@ -344,9 +344,7 @@
                         </div>
                         <button class="w3-button  w3-teal ">Tera comment</button>
                       </form>
-                      <form id="likeForm<%=element.id%>" onsubmit="setTimeout((e)=>{
-            alert('like yabaye')
-           },6000)" method="post" action="/addLikes" class="w3-container w3-margin">
+                      <form id="likeForm<%=element.id%>" onsubmit="" method="post" action="/addLikes" class="w3-container w3-margin">
                         <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text"
                           name="identity" value="<%=element.userId%>" />
                       </form>
