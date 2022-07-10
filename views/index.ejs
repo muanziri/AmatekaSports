@@ -675,9 +675,11 @@
 setInterval(function() {document.querySelectorAll('#audio').load()}, 120000);
  function submitLikes(){
   document.getElementById('likeForm').submit();
-  window.stop()
+  
  }
- 
+ setTimeout(()=>{
+  window.stop()
+ },2000)
 
   function myFunction(){
     var x = document.getElementById("select").value;
