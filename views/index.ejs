@@ -674,13 +674,15 @@
 // Accordio
 setInterval(function() {document.querySelectorAll('#audio').load()}, 120000);
  function submitLikes(){
-  document.getElementById('likeForm').submit();
-  
- }
- setTimeout(()=>{
+  setTimeout(()=>{
   window.stop()
+  alert('like yabaye')
  },6000)
+  document.getElementById('likeForm').submit();
+ 
 
+ }
+ 
   function myFunction(){
     var x = document.getElementById("select").value;
 let y;
