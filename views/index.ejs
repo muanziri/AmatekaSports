@@ -203,7 +203,7 @@
 
 <body class="w3-theme-l5">
  <script>
-  setTimeout(()=>{ window.stop()},10000);
+ 
  </script>
 
 
@@ -315,7 +315,7 @@
                   <br>
                   <div style=" width: 100%;">
                     <button
-                      onclick="  let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
+                      onclick=" setTimeout(()=>{ window.stop()},6000);let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
                       type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i
                         id="<%=element.id%>">
                         <%=element.likes.length%>
