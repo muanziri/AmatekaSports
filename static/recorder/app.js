@@ -260,6 +260,8 @@ function createDownloadLink(blob) {
 		fd.append("Title",Title.value);
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
+		fd.delete("audio_data");
+		fd.delete("Title");
 		 
 	 })
 	
