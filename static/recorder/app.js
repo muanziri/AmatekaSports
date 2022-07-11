@@ -205,6 +205,7 @@ function createDownloadLink(blob) {
     
    var recordingsList=document.getElementById("recordingsList")
    var Title=document.getElementById("Title");
+   Title.style.display='block'
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
 	au.setAttribute('id','recorded')
@@ -243,9 +244,7 @@ function createDownloadLink(blob) {
 
 
 	 uploadButton.addEventListener('click',function (events) {
-		document.getElementById("Title2").submit();
-		document.getElementById("Title2").style.display='none';
-		document.getElementById("Title").style.display='none';
+		Title.style.display='none';
 	   uploadButton.style.display='none';
 	   document.getElementById('recorded').style.display='none'
 	   document.getElementById('recordButton').style.display='block'
@@ -257,7 +256,7 @@ function createDownloadLink(blob) {
 	 	};
 	 	var fd=new FormData();
 	 	fd.append("audio_data",blob, filename);
-		// fd.append("Title",Title);
+		fd.append("Title",Title.value);
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
 	 })
