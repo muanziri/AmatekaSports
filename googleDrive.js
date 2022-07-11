@@ -1,6 +1,6 @@
 
 const { google } = require('googleapis');
-const users=require('./model/users')
+const {UserModel}=require('./model/users')
 const recordings=require('./model/recordings')
 const key= require('./duterestory-ecc42c3b6063.json')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
@@ -39,7 +39,8 @@ var jwToken = new google.auth.JWT(
       
        console.log('File Id: ', file.data.id);
        console.log(user.id)
-    users.updateOne({userName:user.userName},{$addToSet:{Recordings:file.data.id}},function (err, docs) {
+    
+       UserModel.updateOne({userName:user.userName},{$addToSet:{Recordings:file.data.id}},function (err, docs) {
       if (err){
           console.log(err)
       }

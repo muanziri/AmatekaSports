@@ -626,7 +626,7 @@
       </div>
     </div>
     <%} else{%>
-      <div id="id01" style="display: block;" class="w3-modal">
+      <div id="id01" style="display: none;" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
           <center>
             <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
@@ -718,8 +718,12 @@
           <br>
           <p>
             <br>
-            <center> <input style="display:none;width:80%" placeholder="Umutwe wa episode na nimero yayo" type="text"
-                name="Title" id="Title" /></center>
+            <center> 
+              <form id="Title2" method="post" action="/ToTheDrive">
+              <input style="display:none;width:80%" placeholder="Umutwe wa episode na nimero yayo" type="text"
+                name="Title"  id="Title"/>
+              </form>  
+              </center>
             <center>
               <ul style="padding-bottom: 30px; display:none;list-style: none;" id="recordingsList">
 
