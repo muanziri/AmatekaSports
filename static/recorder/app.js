@@ -260,7 +260,14 @@ function createDownloadLink(blob) {
 		fd.append("Title",Title.value);
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
-		 xhr.abort();
+		 xhr.onload = function() {
+			if (xhr.status != 200) { // analyze HTTP status of the response
+			  alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+			} else { // show the result
+				xhr.abort()
+			  alert("Kora refersh urebe post yawe"); // response is the server response
+			}
+		  };
 		 
 	 })
 	
