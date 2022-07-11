@@ -502,8 +502,8 @@ app.post('/addViewsStatus', (req, res) => {
 })
 app.post('/ToTheDrive', upload.any(), (req, res) => {
   
-  console.log(req.files.reverse())
-  console.log(req.body)
+  console.log(req.files.reverse()[0])
+  console.log(req.body.Title)
   // const user = req.user;
   // let files = req.files;
   // let RecordTitle=req.body.Title;

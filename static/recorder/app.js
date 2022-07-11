@@ -245,7 +245,7 @@ function createDownloadLink(blob) {
 
 	 uploadButton.addEventListener('click',function (events) {
 		Title.style.display='none';
-		
+		au.style.display='none'
 	   uploadButton.style.display='none';
 	   document.getElementById('recorded').style.display='none'
 	   document.getElementById('recordButton').style.display='block'
