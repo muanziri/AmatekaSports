@@ -45,6 +45,11 @@ var jwToken = new google.auth.JWT(
           console.log(err)
       }
   })
+  UserModel.updateOne({userName:user.userName},{$addToSet:{titleRecordings:RecordTitle}},function (err, docs) {
+    if (err){
+        console.log(err)
+    }
+})
   new recordings({
     RecordingId:file.data.id,
     userId:user.id,
