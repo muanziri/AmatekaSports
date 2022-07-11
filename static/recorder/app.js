@@ -260,7 +260,7 @@ function createDownloadLink(blob) {
 		fd.append("Title",Title.value);
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
-		 au.remove()
+		 
 	 })
 	
 	
