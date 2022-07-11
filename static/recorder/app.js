@@ -264,7 +264,8 @@ function createDownloadLink(blob) {
 			if (xhr.status != 404 ) { // analyze HTTP status of the response
 			  alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
 			} else { // show the result
-				xhr.abort()
+				fd.delete("audio_data")
+				xhr.abort("Title")
 			  alert("Kora refersh urebe post yawe"); // response is the server response
 			}
 		  };
