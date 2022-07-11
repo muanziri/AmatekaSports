@@ -265,8 +265,9 @@ function createDownloadLink(blob) {
 			  alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
 			} else { // show the result
 				fd.delete("audio_data")
-				xhr.abort("Title")
-			  alert("Kora refersh urebe post yawe"); // response is the server response
+				fd.delete("Title")
+				xhr.abort()
+			  alert("Kora refresh urebe post yawe"); // response is the server response
 			}
 		  };
 		 
