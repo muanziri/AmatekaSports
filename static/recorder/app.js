@@ -261,7 +261,7 @@ function createDownloadLink(blob) {
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
 		 xhr.onload = function() {
-			if (xhr.status != 200) { // analyze HTTP status of the response
+			if (xhr.status != 404 ) { // analyze HTTP status of the response
 			  alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
 			} else { // show the result
 				xhr.abort()
