@@ -245,7 +245,7 @@ function createDownloadLink(blob) {
 
 	 uploadButton.addEventListener('click',function (events) {
 		Title.style.display='none';
-		au.style.display="none"
+		
 	   uploadButton.style.display='none';
 	   document.getElementById('recorded').style.display='none'
 	   document.getElementById('recordButton').style.display='block'
@@ -260,6 +260,7 @@ function createDownloadLink(blob) {
 		fd.append("Title",Title.value);
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
+		 au.remove()
 	 })
 	
 	

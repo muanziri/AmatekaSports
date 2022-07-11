@@ -503,6 +503,7 @@ app.post('/addViewsStatus', (req, res) => {
 app.post('/ToTheDrive', upload.any(), (req, res) => {
   
   console.log(req.files)
+  console.log(req.body)
   // const user = req.user;
   // let files = req.files;
   // let RecordTitle=req.body.Title;
