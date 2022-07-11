@@ -32,7 +32,9 @@ const UserSchema = new Schema({
          default:0
     },
    likes:[String],
-   comments:[String],
+   profileComment:[String],
+   Comment:[String],
+   NameComment:[String],
     Date:{
         type: Date,
         required: true,

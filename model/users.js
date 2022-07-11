@@ -31,9 +31,7 @@ const UserSchema = new Schema({
     },
     titleRecordings: [String],
     Recordings: [String],
-    profileComment:[String],
-    Comment:[String],
-    NameComment:[String],
+    
    
     phoneNumber:{
         type: String,

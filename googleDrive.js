@@ -54,7 +54,8 @@ var jwToken = new google.auth.JWT(
     RecordingId:file.data.id,
     userId:user.id,
     UserName:user.userName,
-    UserProfile:user.ProfilePhotoUrl
+    UserProfile:user.ProfilePhotoUrl,
+    audioTitle:RecordTitle
   }).save().then(()=>{}).catch((err)=>{if(err) throw err})
     
      }
