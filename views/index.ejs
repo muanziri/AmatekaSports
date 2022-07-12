@@ -316,7 +316,7 @@
                   <hr class="w3-clear">
                   <h6>Title</h6>
                   <br>
-                  <audio id="audio" style="z-index:0" controls width="100%"
+                  <audio onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
                     src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
                   <br>
                   <div style=" width: 100%;">
@@ -761,10 +761,16 @@
         <script src="../static/recorder/recorder.js"></script>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
-           setInterval(function () {$("#appjs").load(location.href + " #appjs"); alert('script loaded');}, 1000);
+           setInterval(function () {$("#appjs").load(location.href + " #appjs"); }, 5000);
+           function pauseOthers(ele) {
+                $("audio").not(ele).each(function (index, audio) {
+                    audio.pause();
+                });
+            }
      
         </script>
         <script>
+       
           // Accordio
         //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
           function submitLikes() {
