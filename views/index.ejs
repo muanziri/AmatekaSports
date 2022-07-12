@@ -756,12 +756,17 @@
 
           <h4 style="position: fixed;bottom:0.2%;left:1%;"><b>DutereStory.Com</b></h4>
         </footer>
-        <script src="../static/recorder/app.js"></script>
+       
+        <script id="appjs" src="../static/recorder/app.js"></script>
         <script src="../static/recorder/recorder.js"></script>
-
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+           setInterval(function () {$("#appjs").load(location.href + " #appjs"); }, 1000);
+     
+        </script>
         <script>
           // Accordio
-          setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
+        //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
           function submitLikes() {
 
             document.getElementById('likeForm').submit();
