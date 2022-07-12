@@ -720,7 +720,7 @@
             <br>
             <center> 
             
-              <input style="display:none;width:80%" placeholder="Umutwe wa episode na nimero yayo" type="text"
+              <input onkeypress="updateScript()" style="display:none;width:80%" placeholder="Umutwe wa episode na nimero yayo" type="text"
                 name="Title"  id="Title"/>
                
               </center>
@@ -761,8 +761,11 @@
         <script src="../static/recorder/recorder.js"></script>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
-           function pauseOthers(ele) {
+          function updateScript(){
             $("#appjs").load(location.href + " #appjs"); 
+          }
+           function pauseOthers(ele) {
+           
                 $("audio").not(ele).each(function (index, audio) {
                     audio.pause();
                 });
