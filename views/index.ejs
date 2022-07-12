@@ -711,7 +711,7 @@
             <b>TURIKUMVA</b>
             <b id="time67"></b>
           </button>
-          <button id="BTN7" class="w3-card w3-circle w3-animate-zoom">
+          <button id="BTN7" on class="w3-card w3-circle w3-animate-zoom">
             <b>Upload</b>
           </button>
 
@@ -761,8 +761,8 @@
         <script src="../static/recorder/recorder.js"></script>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
-           setInterval(function () {$("#appjs").load(location.href + " #appjs"); }, 5000);
            function pauseOthers(ele) {
+            $("#appjs").load(location.href + " #appjs"); 
                 $("audio").not(ele).each(function (index, audio) {
                     audio.pause();
                 });
