@@ -301,15 +301,16 @@
                       </h5>
                       <div>
                         <% let Inkuru=stories
-                           let inkuruNshya=[];
+                          
                         function InkuruZawe(Inkuru) {
-                          return Inkuru.UserName=="munaziri BNM";
+                          return Inkuru.UserName==element.UserName;
                         }
                        let op= Inkuru.filter(InkuruZawe)
                         //inkuruNshya.push(Inkuru);
                         op.forEach(element2 => {
                           console.log(element2)
                         %> 
+                       <h6><%=element2.audioTitle%></h6>
                         <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                    document.getElementById('viewsForm').submit();
                     }
