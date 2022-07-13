@@ -312,8 +312,9 @@
                         %> 
                        <h6><%=element2.audioTitle%></h6>
                         <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
-                   document.getElementById('viewsForm').submit();
-                   setTimeout(()=>{ window.stop()},10000)
+                          setTimeout(()=>{ window.stop()},10000)
+                          document.getElementById('viewsForm').submit();
+                   
                     }
                   " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
                     src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
