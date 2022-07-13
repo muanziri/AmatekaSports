@@ -301,8 +301,10 @@
                       </h5>
                       <div>
                         <% let Inkuru=stories
-                       
-                        Inkuru.filter("munaziri BNM").forEach(element2 => {
+                        function InkuruZawe(Inkuru) {
+                          return Inkuru=="munaziri BNM";
+                        }
+                        Inkuru.filter(InkuruZawe).forEach(element2 => {
                         %> 
                         <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                    document.getElementById('viewsForm').submit();
