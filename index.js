@@ -496,11 +496,12 @@ app.post('/addViews', (req, res) => {
   })
   UserModel.findOne({userName:audioTitleViews}).then((results)=>{
     let newViews = results.views+1
-    UserModel.updateOne({userName:audioTitleViews},{Views:newViews},function (err, docs) {
-      if (err) {
-        console.log(err)
-      }
-    })
+    console.log(newViews)
+    // UserModel.updateOne({userName:audioTitleViews},{Views:newViews},function (err, docs) {
+    //   if (err) {
+    //     console.log(err)
+    //   }
+    // })
   })
 
 })
