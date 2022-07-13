@@ -150,8 +150,8 @@ app.post('/addLikes', (req, res) => {
     }
   })
   UserModel.findOne({userName:d}).then((results)=>{
-    let newLikes = results.likes++
-    UserModel.updateOne({userName:audioTitleViews},{likes:newLikes},function (err, docs) {
+    let newLikes = results.likes+1
+    UserModel.updateOne({userName:d},{likes:newLikes},function (err, docs) {
       if (err) {
         console.log(err)
       }
@@ -496,7 +496,7 @@ app.post('/addViews', (req, res) => {
   })
   UserModel.findOne({userName:audioTitleViews}).then((results)=>{
     let newViews = results.views+1
-    UserModel.updateOne({userName:audioTitleViews},{views:newViews},function (err, docs) {
+    UserModel.updateOne({userName:audioTitleViews},{Views:newViews},function (err, docs) {
       if (err) {
         console.log(err)
       }
