@@ -488,7 +488,7 @@ app.post('/addViews', (req, res) => {
   let audioTitleViews = req.body.audioTitleViews
   recordings.findOne({ UserName: audioTitleViews }).then((results) => {
     let newViews = results.views+1
-    recordings.updateOne({ userId: id }, { views: newViews }, function (err, docs) {
+    recordings.updateOne({ UserName: audioTitleViews }, { views: newViews }, function (err, docs) {
       if (err) {
         console.log(err)
       }
