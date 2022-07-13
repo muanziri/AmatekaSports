@@ -297,10 +297,21 @@
                     <span onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none'"
                       class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
                     <center>
-                      <h3>Stories by <%=element.UserName%>
-                      </h3>
+                      <h5>Stories by <%=element.UserName%>
+                      </h5>
                       <div>
-                        <h6>espode 1 Umujinya Wumurandura Nzuzi</h6>
+                        <% let Inkuru=stories
+                        function InkuruZawe(Inkuru) {
+                          return Inkuru == element.UserName;
+                        }
+                      ages.filter(InkuruZawe).forEach(element2 => {
+                        %> 
+                        <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
+                   document.getElementById('viewsForm').submit();
+                    }
+                  " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
+                    src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
+                        <%})%>
                       </div>
                   </div>
                   </center>
@@ -311,17 +322,23 @@
                     style="width:60px">
                   <span class="w3-right w3-opacity">1 min</span>
                   <h4>
-                    <%=element.UserName%>
+                    <%=element.audioTitle%>
                   </h4><br>
                   <hr class="w3-clear">
+                  <form id="viewsForm" style="display:none" action="">
+                    <input type="text" value="<%=element.UserName%>" name="audioTitleViews"/>
+                  </form>
                   <h6>Title</h6>
                   <br>
-                  <audio onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
+                  <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
+                   document.getElementById('viewsForm').submit();
+                    }
+                  " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
                     src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
                   <br>
                   <div style=" width: 100%;">
                     <button
-                      onclick=" setTimeout(()=>{ window.stop()},6000);let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
+                      onclick=" setTimeout(()=>{ window.stop()},10000);let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
                       type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i
                         id="<%=element.id%>">
                         <%=element.likes.length%>
@@ -354,7 +371,7 @@
                       </form>
                       <form id="likeForm<%=element.id%>" onsubmit="" method="post" action="/addLikes" class="w3-container w3-margin">
                         <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text"
-                          name="identity" value="<%=element.userId%>" />
+                          name="identity" value="<%=element.UserName%>" />
                       </form>
                     </center>
                     <center> <button id="somaCommentBTN"
@@ -782,7 +799,10 @@
 
 
           }
-
+          function submitViews(){
+            document.getElementById('viewForm').submit();
+          }
+          
           function myFunction() {
             var x = document.getElementById("select").value;
             let y;

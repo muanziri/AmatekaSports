@@ -26,20 +26,24 @@ const UserSchema = new Schema({
     paymentId: {
         type: String,
     },
-    paymentIdAdvert: {
-        type: String,
+    likes:{
+     type:Number,
+     required:true,
+     default:0
+
+    },
+    Views:{
+        type:Number,
+        required:true,
+        default:0
     },
     titleRecordings: [String],
     Recordings: [String],
-    
-   
     phoneNumber:{
         type: String,
         required: true,
         default:"+250780000000" 
     },
-    
-    
     Date:{
         type: Date,
         required: true,

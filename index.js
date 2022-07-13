@@ -144,10 +144,18 @@ app.get('/refferal/:userName',(req,res)=>{
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id
   let d=req.body.identity
-  recordings.updateOne({userId:d}, { $addToSet: { likes: userID } }, function (err, docs) {
+  recordings.updateOne({UserName:d}, { $addToSet: { likes: userID } }, function (err, docs) {
     if (err) {
       console.log(err)
     }
+  })
+  UserModel.findOne({userName:d}).then((results)=>{
+    let newLikes = results.likes++
+    UserModel.updateOne({userName:audioTitleViews},{likes:newLikes},function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+    })
   })
 
 })
@@ -477,10 +485,18 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   transferTobeneficiary(payload)
 })
 app.post('/addViews', (req, res) => {
-  let id = req.body.id
-  recordings.findOne({ userId: id }).then((results) => {
+  let audioTitleViews = req.body.audioTitleViews
+  recordings.findOne({ UserName: id }).then((results) => {
     let newViews = results.views++
-    recordings.updateOne({ userId: id }, { views: newViews }, function (err, docs) {
+    recordings.updateOne({ userId: id }, { views: audioTitleViews }, function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+    })
+  })
+  UserModel.findOne({userName:audioTitleViews}).then((results)=>{
+    let newViews = results.views++
+    UserModel.updateOne({userName:audioTitleViews},{views:newViews},function (err, docs) {
       if (err) {
         console.log(err)
       }
