@@ -308,6 +308,7 @@
                        let op= Inkuru.filter(InkuruZawe)
                         inkuruNshya.push(Inkuru);
                         inkuruNshya.forEach(element2 => {
+                          console.log(element2.RecordingId)
                         %> 
                         <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                    document.getElementById('viewsForm').submit();
