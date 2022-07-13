@@ -487,15 +487,15 @@ app.post('/flutterWaveWithDraw', (req, res) => {
 app.post('/addViews', (req, res) => {
   let audioTitleViews = req.body.audioTitleViews
   recordings.findOne({ UserName: id }).then((results) => {
-    let newViews = results.views++
-    recordings.updateOne({ userId: id }, { views: audioTitleViews }, function (err, docs) {
+    let newViews = results.views+1
+    recordings.updateOne({ userId: id }, { views: newViews }, function (err, docs) {
       if (err) {
         console.log(err)
       }
     })
   })
   UserModel.findOne({userName:audioTitleViews}).then((results)=>{
-    let newViews = results.views++
+    let newViews = results.views+1
     UserModel.updateOne({userName:audioTitleViews},{views:newViews},function (err, docs) {
       if (err) {
         console.log(err)

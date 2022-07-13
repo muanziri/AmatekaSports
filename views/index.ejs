@@ -313,6 +313,7 @@
                        <h6><%=element2.audioTitle%></h6>
                         <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                    document.getElementById('viewsForm').submit();
+                   setTimeout(()=>{ window.stop()},10000)
                     }
                   " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
                     src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
@@ -330,13 +331,14 @@
                     <%=element.audioTitle%>
                   </h4><br>
                   <hr class="w3-clear">
-                  <form id="viewsForm" style="display:none" action="">
+                  <form id="viewsForm" style="display:none" method="post" action="/addViews">
                     <input type="text" value="<%=element.UserName%>" name="audioTitleViews"/>
                   </form>
                   <h6>by <%=element.UserName%></h6>
                   <br>
                   <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                    document.getElementById('viewsForm').submit();
+                   setTimeout(()=>{ window.stop()},10000)
                     }
                   " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
                     src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
