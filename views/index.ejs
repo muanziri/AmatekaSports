@@ -301,10 +301,13 @@
                       </h5>
                       <div>
                         <% let Inkuru=stories
+                           let inkuruNshya=[];
                         function InkuruZawe(Inkuru) {
                           return Inkuru=="munaziri BNM";
                         }
-                        Inkuru.filter(InkuruZawe).forEach(element2 => {
+                       let op= Inkuru.filter(InkuruZawe)
+                        inkuruNshya.push(op);
+                        inkuruNshya.forEach(element2 => {
                         %> 
                         <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                    document.getElementById('viewsForm').submit();
