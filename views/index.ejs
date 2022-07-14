@@ -384,9 +384,9 @@
                     <center> <button id="somaCommentBTN"
                         onclick="document.getElementById('SomaCommnent').style.display='block';"
                         class="w3-button  w3-teal w3-margin-bottom">Somma comment</button></center>
-                   <%=element.profileComment.forEach(element3=>{%>
-                    <%=element.Comment.forEach(element4=>{%>
-                      <%=element.NameComment.forEach(element5=>{%>
+                   <%element.profileComment.forEach(element3=>{%>
+                    <%element.Comment.forEach(element4=>{%>
+                      <%element.NameComment.forEach(element5=>{%>
                     <div id="SomaCommnent" style="display: none;" class="w3-container w3-card w3-margin-bottom">
                       
                       <img src="<%=element3%>" alt="Avatar" class="w3-left w3-circle w3-margin-left" style="width:60px">
