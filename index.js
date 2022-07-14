@@ -161,15 +161,25 @@ app.post('/addLikes', (req, res) => {
 })
 
 app.post('/addComments', (req, res) => {
-
-  let id = req.body.identit
-  let userComment = {name:req.user.userName, profile:req.user.ProfilePhotoUrl, realcomment:req.body.comment}
-  recordings.updateOne({ userId: id }, { $addToSet: { comments: userComment } }, function (err, docs) {
+   let Profile=req.user.ProfilePhotoUrl;
+   let Name=req.user.UserName
+   let comment=req.body.comment
+   let filter={RecordingId:req.body.recId}
+  recordings.updateOne(filter, { $addToSet: { profileComment: Profile } }, function (err, docs) {
     if (err) {
       console.log(err)
     }
   })
-
+  recordings.updateOne(filter, { $addToSet: { NameComment: Name } }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    }
+  })
+  recordings.updateOne(filter, { $addToSet: { Comment: comment } }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    }
+  })
 })
 app.post('/flutterWaveSubWeek', (req, res) => {
   
