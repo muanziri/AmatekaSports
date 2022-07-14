@@ -162,7 +162,7 @@ app.post('/addLikes', (req, res) => {
 
 app.post('/addComments', (req, res) => {
    let Profile=req.user.ProfilePhotoUrl;
-   let Name=req.user.UserName
+   let Name=req.user.userName
    let comment=req.body.comment
    let filter={RecordingId:req.body.recId}
   recordings.updateOne(filter, { $addToSet: { profileComment: Profile } }, function (err, docs) {
