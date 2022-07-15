@@ -228,7 +228,7 @@
               <span
                 onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
                 class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-              <img src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+              <img data-Lazy="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
 
               <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
                 class=" w3-card w3-white w3-round w3-margin ">
@@ -325,7 +325,7 @@
                 </div>
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                   <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'"
-                    src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
+                  data-Lazy="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
                     style="width:60px;cursor: pointer;">
                   <span class="w3-right w3-opacity">1 min</span>
                   <h4>
