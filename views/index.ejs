@@ -233,7 +233,7 @@
               <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
                 class=" w3-card w3-white w3-round w3-margin ">
 
-                <h6>Story Zawe </h6>
+                <h6>Story Zawe <%=user.Recordings.length%></h6>
                 <br>
               </div>
               <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
@@ -389,7 +389,7 @@
                       <%element.NameComment.forEach(element5=>{%>
                     <div id="SomaCommnent" style="display: none;" class="w3-container w3-card w3-margin-bottom">
                       
-                      <img src="<%=element3%>" alt="Avatar" class="w3-left w3-circle w3-margin-left" style="width:60px">
+                      <img  data-Lazy="<%=element3%>" alt="Avatar" class="w3-left w3-circle w3-margin-left" style="width:60px">
                       <h6 class="w3-right w3-margin-right"><%=element4%></h6>
                       <br>
                       <br>
