@@ -260,18 +260,12 @@
 
              
               <div id="BTN1">
-    <% if(p
-            ayment.PaymentStatus=="payed" ) {%>
+
+
                 <a href="/refferal"> <button id="BTN6" style="background-color: rgb(0, 77, 77); "
                     class="w3-center w3-button ">
                     <b>Refferal</b>
                   </button></a>
-                  <% }else{ %> 
-                    <a href="/refferal"> <button id="BTN6" style="background-color: rgb(0, 77, 77); display:none "
-                      class="w3-center w3-button ">
-                      <b>Refferal</b>
-                    </button></a>
-                  <% } %>   
                   <br>
                   <br>
                    <button id="BTN6" onclick="ChangeToKash();" style="background-color: rgb(0, 77, 77); "
@@ -421,7 +415,6 @@
                   <%}%>
 
           </div>
-
           <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
 
             <h3>Sharinga Iyo Link Maze Wishyurwe</h3>

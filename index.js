@@ -96,9 +96,9 @@ app.get('/', (req, res) => {
 
 app.get('/Advertiser',(req,res)=>{
   if(req.user){
-    paymentYearAdvert.find({userName:req.user.userName}).then((paymentres)=>{
-      paymentMonthAdvert.find({userName:req.user.userName}).then((paymentres2)=>{
-        paymentWeekAdvert.find({userName:req.user.userName}).then((paymentres3)=>{
+    paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
+      paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
+        paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
          if (paymentres.length >0){
           res.render('Advertiser', { user: req.user,paymentAD:paymentres[0]})
       }else if(paymentres2.length >0){
