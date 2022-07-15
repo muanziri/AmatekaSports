@@ -317,7 +317,7 @@
                    
                     }
                   " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
-                    src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
+                  data-Lazy="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
                         <%})%>
                       </div>
                   </div>
@@ -342,7 +342,7 @@
                    setTimeout(()=>{ window.stop()},10000)
                     }
                   " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="100%"
-                    src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+                  data-Lazy="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
                   <br>
                   <div style=" width: 100%;">
                     <button
@@ -793,6 +793,7 @@
             }
      
         </script>
+        <script src="../static/New .js"></script>
         <script>
        
           // Accordio
