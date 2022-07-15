@@ -142,32 +142,7 @@
            </div>
          
           </div>
-          <div  id="id04" style="display: block;" class="w3-modal">
-            <a href="/"><span
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span></a>
-             
-             <% if (user) {%> 
-          <% if(paymentAD.PaymentStatus=="payed") {%> 
-           
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <center>
-                  <button onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza</button>
-                </center>
-               
-          
-              </div>
-             
-        <%}else{%>
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <center>
-              <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
-              <button onclick="document.getElementById('id22').style.display='block';document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
-            </center>
-            </div>
-                  
-                  <% } %> 
-                <% } %> 
-            </div>
+       
        
       </div>
       <div  id="id22" class="w3-modal">
@@ -179,7 +154,7 @@
             <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
           </center>
           <center>
-          <form method="post" onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'" id="formPayment"  class="w3-container w3-margin">
+          <form method="post" action="/paymentWeekAdvert" onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'" id="formPayment"  class="w3-container w3-margin">
             <div class="w3-section">
            <b> <lable>Phone yawe</lable></b>
             <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone" placeholder="078(MTN GUSA)-----"/>
@@ -187,9 +162,9 @@
             
             <b><label>hitamo package wishyura</label></b>
             <select onchange="myFunction(this.value)" id="select" class="w3-input w3-border w3-teal"  name="package" id="selectionOfPackage">
-              <option value="1500">15000 RWF  kucyumweru</option>
-              <option value="5000">50000 RWF  kukwezi</option>
-              <option value="50000">500000 RWF  Kumwaka</option>
+              <option value="1500">1500 RWF  kucyumweru</option>
+              <option value="5000">5000 RWF  kukwezi</option>
+              <option value="50000">50000 RWF  Kumwaka</option>
             </select>
           </div>
 
@@ -204,7 +179,36 @@
       <!-- End Middle Column -->
       
     </div>
+    <div id="id04" class="w3-modal">
+      <span onclick="ChangeToStories();document.getElementById(id04).style.display='none'"
+        class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
 
+      <% if (user) {%>
+        <% if(payment.PaymentStatus=="payed" ) {%>
+
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <center>
+              <h5 style="color:rgb(0, 68, 68)"><b>Murakaza neza Kuri <h2>Korera Cash</h2></b></h5>
+              <button onclick="document.getElementById('id04').style.display='none'"
+                class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza</button>
+            </center>
+
+
+          </div>
+
+          <%}else{%>
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+              <center>
+                <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
+                <button
+                  onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'"
+                  class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
+              </center>
+            </div>
+
+            <% } %>
+              <% } %>
+    </div>
     <!-- Right C--->
     
   <!-- End Grid -->
