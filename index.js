@@ -93,6 +93,7 @@ app.get('/', (req, res) => {
   }
 })    
 })
+
 app.get('/Advertiser',(req,res)=>{
   if(req.user){
     paymentYearAdvert.find({userName:req.user.userName}).then((paymentres)=>{
