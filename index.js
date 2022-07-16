@@ -93,8 +93,7 @@ app.get('/', (req, res) => {
 })    
 })
 app.get('/Admin', (req, res) => {
-     
-     if(req.user){
+  
       paymentYear.find({tx_ref:user.paymentId}).then((usersYear)=>{
         paymentMonth.find({tx_ref:user.paymentId}).then((usersMonth)=>{
           paymentWeek.find({tx_ref:user.paymentId}).then((usersWeek)=>{
