@@ -362,67 +362,12 @@
                         id="<%=element.id%>">
                         <%=element.likes.length%>
                       </i></button>
-                    <button onclick="document.getElementById('CommentSect').style.display='block'" type="p"
-                      class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment
-                     </button>
+                   
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yumvishwe <%=element.views%>
                     </div>
                   </div>
-                  <div style="display: none;" id="CommentSect" class="w3-card">
-                    <button style="margin-left: 90%;margin-top: 2%;"
-                      onclick="document.getElementById('CommentSect').style.display='none'"
-                      class="w3-button  w3-transparent " title="Close Modal">×</button>
-                    <center>
-                      <form id="commentForm<%=element.id%>" action="/addComments" method="post"
-                        class="w3-container w3-margin">
-                        <div class="w3-section">
-                          <b>
-                            <br>
-                            <b><label>Comment Yawe</label></b>
-                            <textarea style="background-color: rgb(169, 224, 224);"
-                              class="w3-input w3-border w3-margin-bottom" type="text" name="comment"
-                              placeholder="----"></textarea>
-                              <input style="display:none" type="text" name="recId" value="<%=element.RecordingId%>"/>
-                        </div>
-                        <button class="w3-button  w3-teal ">Tera comment</button>
-                      </form>
-                      <form id="likeForm<%=element.id%>" onsubmit="" method="post" action="/addLikes" class="w3-container w3-margin">
-                        <input style="display: none;" class="w3-input w3-border w3-margin-bottom" type="text"
-                          name="identity" value="<%=element.UserName%>" />
-                      </form>
-                    </center>
-                    <center> <button id="somaCommentBTN"
-                        onclick="document.getElementById('SomaCommnent').style.display='block';"
-                        class="w3-button  w3-teal w3-margin-bottom">Somma comment</button></center>
-                        <div id="SomaCommnent" style="display: none;" class="w3-container w3-card w3-margin-bottom">
-                      <table class="w3-table">
-                      <%element.NameComment.forEach(element5=>{%> 
-                     <tr>
-                      <td>
-                        <%=element5%>
-                        </td>
-                      </tr>
-                   <%})%>
-                      </table>
-                   <%element.profileComment.forEach(element3=>{%>
-                    <tr>
-                      <td>
-                       
-                        <img data-Lazy="<%=element3%>"="" alt="">
-                        </td>
-                      </tr>
-                   <%})%>
-                    <%element.Comment.forEach(element4=>{%>
-                      <tr>
-                      <td>
-                        <%=element4%>
-                        </td>
-                      </tr>
-                   <%})%>
-                   
-                  </div>
-                  </div>
+                  
 
                 </div>
                 <% });%>
