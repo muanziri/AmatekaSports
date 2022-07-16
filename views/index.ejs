@@ -327,7 +327,7 @@
                           document.getElementById('viewsForm').submit();
                    
                     }
-                  " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
+                  " onplay="pauseOthers()" id="audio" style="z-index:0" controls width="80%"
                   data-Lazy="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
                         <%})%>
                       </div>
@@ -352,7 +352,7 @@
                    document.getElementById('viewsForm').submit();
                    setTimeout(()=>{ window.stop()},10000)
                     }
-                  " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
+                  " onplay="pauseOthers()" id="audio" style="z-index:0" controls width="80%"
                   data-Lazy="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
                   <br>
                   <div style=" width: 100%;">
@@ -383,124 +383,124 @@
             <%if (user) {%>
              <ol>
               <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b></li>
+             } copy()" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b></li>
              </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link2"><b>https://dutere-story.herokuapp.com/2/<%=user.userName%></b></li>
+             } copy()" id="link2"><b>https://dutere-story.herokuapp.com/2/<%=user.userName%></b></li>
              </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link3"><b>https://dutere-story.herokuapp.com/3/<%=user.userName%></b></li>
+             } copy()" id="link3"><b>https://dutere-story.herokuapp.com/3/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link4"><b>https://dutere-story.herokuapp.com/4/<%=user.userName%></b></li>
+             } copy()" id="link4"><b>https://dutere-story.herokuapp.com/4/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link5"><b>https://dutere-story.herokuapp.com/5/<%=user.userName%></b></li>
+             } copy()" id="link5"><b>https://dutere-story.herokuapp.com/5/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link6"><b>https://dutere-story.herokuapp.com/6/<%=user.userName%></b></li>
+             } copy()" id="link6"><b>https://dutere-story.herokuapp.com/6/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link7"><b>https://dutere-story.herokuapp.com/7/<%=user.userName%></b></li>
+             } copy()" id="link7"><b>https://dutere-story.herokuapp.com/7/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link8"><b>https://dutere-story.herokuapp.com/8/<%=user.userName%></b></li>
+             } copy()" id="link8"><b>https://dutere-story.herokuapp.com/8/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link9"><b>https://dutere-story.herokuapp.com/9/<%=user.userName%></b></li>
+             } copy()" id="link9"><b>https://dutere-story.herokuapp.com/9/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link10"><b>https://dutere-story.herokuapp.com/10/<%=user.userName%></b></li>
+             } copy()" id="link10"><b>https://dutere-story.herokuapp.com/10/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link11"><b>https://dutere-story.herokuapp.com/11/<%=user.userName%></b></li>
+             } copy()" id="link11"><b>https://dutere-story.herokuapp.com/11/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link12"><b>https://dutere-story.herokuapp.com/12/<%=user.userName%></b></li>
+             } copy()" id="link12"><b>https://dutere-story.herokuapp.com/12/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link13"><b>https://dutere-story.herokuapp.com/13/<%=user.userName%></b></li>
+             } copy()" id="link13"><b>https://dutere-story.herokuapp.com/13/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link14"><b>https://dutere-story.herokuapp.com/14/<%=user.userName%></b></li>
+             } copy()" id="link14"><b>https://dutere-story.herokuapp.com/14/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link15"><b>https://dutere-story.herokuapp.com/15/<%=user.userName%></b></li>
+             } copy()" id="link15"><b>https://dutere-story.herokuapp.com/15/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link16"><b>https://dutere-story.herokuapp.com/16/<%=user.userName%></b></li>
+             } copy()" id="link16"><b>https://dutere-story.herokuapp.com/16/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link17"><b>https://dutere-story.herokuapp.com/17/<%=user.userName%></b></li>
+             } copy()" id="link17"><b>https://dutere-story.herokuapp.com/17/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link18"><b>https://dutere-story.herokuapp.com/18/<%=user.userName%></b></li>
+             } copy()" id="link18"><b>https://dutere-story.herokuapp.com/18/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link19"><b>https://dutere-story.herokuapp.com/19/<%=user.userName%></b></li>
+             } copy()" id="link19"><b>https://dutere-story.herokuapp.com/19/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy(this) {
+              <li onclick="function copy() {
              navigator.clipboard.writeText(this.innerText);
              alert('link yawe' +this.innerText+'yabaye copied');
-             } copy(this)" id="link20"><b>https://dutere-story.herokuapp.com/20/<%=user.userName%></b></li>
+             } copy()" id="link20"><b>https://dutere-story.herokuapp.com/20/<%=user.userName%></b></li>
             </div>
              <div class="w3-card w3-round w3-margin w3-teal">
               <ol>
