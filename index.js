@@ -92,6 +92,10 @@ app.get('/', (req, res) => {
   }
 })    
 })
+app.get('/Admin', (req, res) => {
+     res.render('Admindashbaord');
+})
+
 
 app.get('/Advertiser',(req,res)=>{
   if(req.user){

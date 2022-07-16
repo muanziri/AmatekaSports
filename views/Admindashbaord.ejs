@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>W3.CSS Template</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif
+    }
+  </style>
+</head>
+
+<body  class="w3-light-grey">
+
+
+
+
+
+
+  <!-- !PAGE CONTENT! -->
+  <div  class="w3-main">
+
+    <!-- Header -->
+    <header class="w3-container" style="padding-top:22px">
+      <h5><b><i class="fa fa-dashboard"></i> Admin Dashboard</b></h5>
+    </header>
+    <div class="w3-row-padding w3-margin-bottom">
+      <div class="w3-quarter">
+        <div class="w3-container w3-black w3-padding-16">
+          <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+          <div class="w3-right">
+            <h3></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>Messages</h4>
+        </div>
+      </div>
+
+      <div class="w3-quarter">
+        <div class="w3-container w3-black w3-padding-16">
+          <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+          <div class="w3-right">
+            <h3> </h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>total clicks from links</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-black w3-text-white w3-padding-16">
+          <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+          <div class="w3-right">
+            <h3></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>Users</h4>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="w3-container w3-half w3-margin-top">
+      <div class="w3-container w3-card-4">
+
+       <a href="/BlogPostControl"><button class="w3-button w3-section w3-teal w3-ripple">News (new edition)</button></a>
+        <br>
+        <a href="/PodcastControl"><button class="w3-button w3-section w3-teal w3-ripple">Podcat (new edition)</button></a>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="w3-container w3-half w3-margin-top">
+      <h3>Post the links to be shared</h3>
+      <form method="post" action="/NewUrlTobeShared" class="w3-container w3-card-4">
+
+        <p>
+          <input class="w3-input" type="text" name="NewUrlTobeSharedred" style="width:90%" required>
+          <label>Link for sharing</label>
+        </p>
+
+
+
+
+        <p>
+          <button class="w3-button w3-section w3-teal w3-ripple"> post the link </button>
+        </p>
+
+      </form>
+    </div>
+    <div class="w3-container w3-half w3-margin-top">
+      <h3>Links that are being shared and number of clicks</h3>
+      <div class="w3-container w3-card-4">
+        <ol>
+          
+            <li>
+             
+        </ol>
+        </p>
+
+      </div>
+    </div>
+
+    <div class="w3-container w3-half w3-margin-top">
+      <h3>Delete the User</h3>
+      <form action="/deleteUser" method="post" class="w3-container w3-card-4">
+        <p>
+          <input class="w3-input" type="text" name="userName" style="width:90%" required>
+          <label>name and Delete the user</label>
+        </p>
+        <p>
+          <button class="w3-button w3-section w3-teal w3-ripple">delete the user </button>
+        </p>
+
+      </form>
+
+    </div>
+
+    <div style="max-height: 1000px;overflow-y:scroll;" class="w3-container w3-half w3-margin-top">
+      <h3>Messages from Users</h3>
+      <div class="w3-container w3-card-4">
+        <ol>
+         
+            <li>
+              <h4><b>Name :</b</h4>    
+              <h4><b>Phone :</b></h4>   
+              <h4><b>email :</b></h4>
+              <p>Message</p>
+              <h5></h5>
+              <form action="/deleteThemessage/" method="post">
+                <button class="w3-button w3-section w3-teal w3-ripple">delete</button>
+              </form>
+              
+            </li>
+            
+        </ol>
+        </p>
+
+      </div>
+
+    </div>
+    <div style="max-height: 1000px;overflow-y:scroll;" class="w3-container w3-half w3-margin-top">
+      <h3>Users and the clicks collected and likes collected</h3>
+      <div class="w3-container w3-card-4">
+        <ol>
+        
+            <li>
+                <b>clicks </b>   <b>likes </b></li>
+           
+        </ol>
+        </p>
+
+      </div>
+    </div>
+    <div class="w3-container w3-half w3-margin-top">
+      
+    </div>
+    <div class="w3-container w3-half w3-margin-top">
+      
+    </div>
+    
+
+    
+    <!-- End page content -->
+  </div>
+  
+
+ 
+
+
+</body>
+
+</html>
