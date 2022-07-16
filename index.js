@@ -93,7 +93,14 @@ app.get('/', (req, res) => {
 })    
 })
 app.get('/Admin', (req, res) => {
-     res.render('Admindashbaord');
+     
+     if(req.user){
+      paymentYear.find({tx_ref:user.paymentId}).then((usersYear)=>{
+        paymentMonth.find({tx_ref:user.paymentId}).then((usersMonth)=>{
+          paymentWeek.find({tx_ref:user.paymentId}).then((usersWeek)=>{
+            res.render('Admindashbaord',{usersYear:usersYear,usersMonth:usersMonth,usersWeek:usersWeek})
+       
+       }) })})
 })
 
 

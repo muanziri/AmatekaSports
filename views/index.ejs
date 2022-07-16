@@ -211,7 +211,7 @@
   <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
     <!-- The Grid -->
     <% if(messages.message1) {%>
-      <div id="message1Id" style="width:50%;position:absolute;right:2%; top:5%"
+      <div id="message1Id" style="width:50%;position:absolute;right:2%; top:1%"
         class="w3-panel w3-teal w3-card w3-animate-right ">
         <span onclick="document.getElementById('message1Id').style.display='none';"
           class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -378,9 +378,92 @@
           <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
 
             <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
-            <p>Ubwishyu Bwa Subscription :<b style="color:red">Nturishyura</b></p>
+           
             <div class="w3-card w3-round w3-margin w3-teal">
-              <b>Link</b>
+            <%if (user)%>
+             <ol>
+            
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link2"><b>https://dutere-story.herokuapp.com/2/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link3"><b>https://dutere-story.herokuapp.com/3/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link4"><b>https://dutere-story.herokuapp.com/4/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link5"><b>https://dutere-story.herokuapp.com/5/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link6"><b>https://dutere-story.herokuapp.com/6/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link7"><b>https://dutere-story.herokuapp.com/7/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link8"><b>https://dutere-story.herokuapp.com/8/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link9"><b>https://dutere-story.herokuapp.com/9/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link10"><b>https://dutere-story.herokuapp.com/10/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link11"><b>https://dutere-story.herokuapp.com/11/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link12"><b>https://dutere-story.herokuapp.com/12/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link13"><b>https://dutere-story.herokuapp.com/13/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link14"><b>https://dutere-story.herokuapp.com/14/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link15"><b>https://dutere-story.herokuapp.com/15/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link16"><b>https://dutere-story.herokuapp.com/16/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link17"><b>https://dutere-story.herokuapp.com/17/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link18"><b>https://dutere-story.herokuapp.com/18/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link19"><b>https://dutere-story.herokuapp.com/19/<%=user.id%></b></li>
+              <li onclick="function copy(this) {
+             navigator.clipboard.writeText(this.innerText);
+             alert('link yawe' +this.innerText+'yabaye copied');
+             }" id="link20"><b>https://dutere-story.herokuapp.com/20/<%=user.id%></b></li>
+              <ol>
             </div>
             <button onclick="document.getElementById('id11').style.display='block'"
               style="position:absolute;top:2%;right:2%" class="w3-button w3-card w3-round w3-margin w3-teal">
@@ -810,6 +893,7 @@
             document.getElementById('BTN7').style.display = 'none'
 
           }
+       
           function ChangeToStories() {
             document.getElementById('BTN4').style.display = 'none'
             document.getElementById('KORERAKASH').style.display = 'none'
