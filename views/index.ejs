@@ -295,7 +295,7 @@
                 <% } %>  
                   <br>
                   <br>
-                   <button id="BTN6" onclick="ChangeToKash();" style="background-color: rgb(0, 77, 77); "
+                   <button id="BTN6" onclick="ChangeToKash();document.getElementById('BTN6').style.display='none'" style="background-color: rgb(0, 77, 77); "
                     class="w3-center w3-button ">
                     <b>KORERA CASH</b>
                   </button>
@@ -552,7 +552,7 @@
                       <br>
 
                       <b><label>hitamo package wishyura</label></b>
-                      <select onchange="myFunction(this.value)" id="select" class="w3-input w3-border w3-teal"
+                      <select onchange="myFunction(this.value)" id="select" class="w3-input  w3-teal"
                         name="package" id="selectionOfPackage">
                         <option value="1500">1500 RWF kucyumweru</option>
                         <option value="5000">5000 RWF kukwezi</option>
@@ -939,7 +939,6 @@
           function ChangeToKash() {
 
             document.getElementById('id04').style.display = 'block'
-           
             document.getElementById('BTN4').style.display = 'block'
             document.getElementById('BTN8').style.display = 'block'
             document.getElementById('KORERAKASH').style.display = 'block'
