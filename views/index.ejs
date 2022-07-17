@@ -247,15 +247,34 @@
                 <br>
               </div>
               <% if(payment.PaymentStatus=="payed" ) {%>
-                <% if(payment.PaymentStatus= ) {%>
+                <% if(payment.PackageDuration=="7" ) {%>
               <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
                 class=" w3-card w3-white w3-round w3-margin ">
-                <h6>Pack wishyuye niy'iminsi <%=user.likes%></h6>
+                <h6>Pack wishyuye niy'iminsi 7</h6>
                 <br>
               </div>
+               <% }else if(payment.PackageDuration=="30"){ %> 
+                <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
+                class=" w3-card w3-white w3-round w3-margin ">
+                <h6>Pack wishyuye niy'iminsi 30</h6>
+                <br>
+              </div>
+                <% }else if(payment.PackageDuration=="360"){ %> 
+                  <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
+                class=" w3-card w3-white w3-round w3-margin ">
+                <h6>Pack wishyuye niy'iminsi Umwaka</h6>
+                <br>
+              </div>
+                <% }else{ %>
+                  <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
+                  class=" w3-card w3-white w3-round w3-margin ">
+                  <h6>Pack wishyuye Nta Package wishyuye/h6>
+                  <br>
+                </div> 
+                <% } %>     
               <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
                 class=" w3-card w3-white w3-round w3-margin ">
-                <h6>Amafaranga Winjije <%=user.likes%></h6>
+                <h6>Amafaranga Winjije <%=payment.PaymentStatus%></h6>
                 <br>
               </div>
 
