@@ -44,6 +44,12 @@ const UserSchema = new Schema({
         default:"pending"
 
     },
+    PackageDuration:{
+        type: String,
+        required: true,
+        default:"7"
+
+    },
     createdAt: { type: Date, expires: '7d', default: Date.now }
 
 })
@@ -90,6 +96,12 @@ const UserSchema2 = new Schema({
         default:"pending"
 
     },
+    PackageDuration:{
+        type: String,
+        required: true,
+        default:"7"
+
+    },
     createdAt: { type: Date, expires: '30d', default: Date.now }
 
 })
@@ -134,6 +146,12 @@ const UserSchema3 = new Schema({
         type: String,
         required: true,
         default:"pending"
+
+    },
+    PackageDuration:{
+        type: String,
+        required: true,
+        default:"7"
 
     },
      createdAt: { type: Date, expires: '1y', default: Date.now }
