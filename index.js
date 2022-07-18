@@ -702,7 +702,35 @@ app.get('/Admin', (req, res) => {
        }) })})
 })
 
-
+app.post('/saveWhatsappNumber/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+        let newNumber="+25"+req.body.phone
+       paymentWeek.updateOne({userName:Name},{PhoneNumber:newNumber},function(err,doc){
+        if(err){
+          console.log(err)
+        }
+       })
+      }else if(results1!= null){
+        let newNumber="+25"+req.body.phone
+        paymentMonth.updateOne({userName:Name},{PhoneNumber:newNumber},function(err,doc){
+         if(err){
+           console.log(err)
+         }
+        })
+      }else if(results2!= null){
+        let newNumber="+25"+req.body.phone
+       paymentYear.updateOne({userName:Name},{PhoneNumber:newNumber},function(err,doc){
+        if(err){
+          console.log(err)
+        }
+       })
+      }
+  })})})
+})
 app.get('/Advertiser',(req,res)=>{
   if(req.user){
     paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
@@ -724,29 +752,7 @@ app.get('/Advertiser',(req,res)=>{
       res.render('Advertiser',{user:req.user})
     }
 })
-app.get('/refferal',(req,res)=>{
-  let user=req.user
-  if(req.user){
-    paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
-      paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
-        paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
-         if (paymentres.length >0){
-          res.render('Refferal', { user: req.user,payment:paymentres[0]})
-      }else if(paymentres2.length >0){
-        res.render('Refferal', { user: req.user,payment:paymentres2[0]})
-       
-      }else if(paymentres3.length >0){
-        res.render('Refferal', { user: req.user,payment:paymentres3[0]})
-      }else{
-        res.render('Refferal', { user: req.user,payment:{PaymentStatus:"unpayed"}})
-      }
-     
-     }) })})
-    }else{
-      res.render('Refferal',{user:req.user})
-    }
 
-})
 app.get('/refferal/:userName',(req,res)=>{
   userName=req.params.userName;
 

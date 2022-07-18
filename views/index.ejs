@@ -281,17 +281,6 @@
 
              
               <div id="BTN1">
-
-                
-                <a href="/refferal"> <button id="BTN6" style="background-color: rgb(0, 77, 77); "
-                    class="w3-center w3-button ">
-                    <b>Refferal</b>
-                  </button></a>
-                <% }else{ %> 
-                  <a href="/refferal"> <button id="BTN6" style="background-color: rgb(0, 77, 77);display:none "
-                    class="w3-center w3-button ">
-                    <b>Refferal</b>
-                  </button></a>
                 <% } %>  
                   <br>
                   <br>
@@ -675,6 +664,7 @@
               </div>
               <%}%>
                 <%}%>
+                <% if (user){%>
                   <div id="id06" class="w3-modal w3-padding">
                     <span onclick="document.getElementById('id06').style.display='none'"
                       class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -682,7 +672,7 @@
                     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                       <center>
                         <h5 style="color:rgb(0, 68, 68)"><b>korera whatsapp shares</b></h5>
-                        <form id="phoneWhatsapp" action="">
+                        <form id="phoneWhatsapp" action="/saveWhatsappNumber/<%=user.useName%>">
                           <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
                             placeholder="Nimero iri kuri whatsapp gusa-----" />
                         </form>
@@ -701,7 +691,7 @@
                         <p>
                           <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
                           <br>
-                          <b>Views Mwagize zemezwa nyuma yi cyumweru</b>
+                          <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
                         </p>
 
                       </center>
@@ -709,6 +699,42 @@
 
                     </div>
                   </div>
+                <%}else{%>
+                  <div id="id06" class="w3-modal w3-padding">
+                    <span onclick="document.getElementById('id06').style.display='none'"
+                      class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                      <center>
+                        <h5 style="color:rgb(0, 68, 68)"><b>korera whatsapp shares</b></h5>
+                        <form id="phoneWhatsapp" action="/saveWhatsappNumber">
+                          <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                            placeholder="Nimero iri kuri whatsapp gusa-----" />
+                        </form>
+                        <button id="whatssapMoney" class="w3-button w3-teal">next</button>
+                        <p><b>uko bakorera whatsapp shares</b>:
+                        <ol>
+                          <li>shyiramo nimero haruguru</li>
+                          <li>kanda ahanditse 'next'</li>
+                          <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
+                          <li>shyira ifoto kuri status</li>
+                          <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button
+                            yanditseho "ohereza views"</li>
+                          <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
+                        </ol>
+                        <p>
+                        <p>
+                          <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
+                          <br>
+                          <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
+                        </p>
+
+                      </center>
+
+
+                    </div>
+                  </div>  
+                <%}%>  
                   <div id="id07" class="w3-modal w3-padding">
 
 
@@ -844,7 +870,7 @@
           <button id="BTN4" onclick="document.getElementById('id03').style.display='block'"
             class="w3-card w3-circle w3-teal">
             <b>BIKUZA</b></button>
-          <button id="BTN8" onclick="document.getElementById('id06').style.display='block'"
+          <button id="BTN8" onclick="document.getElementById('id06').style.display='block';"
             class="w3-card w3-circle w3-teal">
             <b>Korera whatsapp shares</b> </button>
           <button id="BTN2" class="w3-card w3-circle w3-animate-zoom">
@@ -933,6 +959,7 @@
           }
           let whatssapMoney = document.getElementById('whatssapMoney');
           whatssapMoney.addEventListener('click', () => {
+            whatsappViewsSubmit();
             document.getElementById('id07').style.display = 'block';
             document.getElementById('id06').style.display = 'block';
           })
