@@ -1000,10 +1000,10 @@
             document.getElementById('MENU').style.display = 'none'
             document.getElementById('id02').style.display = 'none'
           }
-          function share(content){
+       async function share(content){
             try {
             await navigator.share(content)
-            resultPara.textContent = 'MDN shared successfully'
+            alert('MDN shared successfully')
           } catch(err) {
             resultPara.textContent = 'Error: ' + err
           }
