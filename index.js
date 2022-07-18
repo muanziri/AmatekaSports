@@ -103,12 +103,12 @@ app.get('/1/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -128,12 +128,12 @@ app.get('/2/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -151,12 +151,12 @@ app.get('/3/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -174,12 +174,12 @@ app.get('/4/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -197,12 +197,12 @@ app.get('/5/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -220,12 +220,12 @@ app.get('/6/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -243,12 +243,12 @@ app.get('/7/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -266,12 +266,12 @@ app.get('/8/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -289,12 +289,12 @@ app.get('/9/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -312,12 +312,12 @@ app.get('/10/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -335,12 +335,12 @@ app.get('/11/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -358,12 +358,12 @@ app.get('/12/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -381,12 +381,12 @@ app.get('/13/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -404,12 +404,12 @@ app.get('/14/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -427,12 +427,12 @@ app.get('/15/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -450,12 +450,12 @@ app.get('/16/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -473,12 +473,12 @@ app.get('/17/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -496,12 +496,12 @@ app.get('/18/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -519,12 +519,12 @@ app.get('/19/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
@@ -542,12 +542,12 @@ app.get('/20/:Name',(req,res)=>{
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
       }else if(results1!= null){
-        let NewClicks1= results.clicks+1
+        let NewClicks1= results1.clicks+1
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
         })
       }else if(results2!= null){
-        let NewClicks2= results.clicks+1
+        let NewClicks2= results2.clicks+1
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
        })
