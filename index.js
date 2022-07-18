@@ -92,6 +92,468 @@ app.get('/', (req, res) => {
   }
 })    
 })
+app.get('/1/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else{
+        console.log('failed badly')
+      }
+  })})})
+})
+app.get('/2/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/3/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/4/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/5/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/6/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/7/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/8/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/9/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/10/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/11/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/12/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/13/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/14/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/15/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/16/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/17/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/18/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/19/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
+app.get('/20/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+       let NewClicks= results.clicks+1
+       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }else if(results1!= null){
+        let NewClicks1= results.clicks+1
+        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
+      }else if(results2!= null){
+        let NewClicks2= results.clicks+1
+       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+       })
+      }
+  })})})
+})
 app.get('/Admin', (req, res) => {
   
       paymentYear.find({tx_ref:user.paymentId}).then((usersYear)=>{
