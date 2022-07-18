@@ -98,22 +98,27 @@ app.get('/1/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
-      }else{
-        console.log('failed badly')
+       })})
       }
   })})})
 })
@@ -123,20 +128,27 @@ app.get('/2/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -146,20 +158,27 @@ app.get('/3/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -169,20 +188,27 @@ app.get('/4/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -192,20 +218,27 @@ app.get('/5/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -215,20 +248,27 @@ app.get('/6/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -238,20 +278,27 @@ app.get('/7/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -261,20 +308,27 @@ app.get('/8/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -284,20 +338,27 @@ app.get('/9/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -307,20 +368,27 @@ app.get('/10/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -330,20 +398,27 @@ app.get('/11/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -353,20 +428,27 @@ app.get('/12/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -376,20 +458,27 @@ app.get('/13/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -399,20 +488,27 @@ app.get('/14/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -422,20 +518,27 @@ app.get('/15/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -445,20 +548,27 @@ app.get('/16/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -468,20 +578,27 @@ app.get('/17/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -491,20 +608,27 @@ app.get('/18/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -514,20 +638,27 @@ app.get('/19/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
@@ -537,20 +668,27 @@ app.get('/20/:Name',(req,res)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
     paymentYear.findOne({userName:Name}).then((results2)=>{
       if(results!= null){
-       let NewClicks= results.clicks+1
+       let NewClicks= results.clicks+1;
+       let newCash= results.CashLeft+5;
        paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
+        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
+        })
        })
       }else if(results1!= null){
-        let NewClicks1= results1.clicks+1
+        let NewClicks1= results1.clicks+1;
+        let newCash1= results1.CashLeft+5;
         paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
           res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
+        }) })
       }else if(results2!= null){
-        let NewClicks2= results2.clicks+1
+        let NewClicks2= results2.clicks+1;
+        let newCash1= results2.CashLeft+5;
        paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
+        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })
+       })})
       }
   })})})
 })
