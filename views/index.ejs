@@ -936,11 +936,12 @@
         //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
           function submitLikes() {
 
-            document.getElementById('likeForm').submit();
+            document.getElementById('phoneWhatsapp').submit();
 
 
           }
           function submitViews(){
+            setTimeout(()=>{ window.stop()},10000)
             document.getElementById('viewForm').submit();
           }
           
@@ -957,12 +958,16 @@
             document.getElementById("formPayment").action = y;
 
           }
+          function whatsappViewsSubmit(){
+            document.getElementById('id07').submit();
+          }
           let whatssapMoney = document.getElementById('whatssapMoney');
           whatssapMoney.addEventListener('click', () => {
             whatsappViewsSubmit();
             document.getElementById('id07').style.display = 'block';
             document.getElementById('id06').style.display = 'block';
           })
+          
           function ChangeToKash() {
 
             document.getElementById('id04').style.display = 'block'
