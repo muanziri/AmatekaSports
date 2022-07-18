@@ -940,11 +940,7 @@
 
 
           }
-          function submitViews(){
-            setTimeout(()=>{ window.stop()},10000)
-            document.getElementById('viewForm').submit();
-          }
-          
+         
           function myFunction() {
             var x = document.getElementById("select").value;
             let y;
@@ -959,7 +955,8 @@
 
           }
           function whatsappViewsSubmit(){
-            document.getElementById('id07').submit();
+            setTimeout(()=>{ window.stop()},10000)
+            document.getElementById('viewForm').submit();
           }
           let whatssapMoney = document.getElementById('whatssapMoney');
           whatssapMoney.addEventListener('click', () => {
