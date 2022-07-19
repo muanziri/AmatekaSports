@@ -725,7 +725,11 @@
                       <center> <img style="width:100%;height:300px;" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt=""></center>
                       <button onclick="
                      async function shareImage() {
-                     const response = await fetch('https://github.com/muanziri/BenirAdvert/blob/main/static/image/handsome-man.jpg');
+                      const options = {
+                          method: 'GET',
+                          mode: 'no-cors'
+                   }
+                     const response = await fetch('https://github.com/muanziri/BenirAdvert/blob/main/static/image/handsome-man.jpg',options);
                      const blob = await response.blob();
                      const filesArray = [
                         new File(
