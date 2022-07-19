@@ -803,7 +803,7 @@ app.post('/flutterWaveSubWeek', (req, res) => {
  
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
-       console.log(response);
+    
      req.flash('messageURL',`${response.meta.authorization.redirect}`)
      res.redirect('/')
     } catch (error) {
@@ -828,7 +828,7 @@ app.post('/flutterWaveSubWeek', (req, res) => {
     
     "tx_ref": mykey, 
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-    "amount": "1500",
+    "amount": "500",
     "currency": "RWF",
     "email":"munaziribnm@gmail.com",
     "phone_number": req.body.phone,
@@ -837,47 +837,7 @@ app.post('/flutterWaveSubWeek', (req, res) => {
   }
   rw_mobile_money(payload)
 })
-app.post('/paymentWeekAdvert', (req, res) => {
-  
-  let user=req.user
-   const rw_mobile_money =  async (payload)=>{
-  
-     try {
-        const response =  await flw.MobileMoney.rwanda(payload)
-        console.log(response);
-      req.flash('messageURL2',`${response.meta.authorization.redirect}`)
-      res.redirect('/Advertiser')
-     } catch (error) {
-         console.log(error)
-     }                            
-    
- }
-   var mykey = uniqid()
-   var mykey2 = uniqid()
-   new paymentWeekAdvert({
-     userName:req.user.userName,
-     tx_ref:mykey,
-     Oder_Id:mykey2,
-     PhoneNumber:req.body.phone
-   }).save()
-   UserModel.updateOne({ userName: user.userName }, { paymentIdAdvert:mykey }, function (err, docs) {
-     if (err) {
-       console.log(err)
-     }
-   })
-   let payload = {
-     
-     "tx_ref": mykey, 
-     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-     "amount": "20000",
-     "currency": "RWF",
-     "email":"munaziribnm@gmail.com",
-     "phone_number": req.body.phone,
-     "fullname": req.user.userName
- 
-   }
-   rw_mobile_money(payload)
-})
+
 
 app.post('/flutterWaveSubMonth', (req, res) => {
   let user=req.user
@@ -885,7 +845,7 @@ app.post('/flutterWaveSubMonth', (req, res) => {
  
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
-       console.log(response);
+    
      req.flash('messageURL',`${response.meta.authorization.redirect}`)
      res.redirect('/')
     } catch (error) {
@@ -1055,7 +1015,7 @@ app.post('/flutterWaveSubYear', (req, res) => {
  
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
-       console.log(response);
+    
      req.flash('messageURL',`${response.meta.authorization.redirect}`)
      res.redirect('/')
     } catch (error) {
@@ -1080,7 +1040,7 @@ app.post('/flutterWaveSubYear', (req, res) => {
     
     "tx_ref": mykey, 
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-    "amount": "50000",
+    "amount": "10000",
     "currency": "RWF",
     "email":"munaziribnm@gmail.com",
     "phone_number": req.body.phone,
