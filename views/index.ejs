@@ -724,20 +724,24 @@
                     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                       <center> <img style="width:100%;height:300px;" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt=""></center>
                       <button onclick="
-                      const blob =  fetch('../static/image/handsome-man.jpg').then(r=>{r.blob()
-                      
-                        console.log(r.blob())
-                      });
-                     console.log(blob);
-                      const data = {
-              files: [
-               new File([blob], 'file.png', {
-                type: blob.type,
-                    }),
-                       ],
-                 title: 'money',
-            text: 'alltogrth',
-              };share(data)" class="w3-button w3-teal w3-margin-bottom">share</button>
+                     async function shareImage() {
+                     const response = await fetch('https://github.com/muanziri/BenirAdvert/blob/348dc97a8728caf9464be0970cd6a72ce7b3d5d0/static/image/handsome-man.jpg');
+                     const blob = await response.blob();
+                     const filesArray = [
+                        new File(
+                        [blob],
+                      'meme.jpg',
+                      {
+                        type: 'image/jpeg',
+                      lastModified: new Date().getTime()
+                         }
+                        )
+                    ];
+                     const shareData = {
+                 files: filesArray,
+                         };
+                   navigator.share(shareData);
+};shareImage()" class="w3-button w3-teal w3-margin-bottom">share</button>
                     </div>
                   </div>
         </div>
