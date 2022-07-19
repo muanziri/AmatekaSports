@@ -334,7 +334,7 @@
                        <h6><%=element2.audioTitle%></h6>
                         <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                           setTimeout(()=>{ window.stop()},10000)
-                          document.getElementById('viewsForm').submit();
+                          document.getElementById('viewsForm<%=element2.RecordingId%>').submit();
                    
                         }"
                     onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
@@ -353,14 +353,14 @@
                     <%=element.audioTitle%>
                   </h4><br>
                   <hr class="w3-clear">
-                  <form id="viewsForm" style="display:none" method="post" action="/addViews">
+                  <form id="viewsForm<%=element.RecordingId%>" style="display:none" method="post" action="/addViews">
                     <input type="text" value="<%=element.UserName%>" name="audioTitleViews2"/>
                     <input type="text" value="<%=element.RecordingId%>" name="audioTitleViews"/>
                   </form>
                   <h6>by <%=element.UserName%></h6>
                   <br>
                   <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
-                   document.getElementById('viewsForm').submit();
+                   document.getElementById('viewsForm<%=element.RecordingId%>').submit();
                    setTimeout(()=>{ window.stop()},10000)
                     }
                   " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
