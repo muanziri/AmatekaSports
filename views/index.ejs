@@ -228,7 +228,7 @@
               <span
                 onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
                 class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-              <img data-Lazy="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+              <img src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
 
               <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
                 class=" w3-card w3-white w3-round w3-margin ">
@@ -338,7 +338,7 @@
                    
                     }
                   " onplay="pauseOthers()" id="audio" style="z-index:0" controls width="80%"
-                  data-Lazy="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
+                  src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
                         <%})%>
                       </div>
                   </div>
@@ -346,7 +346,7 @@
                 </div>
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                   <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'"
-                  data-Lazy="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
+                  src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
                     style="width:60px;cursor: pointer;">
                   <span class="w3-right w3-opacity">1 min</span>
                   <h4>
@@ -363,7 +363,7 @@
                    setTimeout(()=>{ window.stop()},10000)
                     }
                   " onplay="pauseOthers()" id="audio" style="z-index:0" controls width="80%"
-                  data-Lazy="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+                  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
                   <br>
                   <div style=" width: 100%;">
                     <button
@@ -903,7 +903,7 @@
             }
      
         </script>
-        <script src="../static/New .js"></script>
+        
         <script>
        
           // Accordio
