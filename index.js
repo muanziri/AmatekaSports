@@ -1076,7 +1076,7 @@ app.post('/addViews', (req, res) => {
   
   recordings.findOne({ RecordingId: Recordingid }).then((results) => {
     let newViews = results.views+1
-    recordings.updateOne({ UserName: audioTitleViews }, { views: newViews }, function (err, docs) {
+    recordings.updateOne({ RecordingId: Recordingid }, { views: newViews }, function (err, docs) {
       if (err) {
         console.log(err)
       }
@@ -1085,7 +1085,7 @@ app.post('/addViews', (req, res) => {
   UserModel.findOne({userName:UserName}).then((results)=>{
     let newViews = results.Views+1
     
-    UserModel.updateOne({userName:audioTitleViews},{Views:newViews},function (err, docs) {
+    UserModel.updateOne({userName:UserName},{Views:newViews},function (err, docs) {
       if (err) {
         console.log(err)
       }
