@@ -724,6 +724,8 @@
                     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                       <center> <img style="width:100%;height:300px;" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt=""></center>
                       <button onclick="
+                      document.getElementById('SHARESTATUS').innerText='rindira amasegonda atanu';
+                      document.getElementById('SHARESTATUS').disabled='true';
                      async function shareImage() {
                       const options = {
                           method: 'GET',
@@ -745,7 +747,7 @@
                  files: filesArray,
                          };
                    navigator.share(shareData);
-};shareImage()" class="w3-button w3-teal w3-margin-bottom">share</button>
+};shareImage()" id="SHARESTATUS" class="w3-button w3-teal w3-margin-bottom">share</button>
                     </div>
                   </div>
         </div>
