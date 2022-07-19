@@ -1071,26 +1071,26 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   transferTobeneficiary(payload)
 })
 app.post('/addViews', (req, res) => {
-  let audioTitleViews = req.body.audioTitleViews;
-  let audioTitleViews2 = req.body.audioTitleViews2;
-  console.log(audioTitleViews+" "+audioTitleViews2)
-  // recordings.findOne({ RecordingId: audioTitleViews }).then((results) => {
-  //   let newViews = results.views+1
-  //   recordings.updateOne({ UserName: audioTitleViews }, { views: newViews }, function (err, docs) {
-  //     if (err) {
-  //       console.log(err)
-  //     }
-  //   })
-  // })
-  // UserModel.findOne({userName:audioTitleViews2}).then((results)=>{
-  //   let newViews = results.Views+1
+  let Recordingid = req.body.audioTitleViews;
+  let UserName = req.body.audioTitleViews2;
+  
+  recordings.findOne({ RecordingId: Recordingid }).then((results) => {
+    let newViews = results.views+1
+    recordings.updateOne({ UserName: audioTitleViews }, { views: newViews }, function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+    })
+  })
+  UserModel.findOne({userName:UserName}).then((results)=>{
+    let newViews = results.Views+1
     
-  //   UserModel.updateOne({userName:audioTitleViews},{Views:newViews},function (err, docs) {
-  //     if (err) {
-  //       console.log(err)
-  //     }
-  //   })
-  // })
+    UserModel.updateOne({userName:audioTitleViews},{Views:newViews},function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+    })
+  })
 
 })
 app.post('/addViewsStatus', (req, res) => {
