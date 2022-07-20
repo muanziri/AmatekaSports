@@ -212,7 +212,7 @@
   <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
     <!-- The Grid -->
     <% if(messages.message1) {%>
-      <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index: 2;"
+      <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
         class="w3-panel w3-teal w3-card w3-animate-right ">
         <span onclick="document.getElementById('message1Id').style.display='none';"
           class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -241,53 +241,35 @@
                   " class="w3-button w3-teal w3-margin-bottom">Hindura Ifoto</button>
                 </div>
               </div>
-              <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px ;"
-                class=" w3-card w3-white w3-round w3-margin ">
+              
 
-                <h6>Story Zawe <%=user.Recordings.length%></h6>
-               
-              </div>
-              <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-                class=" w3-card w3-white w3-round w3-margin ">
-                <h6>Zumvishwe <%=user.Views%></h6>
-               
-              </div>
-              <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-                class=" w3-card w3-white w3-round w3-margin ">
-                <h6>Zakunzwe <%=user.likes%></h6>
-                
-              </div>
+                <h6 class=" w3-card w3-white w3-round w3-margin ">Story Zawe <%=user.Recordings.length%></h6>
+                <h6   class=" w3-card w3-white w3-round w3-margin ">Zumvishwe <%=user.Views%></h6>
+                <h6 class=" w3-card w3-white w3-round w3-margin ">Zakunzwe <%=user.likes%></h6>
               <% if(payment.PaymentStatus=="payed" ) {%>
                 <% if(payment.PackageDuration=="7" ) {%>
-              <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-                class=" w3-card w3-white w3-round w3-margin ">
-                <h6>Pack wishyuye niy'iminsi 7</h6>
               
-              </div>
-               <% }else if(payment.PackageDuration=="30"){ %> 
-                <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-                class=" w3-card w3-white w3-round w3-margin ">
-                <h6>Pack wishyuye niy'iminsi 30</h6>
-               
-              </div>
-                <% }else if(payment.PackageDuration=="360"){ %> 
-                  <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-                class=" w3-card w3-white w3-round w3-margin ">
-                <h6>Pack wishyuye niy'iminsi Umwaka</h6>
-               
-              </div>
-                <% }else{ %>
-                  <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-                  class=" w3-card w3-white w3-round w3-margin ">
-                  <h6>Pack wishyuye Nta Package wishyuye/h6>
-                  
-                </div> 
-                <% } %>     
-              <div style="width: fit-content;height: 5%; padding-left:3px;padding-right:3px"
-                class=" w3-card w3-white w3-round w3-margin ">
-                <h6>Amafaranga Winjije <%=payment.CashLeft%></h6>
                 
-              </div>
+                <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi 7</h6>
+              
+             
+               <% }else if(payment.PackageDuration=="30"){ %> 
+                
+                <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi 30</h6>
+               
+              
+                <% }else if(payment.PackageDuration=="360"){ %> 
+                  
+                <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi Umwaka</h6>
+               
+             
+                <% }else{ %>
+                  <h6 class=" w3-card w3-white w3-round w3-margin "> Nta Package wishyuye</h6>
+                <% } %>     
+              
+                <h6 class=" w3-card w3-white w3-round w3-margin ">Amafaranga Winjije <%=payment.CashLeft%></h6>
+                
+          
 
 
              
@@ -295,10 +277,16 @@
                 <% } %>  
                   <br>
                   <br>
+                  <a href="/Logout"><button  style="background-color: rgb(0, 77, 77); display: block; "
+                    class="w3-center w3-button ">
+                    <b>LOG OUT</b></a>
+                  </button>
+                  <br>
                    <button id="BTN6" onclick="ChangeToKash();" style="background-color: rgb(0, 77, 77); display: block; "
                     class="w3-center w3-button ">
                     <b>KORERA CASH</b>
                   </button>
+                
                 <button onclick="ChangeToStories()" id="BTN5" style="background-color: rgb(0, 77, 77); display:none"
                   class="w3-center w3-button ">
                   <b>Umva Stories</b>
@@ -558,11 +546,11 @@
                       <br>
 
                       <b><label>hitamo package wishyura</label></b>
-                      <select onchange="myFunction(this.value)" id="select" class="w3-input  w3-teal"
-                        name="package" id="selectionOfPackage">
-                        <option value="1500">1500 RWF kucyumweru</option>
-                        <option value="5000">5000 RWF kukwezi</option>
-                        <option value="50000">50000 RWF Kumwaka</option>
+                      <select onchange="myFunction(this.value)" id="select" class="w3-input w3-teal"
+                        name="package" >
+                        <option value="500">500 RWF kucyumweru</option>
+                        <option value="1000">1000 RWF kukwezi</option>
+                        <option value="10000">10000 RWF Kumwaka</option>
                       </select>
                     </div>
 
@@ -842,9 +830,18 @@
                       placeholder="078(MTN GUSA)-----" />
                     <br>
                     <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
+                    <input value="<%=payment.CashLeft%>" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" name="Amount" placeholder="----" />
+                    <input onkeypress="if (document.getElementById('AmountWorked').value < this.value){ if(!this.value>2000){document.getElementById('alerT').style.display='block';document.getElementById(sunmit).disabled='true'} document.getElementById('alerY').style.display='block';document.getElementById(sunmit).disabled='true'}else{document.getElementById(sunmit).disabled='false'}" class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
-                  <button class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
+                  <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
+                    <h6>x</h6>
+                   <p>Bikuza Ayo Wakoreye</p>
+                    </div>
+                    <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
+                      <h6>x</h6>
+                   <p>Bikuza Amafaranga ari hejuru ya 2000</p>
+                    </div>
+                  <button disabled id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
                 </form>
               </center>
             </div>
@@ -992,7 +989,7 @@
             document.getElementById('BTN5').style.display = 'none'
             document.getElementById('MENUBTN').style.display = 'block'
             document.getElementById('BTN6').style.display = 'block'
-            document.getElementById('stories').style.display = 'block'
+            document.getElementById('stories').style.display = 'flex'
             document.getElementById('ReacorderBTN').style.display = 'none'
             document.getElementById('BTN2').style.display = 'none'
             document.getElementById('BTN8').style.display = 'none'

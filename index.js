@@ -92,6 +92,12 @@ app.get('/', (req, res) => {
   }
 })    
 })
+app.get('/Logout', function(req, res){
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
+});
 app.get('/1/:Name',(req,res)=>{
   let Name=req.params.Name
   paymentWeek.findOne({userName:Name}).then((results)=>{
