@@ -831,7 +831,7 @@
                     <br>
                     <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
                     <input value=" <% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%>" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
-                    <input onkeyup="if (document.getElementById('AmountWorked').value > this.value){document.getElementById('alerT').style.display='block';}else{document.getElementById(sunmit).style.display='block';document.getElementById('alerT').style.display='none';};
+                    <input onkeyup="if (this.value < document.getElementById('AmountWorked').value ){document.getElementById('alerT').style.display='block';}else{document.getElementById(sunmit).style.display='block';document.getElementById('alerT').style.display='none';};
                     if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
