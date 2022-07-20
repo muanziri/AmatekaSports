@@ -827,12 +827,14 @@
                       <lable>Phone yawe</lable>
                     </b>
                     <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
-                     value="document.getElementById('AmountWorked').value"    placeholder="078(MTN GUSA)-----" />
+                         placeholder="078(MTN GUSA)-----" />
                     <br>
                     <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
                     <input value=" <% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%>" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
-                    <input onkeyup="if (document.getElementById('AmountWorked').value  < this.value){document.getElementById('alerT').style.display='none';}else{document.getElementById('sunmit').style.display='block';document.getElementById('alerT').style.display='block';};
-                    if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';}
+                    <input onkeyup="
+                     let xy= document.getElementById('AmountWorked').value;
+                    if (document.getElementById('AmountWorked').value  < this.value){document.getElementById('alerT').style.display='none';}else{document.getElementById('sunmit').style.display='block';document.getElementById('alerT').style.display='block';};
+                    if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
                   <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
