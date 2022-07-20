@@ -830,15 +830,15 @@
                       placeholder="078(MTN GUSA)-----" />
                     <br>
                     <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
-                    <input value=" <% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%>" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" name="Amount" placeholder="----" />
-                    <input onkeypress="if (document.getElementById('AmountWorked').value < this.value){ if(!this.value>2000){document.getElementById('alerT').style.display='block';document.getElementById(sunmit).disabled='true'} document.getElementById('alerY').style.display='block';document.getElementById(sunmit).disabled='true'}else{document.getElementById(sunmit).disabled='false'}" class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
+                    <input value=" <% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%>" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: block;" type="text" name="Amount" placeholder="----" />
+                    <input onkeypress="if (document.getElementById('AmountWorked').value < this.value){ if(this.value>2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerT').style.display='none';} document.getElementById('alerT').style.display='block';}else{document.getElementById(sunmit).disabled='false';document.getElementById('alerT').style.display='block';}" class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
                   <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
-                    <h6>x</h6>
+                    <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
                    <p>Bikuza Ayo Wakoreye</p>
                     </div>
                     <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
-                      <h6>x</h6>
+                      <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
                    <p>Bikuza Amafaranga ari hejuru ya 2000</p>
                     </div>
                   <button disabled id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
