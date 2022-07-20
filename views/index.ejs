@@ -834,7 +834,7 @@
                     <input onkeyup="
                      let xy= document.getElementById('AmountWorked').value;
                      console.log(xy)
-                    if (document.getElementById('AmountWorked').value  < this.value){document.getElementById('alerT').style.display='none';}else{document.getElementById('sunmit').style.display='block';document.getElementById('alerT').style.display='block';};
+                    if ( this.value <xy){document.getElementById('alerT').style.display='none';}else{document.getElementById('sunmit').style.display='block';document.getElementById('alerT').style.display='block';};
                     if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
