@@ -1058,9 +1058,10 @@ app.post('/flutterWaveSubYear', (req, res) => {
 
 
 app.post('/flutterWaveWithDraw', (req, res) => {
-   console.log(req.body)
+   
   let kid=req.body.kid.trim();
   let amount=req.body.Amount
+  console.log(kid)
    paymentYear.find({tx_ref:kid}).then((paymentres)=>{
     paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
       paymentWeek.find({tx_ref:kid}).then((paymentres3)=>{
