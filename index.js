@@ -1085,7 +1085,7 @@ app.post('/flutterWaveWithDraw', (req, res) => {
           req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
           res.redirect('/');
         }else{ 
-        req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye${paymentres[0].CashLef},ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+        req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
         res.redirect('/');
       }
     }else if(paymentres2.length >0){
@@ -1108,7 +1108,7 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   transferTobeneficiary(payload)
   req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
   res.redirect('/');
-      }else{req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye${paymentres2[0].CashLef},ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+      }else{req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres2[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
       res.redirect('/');}
     }else if(paymentres3.length >0){
      let  ceck=paymentres3[0].CashLeft-amount
@@ -1130,7 +1130,7 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   transferTobeneficiary(payload)
   req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
   res.redirect('/');
-    }else{req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye${paymentres3[0].CashLef},ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+    }else{req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres3[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
     res.redirect('/');}
     }
    }) })})
