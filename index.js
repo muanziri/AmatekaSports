@@ -1068,34 +1068,73 @@ app.post('/flutterWaveWithDraw', (req, res) => {
        if (paymentres.length >0){
       let ceck=paymentres[0].CashLeft-amount
         if (ceck>0){
-          console.log('no theft',ceck)
-        }else{console.log('a thief')}
+          let payload = {
+    
+     account_bank: "MPS",
+        account_number: req.body.phoneN,
+        amount: req.body.Amount,
+        currency: "RWF",
+        beneficiary_name: req.user.userName,
+        meta: {
+          "sender": "DutereStory Developers",
+          "sender_country": "RWA",
+          "mobile_number": "250790457824"
+        }
+  }
+  transferTobeneficiary(payload)
+          req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
+          res.redirect('/');
+        }else{ 
+        req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye${paymentres[0].CashLef},ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+        res.redirect('/');
+      }
     }else if(paymentres2.length >0){
       let ceck=paymentres2[0].CashLeft-amount
       if (ceck>0){
-        console.log('no theft',ceck)
-      }else{console.log('a thief')}
+       
+          let payload = {
+    
+     account_bank: "MPS",
+        account_number: req.body.phoneN,
+        amount: req.body.Amount,
+        currency: "RWF",
+        beneficiary_name: req.user.userName,
+        meta: {
+          "sender": "DutereStory Developers",
+          "sender_country": "RWA",
+          "mobile_number": "250790457824"
+        }
+  }
+  transferTobeneficiary(payload)
+  req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
+  res.redirect('/');
+      }else{req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye${paymentres2[0].CashLef},ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+      res.redirect('/');}
     }else if(paymentres3.length >0){
      let  ceck=paymentres3[0].CashLeft-amount
      if (ceck>0){
-      console.log('no theft',ceck)
-    }else{console.log('a thief')}
+      
+          let payload = {
+    
+     account_bank: "MPS",
+        account_number: req.body.phoneN,
+        amount: req.body.Amount,
+        currency: "RWF",
+        beneficiary_name: req.user.userName,
+        meta: {
+          "sender": "DutereStory Developers",
+          "sender_country": "RWA",
+          "mobile_number": "250790457824"
+        }
+  }
+  transferTobeneficiary(payload)
+  req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
+  res.redirect('/');
+    }else{req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye${paymentres3[0].CashLef},ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+    res.redirect('/');}
     }
    }) })})
-  // let payload = {
-    
-  //    account_bank: "MPS",
-  //       account_number: req.body.phoneN,
-  //       amount: req.body.Amount,
-  //       currency: "RWF",
-  //       beneficiary_name: req.user.userName,
-  //       meta: {
-  //         "sender": "DutereStory Developers",
-  //         "sender_country": "RWA",
-  //         "mobile_number": "250790457824"
-  //       }
-  // }
-  // transferTobeneficiary(payload)
+  
 })
 app.post('/addViews', (req, res) => {
   let Recordingid = req.body.audioTitleViews;
