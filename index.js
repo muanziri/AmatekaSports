@@ -1066,11 +1066,11 @@ app.post('/flutterWaveWithDraw', (req, res) => {
     paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
       paymentWeek.find({tx_ref:kid}).then((paymentres3)=>{
        if (paymentres.length >0){
-      console.log(paymentres)
+      console.log(amount-paymentres[0].CashLeft)
     }else if(paymentres2.length >0){
-      console.log(paymentres2)
+      console.log(amount-paymentres2[0].CashLeft)
     }else if(paymentres3.length >0){
-      console.log(paymentres3)
+      console.log(amount-paymentres3[0].CashLeft)
     }
    }) })})
   // let payload = {
