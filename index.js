@@ -1068,17 +1068,17 @@ app.post('/flutterWaveWithDraw', (req, res) => {
        if (paymentres.length >0){
       let ceck=amount-paymentres[0].CashLeft
         if (ceck>0){
-          console.log('no theft')
+          console.log('no theft',ceck)
         }else{console.log('a thief')}
     }else if(paymentres2.length >0){
       let ceck=amount-paymentres2[0].CashLeft
       if (ceck>0){
-        console.log('no theft')
+        console.log('no theft',ceck)
       }else{console.log('a thief')}
     }else if(paymentres3.length >0){
      let  ceck=amount-paymentres3[0].CashLeft
      if (ceck>0){
-      console.log('no theft')
+      console.log('no theft',ceck)
     }else{console.log('a thief')}
     }
    }) })})
