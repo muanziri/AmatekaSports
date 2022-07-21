@@ -947,9 +947,10 @@
         </script>
         
         <script>
-          window.onpopstate = function() {
-             alert("clicked back button");
-          }; history.pushState({}, '');
+          window.onbeforeunload = function() { alert("Your work will be lost."); };
+          // window.onpopstate = function() {
+          //    alert("clicked back button");
+          // }; history.pushState({}, '');
           // Accordio
         //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
          
