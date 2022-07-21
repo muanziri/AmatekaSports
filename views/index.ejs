@@ -834,12 +834,13 @@
                    <p>Bikuza Amafaranga ari hejuru ya 2000</p>
                     </div>
                     <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
-                    <input value=" <% if (user) {%>
+                    <% if (user) {%>
                       <% if(payment.PaymentStatus=='payed' ) {%>
+                    <input value=" 
                         <%=payment.id%>
-                      <%}%>
-                      <%}%> 
                     " name="kid" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
+                    <%}%>
+                      <%}%> 
                     <input onkeyup="
                     if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
