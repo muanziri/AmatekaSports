@@ -1059,8 +1059,19 @@ app.post('/flutterWaveSubYear', (req, res) => {
 
 app.post('/flutterWaveWithDraw', (req, res) => {
    console.log(req.body)
-  
- 
+  let kid=req.body.kid
+  let amount=req.body.Amount
+   paymentYear.find({tx_ref:kid}).then((paymentres)=>{
+    paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
+      paymentWeek.find({tx_ref:kid}).then((paymentres3)=>{
+       if (paymentres.length >0){
+      console.log(amount-paymentres.CashLeft)
+    }else if(paymentres2.length >0){
+      console.log(amount-paymentres2.CashLeft)
+    }else if(paymentres3.length >0){
+      console.log(amount-paymentres3.CashLeft)
+    }
+   }) })})
   // let payload = {
     
   //    account_bank: "MPS",
