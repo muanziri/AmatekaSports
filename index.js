@@ -1058,23 +1058,23 @@ app.post('/flutterWaveSubYear', (req, res) => {
 
 
 app.post('/flutterWaveWithDraw', (req, res) => {
-
+   console.log(req.body)
   
  
-  let payload = {
+  // let payload = {
     
-     account_bank: "MPS",
-        account_number: req.body.phoneN,
-        amount: req.body.Amount,
-        currency: "RWF",
-        beneficiary_name: req.user.userName,
-        meta: {
-          "sender": "DutereStory Developers",
-          "sender_country": "RWA",
-          "mobile_number": "250790457824"
-        }
-  }
-  transferTobeneficiary(payload)
+  //    account_bank: "MPS",
+  //       account_number: req.body.phoneN,
+  //       amount: req.body.Amount,
+  //       currency: "RWF",
+  //       beneficiary_name: req.user.userName,
+  //       meta: {
+  //         "sender": "DutereStory Developers",
+  //         "sender_country": "RWA",
+  //         "mobile_number": "250790457824"
+  //       }
+  // }
+  // transferTobeneficiary(payload)
 })
 app.post('/addViews', (req, res) => {
   let Recordingid = req.body.audioTitleViews;

@@ -829,14 +829,18 @@
                     <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
                          placeholder="078(MTN GUSA)-----" />
                     <br>
+                    <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
+                      <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
+                   <p>Bikuza Amafaranga ari hejuru ya 2000</p>
+                    </div>
                     <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
-                    <input value=" <% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%>" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
+                    <input value=" <% if (user) {%>
+                      <% if(payment.PaymentStatus=='payed' ) {%>
+                        <%=payment.id%>
+                      <%}%>
+                      <%}%> 
+                    " name="kid" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
                     <input onkeyup="
-                     let xy= document.getElementById('AmountWorked').value;
-                     console.log(xy ,this.value)
-                    if (xy!==this.value) {
-                      document.getElementById('alerT').style.display='block';
-                    }else{document.getElementById('alerT').style.display='none';}
                     if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
@@ -845,10 +849,7 @@
                    <p>Bikuza Ayo Wakoreye yose</p>
                    <p> wakoreye <b><% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%></b>RWF</p>
                     </div>
-                    <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
-                      <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
-                   <p>Bikuza Amafaranga ari hejuru ya 2000</p>
-                    </div>
+                   
                   <button style="display: none;"  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
                     
                 </form>
