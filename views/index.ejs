@@ -937,6 +937,12 @@
           function updateScript(){
             $("#appjs").load(location.href + " #appjs"); 
           }
+          $(document).ready(function() {
+      window.history.pushState(null, "", window.location.href);        
+      window.onpopstate = function() {
+          window.history.pushState(null, "", window.location.href);
+         };
+           });
            function pauseOthers(ele) {
            
                 $("audio").not(ele).each(function (index, audio) {
@@ -947,10 +953,7 @@
         </script>
         
         <script>
-          window.onbeforeunload = function() { alert("Your work will be lost."); };
-          // window.onpopstate = function() {
-          //    alert("clicked back button");
-          // }; history.pushState({}, '');
+       
           // Accordio
         //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
          
