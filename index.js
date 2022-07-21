@@ -700,9 +700,9 @@ app.get('/20/:Name',(req,res)=>{
 })
 app.get('/Admin', (req, res) => {
       const user=req.user
-      paymentYear.find({tx_ref:user.paymentId}).then((usersYear)=>{
-        paymentMonth.find({tx_ref:user.paymentId}).then((usersMonth)=>{
-          paymentWeek.find({tx_ref:user.paymentId}).then((usersWeek)=>{
+      paymentYear.find().then((usersYear)=>{
+        paymentMonth.find().then((usersMonth)=>{
+          paymentWeek.find().then((usersWeek)=>{
             UserModel.find().then((results)=>{
               res.render('Admindashbaord',{users:results,usersYear:usersYear,usersMonth:usersMonth,usersWeek:usersWeek})
             })
