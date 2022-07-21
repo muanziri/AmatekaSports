@@ -841,7 +841,7 @@
                       <%}%> 
                     " name="kid" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
                     <input onkeyup="
-                    if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';}
+                    if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
                   <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
@@ -946,7 +946,9 @@
         </script>
         
         <script>
-       
+          window.onpopstate = function() {
+             alert("clicked back button");
+          }; history.pushState({}, '');
           // Accordio
         //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
          
