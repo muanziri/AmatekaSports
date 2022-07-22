@@ -53,10 +53,10 @@
         <div class="w3-container w3-black w3-text-white w3-padding-16">
           <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
           <div class="w3-right">
-            <h3></h3>
+            <b><h3><%=users.length%> </h3></b>
           </div>
           <div class="w3-clear"></div>
-          <h4><%=users.length%> </h4>
+          <h4>Users</h4>
         </div>
       </div>
       <% } %> 
@@ -70,6 +70,13 @@
           <h4>Total Money In</h4>
         </div>
       </div>
+      <%
+      if (usersMonth){
+      // const sum1 = usersYear.reduce((partialSum, a) => partialSum + a, 0);
+      // const sum2 = usersYear.reduce((partialSum, a) => partialSum + a, 0);
+      // const sum3 = usersYear.reduce((partialSum, a) => partialSum + a, 0);
+      // console.log(sum1+sum2+sum3); 
+      %>
       <div class="w3-quarter">
         <div class="w3-container w3-black w3-text-white w3-padding-16">
           <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
@@ -77,9 +84,12 @@
             <h3></h3>
           </div>
           <div class="w3-clear"></div>
-          <h4>Total Money Out</h4>
+          <h4><%usersMonth.forEach(element => {
+            element
+          });%></h4>
         </div>
       </div>
+    <%}%>
     </div>
     <br>
 
