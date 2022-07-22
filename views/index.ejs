@@ -954,7 +954,7 @@
                   player1 = new YT.Player('player1', {
                     height: '100%',
                     width: '100%',
-                    playerVars: {'controls': 0 },
+                    playerVars: {'controls': 1 },
                     videoId: 'JL1cyT8WsZ4',
 
                     events: {
@@ -965,8 +965,7 @@
                   player16 = new YT.Player('player2', {
                     height: '100%',
                     width: '100%',
-                    videoId: '<%=watchtime[Math.floor(Math.random() * watchtime.length)].videoId%>',
-                    playerVars: {'controls': 0 },
+                    playerVars: {'controls': 1 },
                     videoId: 'JL1cyT8WsZ4',
                     events: {
                       'onReady': onPlayerReady,
