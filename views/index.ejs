@@ -44,18 +44,19 @@
       animation-iteration-count: infinite;
 
     }
+
     #BTN22 {
 
-     margin-top: -5%;
-     margin-left: 45%;
-     color: white;
-     width: 100px;
-     height: 100px;
-     z-index: 1;
-     border: none;
-     display: none;
-     
-     }
+      margin-top: -5%;
+      margin-left: 45%;
+      color: white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display: none;
+
+    }
 
     #BTN7 {
 
@@ -212,12 +213,13 @@
 
     }
   </style>
+  <style src="../static/style/"></style>
 </head>
 
 <body class="w3-theme-l5">
- <script>
- 
- </script>
+  <script>
+
+  </script>
 
 
   <!-- Page Container -->
@@ -241,71 +243,78 @@
               <span
                 onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'"
                 class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-              <img onclick="document.getElementById('ChangeProfilePic').style.display='block'" src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+              <img onclick="document.getElementById('ChangeProfilePic').style.display='block'"
+                src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
               <div id="ChangeProfilePic" class="w3-modal w3-padding">
 
 
                 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                 <img style="width:50%;height:auto;" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt="">
-                 <img style="width:50%;height:auto;" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt="">
-                 
+                  <img style="width:50%;height:auto;"
+                    src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt="">
+                  <img style="width:50%;height:auto;"
+                    src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt="">
+
                   <button onclick="
                   " class="w3-button w3-teal w3-margin-bottom">Hindura Ifoto</button>
                 </div>
               </div>
-              
 
-                <h6 class=" w3-card w3-white w3-round w3-margin ">Story Zawe <%=user.Recordings.length%></h6>
-                <h6   class=" w3-card w3-white w3-round w3-margin ">Zumvishwe <%=user.Views%></h6>
-                <h6 class=" w3-card w3-white w3-round w3-margin ">Zakunzwe <%=user.likes%></h6>
+
+              <h6 class=" w3-card w3-white w3-round w3-margin ">Story Zawe <%=user.Recordings.length%>
+              </h6>
+              <h6 class=" w3-card w3-white w3-round w3-margin ">Zumvishwe <%=user.Views%>
+              </h6>
+              <h6 class=" w3-card w3-white w3-round w3-margin ">Zakunzwe <%=user.likes%>
+              </h6>
               <% if(payment.PaymentStatus=="payed" ) {%>
                 <% if(payment.PackageDuration=="7" ) {%>
-              
-                
-                <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi 7</h6>
-              
-             
-               <% }else if(payment.PackageDuration=="30"){ %> 
-                
-                <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi 30</h6>
-               
-              
-                <% }else if(payment.PackageDuration=="360"){ %> 
-                  
-                <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi Umwaka</h6>
-               
-             
-                <% }else{ %>
-                  <h6 class=" w3-card w3-white w3-round w3-margin "> Nta Package wishyuye</h6>
-                <% } %>     
-              
-                <h6 class=" w3-card w3-white w3-round w3-margin ">Amafaranga Winjije <%=payment.CashLeft%></h6>
-                
-          
 
 
-             
-              <div id="BTN1">
-                <% } %>  
-                  <br>
-                  <br>
-                  <a href="/Logout"><button  style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>LOG OUT</b></a>
-                  </button>
-                  <br>
-                   <button id="BTN6" onclick="ChangeToKash();" style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>KORERA CASH</b>
-                  </button>
-                
-                <button onclick="ChangeToStories()" id="BTN5" style="background-color: rgb(0, 77, 77); display:none"
-                  class="w3-center w3-button ">
-                  <b>Umva Stories</b>
-                </button>
+                  <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi 7</h6>
 
 
-              </div>
+                  <% }else if(payment.PackageDuration=="30" ){ %>
+
+                    <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi 30</h6>
+
+
+                    <% }else if(payment.PackageDuration=="360" ){ %>
+
+                      <h6 class=" w3-card w3-white w3-round w3-margin ">Pack wishyuye niy'iminsi Umwaka</h6>
+
+
+                      <% }else{ %>
+                        <h6 class=" w3-card w3-white w3-round w3-margin "> Nta Package wishyuye</h6>
+                        <% } %>
+
+                          <h6 class=" w3-card w3-white w3-round w3-margin ">Amafaranga Winjije <%=payment.CashLeft%>
+                          </h6>
+
+
+
+
+
+                          <div id="BTN1">
+                            <% } %>
+                              <br>
+                              <br>
+                              <a href="/Logout"><button style="background-color: rgb(0, 77, 77); display: block; "
+                                  class="w3-center w3-button ">
+                                  <b>LOG OUT</b></a>
+                              </button>
+                              <br>
+                              <button id="BTN6" onclick="ChangeToKash();"
+                                style="background-color: rgb(0, 77, 77); display: block; " class="w3-center w3-button ">
+                                <b>KORERA CASH</b>
+                              </button>
+
+                              <button onclick="ChangeToStories()" id="BTN5"
+                                style="background-color: rgb(0, 77, 77); display:none" class="w3-center w3-button ">
+                                <b>Umva Stories</b>
+                              </button>
+
+
+                          </div>
 
 
 
@@ -320,11 +329,11 @@
 
         <!-- Middle Column -->
         <div style="width:100%;" class="w3-col m7">
-          <div  style="display:flex;flex-direction: row;flex-wrap: wrap;" id="stories">
+          <div style="display:flex;flex-direction: row;flex-wrap: wrap;" id="stories">
             <%if (stories.length>0){%>
               <%stories.forEach(element=> {%>
 
-                <div id="id0222<%=element.UserName%>"  class="w3-modal">
+                <div id="id0222<%=element.UserName%>" class="w3-modal">
                   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
                     <span onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none'"
                       class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -332,32 +341,108 @@
                       <h5>Stories by <%=element.UserName%>
                       </h5>
                       <div>
-                        <% let Inkuru=stories
-                          
-                        function InkuruZawe(Inkuru) {
-                          return Inkuru.UserName==element.UserName;
-                        }
-                       let op= Inkuru.filter(InkuruZawe)
-                        //inkuruNshya.push(Inkuru);
-                        op.forEach(element2 => {
-                         
-                        %> 
-                       <h6><%=element2.audioTitle%></h6>
-                        <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
+                        <% let Inkuru=stories function InkuruZawe(Inkuru) { return Inkuru.UserName==element.UserName; }
+                          let op=Inkuru.filter(InkuruZawe) //inkuruNshya.push(Inkuru); op.forEach(element2=> {
+
+                          %>
+                          <h6>
+                            <%=element2.audioTitle%>
+                          </h6>
+                          <div style="height:20%;width:50%" class="content">
+
+                            <div class="audio-player__container"
+                              data-audio-src="http://www.alexkatz.me/codepen/music/interlude.mp3">
+                              <div class="file-path">
+                                https://archive.org/download/ra2007-07-21/ra2007-07-21d1t05_64kb.mp3
+                              </div>
+                              <div class="play-btn__container">
+                                <div class="text">
+                                  <p class="stop">Stop</p>
+                                  <p class="play">Play</p>
+                                </div>
+                                <div class="toggle">
+                                  <div class="rectangle"></div>
+                                </div>
+                              </div>
+                              <div class="scrubber__container">
+                                <p class="time-start hide" id="0">0:00</p>
+                                <p class="time-end hide" id="0">0:00</p>
+                                <div class="dial">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="107">
+                                    <defs>
+                                      <filter id="a" width="310%" height="122.1%" x="-105%" y="-7.9%"
+                                        filterUnits="objectBoundingBox">
+                                        <feOffset dy="3" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1"
+                                          stdDeviation="3" />
+                                        <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1"
+                                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0" />
+                                        <feMerge>
+                                          <feMergeNode in="shadowMatrixOuter1" />
+                                          <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                      </filter>
+                                    </defs>
+                                    <g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(6.183 3)">
+                                      <path fill="#B84546" d="M2 0h3v91H0z" />
+                                      <path fill="#802F2D" d="M8 0H5v91H0l5 4 5-4z" />
+                                    </g>
+                                  </svg>
+                                </div>
+                                <div class="scrubber__time--top">
+                                  <p class="hide" id="10">10</p>
+                                  <p id="20">20</p>
+                                  <p class="hide" id="30">30</p>
+                                  <p id="40">40</p>
+                                  <p class="hide" id="50">50</p>
+                                  <p id="60">60</p>
+                                  <p class="hide" id="70">70</p>
+                                  <p id="80">80</p>
+                                  <p class="hide" id="90">90</p>
+                                </div>
+                                <div class="scrubber__scrubber--outer">
+                                  <div class="scrubber__scrubber">
+                                    <div class="scrubber__scrubber--start">
+                                    </div>
+                                    <div class="scrubber__scrubber--end">
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- TO DO: Align bottom time -->
+                                <div class="scrubber__time--bottom">
+                                  <div class="desktop">
+                                    <p>15</p>
+                                    <p>25</p>
+                                    <p>35</p>
+                                    <p>45</p>
+                                    <p>55</p>
+                                    <p>65</p>
+                                    <p>75</p>
+                                    <p>85</p>
+                                  </div>
+                                  <div class="mobile">
+                                    <p>30</p>
+                                    <p>50</p>
+                                    <p>70</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                           setTimeout(()=>{ window.stop()},10000)
                           document.getElementById('viewsForm<%=element2.RecordingId%>').submit();
                    
-                        }"
-                    onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
-                  src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
-                        <%})%>
+                        }" onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
+                            src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"></audio>
+                          <%})%>
                       </div>
                   </div>
                   </center>
                 </div>
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                   <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'"
-                  src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
+                    src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
                     style="width:60px;cursor: pointer;">
                   <span class="w3-right w3-opacity">1 min</span>
                   <h4>
@@ -365,17 +450,18 @@
                   </h4><br>
                   <hr class="w3-clear">
                   <form id="viewsForm<%=element.RecordingId%>" style="display:none" method="post" action="/addViews">
-                    <input type="text" value="<%=element.UserName%>" name="audioTitleViews2"/>
-                    <input type="text" value="<%=element.RecordingId%>" name="audioTitleViews"/>
+                    <input type="text" value="<%=element.UserName%>" name="audioTitleViews2" />
+                    <input type="text" value="<%=element.RecordingId%>" name="audioTitleViews" />
                   </form>
-                  <h6>by <%=element.UserName%></h6>
+                  <h6>by <%=element.UserName%>
+                  </h6>
                   <br>
                   <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
                    document.getElementById('viewsForm<%=element.RecordingId%>').submit();
                    setTimeout(()=>{ window.stop()},10000)
                     }
                   " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
-                  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+                    src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
                   <br>
                   <div style=" width: 100%;">
                     <button
@@ -384,12 +470,12 @@
                         id="<%=element.id%>">
                         <%=element.likes.length%>
                       </i></button>
-                   
+
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yumvishwe <%=element.views%>
                     </div>
                   </div>
-                  
+
                   <br>
                   <br>
                   <br>
@@ -399,7 +485,7 @@
                 </div>
                 <% });%>
                   <%}%>
-                
+
 
           </div>
           <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
@@ -408,151 +494,150 @@
               Ohereza whatsapp views
             </button>
             <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
-           
-           
+
+
             <%if (user) {%>
-             <ol>
-              
-              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
+              <ol>
+
+                <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                  <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b></li>
-             </div>
-             
-             <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
+                </div>
+
+                <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                  <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/2/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/2/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link2"><b>https://dutere-story.herokuapp.com/2/<%=user.userName%></b></li>
-             </div>
-             <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
+                </div>
+                <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                  <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/3/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/3/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link3"><b>https://dutere-story.herokuapp.com/3/<%=user.userName%></b></li>
-            </div>
-             <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
+                </div>
+                <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                  <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/4/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/4/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link4"><b>https://dutere-story.herokuapp.com/4/<%=user.userName%></b></li>
-            </div>
-              <ol>
-                
-            <%}%>
-            </div>
-           
+                </div>
+                <ol>
 
-            <div id="id02" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="ChangeToStories()" class="w3-button w3-xlarge w3-transparent w3-display-topright"
-                  title="Close Modal">×</span>
-                <center>
-                  <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
-                </center>
-                <center>
-                  <form method="post"
-                    onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'"
-                    id="formPayment" class="w3-container w3-margin">
-                    <div class="w3-section">
-                      <b>
-                        <lable>Phone yawe</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                        placeholder="078(MTN GUSA)-----" />
-                      <br>
-
-                      <b><label>hitamo package wishyura</label></b>
-                      <select onchange="myFunction(this.value)" id="select" class="w3-input w3-teal"
-                        name="package" >
-                        <option value="500">500 RWF kucyumweru</option>
-                        <option value="1000">1000 RWF kukwezi</option>
-                        <option value="10000">10000 RWF Kumwaka</option>
-                      </select>
-                    </div>
-
-                    <button class="w3-button w3-block w3-teal w3-section w3-padding">ISHYURA</button>
-                  </form>
-                </center>
-
-              </div>
-            </div>
-            <div id="id11" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="document.getElementById('id11').style.display='none'"
-                  class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-                <center>
-                  <h5 style="color:rgb(0, 68, 68)"><b>Uzuzamo Views wagize na screenshot</b></h5>
-                </center>
-                <center>
-                  <form enctype="multipart/form-data" method="post" action="/FromWhatsapp" id="formPaymentW"
-                    class="w3-container w3-margin">
-                    <div class="w3-section">
-                      <b>
-                        <lable>Views wagize</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" type="text" name="Views"
-                        placeholder="Views Wagize" />
-                      <br>
-                      <b>
-                        <lable>ScreenShot</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" name="image" type="file" />
-                      <br>
-
-                    </div>
-                    <button class="w3-button w3-block w3-teal w3-section w3-padding">Komeza</button>
-                  </form>
-                </center>
-
-              </div>
-            </div>
-            <div id="id04" class="w3-modal">
-              <span onclick="ChangeToStories();document.getElementById(id04).style.display='none'"
-                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-
-              <% if (user) {%>
-                <% if(payment.PaymentStatus=="payed" ) {%>
-
-                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                    <center>
-                      <h5 style="color:rgb(0, 68, 68)"><b>Murakaza neza Kuri <h2>Korera Cash</h2></b></h5>
-                      <button onclick="document.getElementById('id04').style.display='none'"
-                        class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza</button>
-                    </center>
+                  <%}%>
+          </div>
 
 
+          <div id="id02" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+              <span onclick="ChangeToStories()" class="w3-button w3-xlarge w3-transparent w3-display-topright"
+                title="Close Modal">×</span>
+              <center>
+                <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
+              </center>
+              <center>
+                <form method="post"
+                  onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'"
+                  id="formPayment" class="w3-container w3-margin">
+                  <div class="w3-section">
+                    <b>
+                      <lable>Phone yawe</lable>
+                    </b>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                      placeholder="078(MTN GUSA)-----" />
+                    <br>
+
+                    <b><label>hitamo package wishyura</label></b>
+                    <select onchange="myFunction(this.value)" id="select" class="w3-input w3-teal" name="package">
+                      <option value="500">500 RWF kucyumweru</option>
+                      <option value="1000">1000 RWF kukwezi</option>
+                      <option value="10000">10000 RWF Kumwaka</option>
+                    </select>
                   </div>
 
-                  <%}else{%>
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <center>
-                        <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
-                        <button
-                          onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'"
-                          class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
-                      </center>
-                    </div>
+                  <button class="w3-button w3-block w3-teal w3-section w3-padding">ISHYURA</button>
+                </form>
+              </center>
 
-                    <% } %>
-                      <% } %>
             </div>
           </div>
-         
-          <% if (user){%>
-            <% if (messages.messageURL){%>
-              <div id="id09" style="display: block;" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:450px">
-                  <iframe src="<%=messages.messageURL%>"
-                    style="height:500px;width:450px;border:none; background-color: aliceblue;"></iframe>
-                  <center> <a href="/payment_callback/<%=user.id%> "><button
-                        class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza Niba Wishyuye</button></a>
+          <div id="id11" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+              <span onclick="document.getElementById('id11').style.display='none'"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+              <center>
+                <h5 style="color:rgb(0, 68, 68)"><b>Uzuzamo Views wagize na screenshot</b></h5>
+              </center>
+              <center>
+                <form enctype="multipart/form-data" method="post" action="/FromWhatsapp" id="formPaymentW"
+                  class="w3-container w3-margin">
+                  <div class="w3-section">
+                    <b>
+                      <lable>Views wagize</lable>
+                    </b>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="Views"
+                      placeholder="Views Wagize" />
+                    <br>
+                    <b>
+                      <lable>ScreenShot</lable>
+                    </b>
+                    <input class="w3-input w3-border w3-margin-bottom" name="image" type="file" />
+                    <br>
+
+                  </div>
+                  <button class="w3-button w3-block w3-teal w3-section w3-padding">Komeza</button>
+                </form>
+              </center>
+
+            </div>
+          </div>
+          <div id="id04" class="w3-modal">
+            <span onclick="ChangeToStories();document.getElementById(id04).style.display='none'"
+              class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+
+            <% if (user) {%>
+              <% if(payment.PaymentStatus=="payed" ) {%>
+
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                  <center>
+                    <h5 style="color:rgb(0, 68, 68)"><b>Murakaza neza Kuri <h2>Korera Cash</h2></b></h5>
+                    <button onclick="document.getElementById('id04').style.display='none'"
+                      class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza</button>
                   </center>
+
+
                 </div>
+
+                <%}else{%>
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                    <center>
+                      <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
+                      <button
+                        onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'"
+                        class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
+                    </center>
+                  </div>
+
+                  <% } %>
+                    <% } %>
+          </div>
+        </div>
+
+        <% if (user){%>
+          <% if (messages.messageURL){%>
+            <div id="id09" style="display: block;" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:450px">
+                <iframe src="<%=messages.messageURL%>"
+                  style="height:500px;width:450px;border:none; background-color: aliceblue;"></iframe>
+                <center> <a href="/payment_callback/<%=user.id%> "><button
+                      class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza Niba Wishyuye</button></a>
+                </center>
               </div>
+            </div>
+            <%}%>
               <%}%>
-                <%}%>
                 <% if (user){%>
                   <div id="id06" class="w3-modal w3-padding">
                     <span onclick="document.getElementById('id06').style.display='none'"
@@ -588,48 +673,50 @@
 
                     </div>
                   </div>
-                <%}else{%>
-                  <div id="id06" class="w3-modal w3-padding">
-                    <span onclick="document.getElementById('id06').style.display='none'"
-                      class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                  <%}else{%>
+                    <div id="id06" class="w3-modal w3-padding">
+                      <span onclick="document.getElementById('id06').style.display='none'"
+                        class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
 
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <center>
-                        <h5 style="color:rgb(0, 68, 68)"><b>korera whatsapp shares</b></h5>
-                        <form id="phoneWhatsapp" method="post" action="/saveWhatsappNumber">
-                          <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                            placeholder="Nimero iri kuri whatsapp gusa (isa nka 0780000000)-----" />
-                        </form>
-                        <button id="whatssapMoney" class="w3-button w3-teal">next</button>
-                        <p><b>uko bakorera whatsapp shares</b>:
-                        <ol>
-                          <li>shyiramo nimero haruguru</li>
-                          <li>kanda ahanditse 'next'</li>
-                          <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
-                          <li>shyira ifoto kuri status</li>
-                          <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button
-                            yanditseho "ohereza views"</li>
-                          <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
-                        </ol>
-                        <p>
-                        <p>
-                          <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
-                          <br>
-                          <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
-                        </p>
+                      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                        <center>
+                          <h5 style="color:rgb(0, 68, 68)"><b>korera whatsapp shares</b></h5>
+                          <form id="phoneWhatsapp" method="post" action="/saveWhatsappNumber">
+                            <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                              placeholder="Nimero iri kuri whatsapp gusa (isa nka 0780000000)-----" />
+                          </form>
+                          <button id="whatssapMoney" class="w3-button w3-teal">next</button>
+                          <p><b>uko bakorera whatsapp shares</b>:
+                          <ol>
+                            <li>shyiramo nimero haruguru</li>
+                            <li>kanda ahanditse 'next'</li>
+                            <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
+                            <li>shyira ifoto kuri status</li>
+                            <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri
+                              button
+                              yanditseho "ohereza views"</li>
+                            <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
+                          </ol>
+                          <p>
+                          <p>
+                            <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
+                            <br>
+                            <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
+                          </p>
 
-                      </center>
+                        </center>
 
 
+                      </div>
                     </div>
-                  </div>  
-                <%}%>  
-                  <div id="id07" class="w3-modal w3-padding">
+                    <%}%>
+                      <div id="id07" class="w3-modal w3-padding">
 
 
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <center> <img style="width:100%;height:300px;" src="../static/image/handsome-man.jpg" alt=""></center>
-                      <button onclick="
+                        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                          <center> <img style="width:100%;height:300px;" src="../static/image/handsome-man.jpg" alt="">
+                          </center>
+                          <button onclick="
                       document.getElementById('SHARESTATUS').innerText='rindira amasegonda atanu';
                       document.getElementById('SHARESTATUS').disabled='true';
                      async function shareImage() {
@@ -657,19 +744,19 @@
                          };
                    navigator.share(shareData);
 };shareImage()" id="SHARESTATUS" class="w3-button w3-teal w3-margin-bottom">share</button>
-                    </div>
-                  </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+                        </div>
+                      </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   </div>
 
   <!-- Right C
@@ -745,32 +832,42 @@
                       <lable>Phone yawe</lable>
                     </b>
                     <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
-                         placeholder="078(MTN GUSA)-----" />
+                      placeholder="078(MTN GUSA)-----" />
                     <br>
                     <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
-                      <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
-                   <p>Bikuza Amafaranga ari hejuru ya 2000</p>
+                      <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x
+                      </h6>
+                      <p>Bikuza Amafaranga ari hejuru ya 2000</p>
                     </div>
                     <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
                     <% if (user) {%>
                       <% if(payment.PaymentStatus=='payed' ) {%>
-                    <input value=" 
+                        <input value=" 
                         <%=payment.tx_ref%>
-                    " name="kid" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
-                    <%}%>
-                      <%}%> 
-                    <input onkeyup="
+                    " name="kid" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;"
+                          type="text" placeholder="----" />
+                        <%}%>
+                          <%}%>
+                            <input onkeyup="
                     if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
                   <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
-                    <h6 onclick="document.getElementById('alerT').style.display='none'" class="w3-display-topright">x</h6>
-                   <p>Bikuza Ayo Wakoreye yose</p>
-                   <p> wakoreye <b><% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%></b>RWF</p>
-                    </div>
-                   
-                  <button style="display: none;"  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
-                    
+                    <h6 onclick="document.getElementById('alerT').style.display='none'" class="w3-display-topright">x
+                    </h6>
+                    <p>Bikuza Ayo Wakoreye yose</p>
+                    <p> wakoreye <b>
+                        <% if (user) {%>
+                          <% if(payment.PaymentStatus=="payed" ) {%>
+                            <%=payment.CashLeft%>
+                              <%}%>
+                                <%}%>
+                      </b>RWF</p>
+                  </div>
+
+                  <button style="display: none;" id="sunmit"
+                    class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
+
                 </form>
               </center>
             </div>
@@ -811,73 +908,232 @@
             <b>TURIKUMVA</b>
             <b id="time67"></b>
             <div id="BTN22" class="w3-card w3-animate-up">
-            <p>
-              Aho  usharinga link hose ubabwire bakoreshe VPN nibwo clicks zawe ziziyongera Vuba
-              VPN yoroshye yidownloadinge kuri iyi link https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en_GB&gl=US
+              <p>
+                Aho usharinga link hose ubabwire bakoreshe VPN nibwo clicks zawe ziziyongera Vuba
+                VPN yoroshye yidownloadinge kuri iyi link
+                https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en_GB&gl=US
               </p>
-          </div>
-          <button id="BTN7" on class="w3-card w3-circle w3-animate-zoom">
-            <b>Upload</b>
-          </button>
+            </div>
+            <button id="BTN7" on class="w3-card w3-circle w3-animate-zoom">
+              <b>Upload</b>
+            </button>
 
-          <br>
-          <p>
             <br>
-            <center> 
-            
-              <input onkeypress="updateScript()" style="display:none;width:80%" placeholder="Umutwe wa episode na nimero yayo" type="text"
-                name="Title"  id="Title"/>
-               
+            <p>
+              <br>
+              <center>
+
+                <input onkeypress="updateScript()" style="display:none;width:80%"
+                  placeholder="Umutwe wa episode na nimero yayo" type="text" name="Title" id="Title" />
+
               </center>
+              <center>
+                <ul style="padding-bottom: 30px; display:none;list-style: none;" id="recordingsList">
+
+                </ul>
+              </center>
+
+            </p>
+
+            <div style="display:none ;width:100%;position:absolute;top:0;" id="ReacorderBTN">
+              <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:4%;font-size: 40px; "
+                class="fa fa-stop"></i>
+              <i id="pauseButton"
+                onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';"
+                style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px; "
+                class="fa fa-pause"></i>
+              <i id="pauseButton2" onclick="pauseRecording()"
+                style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px;display:none; "
+                class="fa fa-play"></i>
+            </div>
+
+
             <center>
-              <ul style="padding-bottom: 30px; display:none;list-style: none;" id="recordingsList">
-
-              </ul>
+              <h4 style="margin-bottom: 0%;"><b>DutereStory.Com</b></h4>
             </center>
-
-          </p>
-
-          <div style="display:none ;width:100%;position:absolute;top:0;" id="ReacorderBTN">
-            <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:4%;font-size: 40px; "
-              class="fa fa-stop"></i>
-            <i id="pauseButton"
-              onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';"
-              style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px; "
-              class="fa fa-pause"></i>
-            <i id="pauseButton2" onclick="pauseRecording()"
-              style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px;display:none; "
-              class="fa fa-play"></i>
-          </div>
-          
-
-    <center> <h4 style="margin-bottom: 0%;"><b>DutereStory.Com</b></h4></center>
         </footer>
-       
+
         <script id="appjs" src="../static/recorder/app.js"></script>
         <script src="../static/recorder/recorder.js"></script>
-        
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
-          function updateScript(){
-            $("#appjs").load(location.href + " #appjs"); 
+          function updateScript() {
+            $("#appjs").load(location.href + " #appjs");
           }
-          $.getJSON('https://ipinfo.io/json', function(data) {
+          $.getJSON('https://ipinfo.io/json', function (data) {
             console.log(JSON.stringify(data, null, 2));
           });
-           function pauseOthers(ele) {
-           
-                $("audio").not(ele).each(function (index, audio) {
-                    audio.pause();
-                });
-            }
-     
+          function pauseOthers(ele) {
+
+            $("audio").not(ele).each(function (index, audio) {
+              audio.pause();
+            });
+          }
+
         </script>
-        
         <script>
-       
+          var audioPlayers = document.querySelectorAll(".audio-player__container");
+
+          for (var i = 0; i < audioPlayers.length; i++) {
+            (function () {
+              var newI = i;
+
+              var audioBtn = audioPlayers[newI].querySelector(".toggle");
+              var durationText = audioPlayers[newI].querySelector(".time-end");
+              var currentText = audioPlayers[newI].querySelector(".time-start");
+              var scrubber = audioPlayers[newI].querySelector(".scrubber__scrubber");
+              var dial = audioPlayers[newI].querySelector(".dial");
+              var source = audioPlayers[newI].querySelector(".file-path").innerHTML;
+              var scrubberRect = scrubber.getBoundingClientRect();
+              var scrubberWidth = scrubberRect.right - scrubberRect.left;
+              var dialRect = dial.getBoundingClientRect();
+              var dialWidth = dialRect.right - dialRect.left;
+              var distance = scrubberWidth - dialWidth;
+              var audio = new Audio();
+              var position = 0;
+              var playhead;
+
+              ///////////////
+              // Set up audio
+              ///////////////
+
+              function setAudio(src) {
+                audio.src = src;
+                // set duration and time it takes to fill each progress bar once audio is loaded
+                audio.addEventListener("loadedmetadata", function () {
+                  // sets duration label
+                  duration = audio.duration;
+                  console.log(duration);
+                  var minutes = Math.floor(duration / 60);
+                  var seconds = duration - (minutes * 60);
+                  durationText.innerText = minutes + ":" + seconds.toFixed(0);
+                });
+              }
+
+              setAudio(source);
+
+              ////////////////////////////////////
+              // Update Current Time
+              ////////////////////////////////////
+
+              function updateCurrentTime() {
+                var minutes = Math.floor(audio.currentTime / 60);
+                var seconds = audio.currentTime - (minutes * 60);
+                if (seconds <= 9) {
+                  currentText.innerText = minutes + ":" + "0" + seconds.toFixed(0);
+                } else if (seconds >= 10) {
+                  currentText.innerText = minutes + ":" + seconds.toFixed(0);
+                }
+                setTimeout(updateCurrentTime, 10);
+              }
+
+              ////////////////////////////////////
+              // Draggable Scrubber
+              ////////////////////////////////////
+
+              Draggable.create(dial, {
+                type: "x",
+                edgeResistance: 1,
+                bounds: scrubber,
+                lockAxis: true,
+                throwProps: false,
+                onPress: function () {
+                  pauseAll();
+                },
+                onDragEnd: function () {
+                  position = this.x / distance;
+                  playAll(position);
+                  updatedCurrentTime();
+                }
+              });
+
+              /////////////////////
+              // Clickable Scrubber
+              /////////////////////
+
+              function updateOnClick(event) {
+                pauseAll();
+                var xPosition =
+                  event.clientX -
+                  scrubber.getBoundingClientRect().left -
+                  dial.clientWidth / 2;
+                TweenMax.to(dial, 1, { x: xPosition });
+                position = xPosition / scrubber.clientWidth;
+                playAll(position);
+              }
+
+              scrubber.addEventListener("click", updateOnClick);
+
+              /////////////////////
+              // Play/Pause Toggle
+              /////////////////////
+
+              function playAll(pos) {
+                audioBtn.classList.remove("paused");
+                audioBtn.classList.add("playing");
+                audio.currentTime = pos * audio.duration;
+                audio.play();
+                positionPlayhead();
+                updateCurrentTime(audio.currentTime);
+              }
+
+              function pauseAll() {
+                audioBtn.classList.remove("playing");
+                audioBtn.classList.add("paused");
+                clearInterval(playhead);
+                audio.pause();
+              }
+
+              audioBtn.addEventListener("click", function () {
+                if (audioBtn.classList.contains("playing")) {
+                  pauseAll();
+                } else {
+                  playAll(audio.currentTime / audio.duration);
+                }
+              });
+
+              /////////////////////////
+              // Restart Clip on Finish
+              /////////////////////////
+              audio.addEventListener("ended", function () {
+                btn.classList.remove("playing");
+                btn.classList.add("paused");
+                clearInterval(playhead);
+                audio.pause();
+                audio.currentTime = 0;
+                TweenMax.to(dial, 1, { x: 0 });
+              });
+
+              function positionPlayhead() {
+                playhead = setInterval(function () {
+                  TweenMax.set(dial, {
+                    x: audio.currentTime / audio.duration * distance
+                  });
+                }, 30);
+              }
+
+              /////////////////////////////////
+              // Reset player on window resize
+              /////////////////////////////////
+
+              window.addEventListener("resize", function () {
+                // reset size of scrubber
+                scrubberRect = scrubber.getBoundingClientRect();
+                scrubberWidth = scrubberRect.right - scrubberRect.left;
+                dial = scrubberContainer.querySelector(".dial");
+                dialRect = dial.getBoundingClientRect();
+                dialWidth = dialRect.right - dialRect.left;
+                distance = scrubberWidth - dialWidth;
+              });
+            })();
+          }
+        </script>
+        <script>
+
           // Accordio
-        //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
-         
+          //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
+
           function myFunction() {
             var x = document.getElementById("select").value;
             let y;
@@ -891,8 +1147,8 @@
             document.getElementById("formPayment").action = y;
 
           }
-          function whatsappViewsSubmit(){
-            setTimeout(()=>{ window.stop()},10000)
+          function whatsappViewsSubmit() {
+            setTimeout(() => { window.stop() }, 10000)
             document.getElementById('phoneWhatsapp').submit();
           }
           let whatssapMoney = document.getElementById('whatssapMoney');
@@ -901,7 +1157,7 @@
             document.getElementById('id07').style.display = 'block';
             document.getElementById('id06').style.display = 'block';
           })
-          
+
           function ChangeToKash() {
 
             document.getElementById('id04').style.display = 'block'
@@ -921,7 +1177,7 @@
             document.getElementById('BTN7').style.display = 'none'
 
           }
-       
+
           function ChangeToStories() {
             document.getElementById('BTN4').style.display = 'none'
             document.getElementById('KORERAKASH').style.display = 'none'
@@ -936,13 +1192,13 @@
             document.getElementById('MENU').style.display = 'none'
             document.getElementById('id02').style.display = 'none'
           }
-       async function share(content){
+          async function share(content) {
             try {
-            await navigator.share(content)
-            alert('MDN shared successfully')
-          } catch(err) {
-            console.log(err)
-          }
+              await navigator.share(content)
+              alert('MDN shared successfully')
+            } catch (err) {
+              console.log(err)
+            }
           }
         </script>
         <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
