@@ -44,6 +44,18 @@
       animation-iteration-count: infinite;
 
     }
+    #BTN22 {
+
+     margin-top: -5%;
+     margin-left: 45%;
+     color: white;
+     width: 100px;
+     height: 100px;
+     z-index: 1;
+     border: none;
+     display: none;
+     
+     }
 
     #BTN7 {
 
@@ -391,7 +403,10 @@
 
           </div>
           <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
-
+            <button onclick="document.getElementById('id11').style.display='block'"
+              style="position:absolute;top:-1%;right:0%" class="w3-button w3-card w3-round w3-margin w3-teal">
+              Ohereza whatsapp views
+            </button>
             <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
            
            
@@ -427,10 +442,7 @@
                 
             <%}%>
             </div>
-            <button onclick="document.getElementById('id11').style.display='block'"
-              style="position:absolute;top:-1%;right:0%" class="w3-button w3-card w3-round w3-margin w3-teal">
-              Ohereza whatsapp views
-            </button>
+           
 
             <div id="id02" class="w3-modal">
               <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
@@ -798,7 +810,12 @@
           <button id="BTN2" class="w3-card w3-circle w3-animate-zoom">
             <b>TURIKUMVA</b>
             <b id="time67"></b>
-          </button>
+            <div id="BTN22" class="w3-card  w3-animate-up">
+            <p>
+              Aho  usharinga link hose ubabwire bakoreshe VPN nibwo clicks zawe ziziyongera Vuba
+              VPN yoroshye yidownloadinge kuri iyi link https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en_GB&gl=US
+              </p>
+          </div>
           <button id="BTN7" on class="w3-card w3-circle w3-animate-zoom">
             <b>Upload</b>
           </button>
@@ -888,6 +905,7 @@
           function ChangeToKash() {
 
             document.getElementById('id04').style.display = 'block'
+            document.getElementById('BTN22').style.display = 'block'
             document.getElementById('BTN4').style.display = 'block'
             document.getElementById('BTN8').style.display = 'block'
             document.getElementById('KORERAKASH').style.display = 'block'
