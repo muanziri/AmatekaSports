@@ -689,32 +689,30 @@
   </div>
   <br>
   <% if (user) {%>
-    <div id="id01" class="w3-modal">
-      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-        <center>
-          <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
-        </center>
-        <center>
-          <h2 style="color:rgb(0, 68, 68)"><b>Komeza Na </b></h2>
-        </center>
-        <div>
-          <center>
-            <i style="font-size: 10vw; color:teal; " class="fa fa-facebook-official w3-hover-opacity"></i>
-            <br>
-            <h2 style="color:rgb(0, 68, 68)"><b>CYANGWA NA </b>
-            </h2>
-            <br>
-            <i style="font-size: 10vw; color:teal; " class="fa fa-google w3-hover-opacity"></i>
-            <br>
-            <br>
-          </center>
-        </div>
-
-
-      </div>
-    </div>
+    
     <%} else{%>
-      
+      <div id="id01" style="display: none;" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+          <center>
+            <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
+          </center>
+          <center>
+            <h2 style="color:rgb(0, 68, 68)"><b>Komeza Na </b></h2>
+          </center>
+          <div>
+            <center>
+
+              <br>
+              <a href="/auth/google"> <i style="font-size: 10vw; color:teal; "
+                  class="fa fa-google w3-hover-opacity"></i></a>
+              <br>
+              <br>
+            </center>
+          </div>
+
+
+        </div>
+      </div>
       <%}%>
         <div id="id03" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
