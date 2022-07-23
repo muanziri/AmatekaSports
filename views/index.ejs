@@ -11,7 +11,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/d4c3257288.js" crossorigin="anonymous"></script>
   <link rel="icon" type="image/ico" href="../static/image/favicon.ico">
-  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+  <link rel="stylesheet" href="/path/to/cdn/fontawesome.min.css" />
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="../static/Cross-Platform-Audio-Player-tinyPlayer/dist/tinyPlayer.min.css" rel="stylesheet" type="text/css">
   <style>
     html,
     body,
@@ -212,251 +216,11 @@
 
     }
   </style>
-  <style >
-    body {
-    background: #ffffff00;
-    font-family: helvetica, arial, sans-serif;
-  }
-  
-  .content {
-    height:50px;
-    width:80vw;
-    background: #ffffff00;
-  }
-  
-  .audio-player__container {
-    background: #d8ecec;
-    margin-left: 0px;
-    width: 80%;
-   
-    height:   60%;;
-    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.12);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-  .audio-player__container .file-path {
-    display: none;
-  }
-  .audio-player__container .play-btn__container {
-    width: 100px;
-  }
-  .audio-player__container .play-btn__container .text {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-  }
-  .audio-player__container .play-btn__container .text p {
-    display: inline;
-    width: 100%;
-    margin: 0 auto;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #444444;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  }
-  .audio-player__container .play-btn__container .text p.play {
-    text-align: right;
-    color: #b84546;
-  }
-  .audio-player__container .play-btn__container .toggle {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 0 auto;
-    background-color: #444444;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
-    transition: transform 1s;
-  }
-  .audio-player__container .play-btn__container .toggle .rectangle {
-    width: 6px;
-    height: 38px;
-    margin: 0 auto;
-    background-color: #b84546;
-  }
-  .audio-player__container .play-btn__container .toggle.playing {
-    transform: rotate(45deg);
-  }
-  .audio-player__container .play-btn__container .toggle.paused {
-    transform: rotate(-45deg);
-  }
-  .audio-player__container .scrubber__container {
-    width: calc(90% - 100px);
-    position: relative;
-    padding: 0 12px;
-  }
-  .audio-player__container .scrubber__container .dial {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    height: 95px;
-  }
-  .audio-player__container .scrubber__container .time-start {
-    position: absolute;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    left: 12px;
-  }
-  @media screen and (max-width: 600px) {
-    .content{
-      width:90vw;
-    }
-    .audio-player__container .scrubber__container .time-start.hide {
-      visibility: hidden;
-    }
-  }
-  .audio-player__container .scrubber__container .time-end {
-    position: absolute;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    right: 12px;
-  }
-  @media screen and (max-width: 600px) {
-    .audio-player__container .scrubber__container .time-end.hide {
-      visibility: hidden;
-    }
-  }
-  .audio-player__container .scrubber__container .scrubber__time--top {
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-  }
-  .audio-player__container .scrubber__container .scrubber__time--top p {
-    display: inline;
-    margin: 0;
-  }
-  .audio-player__container .scrubber__container .scrubber__time--top p:after {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 3px;
-    background-color: #424242;
-    margin: 0 auto;
-    opacity: 0.35;
-  }
-  @media screen and (max-width: 600px) {
-    .audio-player__container .scrubber__container .scrubber__time--top .hide {
-      visibility: hidden;
-    }
-  }
-  .audio-player__container .scrubber__container .scrubber__time--bottom {
-    text-align: center;
-    width: 80%;
-    margin: 0 10%;
-  }
-  .audio-player__container .scrubber__container .scrubber__time--bottom .desktop {
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-  }
-  .audio-player__container .scrubber__container .scrubber__time--bottom .desktop p {
-    display: inline;
-    margin: 0;
-  }
-  .audio-player__container .scrubber__container .scrubber__time--bottom .desktop p:before {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 3px;
-    background-color: #424242;
-    margin: 0 auto;
-    opacity: 0.35;
-  }
-  @media screen and (max-width: 600px) {
-    .audio-player__container .scrubber__container .scrubber__time--bottom .desktop {
-      display: none;
-    }
-  }
-  .audio-player__container .scrubber__container .scrubber__time--bottom .mobile {
-    display: none;
-  }
-  .audio-player__container .scrubber__container .scrubber__time--bottom .mobile p {
-    display: inline;
-    margin: 0;
-  }
-  .audio-player__container .scrubber__container .scrubber__time--bottom .mobile p:before {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 3px;
-    background-color: #424242;
-    margin: 0 auto;
-    opacity: 0.35;
-  }
-  @media screen and (max-width: 600px) {
-    .audio-player__container .scrubber__container .scrubber__time--bottom .mobile {
-      text-align: center;
-      width: 100%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: no-wrap;
-      justify-content: space-around;
-      align-items: center;
-      align-content: center;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .audio-player__container .scrubber__container .scrubber__time--bottom {
-      width: 60%;
-      margin: 0 20%;
-    }
-  }
-  .audio-player__container .scrubber__container .scrubber__scrubber--outer {
-    width: 100%;
-  }
-  .audio-player__container .scrubber__container .scrubber__scrubber--outer .scrubber__scrubber {
-    width: calc(100% - 14px);
-    height: 6px;
-    border-top: rgba(66, 66, 66, 0.5) 3px solid;
-    border-bottom: rgba(66, 66, 66, 0.5) 3px solid;
-    border-left: rgba(66, 66, 66, 0.5) 7px solid;
-    border-right: rgba(66, 66, 66, 0.5) 7px solid;
-  }
-  .audio-player__container .scrubber__container .scrubber__scrubber--outer .scrubber__scrubber .scrubber__scrubber--start {
-    position: absolute;
-    width: 7px;
-    height: 6px;
-    top: 24px;
-    left: 12px;
-    background-color: #b84546;
-  }
-  .audio-player__container .scrubber__container .scrubber__scrubber--outer .scrubber__scrubber .scrubber__scrubber--end {
-    position: absolute;
-    width: 7px;
-    height: 6px;
-    top: 24px;
-    right: 12px;
-    background-color: #b84546;
-  }
-  </style>
+ 
 </head>
 
 <body class="w3-theme-l5">
- <script>
- 
- </script>
+
 
 
   <!-- Page Container -->
@@ -583,13 +347,13 @@
                         %> 
                        <h6><%=element2.audioTitle%></h6>
                        
-                  //       <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
-                  //         setTimeout(()=>{ window.stop()},10000)
-                  //         document.getElementById('viewsForm<%=element2.RecordingId%>').submit();
+                         <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
+                           setTimeout(()=>{ window.stop()},10000)
+                           document.getElementById('viewsForm<%=element2.RecordingId%>').submit();
                    
-                  //       }"
-                  //   onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
-                  // src="https://drive.google.com/uc?export=download&id=<%element2.RecordingId%>"></audio>
+                       }"
+                     onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
+                   src="https://drive.google.com/uc?export=download&id=<%element2.RecordingId%>"></audio>
                         <%})%>
                       </div>
                   </div>
@@ -601,96 +365,25 @@
                     style="width:60px;cursor: pointer;">
                   <span class="w3-right w3-opacity">1 min</span>
                   <h4>
-                    <%=element.audioTitle%>
+                    <%=element.UserName%>
                   </h4><br>
                   <hr class="w3-clear">
                   <form id="viewsForm<%=element.RecordingId%>" style="display:none" method="post" action="/addViews">
                     <input type="text" value="<%=element.UserName%>" name="audioTitleViews2"/>
                     <input type="text" value="<%=element.RecordingId%>" name="audioTitleViews"/>
                   </form>
-                  <h6>by <%=element.UserName%></h6>
+                
+                  
+                
+                 <br>
+                 <audio controls 
+                   class="iru-tiny-player"
+                  titre="viewsForm<%=element.RecordingId%>"
+                 data-title="">
+                 <source src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" type="audio/mpeg">
+                  </audio>
                   <br>
-                  <div  class="content">
-  <div class="audio-player__container" data-audio-src="https://raw.githubusercontent.com/ahmednooor/textonome/master/media/gotViolin.mp3">
-    <div class="file-path"> https://raw.githubusercontent.com/ahmednooor/textonome/master/media/gotViolin.mp3
-    </div>
-    <div class="play-btn__container">
-      <div class="text">
-        <p class="stop">Stop</p>
-        <p class="play">Play</p>
-      </div>
-      <div class="toggle">
-        <div class="rectangle"></div>
-      </div>
-    </div>
-    <div class="scrubber__container">
-      <p class="time-start hide" id="0">0:00</p>
-      <p class="time-end hide" id="0">0:00</p>
-      <div class="dial">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="107">
-          <defs>
-            <filter id="a" width="310%" height="122.1%" x="-105%" y="-7.9%" filterUnits="objectBoundingBox">
-              <feOffset dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
-              <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
-              <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
-              <feMerge><feMergeNode in="shadowMatrixOuter1"/><feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          <g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(6.183 3)"><path fill="#B84546" d="M2 0h3v91H0z"/>
-            <path fill="#802F2D" d="M8 0H5v91H0l5 4 5-4z"/>
-          </g>
-        </svg>
-      </div>
-      <div class="scrubber__time--top">
-        <p class="hide" id="10">10</p>
-        <p id="20">20</p>
-        <p class="hide" id="30">30</p>
-        <p id="40">40</p>
-        <p class="hide" id="50">50</p>
-        <p id="60">60</p>
-        <p class="hide" id="70">70</p>
-        <p id="80">80</p>
-        <p class="hide" id="90">90</p>
-      </div>
-      <div class="scrubber__scrubber--outer">
-        <div class="scrubber__scrubber">
-          <div class="scrubber__scrubber--start">
-          </div>
-          <div class="scrubber__scrubber--end">
-          </div>
-        </div>
-      </div>
-      <!-- TO DO: Align bottom time -->
-      <div class="scrubber__time--bottom">
-        <div class="desktop">
-          <p>15</p>
-          <p>25</p>
-          <p>35</p>
-          <p>45</p>
-          <p>55</p>
-          <p>65</p>
-          <p>75</p>
-          <p>85</p>
-        </div>
-        <div class="mobile">
-          <p>30</p>
-          <p>50</p>
-          <p>70</p>
-        </div>
-      </div>
-    </div>
-  </div>
- 
-                 </div>
-                 <br>
-                 <br>
-                  <audio ontimeupdate=" if(Math.floor(this.currentTime)==45||Math.floor(this.currentTime)==Math.floor(this.duration)){
-                   document.getElementById('viewsForm<%=element.RecordingId%>').submit();
-                   setTimeout(()=>{ window.stop()},10000)
-                    }
-                  " onplay="pauseOthers(this)" id="audio" style="z-index:0" controls width="80%"
-                  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"></audio>
+                  <h3 id="opl"></h3>
                   <br>
                   <div style=" width: 100%;">
                     <button
@@ -1167,25 +860,49 @@
 
     <center> <h4 style="margin-bottom: 0%;"><b>DutereStory.Com</b></h4></center>
         </footer>
-       
+       <script>
+         function greet(){
+          alert('hello')
+        }
+        </script>
         <script id="appjs" src="../static/recorder/app.js"></script>
         <script src="../static/recorder/recorder.js"></script>
-       
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.13/howler.min.js"></script>
+        <script src="../static/Cross-Platform-Audio-Player-tinyPlayer/dist/tinyPlayer.min.js"></script>
+        
         <script>
-          function updateScript(){
-            $("#appjs").load(location.href + " #appjs"); 
-          }
-          $.getJSON('https://ipinfo.io/json', function(data) {
-            console.log(JSON.stringify(data, null, 2));
-          });
+          // function updateScript(){
+          //   $("#appjs").load(location.href + " #appjs"); 
+         // }
+          // $.getJSON('https://ipinfo.io/json', function(data) {
+            //console.log(JSON.stringify(data, null, 2));
+          //});
            function pauseOthers(ele) {
            
                 $("audio").not(ele).each(function (index, audio) {
                     audio.pause();
                 });
             }
-     
+           
+          function checkIfReady(audio) {
+            var readyState = audio.readyState;
+          if(readyState==0){
+            console.log(readyState)
+            audio.setAttribute('data-title','Loading')
+          }else if(readyState==2){
+            console.log(readyState)
+            audio.setAttribute('data-title','Loaded ariko rindira')
+          }else if(readyState==1){
+            console.log(readyState)
+            audio.setAttribute('data-title','rindira iminota mike')
+          }else if(readyState==4){
+            
+            var title=audio.getAttribute('titre')
+            audio.setAttribute('data-title','title')
+          }
+          }
+            
         </script>
         
         <script>
