@@ -245,11 +245,21 @@
 
 
                 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                 <img style="width:50%;height:auto;" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt="">
-                 <img style="width:50%;height:auto;" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt="">
-                 
+                 <br>
+                 <form runat="server">
+                  <input accept="image/*" type='file' id="imgInp" />
+                  <img id="blah" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt="your image" />
                   <button onclick="
                   " class="w3-button w3-teal w3-margin-bottom">Hindura Ifoto</button>
+                </form>              
+                 <script>
+                  imgInp.onchange = evt => {
+                      const [file] = imgInp.files
+                      if (file) {
+                        blah.src = URL.createObjectURL(file)
+                      }
+                   }
+                 </script>
                 </div>
               </div>
               
