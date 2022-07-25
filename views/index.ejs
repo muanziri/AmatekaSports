@@ -445,7 +445,18 @@
 
           </div>
           <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <button onclick="document.getElementById('id11').style.display='block'"
+            <button onclick="document.getElementById('id11').style.display='block'
+            window.addEventListener('popstate',function (){
+                    if(window.location.href!==window.location.href+'id11'){
+                   
+                      document.getElementById('id11').style.display='block'
+                  }})
+            let url11=window.location.href;
+            const nextURL11 = `id11`;
+            const nextTitle11 = 'id11';
+            const nextState11 = { additionalInformation: 'id11' };
+            window.history.pushState(nextState, nextTitle, nextURL);
+            "
               style="position:absolute;top:-2%;right:-2%" class="w3-button w3-card w3-round w3-margin w3-teal">
               Ohereza whatsapp views
             </button>
@@ -1045,6 +1056,8 @@
                     if(window.location.href!==window.location.href+"ChangeToKash"){
                    
                    ChangeToStories();
+                 }else{
+                  document.getElementById('KORERAKASH').style.display='block'
                  }
                   })
             let url=window.location.href;
