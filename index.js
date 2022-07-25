@@ -1072,7 +1072,7 @@ app.post('/flutterWaveWithDraw', (req, res) => {
           let payload = {
     
      account_bank: "MPS",
-        account_number: req.body.phoneN,
+        account_number: req.user.phoneNumber.slice(1),
         amount: req.body.Amount,
         currency: "RWF",
         beneficiary_name: req.user.userName,
@@ -1096,7 +1096,7 @@ app.post('/flutterWaveWithDraw', (req, res) => {
           let payload = {
     
      account_bank: "MPS",
-        account_number: req.body.phoneN,
+        account_number: req.user.phoneNumber.slice(1),
         amount: req.body.Amount,
         currency: "RWF",
         beneficiary_name: req.user.userName,
@@ -1118,7 +1118,7 @@ app.post('/flutterWaveWithDraw', (req, res) => {
           let payload = {
     
      account_bank: "MPS",
-        account_number: req.body.phoneN,
+        account_number: req.user.phoneNumber.slice(1),
         amount: req.body.Amount,
         currency: "RWF",
         beneficiary_name: req.user.userName,

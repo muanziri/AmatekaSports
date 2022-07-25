@@ -332,10 +332,21 @@
         <!-- Middle Column -->
         <div style="width:100%;" class="w3-col m7">
           <div   id="stories">
+            <button id="BTN6" onclick="ChangeToKash();" style="background-color: rgb(0, 77, 77); display: block; "
+                    class="w3-center w3-button ">
+                    <b>KORERA CASH</b>
+                  </button>
             <%if (stories.length>0){%>
-              <%stories.forEach(element=> {%>
-
-                <div id="id0222<%=element.UserName%>"  class="w3-modal">
+              <%stories.reverse().forEach(element=> {%>
+                 <script>
+                  window.addEventListener('popstate',function (){
+                    if(window.location.href!==window.location.href+"id0222"){
+                   
+                   document.getElementById("id0222<%=element.UserName%>").style.display='none'
+                 }
+                  })
+                 </script>
+                <div id="id0222<%=element.UserName%>"   class="w3-modal">
                   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
                     <span onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none'"
                       class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -367,10 +378,29 @@
                   </center>
                 </div>
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                  <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block'"
+                  <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block' ;
+                  let ul=window.location.href;
+                  const netURL = `id0222`;
+                  const netTitle = '&{url}id0222<%=element.UserName%>';
+                   const netState = { additionalInformation: 'id0222<%=element.UserName%>' };
+                     window.history.pushState(netState, netTitle, netURL);
+                  "
                   src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
                     style="width:60px;cursor: pointer;">
-                  <span class="w3-right w3-opacity">1 min</span>
+                    
+                  <span id="demo<%=element.Date%>" class="w3-right w3-opacity"></span>
+                  <script>
+                      
+                      if(new Date().getMonth()!==new Date("<%=element.Date%>").getMonth()){
+                         document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getMonth()-new Date("<%=element.Date%>").getMonth()+" months ago";
+                      }else if(new Date().getDate()!==new Date("<%=element.Date%>").getDate()){
+                        document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getDate()-new Date("<%=element.Date%>").getDate()+" days ago";
+                      }else if(new Date().getHours()!==new Date("<%=element.Date%>").getHours()){
+                       document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getHours()-new Date("<%=element.Date%>").getHours()+" hours ago";
+                      }else if(new Date().getMinutes() !==new Date("<%=element.Date%>").getMinutes()){
+                        document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getMinutes()-new Date("<%=element.Date%>").getMinutes()+" minutes ago";
+                      }
+                      </script>
                   <h4>
                     <%=element.UserName%>
                   </h4><br>
@@ -468,7 +498,7 @@
                 </center>
                 <center>
                   <form method="post"
-                    onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='non'"
+                    onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='none'"
                     id="formPayment" class="w3-container w3-margin">
                     <div class="w3-section">
                       <b>
@@ -524,7 +554,7 @@
               </div>
             </div>
             <div id="id04" class="w3-modal">
-              <span onclick="ChangeToStories();document.getElementById(id04).style.display='none'"
+              <span onclick="ChangeToStories();"
                 class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
 
               <% if (user) {%>
@@ -575,7 +605,7 @@
 
                     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                       <center>
-                        <h5 style="color:rgb(0, 68, 68)"><b>korera whatsapp shares</b></h5>
+                        <h5 style="color:rgb(0, 68, 68)"><b>korera status shares</b></h5>
                         <form id="phoneWhatsapp" method="post" action="/saveWhatsappNumber/<%=user.userName%>">
                           <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
                             placeholder="Nimero iri kuri whatsapp gusa-----" />
@@ -671,7 +701,7 @@
                      
                          };
                    navigator.share(shareData);
-};shareImage()" id="SHARESTATUS" class="w3-button w3-teal w3-margin-bottom">share</button>
+                 };shareImage()" id="SHARESTATUS" class="w3-button w3-teal w3-margin-bottom">share</button>
                     </div>
                   </div>
         </div>
@@ -698,7 +728,7 @@
   <% if (user) {%>
     
     <%} else{%>
-      <div id="id01" style="display: block;" class="w3-modal">
+      <div id="id01" style="display: none;" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
           <center>
             <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
@@ -721,6 +751,7 @@
         </div>
       </div>
       <%}%>
+      <% if (user) {%>
         <div id="id03" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <span
@@ -737,7 +768,7 @@
                       <lable>Phone yawe</lable>
                     </b>
                     <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
-                         placeholder="078(MTN GUSA)-----" />
+                      disabled  value="<%=user.phoneNumber%>" placeholder="078(MTN GUSA)-----" />
                     <br>
                     <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
                       <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
@@ -770,7 +801,7 @@
 
           </div>
         </div>
-
+       <%}%>
 
         <!-- Footer -->
 
@@ -781,9 +812,24 @@
 
 
 
-        </button>
+      
         <button id="MENUBTN"
-          onclick="document.getElementById('MENU').style.display='block';document.getElementById('MENUBTN').style.display='none'"
+          onclick="document.getElementById('MENU').style.display='block';
+          document.getElementById('MENUBTN').style.display='none';
+          let url3=window.location.href;
+            const nextURL3 = `sideDiv`;
+            const nextTitle3= 'sideDiv';
+            const nextStat3 = { additionalInformation: 'sideDiv' };
+            window.history.pushState(nextURL3, nextTitle3, nextStat3);
+          window.addEventListener('popstate',function (){
+                    if(window.location.href!==window.location.href+'MENU'){
+                   
+                      document.getElementById('MENU').style.display='none';
+                      document.getElementById('MENUBTN').style.display='block';
+                 }
+                  })
+          
+          "
           style="border:none;position:fixed;top:2%;left:2%;width:60px;height:60px; z-index:1;"
           class="w3-card w3-circle w3-teal  w3-animate-zoom">
           <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
@@ -793,10 +839,34 @@
         <footer
           style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
           class="w3-card w3-container w3-theme-d3 ">
-          <button id="BTN4" onclick="document.getElementById('id03').style.display='block'"
+          <button id="BTN4" onclick="document.getElementById('id03').style.display='block'
+          window.addEventListener('popstate',function (){
+                    if(window.location.href!==window.location.href+'id03'){
+                   
+                      document.getElementById('id03').style.display='block';
+                 }
+                  })
+            let url1=window.location.href;
+            const nextURL1 = `id03`;
+            const nextTitle1= 'id03';
+            const nextState = { additionalInformation: 'id03' };
+            window.history.pushState(nextState, nextTitle1, nextURL1);
+          "
             class="w3-card w3-circle w3-teal">
             <b>BIKUZA</b></button>
-          <button id="BTN8" onclick="document.getElementById('id06').style.display='block';"
+          <button id="BTN8" onclick="document.getElementById('id06').style.display='block';
+          window.addEventListener('popstate',function (){
+                    if(window.location.href!==window.location.href+'id06'){
+                   
+                      document.getElementById('id06').style.display='block';
+                 }
+                  })
+            let url2=window.location.href;
+            const nextURL2 = `id06`;
+            const nextTitle2= 'id06';
+            const nextStat2 = { additionalInformation: 'id06' };
+            window.history.pushState(nextURL2, nextTitle2, nextStat2);
+          "
             class="w3-card w3-circle w3-teal">
             <b>Korera whatsapp shares</b> </button>
           <button id="BTN2" class="w3-card w3-circle w3-animate-zoom">
@@ -926,11 +996,47 @@
           whatssapMoney.addEventListener('click', () => {
             whatsappViewsSubmit();
             document.getElementById('id07').style.display = 'block';
+            window.addEventListener('popstate',function (){
+                    if(window.location.href!==window.location.href+'id07'){
+                   
+                      document.getElementById('id07').style.display='block';
+                 }
+                  })
+            let url2=window.location.href;
+            const nextURL2 = `id07`;
+            const nextTitle2= 'id07';
+            const nextStat2 = { additionalInformation: 'id07' };
+            window.history.pushState(nextURL2, nextTitle2, nextStat2);
             document.getElementById('id06').style.display = 'block';
           })
+          function ChangeToStories() {
+            document.getElementById('id04').style.display='none'
+            document.getElementById('BTN8').style.display = 'none';
+            document.getElementById('BTN4').style.display = 'none'
+            document.getElementById('KORERAKASH').style.display = 'none'
+            document.getElementById('BTN5').style.display = 'none'
+            document.getElementById('MENUBTN').style.display = 'block'
+            document.getElementById('BTN6').style.display = 'block'
+            document.getElementById('stories').style.display = 'block'
+            document.getElementById('ReacorderBTN').style.display = 'none'
+            document.getElementById('BTN2').style.display = 'none'
+            document.getElementById('recordButton').style.display = 'block'
+            document.getElementById('MENU').style.display = 'none'
+            document.getElementById('id02').style.display = 'none'
+          }
           
           function ChangeToKash() {
-
+            window.addEventListener('popstate',function (){
+                    if(window.location.href!==window.location.href+"ChangeToKash"){
+                   
+                   ChangeToStories();
+                 }
+                  })
+            let url=window.location.href;
+            const nextURL = `ChangeToKash`;
+            const nextTitle = 'ChangeToKash';
+            const nextState = { additionalInformation: 'ChangeToKash' };
+            window.history.pushState(nextState, nextTitle, nextURL);
             document.getElementById('id04').style.display = 'block'
             document.getElementById('BTN22').style.display = 'block'
             document.getElementById('BTN4').style.display = 'block'
@@ -949,20 +1055,7 @@
 
           }
        
-          function ChangeToStories() {
-            document.getElementById('BTN4').style.display = 'none'
-            document.getElementById('KORERAKASH').style.display = 'none'
-            document.getElementById('BTN5').style.display = 'none'
-            document.getElementById('MENUBTN').style.display = 'block'
-            document.getElementById('BTN6').style.display = 'block'
-            document.getElementById('stories').style.display = 'block'
-            document.getElementById('ReacorderBTN').style.display = 'none'
-            document.getElementById('BTN2').style.display = 'none'
-            document.getElementById('BTN8').style.display = 'none'
-            document.getElementById('recordButton').style.display = 'block'
-            document.getElementById('MENU').style.display = 'none'
-            document.getElementById('id02').style.display = 'none'
-          }
+          
        async function share(content){
             try {
             await navigator.share(content)
