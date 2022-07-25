@@ -267,7 +267,7 @@ function createDownloadLink(blob) {
 				fd.delete("audio_data")
 				fd.delete("Title")
 				xhr.abort()
-			  alert("Kora refresh urebe post yawe"); // response is the server response
+				window.location.reload(); // response is the server response
 			}
 		  };
 		 
