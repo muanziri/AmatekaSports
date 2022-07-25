@@ -943,17 +943,22 @@
         <script id="jquery"  integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
         <script id="cloudflare" ></script>
         <script id="Platform" ></script>
+       
         <script>
-          if(navigator.connection.effectiveType=='4g'){
+          if(navigator.connection.effectiveType=='4g'||navigator.connection.effectiveType=='5g'){
             console.log(navigator.connection.effectiveType)
             document.getElementById('jquery').src='https://code.jquery.com/jquery-3.3.1.min.js'
             document.getElementById('cloudflare').src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.13/howler.min.js'
             document.getElementById('Platform').src='../static/Cross-Platform-Audio-Player-tinyPlayer/dist/tinyPlayer.min.js'
-          }else{
-           alert('Nta connection mufite ihagije')
           }
        </script>
-        
+       <% if(!user){%>
+        <script>
+          if(navigator.connection.effectiveType !=='4g'){
+            alert('Nta connection mufite ihagije')
+          }
+          </script>
+      <%}%>
         
         <script>
           // function updateScript(){
