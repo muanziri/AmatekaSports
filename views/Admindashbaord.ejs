@@ -21,7 +21,7 @@
   </style>
 </head>
 
-<body  class="w3-light-grey">
+<body class="w3-light-grey">
 
 
 
@@ -29,14 +29,14 @@
 
 
   <!-- !PAGE CONTENT! -->
-  <div  class="w3-main">
+  <div class="w3-main">
 
     <!-- Header -->
     <header class="w3-container" style="padding-top:22px">
       <h5><b><i class="fa fa-dashboard"></i> Admin Dashboard</b></h5>
     </header>
     <div class="w3-row-padding w3-margin-bottom">
-   
+
 
       <div class="w3-quarter">
         <div class="w3-container w3-black w3-padding-16">
@@ -48,48 +48,68 @@
           <h4>total clicks from links</h4>
         </div>
       </div>
-      <% if (users.length>0){ %> 
-      <div class="w3-quarter">
-        <div class="w3-container w3-black w3-text-white w3-padding-16">
-          <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-          <div class="w3-right">
-            <b><h3><%=users.length%> </h3></b>
+      <% if (users.length>0){ %>
+        <div class="w3-quarter">
+          <div class="w3-container w3-black w3-text-white w3-padding-16">
+            <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <b>
+                <h3>
+                  <%=users.length%>
+                </h3>
+              </b>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Users</h4>
           </div>
-          <div class="w3-clear"></div>
-          <h4>Users</h4>
         </div>
-      </div>
-      <% } %> 
-      <div class="w3-quarter">
-        <div class="w3-container w3-black w3-text-white w3-padding-16">
-          <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
-          <div class="w3-right">
-            <h3></h3>
-          </div>
-          <div class="w3-clear"></div>
-          <h4>Total Money In</h4>
-        </div>
-      </div>
-      <%
-      if (usersMonth){
-      // const sum1 = usersYear.reduce((partialSum, a) => partialSum + a, 0);
-      // const sum2 = usersYear.reduce((partialSum, a) => partialSum + a, 0);
-      // const sum3 = usersYear.reduce((partialSum, a) => partialSum + a, 0);
-      // console.log(sum1+sum2+sum3); 
-      %>
-      <div class="w3-quarter">
-        <div class="w3-container w3-black w3-text-white w3-padding-16">
-          <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
-          <div class="w3-right">
-            <h3></h3>
-          </div>
-          <div class="w3-clear"></div>
-          <h4><%usersMonth.forEach(element => {
-            element
-          });%></h4>
-        </div>
-      </div>
-    <%}%>
+        <% } %>
+          <% if (usersMonth){ %>
+            <div class="w3-quarter">
+              <div class="w3-container w3-black w3-text-white w3-padding-16">
+                <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                  <h3>
+                    <% const resultMonth1=usersMonth.filter(checkPayment1); const
+                      resultYear1=usersYear.filter(checkPayment1); const resultWeek1=usersWeek.filter(checkPayment1);
+                      function checkPayment1(payment) { return payment.CashLeft>= 1;
+                      }
+                      let total1=0;
+                      resultMonth1.forEach(element => {
+                      total1 += element.CashLeft
+                      });
+                      resultYear1.forEach(element => {
+                      total1 += element.CashLeft
+                      });
+                      resultWeek1.forEach(element => {
+                      total1 += element.CashLeft
+                      }); %><%=total1 %> Rwf
+                  </h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4> Money Out</h4>
+              </div>
+            </div>
+
+            <div class="w3-quarter">
+              <div class="w3-container w3-black w3-text-white w3-padding-16">
+                <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                  <h3>
+                    <% const resultMonth=usersMonth.filter(checkPayment); const
+                      resultYear=usersYear.filter(checkPayment); const resultWeek=usersWeek.filter(checkPayment);
+                      function checkPayment(payment) { return payment.PaymentStatus=='payed' ; } let
+                      month=resultMonth.length*1000; let week=resultYear.length*500; let year=resultWeek.length*10000;
+                      let total=month+week+year %>
+                      <%=total%> Rwf
+                  </h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>Money In</h4>
+
+              </div>
+            </div>
+            <%}%>
     </div>
     <br>
 
@@ -118,9 +138,10 @@
       <h3>Links that are being shared and number of clicks</h3>
       <div class="w3-container w3-card-4">
         <ol>
-          
-            <li>https://www.youtube.com/watch?v=juoJK5L4lfk <b>clicks</b> 0 <b>Date</b> 12th jan 2022 <button class="w3-button w3-section w3-teal w3-ripple">delete</button></li>
-             
+
+          <li>https://www.youtube.com/watch?v=juoJK5L4lfk <b>clicks</b> 0 <b>Date</b> 12th jan 2022 <button
+              class="w3-button w3-section w3-teal w3-ripple">delete</button></li>
+
         </ol>
         </p>
 
@@ -145,48 +166,142 @@
     <div style="max-height: 1000px;overflow-y:scroll;" class="w3-container w3-half w3-margin-top">
       <h3>Whatsapp Views from Users</h3>
       <div class="w3-container w3-card-4">
-       
+
 
       </div>
 
     </div>
-    <div style="max-height: 1000px;overflow-y:scroll;" class="w3-container w3-half w3-margin-top">
-      <h3>Whatsapp Pic to be Posted By Users</h3>
-      <div class="w3-container w3-card-4" style="max-height:700px">
-       
-    
+
+    <div class="w3-container w3-half w3-margin-top">
+      <header class="w3-container w3-card-4 w3-theme">
+        <h1>Status Approve Board(month)</h1>
+      </header>
+
+      <div class="w3-panel">
+        <%usersMonth.forEach(element=> {%>
+          <div class="w3-row w3-card-4">
+            <div class="w3-col s9 w3-container">
+              <h5>
+                <%=element.userName%>
+              </h5>
+              <button onclick="document.getElementById('<%=element.id%>').style.display='block'"
+                class="w3-button w3-section w3-teal w3-ripple">watch and Approve</button>
+            </div>
+            <div id="<%=element.id%>" class="w3-modal">
+              <span onclick="document.getElementById('<%=element.id%>').style.display='none'"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+            </div>
+          </div>
+          <% });%>
+            <hr>
       </div>
 
     </div>
+    <div class="w3-container w3-half w3-margin-top">
+      <header class="w3-container w3-card-4 w3-theme">
+        <h1>Status Approve Board(week)</h1>
+      </header>
+
+      <div class="w3-panel">
+        <%usersWeek.forEach(element=> {%>
+          <div class="w3-row w3-card-4">
+            <div class="w3-col s9 w3-container">
+              <h5>
+                <%=element.userName%>
+              </h5>
+              <button onclick="document.getElementById('<%=element.id%>').style.display='block'"
+                class="w3-button w3-section w3-teal w3-ripple">watch and Approve</button>
+            </div>
+            <div id="<%=element.id%>" class="w3-modal">
+              <span onclick="document.getElementById('<%=element.id%>').style.display='none'"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+            </div>
+          </div>
+          <% });%>
+            <hr>
+      </div>
+
+    </div>
+    <div class="w3-container w3-half w3-margin-top">
+      <header class="w3-container w3-card-4 w3-theme">
+        <h1>Status Approve Board(year)</h1>
+      </header>
+
+      <div class="w3-panel">
+        <%usersYear.forEach(element=> {
+          console.log(element);
+          %>
+          <div class="w3-row w3-card-4">
+            <div class="w3-col s9 w3-container">
+              <h5>
+                <%=element.userName%>
+              </h5>
+              <button onclick="document.getElementById('<%=element.id%>').style.display='block'"
+                class="w3-button w3-section w3-teal w3-ripple">watch and Approve</button>
+            </div>
+            <div id="<%=element.id%>" class="w3-modal">
+              <span onclick="document.getElementById('<%=element.id%>').style.display='none'"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
+                <h5>
+                  posted by  <%=element.userName%>
+              </h5>
+                <%element.WhatsappScreenShotPosts.forEach(element2=> {
+                 // console.log(element.WhatsappScreenShotPosts)
+                  %>
+                  <div class="w3-card">
+                    <div>
+                      <img src="https://drive.google.com/uc?export=download&id=<%element2%>" style="width:100%">
+                    </div>
+                    <br>
+
+                    <button class="w3-button w3-green w3-padding-large">Approve</button>
+                    <button class="w3-button w3-green w3-padding-large">Abort</button>
+
+                  </div>
+
+                  <br>
+                  <%});%>
+              </div>
+            </div>
+          </div>
+          <% });%>
+            <hr>
+      </div>
+
+    </div>
+
+
+
     <div style="max-height: 1000px;overflow-y:scroll;" class="w3-container w3-half w3-margin-top">
-      <h3>Users  packageStatus and Views Collected</h3>
+      <h3>Users packageStatus and Views Collected</h3>
       <div class="w3-container w3-card-4">
         <ol>
 
-            <li>
-             <b>clicks </b>   <b>likes </b>
-              
-              </li>
-           
+          <li>
+            <b>clicks </b> <b>likes </b>
+
+          </li>
+
         </ol>
         </p>
 
       </div>
     </div>
     <div class="w3-container w3-half w3-margin-top">
-      
+
     </div>
     <div class="w3-container w3-half w3-margin-top">
-      
-    </div>
-    
 
-    
+    </div>
+
+
+
     <!-- End page content -->
   </div>
-  
 
- 
+
+
 
 
 </body>
