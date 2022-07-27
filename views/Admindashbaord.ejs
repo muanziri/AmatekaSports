@@ -163,14 +163,7 @@
 
     </div>
 
-    <div style="max-height: 1000px;overflow-y:scroll;" class="w3-container w3-half w3-margin-top">
-      <h3>Whatsapp Views from Users</h3>
-      <div class="w3-container w3-card-4">
-
-
-      </div>
-
-    </div>
+  
 
     <div class="w3-container w3-half w3-margin-top">
       <header class="w3-container w3-card-4 w3-theme">
@@ -190,6 +183,27 @@
             <div id="<%=element.id%>" class="w3-modal">
               <span onclick="document.getElementById('<%=element.id%>').style.display='none'"
                 class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
+                <h5>
+                  posted by  <%=element.userName%>
+              </h5>
+                <%element.WhatsappScreenShotPosts.forEach(element2=> {
+                
+                  %>
+                  <div class="w3-card">
+                    <div>
+                      <img src="https://drive.google.com/uc?export=download&id=<%=element2%>" style="width:100%">
+                    </div>
+                    <br>
+
+                    <button class="w3-button w3-green w3-padding-large">Approve</button>
+                    <button class="w3-button w3-green w3-padding-large">Abort</button>
+
+                  </div>
+
+                  <br>
+                  <%});%>
+              </div>
             </div>
           </div>
           <% });%>
@@ -229,7 +243,7 @@
 
       <div class="w3-panel">
         <%usersYear.forEach(element=> {
-          console.log(element);
+          
           %>
           <div class="w3-row w3-card-4">
             <div class="w3-col s9 w3-container">

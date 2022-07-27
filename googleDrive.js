@@ -101,4 +101,31 @@ var jwToken = new google.auth.JWT(
      }
    });
    }
-   module.exports={totheDrivers,totheDriversWhatsapp};
+   const ChangeProfilePic= (fileMetadata,media,user)=>{
+    drive.files.create({
+     auth: jwToken,
+     resource: fileMetadata,
+     media: media,
+     fields: 'id',
+  
+   },async function(err, file) {
+     if (err) {
+       // Handle error
+       console.error(err);
+     } else {
+      let query='https://drive.google.com/uc?export=download&id='+file.data.id;
+      UserModel.updateOne({userName:user.userName},{ProfilePhotoUrl:query},function (err, docs) {
+        if (err){
+            console.log(err)
+        }
+    })
+    recordings.updateMany({UserName:user.userName},{UserProfile:query},function (err, docs) {
+      if (err){
+          console.log(err)
+      }
+  })
+    
+     }
+   });
+   }
+   module.exports={totheDrivers,totheDriversWhatsapp,ChangeProfilePic};

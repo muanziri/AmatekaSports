@@ -9,7 +9,7 @@ const multer = require('multer')
 let uniqid = require('uniqid'); 
 const upload = multer();
 const Readable = require('stream').Readable;
-const {totheDrivers,totheDriversWhatsapp} = require('./googleDrive')
+const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic} = require('./googleDrive')
 const {transferTobeneficiary} = require('./flutterWave')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/recordings');
@@ -1172,7 +1172,20 @@ app.post('/addViewsStatus', (req, res) => {
   })
 
 })
-
+app.post('/ChangeProfilePic',upload.any(),(req,res)=>{
+  const user = req.user;
+  const originalname=req.user.userName
+  var folderId = user.folderId;
+  var fileMetadata = {
+    'name': [originalname],
+    parents: [folderId]
+  };
+  var media = {
+    mimeType: req.files[0].mimetype,
+    body: bufferToStream(req.files[0].buffer)
+  };
+  ChangeProfilePic(fileMetadata,media,user);
+})
 app.post('/ToTheDrive', upload.any(), (req, res,next) => {
   const user = req.user;
   let files =req.files.reverse()[0];
