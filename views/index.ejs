@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/d4c3257288.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="icon" type="image/ico" href="../static/image/favicon.ico">
-  <link href="../static/Cross-Platform-Audio-Player-tinyPlayer/dist/tinyPlayer.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
   <style>
     html,
     body,
@@ -246,13 +246,12 @@
 
                 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                  <br>
-                 <form runat="server">
+                 <form action="/ChangeProfilePic" method="post" runat="server">
                   
-                  <img style="z-index:2;" id="blah" src="https://drive.google.com/uc?export=download&id=1zcsfaKRBHNgLmENscj8f1jQOLoRGPjAX" alt="your image" />
+                  <img style="z-index:2;" id="blah" src="<%=user.ProfilePhotoUrl%>" alt="your image" />
                   <input accept="image/*" type='file' id="imgInp" />
-                  <img src="<%=user.ProfilePhotoUrl%>" alt="">
-                  <button onclick="
-                  " class="w3-button w3-teal w3-margin-bottom">Hindura Ifoto</button>
+            
+                  <button  class="w3-button w3-teal w3-margin-bottom">Hindura Ifoto</button>
                 </form>              
                  <script>
                   imgInp.onchange = evt => {
@@ -261,6 +260,14 @@
                         blah.src = URL.createObjectURL(file)
                       }
                    }
+                   var uploadField = document.getElementById("blah");
+
+                   uploadField.onchange = function() {
+                       if(this.files[0].size > 25){
+                          alert("ifoto yigabanye");
+                          this.value = "";
+                       };
+                   };
                  </script>
                 </div>
               </div>
@@ -366,13 +373,17 @@
                          
                         %> 
                        <h6><%=element2.audioTitle%></h6>
-                       
-                       <audio controls 
-                   class="iru-tiny-player"
-                  titre="viewsForm<%=element2.RecordingId%>"
-                 data-title="<%=element2.audioTitle%>">
-                 <source src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>" type="audio/mpeg">
-                  </audio>
+                       <div id="audio">
+                       <audio data-role="audio-player"
+       
+       data-source="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"
+       data-src=""
+       data-show-loop="false"
+       data-show-stop="false"
+       data-show-volume="false"
+       data-show-info="false">
+                       </audio>
+                      </div>
                         <%})%>
                       </div>
                   </div>
@@ -414,12 +425,8 @@
                   
                 
                  <br>
-                 <audio controls 
-                   class="iru-tiny-player"
-                  titre="viewsForm<%=element.RecordingId%>"
-                 data-title="<%=element.audioTitle%>">
-                 <source src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" type="audio/mpeg">
-                  </audio>
+                
+                 <div id="audio"><audio data-role="audio-player" data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" class="light"></audio></div>
                   <br>
                   <h3 id="opl"></h3>
                   <br>
@@ -754,7 +761,7 @@
   <% if (user) {%>
     
     <%} else{%>
-      <div id="id01" style="display: block;" class="w3-modal">
+      <div id="id01" style="display: none;" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
           <center>
             <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
@@ -945,37 +952,25 @@
 
     <center> <h4 style="margin-bottom: 0%;"><b>DutereStory.Com</b></h4></center>
         </footer>
-       <script>
-         function greet(){
-          alert('hello')
-        }
-        </script>
+        <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
         <script id="appjs" src="../static/recorder/app.js"></script>
         <script src="../static/recorder/recorder.js"></script>
-        <script id="jquery"  integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
-        <script id="cloudflare" ></script>
-        <script id="Platform" ></script>
        
-        <script>
-          if(navigator.connection.effectiveType=='4g'||navigator.connection.effectiveType=='5g'){
-            console.log(navigator.connection.effectiveType)
-            document.getElementById('jquery').src='https://code.jquery.com/jquery-3.3.1.min.js'
-            document.getElementById('cloudflare').src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.13/howler.min.js'
-            document.getElementById('Platform').src='../static/Cross-Platform-Audio-Player-tinyPlayer/dist/tinyPlayer.min.js'
-          }
-       </script>
+       
+        
        <% if(!user){%>
         <script>
           if(navigator.connection.effectiveType !=='4g'){
-            alert('Nta connection mufite ihagije')
+            alert('Nta connection mufite ihagije ,uri gukoresha '+navigator.connection.effectiveType)
           }
           </script>
       <%}%>
-        
+     
         <script>
-          // function updateScript(){
-          //   $("#appjs").load(location.href + " #appjs"); 
-         // }
+         function updateScript(){
+             $("#appjs").load(location.href + " #appjs"); 
+          }
+         
           // $.getJSON('https://ipinfo.io/json', function(data) {
             //console.log(JSON.stringify(data, null, 2));
           //});
@@ -986,24 +981,7 @@
                 });
             }
            
-          function checkIfReady(audio) {
-            var readyState = audio.readyState;
-          if(readyState==0){
-            console.log(readyState)
-            audio.setAttribute('data-title','Loading')
-          }else if(readyState==2){
-            console.log(readyState)
-            audio.setAttribute('data-title','Loaded ariko rindira')
-          }else if(readyState==1){
-            console.log(readyState)
-            audio.setAttribute('data-title','rindira iminota mike')
-          }else if(readyState==4){
-            
-            var title=audio.getAttribute('titre')
-            audio.setAttribute('data-title','title')
-          }
-          }
-            
+          
         </script>
         
         <script>
