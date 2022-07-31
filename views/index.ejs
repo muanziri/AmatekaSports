@@ -44,6 +44,11 @@
       animation-iteration-count: infinite;
 
     }
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-panel {
+      background-color: teal;
+      
+    }
     #BTN22 {
 
      margin-top: -5%;
@@ -338,11 +343,45 @@
 
         <!-- Middle Column -->
         <div style="width:100%;" class="w3-col m7">
-        
-          <div   id="stories">
+          <script>
+            let inter=null;
+          </script>
+          <div style="display: flex;flex-direction:row;flex-wrap: wrap;"  id="stories">
            
             <%if (stories.length>0){%>
+              
               <%stories.reverse().forEach(element=> {%>
+                <div id="id303" class="w3-modal">
+                  <center><form method="post" action="/addComments" style="width: 60%;" class="w3-container w3-white w3-card-4">
+                      <h2>kora comment</h2>
+                    <p>
+                    <textarea class="w3-input" type="text" name="comment" style="width:90%" required></textarea>
+                    <label>comment</label></p>
+                    <input value="<%=element.UserName%>" name="UserName" style="display: none;" type="text">
+                    <input value="<%=element.UserProfile%>" name="UserProfile" style="display: none;" type="text">
+                    <input value="<%=element.RecordingId%>" name="RecordingId" style="display: none;" type="text">
+                   
+                    
+                    <p>
+                      <button class="w3-button w3-section w3-teal w3-ripple">kora comment</button></p>
+                    </form></center>
+                    
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                    <div class="w3-row w3-margin">
+
+                      <div class="w3-third">
+                        <img src="img_5terre.jpg" style="width:50%;">
+                      </div>
+                      <div class="w3-twothird w3-container">
+                        <h2>5 Terre</h2>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                      </div>
+                      
+                      </div>
+                  </div> 
+                  </div>
                  <script>
                   window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+"id0222"){
@@ -354,7 +393,8 @@
                  }
                   })
                  </script>
-                <div id="id0222<%=element.UserName%>"   class="w3-modal">
+
+                <div   id="id0222<%=element.UserName%>"   class="w3-modal">
                   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
                     <span onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none'"
                       class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -383,13 +423,15 @@
        data-show-volume="false"
        data-show-info="false">
                        </audio>
+                      
                       </div>
                         <%})%>
                       </div>
                   </div>
                   </center>
                 </div>
-                <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                
+                <div style="width: 325px;" class="w3-container w3-card w3-white w3-round w3-margin"><br>
                   <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block' ;
                   let ul=window.location.href;
                   const netURL = `id0222`;
@@ -423,13 +465,13 @@
                   </form>
                 
                   
-                
-                 <br>
-                
-                 <div id="audio"><audio data-role="audio-player" data-src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" class="light"></audio></div>
-                  <br>
-                  <h3 id="opl"></h3>
-                  <br>
+                  
+                  <div style="display: block;" class="audio_3g">
+                    <h4><%=element.audioTitle%></h4>
+                    <audio id="odi<%=element.RecordingId%>"  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
+                    <p id="metaa<%=element.RecordingId%>"></p>
+                    
+                  </div>
                   <div style=" width: 100%;">
                     <button
                       onclick=" setTimeout(()=>{ window.stop()},10000);let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
@@ -437,10 +479,15 @@
                         id="<%=element.id%>">
                         <%=element.likes.length%>
                       </i></button>
-                   
+                      <button
+                      onclick="document.getElementById('id303').style.display='block'"
+                      type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa-solid fa-comment-dots"></i>  comments</button>
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yumvishwe <%=element.views%>
                     </div>
+                    <form action="post" method="post">
+                    <input style="display: none;" value="<%=element.UserName%>" name="identity" type="text"/>
+                    </form>
                   </div>
                   
                   <br>
@@ -449,7 +496,22 @@
                   <br>
                   <br>
                   <br>
+                  <script>
+                     inter=setInterval(() => {
+                        
+                        if(document.getElementById('odi<%=element.RecordingId%>').duration){
+                      document.getElementById('metaa<%=element.RecordingId%>').innerText='loaded'
+                      clearInterval(inter)
+                    }else{
+                      document.getElementById('metaa<%=element.RecordingId%>').innerText='loading...'
+                     
+                    }
+                      }, 100);
+                    
+                      </script>
+                     
                 </div>
+
                 <% });%>
                   <%}%>
                 
@@ -955,18 +1017,7 @@
         <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
         <script id="appjs" src="../static/recorder/app.js"></script>
         <script src="../static/recorder/recorder.js"></script>
-       
-       
-        
-       <% if(!user){%>
-        <script>
-          if(navigator.connection.effectiveType !=='4g'){
-            alert('Nta connection mufite ihagije ,uri gukoresha '+navigator.connection.effectiveType)
-          }
-          </script>
-      <%}%>
-     
-        <script>
+       <script>
          function updateScript(){
              $("#appjs").load(location.href + " #appjs"); 
           }
@@ -1034,7 +1085,7 @@
             document.getElementById('BTN5').style.display = 'none'
             document.getElementById('MENUBTN').style.display = 'block'
             document.getElementById('BTN6').style.display = 'block'
-            document.getElementById('stories').style.display = 'block'
+            document.getElementById('stories').style.display = 'flex'
             document.getElementById('ReacorderBTN').style.display = 'none'
             document.getElementById('BTN2').style.display = 'none'
             document.getElementById('recordButton').style.display = 'block'

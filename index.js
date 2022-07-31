@@ -10,6 +10,7 @@ let uniqid = require('uniqid');
 const upload = multer();
 const Readable = require('stream').Readable;
 const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic} = require('./googleDrive')
+const commentModel=require('./model/comments');
 const {transferTobeneficiary} = require('./flutterWave')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/recordings');
@@ -69,6 +70,7 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
+  
   let user=req.user
   recordings.find().then((recordings)=>{
   if(req.user){
@@ -785,24 +787,16 @@ app.post('/addLikes', (req, res) => {
 
 app.post('/addComments', (req, res) => {
    let Profile=req.user.ProfilePhotoUrl;
-   let Name=req.user.userName
-   let comment=req.body.comment
-   let filter={RecordingId:req.body.recId}
-  recordings.updateOne(filter, { $addToSet: { profileComment: Profile } }, function (err, docs) {
-    if (err) {
-      console.log(err)
-    }
-  })
-  recordings.updateOne(filter, { $addToSet: { NameComment: Name } }, function (err, docs) {
-    if (err) {
-      console.log(err)
-    }
-  })
-  recordings.updateOne(filter, { $addToSet: { Comment: comment } }, function (err, docs) {
-    if (err) {
-      console.log(err)
-    }
-  })
+   let Name=req.user.userName;
+   let id=req.body.RecordingId;
+   let Comment=req.body.comment
+   new commentModel({
+    RecorderId:id,
+    userName:Name,
+    userProfile:Profile,
+    Comments:Comment
+   }).save()
+  
 })
 app.post('/flutterWaveSubWeek', (req, res) => {
   
