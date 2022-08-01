@@ -91,7 +91,7 @@ app.get('/', (req, res) => {
         })
    }) })})
   }else{
-    res.render('index',{comments:comm,user:req.user,stories:recordings})
+    res.render('index',{user:req.user,stories:recordings})
   }
 })    
 })
