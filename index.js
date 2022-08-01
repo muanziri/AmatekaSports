@@ -72,12 +72,13 @@ app.get('/auth/google/success', (req, res) => {
 app.get('/', (req, res) => {
   
   let user=req.user
+  commentModel.find().then((comm)=>{
   recordings.find().then((recordings)=>{
   if(req.user){
   paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
     paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
       paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
-        commentModel.find().then((comm)=>{
+       
           if (paymentres.length >0){
             res.render('index', { comments:comm,user: req.user,payment:paymentres[0],stories:recordings})
           }else if(paymentres2.length >0){
@@ -88,12 +89,12 @@ app.get('/', (req, res) => {
           }else{
             res.render('index', { comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
           }
-        })
+        
    }) })})
   }else{
-    res.render('index',{user:req.user,stories:recordings})
+    res.render('index',{comments:comm,user:req.user,stories:recordings})
   }
-})    
+}) })   
 })
 app.get('/Logout', function(req, res){
   req.logout(function(err) {
