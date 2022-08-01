@@ -351,8 +351,8 @@
             <%if (stories.length>0){%>
               
               <%stories.reverse().forEach(element=> {%>
-                <div id="id303<%=element.UserName%>" class="w3-modal">
-                  <span onclick="document.getElementById('id303<%=element.UserName%>').style.display='none'"
+                <div id="id303<%=element.id%>" class="w3-modal">
+                  <span onclick="document.getElementById('id303<%=element.id%>').style.display='none'"
                     class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
                   <center><form method="post" action="/addComments" style="width: 60%;" class="w3-container w3-white w3-card-4">
                       <h2>kora comment</h2>
@@ -368,15 +368,17 @@
                       <button class="w3-button w3-section w3-teal w3-ripple">kora comment</button></p>
                     </form></center>
                     
-                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-height: 500px;overflow: scroll;">
                     <% if(comments.length>0) {
                       let co=comments
                          
                           function filterCom(com) {
-                            return com.id == element.id;
+                            
+                            return com.RecorderId == element.id;
                           }
-                        
+                         
                          let pl= co.filter(filterCom)
+                         console.log(pl);
                          if (pl<0){%>
                           
 
@@ -489,7 +491,7 @@
                         <%=element.likes.length%>
                       </i></button>
                       <button
-                      onclick="document.getElementById('id303<%=element.UserName%>').style.display='block'"
+                      onclick="document.getElementById('id303<%=element.id%>').style.display='block'"
                       type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa-solid fa-comment-dots"></i>  comments</button>
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yumvishwe <%=element.views%>
@@ -832,7 +834,7 @@
   <% if (user) {%>
     
     <%} else{%>
-      <div id="id01" style="display: block;" class="w3-modal">
+      <div id="id01" style="display: none;" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
           <center>
             <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
