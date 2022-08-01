@@ -351,7 +351,9 @@
             <%if (stories.length>0){%>
               
               <%stories.reverse().forEach(element=> {%>
-                <div id="id303" class="w3-modal">
+                <div id="id303<%=element.UserName%>" class="w3-modal">
+                  <span onclick="document.getElementById('id303<%=element.UserName%>').style.display='none'"
+                    class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
                   <center><form method="post" action="/addComments" style="width: 60%;" class="w3-container w3-white w3-card-4">
                       <h2>kora comment</h2>
                     <p>
@@ -359,7 +361,7 @@
                     <label>comment</label></p>
                     <input value="<%=element.UserName%>" name="UserName" style="display: none;" type="text">
                     <input value="<%=element.UserProfile%>" name="UserProfile" style="display: none;" type="text">
-                    <input value="<%=element.RecordingId%>" name="RecordingId" style="display: none;" type="text">
+                    <input value="<%=element.id%>" name="RecordingId" style="display: none;" type="text">
                    
                     
                     <p>
@@ -369,16 +371,21 @@
                   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                     <% if(comments.length>0) {
                       let co=comments
-                          
+                         
                           function filterCom(com) {
-                            return com.RecorderId==element.RecordingId;
+                            return com.RecorderId == element.RecordingId;
                           }
+                        
                          let pl= co.filter(filterCom)
-                         pl.forEach(elementa => {%> 
+                         if (pl<0){%>
+                          
+
+                          <%}else{pl.forEach(elementa => {%>
+                          
                     <div class="w3-row w3-margin">
 
                       <div class="w3-third">
-                        <img src="<%=elementa.userProfile%>" style="width:50%;">
+                        <img src="<%=elementa.userProfile%>"  class="w3-left w3-circle w3-margin-right" >
                       </div>
                       <div class="w3-twothird w3-container">
                         <h2><%=elementa.userName%></h2>
@@ -388,7 +395,7 @@
                       </div>
                       
                       </div>
-                      <%  })} %> 
+                      <%  })}} %> 
                   </div> 
                   </div>
                  <script>
@@ -423,14 +430,7 @@
                         %> 
                        <h6><%=element2.audioTitle%></h6>
                        <div id="audio">
-                       <audio data-role="audio-player"
-       
-       data-source="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>"
-       data-src=""
-       data-show-loop="false"
-       data-show-stop="false"
-       data-show-volume="false"
-       data-show-info="false">
+                       <audio controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
                        </audio>
                       
                       </div>
@@ -489,7 +489,7 @@
                         <%=element.likes.length%>
                       </i></button>
                       <button
-                      onclick="document.getElementById('id303').style.display='block'"
+                      onclick="document.getElementById('id303<%=element.UserName%>').style.display='block'"
                       type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa-solid fa-comment-dots"></i>  comments</button>
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yumvishwe <%=element.views%>
@@ -832,7 +832,7 @@
   <% if (user) {%>
     
     <%} else{%>
-      <div id="id01" style="display: block;" class="w3-modal">
+      <div id="id01" style="display: none;" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
           <center>
             <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
