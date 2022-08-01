@@ -367,19 +367,28 @@
                     </form></center>
                     
                   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                    <% if(comments.length>0) {
+                      let co=coments
+                          
+                          function filterCom(com) {
+                            return com.RecorderId==element.RecordingId;
+                          }
+                         let pl= co.filter(filterCom)
+                         pl.forEach(elementa => {%> 
                     <div class="w3-row w3-margin">
 
                       <div class="w3-third">
-                        <img src="img_5terre.jpg" style="width:50%;">
+                        <img src="<%=elementa.userProfile%>" style="width:50%;">
                       </div>
                       <div class="w3-twothird w3-container">
-                        <h2>5 Terre</h2>
+                        <h2><%=elementa.userName%></h2>
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
+                          <%=elementa.Comments%>
+                      </p>
                       </div>
                       
                       </div>
+                      <%  })} %> 
                   </div> 
                   </div>
                  <script>
