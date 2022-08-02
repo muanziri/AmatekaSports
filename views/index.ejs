@@ -255,25 +255,11 @@
                   
                   <img style="z-index:2;" id="blah" src="<%=user.ProfilePhotoUrl%>" alt="your image" />
                   <input accept="image/*" type='file' id="imgInp" />
+                  <div id="preview"></div>
             
                   <button  class="w3-button w3-teal w3-margin-bottom">Hindura Ifoto</button>
                 </form>              
-                 <script>
-                  imgInp.onchange = evt => {
-                      const [file] = imgInp.files
-                      if (file) {
-                        blah.src = URL.createObjectURL(file)
-                      }
-                   }
-                   var uploadField = document.getElementById("blah");
-
-                   uploadField.onchange = function() {
-                       if(this.files[0].size > 25){
-                          alert("ifoto yigabanye");
-                          this.value = "";
-                       };
-                   };
-                 </script>
+              
                 </div>
               </div>
               
@@ -948,7 +934,7 @@
                     if(window.location.href!==window.location.href+'MENU'){
                    
                       document.getElementById('MENU').style.display='none';
-                      
+                      ChangeToStories();
                       document.getElementById('id04').style.display='none';
                  }
                   })
@@ -1062,7 +1048,20 @@
            
           
         </script>
-        
+        <script>
+          $.cloudinary.config({ cloud_name: 'munazirib', secure: true});
+         let  imgInp=document.getElementById('imgInp');
+
+          imgInp.onchange = evt => {
+                      const [file] = imgInp.files
+                      if (file) {
+                       // blah.src = URL.createObjectURL(file)
+                        $('.preview').html( $.cloudinary.image( URL.createObjectURL(file), {gravity: "face", crop: "crop"}))
+                      }
+                   }
+                  
+                   
+          </script>
         <script>
       //     function stoperror() {
       //   return true;
