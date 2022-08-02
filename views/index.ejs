@@ -259,7 +259,20 @@
             
                   <button  class="w3-button w3-teal w3-margin-bottom">Hindura Ifoto</button>
                 </form>              
-              
+                <script>
+                  $.cloudinary.config({ cloud_name: 'munazirib', secure: true});
+                 let  imgInp=document.getElementById('imgInp');
+        
+                  imgInp.onchange = evt => {
+                              const [file] = imgInp.files
+                              if (file) {
+                               // blah.src = URL.createObjectURL(file)
+                                $('.preview').html( $.cloudinary.image( URL.createObjectURL(file), {gravity: "face", crop: "crop"}))
+                              }
+                           }
+                          
+                           
+                  </script>
                 </div>
               </div>
               
@@ -1048,20 +1061,7 @@
            
           
         </script>
-        <script>
-          $.cloudinary.config({ cloud_name: 'munazirib', secure: true});
-         let  imgInp=document.getElementById('imgInp');
-
-          imgInp.onchange = evt => {
-                      const [file] = imgInp.files
-                      if (file) {
-                       // blah.src = URL.createObjectURL(file)
-                        $('.preview').html( $.cloudinary.image( URL.createObjectURL(file), {gravity: "face", crop: "crop"}))
-                      }
-                   }
-                  
-                   
-          </script>
+      
         <script>
       //     function stoperror() {
       //   return true;
