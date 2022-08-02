@@ -124,6 +124,10 @@
           <input class="w3-input" type="text" name="NewUrlTobeSharedred" style="width:90%" required>
           <label>Link for sharing</label>
         </p>
+        <p>
+          <textarea class="w3-input" type="text" name="Description" style="width:90%" required></textarea>
+          <label>Description</label>
+        </p>
 
 
 
@@ -170,8 +174,67 @@
         <h1>Status Approve Board(month)</h1>
       </header>
 
-      <div class="w3-panel">
-        <%usersMonth.forEach(element=> {%>
+      <div style="overflow-y: scroll; max-height: 350px;" class="w3-panel">
+        <%usersMonth.forEach(element=> {
+        if(element.WhatsappScreenShotPosts.length>0){
+          %>
+          
+          <div class="w3-row w3-card-4">
+            <div class="w3-col s9 w3-container">
+              <h5>
+                <%=element.userName%>
+              </h5>
+              <button onclick="document.getElementById('<%=element.id%>').style.display='block'"
+                class="w3-button w3-section w3-teal w3-ripple">watch and Approve</button>
+            </div>
+            <div id="<%=element.id%>" class="w3-modal">
+              <span onclick="document.getElementById('<%=element.id%>').style.display='none'"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
+                <h5>
+                  posted by  <%=element.userName%>
+              </h5>
+                <%element.WhatsappScreenShotPosts.forEach(element2=> {%>
+                  <div class="w3-card">
+                    <div>
+                      <img src="https://drive.google.com/uc?export=download&id=<%=element2%>" style="width:100%">
+                    </div>
+                    <br>
+                    <div >
+                    <form action="/approveMonth" id="approveMonth"  method="post" >
+                      <input style="display: none;" type="text" value="<%=element.id%>" name="approveId"/>
+                      <input  type="number"  placeholder="Views seen in a picture" name="views"/>
+                      <input style="display: none;" type="text" value="<%=element2%>" name="approveIda"/>
+
+                      </form>
+                      <form action="/abortMonth" id="abortMonth"  method="post" >
+                      <input style="display: none;" type="text" value="<%=element.id%>" name="abortId"/>
+                      <input style="display: none;" type="text" value="<%=element2%>" name="abortIda"/>
+                      </form>
+                    </div>
+
+                    <button onclick="document.getElementById('approveMonth').submit()"  class="w3-button w3-green w3-padding-large">Approve</button>
+                    <button onclick="document.getElementById('abortMonth').submit()" class="w3-button w3-green w3-padding-large">Abort</button>
+
+                  </div>
+
+                  <br>
+                  <%});%>
+              </div>
+            </div>
+          </div>
+          <% }});%>
+            <hr>
+      </div>
+
+    </div>
+    <div class="w3-container w3-half w3-margin-top">
+      <header class="w3-container w3-card-4 w3-theme">
+        <h1>Status Approve Board(week)</h1>
+      </header>
+
+      <div style="overflow-y: scroll;max-height: 350px;" class="w3-panel">
+        <%usersWeek.forEach(element=> {%>
           <div class="w3-row w3-card-4">
             <div class="w3-col s9 w3-container">
               <h5>
@@ -188,16 +251,23 @@
                   posted by  <%=element.userName%>
               </h5>
                 <%element.WhatsappScreenShotPosts.forEach(element2=> {
-                
+                 // console.log(element.WhatsappScreenShotPosts)
                   %>
                   <div class="w3-card">
                     <div>
-                      <img src="https://drive.google.com/uc?export=download&id=<%=element2%>" style="width:100%">
+                      <img src="https://drive.google.com/uc?export=download&id=<%element2%>" style="width:100%">
                     </div>
                     <br>
-
-                    <button class="w3-button w3-green w3-padding-large">Approve</button>
-                    <button class="w3-button w3-green w3-padding-large">Abort</button>
+                    <div style="display: none;">
+                    <form action="/aprroved" id="aprrovedWeek" method="post" >
+                      <input type="text" value="<%=element2%>" name="approveId"/>
+                      </form>
+                      <form action="/abortWeek"   id="abortWeek" method="post" >
+                      <input type="text" value="<%=element2%>" name="approveId"/>
+                      </form>
+                    </div>
+                    <button onclick="document.getElementById('aprrovedWeek').submit()" class="w3-button w3-green w3-padding-large">Approve</button>
+                    <button onclick="document.getElementById('abortWeek').submit()" class="w3-button w3-green w3-padding-large">Abort</button>
 
                   </div>
 
@@ -213,35 +283,10 @@
     </div>
     <div class="w3-container w3-half w3-margin-top">
       <header class="w3-container w3-card-4 w3-theme">
-        <h1>Status Approve Board(week)</h1>
-      </header>
-
-      <div class="w3-panel">
-        <%usersWeek.forEach(element=> {%>
-          <div class="w3-row w3-card-4">
-            <div class="w3-col s9 w3-container">
-              <h5>
-                <%=element.userName%>
-              </h5>
-              <button onclick="document.getElementById('<%=element.id%>').style.display='block'"
-                class="w3-button w3-section w3-teal w3-ripple">watch and Approve</button>
-            </div>
-            <div id="<%=element.id%>" class="w3-modal">
-              <span onclick="document.getElementById('<%=element.id%>').style.display='none'"
-                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-            </div>
-          </div>
-          <% });%>
-            <hr>
-      </div>
-
-    </div>
-    <div class="w3-container w3-half w3-margin-top">
-      <header class="w3-container w3-card-4 w3-theme">
         <h1>Status Approve Board(year)</h1>
       </header>
 
-      <div class="w3-panel">
+      <div style="overflow-y: scroll;max-height: 350px;" class="w3-panel">
         <%usersYear.forEach(element=> {
           
           %>
@@ -268,9 +313,16 @@
                       <img src="https://drive.google.com/uc?export=download&id=<%element2%>" style="width:100%">
                     </div>
                     <br>
-
-                    <button class="w3-button w3-green w3-padding-large">Approve</button>
-                    <button class="w3-button w3-green w3-padding-large">Abort</button>
+                    <div style="display: none;">
+                    <form action="/approved" id="approveYear" method="post" >
+                      <input type="text" value="<%=element2%>" name="approveId"/>
+                      </form>
+                      <form action="/abort" id="abortYear"  method="post" >
+                      <input type="text" value="<%=element2%>" name="approveId"/>
+                      </form>
+                    </div>
+                    <button onclick="document.getElementById('approveYear').submit()" class="w3-button w3-green w3-padding-large">Approve</button>
+                    <button onclick="document.getElementById('abortYear').submit()" class="w3-button w3-green w3-padding-large">Abort</button>
 
                   </div>
 
@@ -303,6 +355,42 @@
       </div>
     </div>
     <div class="w3-container w3-half w3-margin-top">
+      <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+<h2 class="w3-center">Send Email to users</h2>
+ 
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+    <div class="w3-rest">
+      <input class="w3-input w3-border" name="name" type="text" placeholder=" Name">
+    </div>
+</div>
+
+
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-header"></i></div>
+    <div class="w3-rest">
+      <input class="w3-input w3-border" name="title" type="text" placeholder="title">
+    </div>
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
+    <div class="w3-rest">
+      <textarea class="w3-input w3-border" name="message" type="text" placeholder="Message"></textarea>
+    </div>
+</div>
+<br>
+<input class="w3-radio" type="radio" id="individual" value="male" checked>
+<label>individual</label>
+<br>
+<input class="w3-radio" type="radio" id="User" value="male" checked>
+<label>all User</label>
+
+<p class="w3-center">
+<button class="w3-button w3-section w3-blue w3-ripple"> Send </button>
+</p>
+</form>
 
     </div>
     <div class="w3-container w3-half w3-margin-top">
@@ -316,7 +404,9 @@
 
 
 
-
+<script>
+  console.log(document.getElementById('individual').value,document.getElementById('User').value)
+  </script>
 
 </body>
 

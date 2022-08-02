@@ -9,7 +9,7 @@ const multer = require('multer')
 let uniqid = require('uniqid'); 
 const upload = multer();
 const Readable = require('stream').Readable;
-const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic} = require('./googleDrive')
+const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic,DeleteFile} = require('./googleDrive')
 const commentModel=require('./model/comments');
 const {transferTobeneficiary} = require('./flutterWave')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
@@ -786,7 +786,108 @@ app.post('/addLikes', (req, res) => {
   })
 
 })
-
+app.post('/approveYear',(req,res)=>{
+  let approveId=req.body.approveId
+  let ida=req.body.approveIda
+  let views=req.body.views
+  let filter={id:approveId};
+   paymentYear.findById(approveId).then((results)=>{
+    let Views=results.clicks+parseInt(views)
+    let newMoney=Views*5
+    paymentYear.updateOne(filter,{clicks:Views},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentYear.updateOne(filter,{CashLeft:newMoney},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentYear.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+   })
+   res.redirect('/Admin')
+})
+app.post('/abortYear',(req,res)=>{
+  let approveId=req.body.abortId
+  let ida=req.body.abortIda
+  let filter={id:approveId};
+  paymentYear.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+    if(err)throw err
+    console.log('done')
+  })
+  DeleteFile(ida)
+  res.redirect('/Admin')
+})
+app.post('/approveMonth',(req,res)=>{
+  let approveId=req.body.approveId
+  let ida=req.body.approveIda
+  let views=req.body.views
+  let filter={id:approveId};
+   paymentMonth.findById(approveId).then((results)=>{
+    let Views=results.clicks+parseInt(views)
+    let newMoney=Views*5
+    paymentMonth.updateOne(filter,{clicks:Views},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentMonth.updateOne(filter,{CashLeft:newMoney},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentMonth.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+   })
+   res.redirect('/Admin')
+ })
+ app.post('/abortMonth',(req,res)=>{
+  let approveId=req.body.abortId
+  let ida=req.body.abortIda
+  let filter={id:approveId};
+  paymentMonth.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+    if(err)throw err
+    console.log('done')
+  })
+  DeleteFile(ida)
+  res.redirect('/Admin')
+ })
+ app.post('/approveWeek',(req,res)=>{
+  let approveId=req.body.approveId
+  let ida=req.body.approveIda
+  let views=req.body.views
+  let filter={id:approveId};
+   paymentWeek.findById(approveId).then((results)=>{
+    let Views=results.clicks+parseInt(views)
+    let newMoney=Views*5
+    paymentWeek.updateOne(filter,{clicks:Views},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentWeek.updateOne(filter,{CashLeft:newMoney},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentWeek.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+   })
+   res.redirect('/Admin')
+ })
+ app.post('/abortWeek',(req,res)=>{
+  let approveId=req.body.abortId
+  let ida=req.body.abortIda
+  let filter={id:approveId};
+  paymentWeek.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+    if(err)throw err
+    console.log('done')
+  })
+  DeleteFile(ida)
+  res.redirect('/Admin')
+ })
 app.post('/addComments', (req, res) => {
    let Profile=req.user.ProfilePhotoUrl;
    let Name=req.user.userName;

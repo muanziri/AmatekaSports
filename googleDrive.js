@@ -128,4 +128,10 @@ var jwToken = new google.auth.JWT(
      }
    });
    }
-   module.exports={totheDrivers,totheDriversWhatsapp,ChangeProfilePic};
+   const DeleteFile=(fileId)=>{
+    var request = drive.files.delete({
+      'fileId': fileId
+    });
+    request.execute(function(resp) { });
+   }
+   module.exports={totheDrivers,totheDriversWhatsapp,ChangeProfilePic,DeleteFile};
