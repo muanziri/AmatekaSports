@@ -772,12 +772,12 @@ app.post('/addLikes', (req, res) => {
   let userID = req.user.id;
   let d=req.body.identity;
   console.log(req.body)
-  recordings.updateOne({UserName:d}, { $addToSet: { likes: userID } }, function (err, docs) {
-    if (err) {
-      console.log(err)
-    }
-  })
-  console.log(d)
+  //recordings.updateOne({UserName:d}, { $addToSet: { likes: userID } }, function (err, docs) {
+  //  if (err) {
+  //    console.log(err)
+  //  }
+  //})
+  //console.log(d)
   // UserModel.findOne({userName:d}).then((results)=>{
   //   let newLikes = results.likes+1
   //   UserModel.updateOne({userName:d},{likes:newLikes},function (err, docs) {
