@@ -253,11 +253,11 @@
                 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                  <br>
                  
-                 <div id="preview"></div>
+                 <center><div id="preview"></div>
                 <form action="/ChangeProfilePic" method="post" enctype="multipart/form-data">
                   <input type="file" id="fileInput" name="image" accept="image/*" />
                   <input type="submit" name="do" value="submit" />
-                </form>
+                </form></center>
                 <script>
                   function FileListItem(a) {
                   a = [].slice.call(Array.isArray(a) ? a : arguments)
@@ -567,7 +567,24 @@
 
           </div>
           <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
-          
+            <% if (user) {%>
+                <% if(payment.PaymentStatus=="payed" ) {%>
+                  <%}else{%>
+                    <div id="id04" style="display:block" class="w3-modal">
+                    <span onclick="ChangeToStories();"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                      <center>
+                        <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
+                        <button
+                          onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'"
+                          class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
+                      </center>
+                    </div>
+                  </div>
+               
+                    <% } %>
+                      <% } %>
             <button onclick="document.getElementById('id11').style.display='block'
             window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id11'){
@@ -725,24 +742,7 @@
 
               </div>
             </div>
-            <% if (user) {%>
-                <% if(payment.PaymentStatus=="payed" ) {%>
-                  <%}else{%>
-                    <div id="id04" style="display:block" class="w3-modal">
-                    <span onclick="ChangeToStories();"
-                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <center>
-                        <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
-                        <button
-                          onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'"
-                          class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
-                      </center>
-                    </div>
-                  </div>
-               
-                    <% } %>
-                      <% } %>
+        
             
                     </div>   
          
