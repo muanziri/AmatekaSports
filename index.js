@@ -773,7 +773,7 @@ app.post('/addLikes', (req, res) => {
   let d=req.body.identity;
   
   let idF=req.body.Id;
-  console.log(idF)
+
   recordings.updateOne({RecordingId:idF}, { $addToSet: { likes: userID } }, function (err, docs) {
     if (err) {
       console.log(err)
