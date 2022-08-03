@@ -474,7 +474,7 @@
                         %> 
                        <h6><%=element2.audioTitle%></h6>
                        <div id="audio">
-                       <audio controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
+                       <audio ontimeupdate="console.log(this.currentTime)" controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
                        </audio>
                       
                       </div>
@@ -521,7 +521,7 @@
                   
                   <div style="display: block;" class="audio_3g">
                     <h4><%=element.audioTitle%></h4>
-                    <audio id="odi<%=element.RecordingId%>"  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
+                    <audio ontimeupdate="console.log(this.currentTime)" id="odi<%=element.RecordingId%>"  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
                     <p id="metaa<%=element.RecordingId%>"></p>
                     
                   </div>
