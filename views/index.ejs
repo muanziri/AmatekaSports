@@ -258,16 +258,17 @@
                   <div id="preview"></div>
             
                   <button  class="w3-button w3-teal w3-margin-bottom">Hindura Ifoto</button>
-                </form>              
+                </form>  
+                <script defer src="https://cdn.crop.guide/loader/l.js?c=123ABC"></script>            
                 <script>
-                  $.cloudinary.config({ cloud_name: 'munazirib', secure: true});
+                 
                  let  imgInp=document.getElementById('imgInp');
         
                   imgInp.onchange = evt => {
                               const [file] = imgInp.files
                               if (file) {
-                               // blah.src = URL.createObjectURL(file)
-                                $('.preview').html( $.cloudinary.image( URL.createObjectURL(file), {gravity: "face", crop: "crop"}))
+                                blah.src = URL.createObjectURL(file)
+                               
                               }
                            }
                           
