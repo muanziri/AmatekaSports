@@ -474,7 +474,7 @@
                         %> 
                        <h6><%=element2.audioTitle%></h6>
                        <div id="audio">
-                       <audio ontimeupdate="console.log(this.currentTime)" controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
+                       <audio ontimeupdate="if(this.currentTime== this.duration-1){setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()}" controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
                        </audio>
                       
                       </div>
@@ -521,7 +521,7 @@
                   
                   <div style="display: block;" class="audio_3g">
                     <h4><%=element.audioTitle%></h4>
-                    <audio ontimeupdate="console.log(this.currentTime)" id="odi<%=element.RecordingId%>"  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
+                    <audio ontimeupdate="if(this.currentTime== this.duration-1){setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()}" id="odi<%=element.RecordingId%>"  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
                     <p id="metaa<%=element.RecordingId%>"></p>
                     
                   </div>
@@ -538,7 +538,7 @@
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yumvishwe <%=element.views%>
                     </div>
-                    <form action="/addLikes" method="post">
+                    <form action="/addLikes" id="likeForm<%=element.id%>" method="post">
                     <input style="display: none;" value="<%=element.userName%>" name="identity" type="text"/>
                     </form>
                   </div>
