@@ -769,7 +769,7 @@ app.get('/refferal/:userName',(req,res)=>{
 
 })
 app.post('/addLikes', (req, res) => {
-  let userID = req.user.id;
+ // let userID = req.user.id;
   let d=req.body.identity;
   console.log(req.body)
   //recordings.updateOne({UserName:d}, { $addToSet: { likes: userID } }, function (err, docs) {
