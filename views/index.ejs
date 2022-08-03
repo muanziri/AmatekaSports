@@ -252,9 +252,13 @@
 
                 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                  <br>
+                 <span
+                onclick="document.getElementById('MENU').style.display='none';document.getElementById('ChangeProfilePic').style.display='block'"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                <center><h1>Hindura Profile pic</h1></center>
                  
                  <center><div id="preview"></div>
-                <form action="/ChangeProfilePic" method="post" enctype="multipart/form-data">
+                <form onsubmit="setTimeout(()=>{ window.stop()},10000);" action="/ChangeProfilePic" method="post" enctype="multipart/form-data">
                   <input type="file" id="fileInput" name="image" accept="image/*" />
                   <input type="submit" name="do" value="submit" />
                 </form></center>
@@ -534,8 +538,8 @@
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yumvishwe <%=element.views%>
                     </div>
-                    <form action="post" method="post">
-                    <input style="display: none;" value="<%=element.UserName%>" name="identity" type="text"/>
+                    <form action="/addLikes" method="post">
+                    <input style="display: none;" value="<%=element.userName%>" name="identity" type="text"/>
                     </form>
                   </div>
                   
@@ -571,9 +575,7 @@
                 <% if(payment.PaymentStatus=="payed" ) {%>
                   <%}else{%>
                     <div id="id04" style="display:block" class="w3-modal">
-                    <span onclick="ChangeToStories();"
-                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                  
                       <center>
                         <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
                         <button
