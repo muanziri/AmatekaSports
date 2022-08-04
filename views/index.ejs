@@ -521,11 +521,11 @@
                   
                   
                   <div style="display: block;" class="audio_3g">
-                    <div style="height: 100px;width:90%;background-color:aquamarine;">
+                    <div style="height: 150px;width:90%;background-color:aquamarine;">
                       <center><h3><b><%=element.newsBody%></b></h3></center>
                       <p><%=element.Title%></p>
                       </div>
-                       <button  style="width:90%" class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
+                      
                     <audio ontimeupdate="if(this.currentTime== this.duration-1){setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()}" id="odi<%=element.RecordingId%>"  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
                     <p id="metaa<%=element.RecordingId%>"></p>
                     
