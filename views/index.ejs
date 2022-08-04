@@ -407,7 +407,7 @@
                    
                     
                     <p>
-                      <button class="w3-button w3-section w3-teal w3-ripple">kora comment kuri <%=element.audioTitle%></button></p>
+                      <button class="w3-button w3-section w3-teal w3-ripple">kora comment inkuru  :<%=element.newsBody%></button></p>
                     </form></center>
                     
                   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-height: 500px;overflow-y: scroll;">
@@ -521,7 +521,10 @@
                   
                   
                   <div style="display: block;" class="audio_3g">
-                    <p style="height: 300px;width:90%;background-color:aquamarine;"><%=element.audioTitle%></p>
+                    <div style="height: 100px;width:90%;background-color:aquamarine;">
+                      <center><h3><b><%=element.newsBody%></b></h3></center>
+                      <p><%=element.Title%></p>
+                      </div>
                        <button  style="width:90%" class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
                     <audio ontimeupdate="if(this.currentTime== this.duration-1){setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()}" id="odi<%=element.RecordingId%>"  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
                     <p id="metaa<%=element.RecordingId%>"></p>
@@ -566,9 +569,19 @@
 
                 <% });%>
                   <%}%>
-                
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>    
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>    
 
           </div>
+          
           <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
             <div>
               
@@ -892,7 +905,7 @@
   <% if (user) {%>
     
     <%} else{%>
-      <div id="id01" style="display: block;" class="w3-modal">
+      <div id="id01" style="display: none;" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
           <center>
             <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
