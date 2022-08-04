@@ -205,13 +205,16 @@ function createDownloadLink(blob) {
     
    var recordingsList=document.getElementById("recordingsList")
    var Title=document.getElementById("Title");
+   var Title2=document.getElementById("Title2");
    Title.style.display='block'
+   Title2.style.display='block'
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
 	au.setAttribute('id','recorded')
 	var li = document.createElement('li');
 	var link = document.createElement('a');
 	Title.style.display='block';
+	Title2.style.display='block';
 	//name of .wav file to use during upload and download (without extendion)
 	var filename = Date.now();
     au.style.color='teal'
@@ -245,6 +248,7 @@ function createDownloadLink(blob) {
 
 	 uploadButton.addEventListener('click',function (events) {
 		Title.style.display='none';
+		Title2.style.display='none';
 		au.style.display='none'
 	   uploadButton.style.display='none';
 	   document.getElementById('recorded').style.display='none'
@@ -258,6 +262,7 @@ function createDownloadLink(blob) {
 	 	var fd=new FormData();
 	 	fd.append("audio_data",blob, filename);
 		fd.append("Title",Title.value);
+		fd.append("Title2",Title2.value);
 	 	xhr.open("POST","ToTheDrive",true);
 	 	xhr.send(fd);
 		 xhr.onload = function() {
@@ -266,6 +271,7 @@ function createDownloadLink(blob) {
 			} else { // show the result
 				fd.delete("audio_data")
 				fd.delete("Title")
+				fd.delete("Title2")
 				xhr.abort()
 				window.location.reload(); // response is the server response
 			}

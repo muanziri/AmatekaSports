@@ -472,7 +472,8 @@
                         op.forEach(element2 => {
                          
                         %> 
-                       <h6><%=element2.audioTitle%></h6>
+                       <p style="height: 300px;width:90%;background-color:aquamarine;"><%=element2.audioTitle%></p>
+                       <button  style="width:90%" class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
                        <div id="audio">
                        <audio ontimeupdate="if(this.currentTime== this.duration-1){setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()}" controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
                        </audio>
@@ -520,7 +521,8 @@
                   
                   
                   <div style="display: block;" class="audio_3g">
-                    <h4><%=element.audioTitle%></h4>
+                    <p style="height: 300px;width:90%;background-color:aquamarine;"><%=element.audioTitle%></p>
+                       <button  style="width:90%" class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
                     <audio ontimeupdate="if(this.currentTime== this.duration-1){setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()}" id="odi<%=element.RecordingId%>"  src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
                     <p id="metaa<%=element.RecordingId%>"></p>
                     
@@ -544,11 +546,7 @@
                     </form>
                   </div>
                   
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
+                  
                   <br>
                   <script>
                      inter=setInterval(() => {
@@ -572,7 +570,9 @@
 
           </div>
           <div style="display:none" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <% if (user) {%>
+            <div>
+              
+              <% if (user) {%>
                 <% if(payment.PaymentStatus=="payed" ) {%>
                   <%}else{%>
                     <div id="id04" style="display:block" class="w3-modal">
@@ -602,7 +602,7 @@
             const nextState11 = { additionalInformation: 'id11' };
             window.history.pushState(nextState, nextTitle, nextURL);
             "
-              style="position:absolute;top:-2%;right:-2%" class="w3-button w3-card w3-round w3-margin w3-teal">
+              style="position:absolute;top:-2%;right:-2%;display: none;" class="w3-button w3-card w3-round w3-margin w3-teal">
               Ohereza whatsapp views
             </button>
           
@@ -892,7 +892,7 @@
   <% if (user) {%>
     
     <%} else{%>
-      <div id="id01" style="display: block;" class="w3-modal">
+      <div id="id01" style="display: none;" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
           <center>
             <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
@@ -1055,9 +1055,10 @@
           <p>
             <br>
             <center> 
-            
-              <input onkeypress="updateScript()" style="display:none;width:80%" placeholder="Umutwe wa episode na nimero yayo" type="text"
-                name="Title"  id="Title"/>
+               <input style="display:none;width:80%" id="Title2"  placeholder="Munutwe winkuru" type="title">
+               <br> 
+              <textarea onkeypress="updateScript()" style="display:none;width:80%"   placeholder="Inshamake.........." type="text"
+                name="Title"  id="Title"></textarea>
                
               </center>
             <center>

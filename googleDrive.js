@@ -19,7 +19,7 @@ var jwToken = new google.auth.JWT(
       console.log("Authorization accorded");
     }
   });
-  const totheDrivers= (fileMetadata,media,RecordTitle,stringedFilePath,user,folderIda)=>{
+  const totheDrivers= (fileMetadata,media,RecordTitle,stringedFilePath,user,folderIda,NewsBody)=>{
     drive.files.create({
      auth: jwToken,
      resource: fileMetadata,
@@ -55,7 +55,8 @@ var jwToken = new google.auth.JWT(
     userId:user.id,
     UserName:user.userName,
     UserProfile:user.ProfilePhotoUrl,
-    audioTitle:RecordTitle
+    Title:RecordTitle,
+    newsBody:NewsBody
   }).save().then(()=>{}).catch((err)=>{if(err) throw err})
     
      }

@@ -7,7 +7,11 @@ const UserSchema = new Schema({
         required: true
 
     },
-    audioTitle:{
+    Title:{
+        type: String,
+        required: true
+    },
+    newsBody:{
         type: String,
         required: true
     },
