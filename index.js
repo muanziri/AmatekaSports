@@ -523,12 +523,7 @@ app.post('/flutterWaveSubMonth', (req, res) => {
 }
   var mykey = uniqid()
   var mykey2 = uniqid()
-  new paymentMonth({
-    userName:req.user.userName,
-    tx_ref:mykey,
-    Oder_Id:mykey2,
-    PhoneNumber:req.body.phone
-  }).save();
+  
   UserModel.updateOne({ userName: user.userName }, { paymentId:mykey }, function (err, docs) {
     if (err) {
       console.log(err)
