@@ -99,7 +99,9 @@ passport.use(new GoogleStrategy({
         uploadToTheDriveMakeFOlder(fileMetadataa);
       }});
 
-      
+      new paymentMonth({
+        userName:profile.displayName,
+      }).save();  
   
       
   

@@ -58,14 +58,9 @@ const UserSchema2 = new Schema({
         type: String,
 
     },
-    PhoneNumber:{
-        type: String,
-        required: true,
-        default:"+250780000000"
-
-    },
+    
     views:{
-        type: String,
+        type: Number,
         required: true,
         default:"0"
 
@@ -84,25 +79,20 @@ const UserSchema2 = new Schema({
     },
 
     WhatsappScreenShotPosts:[],    
-    tx_ref:{
-        type: String,
-    },
-    Oder_Id:{
-        type: String,
-    },
+    
     PaymentStatus:{
         type: String,
         required: true,
-        default:"pending"
+        default:"payed"
 
     },
     PackageDuration:{
         type: String,
         required: true,
-        default:"30"
+        default:"6Month"
 
     },
-    createdAt: { type: Date, expires: '30d', default: Date.now }
+    createdAt: { type: Date, expires: '180d', default: Date.now }
 
 })
 const UserSchema3 = new Schema({
