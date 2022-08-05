@@ -9,6 +9,15 @@ const UserSchema = new Schema({
     
 
     },
+    Discription:{
+        type: String,
+        required: true,
+    },
+    clicks:{
+        type: Number,
+        required: true,
+        default:0
+    },
     Date:{
         type: Date,
         required: true,

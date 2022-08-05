@@ -11,10 +11,13 @@ const upload = multer();
 const Readable = require('stream').Readable;
 const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic,DeleteFile} = require('./googleDrive')
 const commentModel=require('./model/comments');
+const {ClickableLink}=require('./model/ClickableLinks');
 const {transferTobeneficiary} = require('./flutterWave')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/recordings');
+const {main}=require('./nomailer');
 const { UserModel } = require('./model/users');
+
 require('./athentication/google')
 
 
@@ -222,493 +225,16 @@ app.get('/4/:Name',(req,res)=>{
       }
   })})})
 })
-app.get('/5/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/6/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/7/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/8/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/9/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/10/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/11/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/12/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/13/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/14/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/15/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/16/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/17/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/18/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/19/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
-app.get('/20/:Name',(req,res)=>{
-  let Name=req.params.Name
-  paymentWeek.findOne({userName:Name}).then((results)=>{
-    paymentMonth.findOne({userName:Name}).then((results1)=>{
-    paymentYear.findOne({userName:Name}).then((results2)=>{
-      if(results!= null){
-       let NewClicks= results.clicks+1;
-       let newCash= results.CashLeft+5;
-       paymentWeek.updateOne({userName:Name},{clicks:NewClicks},function(){
-        paymentWeek.updateOne({userName:Name},{CashLeft:newCash},function(){
-         res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        })
-       })
-      }else if(results1!= null){
-        let NewClicks1= results1.clicks+1;
-        let newCash1= results1.CashLeft+5;
-        paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
-          paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-          res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-        }) })
-      }else if(results2!= null){
-        let NewClicks2= results2.clicks+1;
-        let newCash1= results2.CashLeft+5;
-       paymentYear.updateOne({userName:Name},{clicks:NewClicks2},function(){
-        paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
-        res.redirect('https://www.youtube.com/watch?v=mC93zsEsSrg')
-       })})
-      }
-  })})})
-})
+
 app.get('/Admin', (req, res) => {
       const user=req.user
       paymentYear.find().then((usersYear)=>{
         paymentMonth.find().then((usersMonth)=>{
           paymentWeek.find().then((usersWeek)=>{
             UserModel.find().then((results)=>{
-              res.render('Admindashbaord',{users:results,usersYear:usersYear,usersMonth:usersMonth,usersWeek:usersWeek})
+            ClickableLink.find().then((links)=>{
+              res.render('Admindashbaord',{users:results,usersYear:usersYear,usersMonth:usersMonth,usersWeek:usersWeek,link:links})
+            })
             })
        }) })})
 })
@@ -764,10 +290,17 @@ app.get('/Advertiser',(req,res)=>{
     }
 })
 
-app.get('/refferal/:userName',(req,res)=>{
-  userName=req.params.userName;
 
-})
+//app.post('/SendMessageIndividual',(req,res)=>{
+//let message={
+//             from: 'duterestory@gmail.com', // sender address
+//             to: req.body.Email, // list of receivers
+//             subject: req.body.title, // Subject line
+//             text: req.body.message, // plain text body
+//             html: "<b>Hello world?</b>", // html body
+//           }
+//   main(message);
+//})
 app.post('/addLikes', (req, res) => {
   let userID = req.user.id;
   let d=req.body.identity;
@@ -857,6 +390,33 @@ app.post('/approveMonth',(req,res)=>{
   })
   DeleteFile(ida)
   res.redirect('/Admin')
+ })
+ app.post('/NewUrlTobeShared',(req,res)=>{
+  ClickableLink({
+    link:req.body.NewUrlTobeSharedred,
+    Discription:req.body.DescriptionH
+  }).save();
+  res.redirect('/Admin')
+
+ })
+ app.post('/DeleteTheLink',(req,res)=>{
+  let id=req.body.identify
+  ClickableLink.findByIdAndDelete(id,function (err, docs) {
+    if (err){
+        console.log(err)
+    }
+    else{
+      res.redirect('/Admin');
+    }
+});
+
+ })
+ app.post('/DeleteTheUser',(req,res)=>{
+  ClickableLink({
+    link:req.body.NewUrlTobeSharedred,
+    Discription:req.body.DescriptionH
+  }).save();
+
  })
  app.post('/approveWeek',(req,res)=>{
   let approveId=req.body.approveId
@@ -1313,7 +873,7 @@ app.post('/ToTheDrive', upload.any(), (req, res,next) => {
 
 
 
-const port = process.env.PORT || 3300
+const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log('heard from port')
 })

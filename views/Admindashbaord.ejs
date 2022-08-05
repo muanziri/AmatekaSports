@@ -126,7 +126,7 @@
           <label>Link for sharing</label>
         </p>
         <p>
-          <textarea class="w3-input" type="text" name="Description" style="width:90%" required></textarea>
+          <textarea class="w3-input" type="text" name="DescriptionH" style="width:90%" required></textarea>
           <label>Description</label>
         </p>
 
@@ -143,10 +143,16 @@
       <h3>Links that are being shared and number of clicks</h3>
       <div class="w3-container w3-card-4">
         <ol>
-
-          <li>https://www.youtube.com/watch?v=juoJK5L4lfk <b>clicks</b> 0 <b>Date</b> 12th jan 2022 <button
+           <%if (link.length>0){
+           link.forEach(element => {%>
+            <li><%=element.link%>   <b>clicks</b> 0 <b>Date</b>    <%=element.Date%>
+            <p><%=element.Discription%></p> 
+            <form action="/DeleteTheLink" id="<%=element.id%>" method="post">
+              <input style="display: none;" type="text" name="identify"  value="<%=element.id%>">
+              </form>
+            <button onclick="document.getElementById('<%=element.id%>').submit();"
               class="w3-button w3-section w3-teal w3-ripple">delete</button></li>
-
+          <%})};%>
         </ol>
         </p>
 
@@ -390,7 +396,7 @@
       </div>
     </div>
     <div class="w3-container w3-half w3-margin-top">
-      <form action="/SendMessageIndividual" id="sendMessage"
+      <form action="/SendMessageIndividual" method="post" id="sendMessage"
         class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
         <h2 class="w3-center">Send Email to users</h2>
 
