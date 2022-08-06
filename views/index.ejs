@@ -567,24 +567,28 @@
                       Yitore
                     </button>
                     <div id="yitore<%=element.id%>" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                      <center>
+                    <div style="padding:3px;" class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                       <div class="w3-section">
+                        <form action="/Votting" method="post">
                     <b>
                       <lable>Phone yawe</lable>
                     </b>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="Withdrawero"
                        placeholder="078(MTN GUSA)-----" />
                     <br>
                     <b>
                       <lable>Amajwi</lable>
                     </b>
-                    <input class="w3-input w3-border w3-margin-bottom" type="Numver" name="phoneN"
+                    <input class="w3-input w3-border w3-margin-bottom" type="Number" name="Vote"
                          placeholder="Numbers only" />
                     <br>
-
+                    <button  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
+                  </form>
 
                     </div>
                     </div>
+                  </center>
 
                     <form action="/addLikes" id="likeForm<%=element.id%>" method="post">
                     <input style="display: none;" value="<%=element.UserName%>" name="identity" type="text"/>
