@@ -89,7 +89,7 @@ const UserSchema2 = new Schema({
     PackageDuration:{
         type: String,
         required: true,
-        default:"6Month"
+        default:"180"
 
     },
     createdAt: { type: Date, expires: '180d', default: Date.now }
