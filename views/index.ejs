@@ -602,6 +602,19 @@
 
                   <br>
                   <script>
+                   function startio(params) {
+                    inter=setInterval(() => {
+
+          if(document.getElementById('odi<%=element.RecordingId%>').duration){
+        document.getElementById('metaa<%=element.RecordingId%>').innerText='loaded'
+            clearInterval(inter)
+              }else{
+              document.getElementById('metaa<%=element.RecordingId%>').innerText='loading...'
+
+               }
+               }, 100);
+                   }
+                   startio();
                       function postReads() {
                       setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()
                     }
@@ -619,21 +632,10 @@
                     },1000);
                     }
 
+                    
 
                     </script>
-                  <script>
-                     inter=setInterval(() => {
-
-                        if(document.getElementById('odi<%=element.RecordingId%>').duration){
-                      document.getElementById('metaa<%=element.RecordingId%>').innerText='loaded'
-                      clearInterval(inter)
-                    }else{
-                      document.getElementById('metaa<%=element.RecordingId%>').innerText='loading...'
-
-                    }
-                      }, 100);
-
-                      </script>
+                
 
                 </div>
 
