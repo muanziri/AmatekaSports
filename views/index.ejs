@@ -676,22 +676,23 @@
             <div>
            
 
-            <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
+            <h3>Kanda gukora Copy Ukore Share Iyo Link</h3>
 
 
           
              <ol>
-              <%if (user) {%>
-                <script>
-                  console.log('<%=user%>')
-                  </script>
+              <%if (user) {
+                if (links.length>0) {
+                %>
+
+             
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b>
              <p>
-              Discription
+              <%=links[0].Discription%>
             </p>
              </li>
              </div>
@@ -702,7 +703,7 @@
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/2/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link2"><b>https://dutere-story.herokuapp.com/2/<%=user.userName%></b>
              <p>
-              Discription
+              <%=links[1].Discription%>
             </p>
              </li>
              </div>
@@ -712,7 +713,7 @@
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/3/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link3"><b>https://dutere-story.herokuapp.com/3/<%=user.userName%></b>
              <p>
-              Discription
+              <%=links[2].Discription%>
             </p>
              </li>
             </div>
@@ -722,13 +723,18 @@
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/4/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link4"><b>https://dutere-story.herokuapp.com/4/<%=user.userName%></b>
              <p>
-              Discription
+              <%=links[3].Discription%>
             </p>
              </li>
             </div>
               
 
-            <%}%>
+            <%}else{%>
+              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+              <h1>Nta links zari zaboneka</h1>
+             </div>
+              
+              <%}}%>
             </ol>
             </div>
             </div>

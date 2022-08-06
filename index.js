@@ -15,7 +15,7 @@ const {ClickableLink}=require('./model/ClickableLinks');
 const {transferTobeneficiary} = require('./flutterWave')
 const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
 const recordings = require('./model/recordings');
-const {main}=require('./nomailer');
+
 const { UserModel } = require('./model/users');
 
 require('./athentication/google')
@@ -82,21 +82,21 @@ app.get('/', (req, res) => {
   paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
     paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
       paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
-       
+        ClickableLink.find().then((plo)=>{
           if (paymentres.length >0){
-            res.render('index', { comments:comm,user: req.user,payment:paymentres[0],stories:recordings})
+            res.render('index', {   links:plo,comments:comm,user: req.user,payment:paymentres[0],stories:recordings})
           }else if(paymentres2.length >0){
-            res.render('index', { comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
+            res.render('index', {  links:plo,comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
            
           }else if(paymentres3.length >0){
-            res.render('index', { comments:comm,user: req.user,payment:paymentres3[0],stories:recordings})
+            res.render('index', {  links:plo,comments:comm,user: req.user,payment:paymentres3[0],stories:recordings})
           }else{
-            res.render('index', { comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
+            res.render('index', {  links:plo,comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
           }
-        
+        })
    }) })})
   }else{
-    res.render('index',{comments:comm,user:req.user,stories:recordings})
+    res.render('index', {  links:plo,comments:comm,user:req.user,stories:recordings})
   }
 }) })   
 })
@@ -462,7 +462,7 @@ app.post('/addComments', (req, res) => {
     RecorderId:id,
     userName:Name,
     userProfile:Profile,
-    Comments:Comment
+     links:plo,Comments:Comment
    }).save()
   
 })
