@@ -347,6 +347,41 @@ app.post('/approveYear',(req,res)=>{
    })
    res.redirect('/Admin')
 })
+app.post('/Votting',(req,res)=>{
+  let user=req.user
+  const rw_mobile_money =  async (payload)=>{
+ 
+    try {
+       const response =  await flw.MobileMoney.rwanda(payload)
+    
+     req.flash('VoteAuth',`${response.meta.authorization.redirect}`)
+     res.redirect('/')
+    } catch (error) {
+        console.log(error)
+    }                            
+   
+}
+  var mykey = uniqid()
+  var mykey2 = uniqid()
+  UserModel.updateOne({ userName: user.userName }, { paymentId:mykey }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    }
+  })
+ 
+  let payload = {
+    
+    "tx_ref": mykey, 
+    "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "amount": "50",
+    "currency": "RWF",
+    "email":"munaziribnm@gmail.com",
+    "phone_number": req.body.phone,
+    "fullname": req.user.userName
+
+  }
+  rw_mobile_money(payload)
+})
 app.post('/abortYear',(req,res)=>{
   let approveId=req.body.abortId
   let ida=req.body.abortIda
@@ -575,7 +610,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
   if (transactionDetailsM.length >0){
      const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
      if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
-      req.flash('message1','Ntiwishyuye')
+      req.flash('message1','Ntiwatoye Antabwo ijwi ryawe ntiribarwa')
       res.redirect('/')
     }else{
       paymentMonth.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
@@ -619,6 +654,29 @@ app.get('/payment_callback/:userName', async (req, res) => {
         res.redirect('/')
   }
 });
+app.get('/Votting_CallBack/:userName', async (req, res) => {
+
+  let user=req.user
+   const transactionDetailsM = await paymentMonth.find({tx_ref:user.paymentId});
+   if (transactionDetailsM.length >0){
+      const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
+      if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
+       req.flash('message1','Ntiwatoye Antabwo ijwi ryawe ntiribarwa')
+       res.redirect('/')
+     }else{
+       paymentMonth.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
+         if (err) {
+           console.log(err)
+         }
+         req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+         res.redirect('/')
+       })
+     }
+   } else{
+     req.flash('message1','Ntiwishyuye')
+         res.redirect('/')
+   }
+ });
 app.get('/payment_callback_Advert/:userName', async (req, res) => {
 
   let user=req.user

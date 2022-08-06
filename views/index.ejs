@@ -583,13 +583,13 @@
                     <input class="w3-input w3-border w3-margin-bottom" type="Number" name="Vote"
                          placeholder="Numbers only" />
                     <br>
-                    <button  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
+                    <button  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda Gutora</button>
                   </form>
 
                     </div>
                     </div>
                   </center>
-
+                  
                     <form action="/addLikes" id="likeForm<%=element.id%>" method="post">
                     <input style="display: none;" value="<%=element.UserName%>" name="identity" type="text"/>
                     <input style="display: none;" value="<%=element.RecordingId%>" name="Id" type="text"/>
@@ -1018,6 +1018,18 @@
 
         <!-- Footer -->
 
+         <%
+         if(user){
+         if (messages.VoteAuth){%>
+          <div id="oop" class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <span
+              onclick="document.getElementById('oop').style.display='none';"
+              class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+               <iframe src="<%=messages.VoteAuth%>" frameborder="0"></iframe>
+              <a href="/Votting_CallBack/<%=user.userName%>"><button  class="w3-card w3-circle w3-teal">Kanda hano kwemeza ijwi ryawe</button></a>
+            </div>
+            </div>
+         <%}}%>
         <button id="recordButton" style="font-size: 300%;" class="w3-card w3-circle w3-teal">
           <i class="fa-solid fa-microphone-lines"></i>
         </button>
