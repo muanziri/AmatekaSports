@@ -349,6 +349,13 @@ app.post('/approveYear',(req,res)=>{
 })
 app.post('/Votting',(req,res)=>{
   let user=req.user
+  if(req.body.Vote==0){
+    req.flash('message1','shyiramo amajwi atangana na zero')
+    req.redirect('/')
+
+  
+  }else{
+
   const rw_mobile_money =  async (payload)=>{
  
     try {
@@ -368,19 +375,20 @@ app.post('/Votting',(req,res)=>{
       console.log(err)
     }
   })
- 
+ let votes= req.body.phone
+ let neWVotes=votes*50
   let payload = {
     
     "tx_ref": mykey, 
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
-    "amount": "50",
+    "amount": neWVotes,
     "currency": "RWF",
     "email":"munaziribnm@gmail.com",
     "phone_number": req.body.phone,
     "fullname": req.user.userName
 
   }
-  rw_mobile_money(payload)
+  rw_mobile_money(payload)}
 })
 app.post('/abortYear',(req,res)=>{
   let approveId=req.body.abortId
