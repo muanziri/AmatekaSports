@@ -665,6 +665,7 @@ app.get('/payment_callback/:userName', async (req, res) => {
 app.get('/Votting_CallBack/:userName', async (req, res) => {
 
   let user=req.user
+  console.log(user)
    const transactionDetailsM = await paymentMonth.find({tx_ref:user.paymentId});
    if (transactionDetailsM.length >0){
       const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
