@@ -641,6 +641,7 @@
 
                 <% });%>
                   <%}%>
+                </div>
             <br>
             <br>
             <br>
@@ -654,7 +655,7 @@
 
           </div>
       
-          <div  id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin">
+          <div style="display: none;"  id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin">
           
             <button id="Ohereza" onclick="document.getElementById('id11').style.display='block'
             window.addEventListener('popstate',function (){
@@ -681,6 +682,9 @@
           
              <ol>
               <%if (user) {%>
+                <script>
+                  console.log('<%=user%>')
+                  </script>
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
