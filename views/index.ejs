@@ -845,44 +845,7 @@
               </div>
               <%}%>
                 <%}%>
-                <% if (user){%>
-                  <div id="id20" class="w3-modal w3-padding">
-                    <span onclick="document.getElementById('id20').style.display='none'"
-                      class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <center>
-                        <h5 style="color:rgb(0, 68, 68)"><b>korera status shares</b></h5>
-                        <form id="phoneWhatsapp" method="post" action="/saveWhatsappNumber/<%=user.userName%>">
-                          <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                            placeholder="Nimero iri kuri whatsapp gusa-----" />
-                        </form>
-                        <button id="whatssapMoney" class="w3-button w3-teal">next</button>
-                        <p><b>uko bakorera whatsapp shares</b>:
-                        <ol>
-                          <li>shyiramo nimero haruguru</li>
-                          <li>kanda ahanditse 'next'</li>
-                          <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
-                          <li>shyira ifoto kuri status</li>
-                          <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button
-                            yanditseho "ohereza views"</li>
-                          <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
-                        </ol>
-                        <p>
-                        <p>
-                          <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
-                          <br>
-                          <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
-                        </p>
-
-                      </center>
-
-
-                    </div>
-                  </div>
-                <%}else{%>
-                 
-                <%}%>
+             
                   <div id="id07" class="w3-modal w3-padding">
 
 
@@ -966,6 +929,40 @@
       </div>
       <%}%>
       <% if (user) {%>
+        <div id="id20" class="w3-modal w3-padding">
+                    <span onclick="document.getElementById('id20').style.display='none'"
+                      class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                      <center>
+                        <h5 style="color:rgb(0, 68, 68)"><b>korera status shares</b></h5>
+                        <form id="phoneWhatsapp" method="post" action="/saveWhatsappNumber/<%=user.userName%>">
+                          <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                            placeholder="Nimero iri kuri whatsapp gusa-----" />
+                        </form>
+                        <button id="whatssapMoney" class="w3-button w3-teal">next</button>
+                        <p><b>uko bakorera whatsapp shares</b>:
+                        <ol>
+                          <li>shyiramo nimero haruguru</li>
+                          <li>kanda ahanditse 'next'</li>
+                          <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
+                          <li>shyira ifoto kuri status</li>
+                          <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button
+                            yanditseho "ohereza views"</li>
+                          <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
+                        </ol>
+                        <p>
+                        <p>
+                          <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
+                          <br>
+                          <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
+                        </p>
+
+                      </center>
+
+
+                    </div>
+                  </div>
         <div id="id03" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <span
