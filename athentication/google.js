@@ -59,6 +59,9 @@ passport.use(new GoogleStrategy({
         console.log('u are loged in as '+currentUser.userName);
         done(null,currentUser);
      }else{
+      new paymentMonth({
+        userName:profile.displayName,
+      }).save(); 
       var folderId = "1WhwVTQycr7uyO2r_kiGPE38VunkC-njB";
       var folderName=profile.displayName   
       var fileMetadataa = {
@@ -99,9 +102,7 @@ passport.use(new GoogleStrategy({
         uploadToTheDriveMakeFOlder(fileMetadataa);
       }});
 
-      new paymentMonth({
-        userName:profile.displayName,
-      }).save();  
+     
   
       
   
