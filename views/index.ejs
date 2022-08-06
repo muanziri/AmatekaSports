@@ -653,10 +653,26 @@
             <br>
 
           </div>
-
+      
           <div  id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <div>
+            <button id="Ohereza" onclick="document.getElementById('id11').style.display='block'
+            window.addEventListener('popstate',function (){
+                    if(window.location.href!==window.location.href+'id11'){
 
+                      document.getElementById('id11').style.display='none';
+                      ChangeToKash();
+                      document.getElementById('id04').style.display='none';
+                  }})
+            let url11=window.location.href;
+            const nextURL11 = `id11`;
+            const nextTitle11 = 'id11';
+            const nextState11 = { additionalInformation: 'id11' };
+            window.history.pushState(nextState, nextTitle, nextURL);
+            " style="position:absolute;top:0%;right:0%;display: none;" class="w3-button w3-card w3-round w3-margin w3-teal">
+              Ohereza  views
+            </button>
+            <div>
+           
               <% if (user) {%>
                 <% if(payment.PaymentStatus=="payed" ) {%>
                   <%}else{%>
@@ -673,22 +689,7 @@
 
                     <% } %>
                       <% } %>
-            <button onclick="document.getElementById('id11').style.display='block'
-            window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+'id11'){
-
-                      document.getElementById('id11').style.display='none';
-                      ChangeToKash();
-                      document.getElementById('id04').style.display='none';
-                  }})
-            let url11=window.location.href;
-            const nextURL11 = `id11`;
-            const nextTitle11 = 'id11';
-            const nextState11 = { additionalInformation: 'id11' };
-            window.history.pushState(nextState, nextTitle, nextURL);
-            " style="position:absolute;top:0%;right:0%;display: none;" class="w3-button w3-card w3-round w3-margin w3-teal">
-              Ohereza  views
-            </button>
+       
 
             <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
 
@@ -737,9 +738,10 @@
             </p>
              </li>
             </div>
-              <ol>
+              
 
             <%}%>
+            </ol>
             </div>
             <center> <div id="Itangazo" style="display: none;" class="w3-card w3-round w3-margin w3-teal w3-animate">
             <p><b> Kugirango clicks ziyongere Mukoreshe VPN,Mushobora gukoresha </b>
@@ -1217,6 +1219,7 @@
             document.getElementById('Itangazo').style.display = 'block'
             document.getElementById('BTN22').style.display = 'block'
             document.getElementById('BTN4').style.display = 'block'
+            document.getElementById('Ohereza').style.display = 'block'
             document.getElementById('BTN8').style.display = 'block'
             document.getElementById('KORERAKASH').style.display = 'block'
             document.getElementById('BTN5').style.display = 'block'
