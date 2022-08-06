@@ -1022,15 +1022,15 @@
          if(user){
          if (messages.VoteAuth){%>
           <div style="display: block;" class="w3-modal">
-          <div id="oop"  class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+          <div id="oop"  class="w3-modal-content w3-card-4 w3-animate-zoom" >
             <span
               onclick="document.getElementById('oop').style.display='none';"
               class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
               <center>
                <h3>kora confirm ya nimero Wishyure Na MTN</h3>
-               <iframe style="width: 100%;height:auto;" src="<%=messages.VoteAuth%>" frameborder="0"></iframe>
+               <iframe style="width: 50%;height:70%;" src="<%=messages.VoteAuth%>" frameborder="0"></iframe>
                <br>
-              <a href="/Votting_CallBack/<%=user.userName%>"><button  class="w3-card  w3-teal">Kanda hano kwemeza ijwi ryawe</button></a>
+              <a href="/Votting_CallBack/<%=user.userName%>"><button  class="w3-card w3-button  w3-teal">Kanda hano kwemeza ijwi ryawe</button></a>
             </center>
 
             </div>
