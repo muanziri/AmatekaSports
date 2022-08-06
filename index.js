@@ -666,9 +666,9 @@ app.get('/Votting_CallBack/:userName', async (req, res) => {
 
   let user=req.user
   console.log(user)
-   const transactionDetailsM = await paymentMonth.find({tx_ref:user.paymentId});
+   const transactionDetailsM = await UserModel.find({paymentId:user.paymentId});
    if (transactionDetailsM.length >0){
-      const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
+      const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].paymentId});
       if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
        req.flash('message1','Ntiwatoye Antabwo ijwi ryawe ntiribarwa')
        res.redirect('/')
