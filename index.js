@@ -82,16 +82,16 @@ app.get('/', (req, res) => {
   paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
     paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
       paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
-        ClickableLink.find().then((res)=>{
+        ClickableLink.find().then((response)=>{
           if (paymentres.length >0){
-            res.render('index', {   links:res,comments:comm,user: req.user,payment:paymentres[0],stories:recordings})
+            res.render('index', {   links:response,comments:comm,user: req.user,payment:paymentres[0],stories:recordings})
           }else if(paymentres2.length >0){
-            res.render('index', {  links:res,comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
+            res.render('index', {  links:response,comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
            
           }else if(paymentres3.length >0){
-            res.render('index', {  links:res,comments:comm,user: req.user,payment:paymentres3[0],stories:recordings})
+            res.render('index', {  links:response,comments:comm,user: req.user,payment:paymentres3[0],stories:recordings})
           }else{
-            res.render('index', {  links:res,comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
+            res.render('index', {  links:response,comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
           }
         })
    }) })})
