@@ -75,7 +75,7 @@ app.get('/auth/google/success', (req, res) => {
 app.get('/', (req, res) => {
   
   let user=req.user
-  console.log(user)
+  
   commentModel.find().then((comm)=>{
   recordings.find().then((recordings)=>{
   if(req.user){
