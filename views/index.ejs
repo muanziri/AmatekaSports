@@ -654,7 +654,8 @@
 
           </div>
       
-          <div  id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <div  id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin">
+          
             <button id="Ohereza" onclick="document.getElementById('id11').style.display='block'
             window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id11'){
@@ -673,30 +674,13 @@
             </button>
             <div>
            
-              <% if (user) {%>
-                <% if(payment.PaymentStatus=="payed" ) {%>
-                  <%}else{%>
-                    <div id="id04" style="display:block" class="w3-modal">
-
-                      <center>
-                        <h5 style="color:rgb(0, 68, 68)"><b>Kanda Ahakurikira wishyure package</b></h5>
-                        <button
-                          onclick="document.getElementById('id02').style.display='block';document.getElementById('id04').style.display='none'"
-                          class="w3-button w3-teal w3-margin-bottom">kanda hano gukomeza</button>
-                      </center>
-                    </div>
-                  </div>
-
-                    <% } %>
-                      <% } %>
-       
 
             <h3>Sharinga Iyo Link Maze Wishyurwe</h3>
 
 
-            <%if (user) {%>
+          
              <ol>
-
+              <%if (user) {%>
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
@@ -742,6 +726,7 @@
 
             <%}%>
             </ol>
+            </div>
             </div>
             <center> <div id="Itangazo" style="display: none;" class="w3-card w3-round w3-margin w3-teal w3-animate">
             <p><b> Kugirango clicks ziyongere Mukoreshe VPN,Mushobora gukoresha </b>
