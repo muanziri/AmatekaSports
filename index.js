@@ -7,7 +7,7 @@ const flw = new Flutterwave("FLWPUBK_TEST-f0e7f1c175bcc3c18e4064c7f6059909-X", "
 const passport = require('passport')
 const multer = require('multer')
 let uniqid = require('uniqid'); 
-const upload = multer();
+const uresad = multer();
 const Readable = require('stream').Readable;
 const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic,DeleteFile} = require('./googleDrive')
 const commentModel=require('./model/comments');
@@ -82,21 +82,21 @@ app.get('/', (req, res) => {
   paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
     paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
       paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
-        ClickableLink.find().then((plo)=>{
+        ClickableLink.find().then((res)=>{
           if (paymentres.length >0){
-            res.render('index', {   links:plo,comments:comm,user: req.user,payment:paymentres[0],stories:recordings})
+            res.render('index', {   links:res,comments:comm,user: req.user,payment:paymentres[0],stories:recordings})
           }else if(paymentres2.length >0){
-            res.render('index', {  links:plo,comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
+            res.render('index', {  links:res,comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
            
           }else if(paymentres3.length >0){
-            res.render('index', {  links:plo,comments:comm,user: req.user,payment:paymentres3[0],stories:recordings})
+            res.render('index', {  links:res,comments:comm,user: req.user,payment:paymentres3[0],stories:recordings})
           }else{
-            res.render('index', {  links:plo,comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
+            res.render('index', {  links:res,comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
           }
         })
    }) })})
   }else{
-    res.render('index', {  links:plo,comments:comm,user:req.user,stories:recordings})
+    res.render('index', { comments:comm,user:req.user,stories:recordings})
   }
 }) })   
 })
@@ -462,7 +462,7 @@ app.post('/addComments', (req, res) => {
     RecorderId:id,
     userName:Name,
     userProfile:Profile,
-     links:plo,Comments:Comment
+     links:res,Comments:Comment
    }).save()
   
 })
@@ -544,7 +544,7 @@ app.post('/flutterWaveSubMonth', (req, res) => {
   rw_mobile_money(payload)
 })
 
-app.post('/FromWhatsapp',upload.any(),(req,res)=>{
+app.post('/FromWhatsapp',uresad.any(),(req,res)=>{
   console.log(req.files)
   let views=req.body.Views;
   const user = req.user;
@@ -829,7 +829,7 @@ app.post('/addViewsStatus', (req, res) => {
   })
 
 })
-app.post('/ChangeProfilePic',upload.any(),(req,res)=>{
+app.post('/ChangeProfilePic',uresad.any(),(req,res)=>{
   const user = req.user;
   const originalname=req.user.userName
   var folderId = user.folderId;
@@ -843,12 +843,12 @@ app.post('/ChangeProfilePic',upload.any(),(req,res)=>{
   };
   ChangeProfilePic(fileMetadata,media,user);
 })
-app.post('/ToTheDrive', upload.any(), (req, res,next) => {
+app.post('/ToTheDrive', uresad.any(), (req, res,next) => {
   const user = req.user;
   let files =req.files.reverse()[0];
   let RecordTitle=req.body.Title;
   let NewsBody=req.body.Title2;
-  let filepath = "./audioUploads/";
+  let filepath = "./audioUresads/";
   let originalname = files.originalname + '.aac'
   let stringedFilePath = filepath + originalname;
   var folderId = user.folderId;
