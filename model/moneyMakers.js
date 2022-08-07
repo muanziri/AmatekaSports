@@ -89,10 +89,10 @@ const UserSchema2 = new Schema({
     PackageDuration:{
         type: String,
         required: true,
-        default:"180"
+        default:"30"
 
     },
-    createdAt: { type: Date, expires: '180d', default: Date.now }
+    createdAt: { type: Date, expires: '30d', default: Date.now }
 
 })
 const UserSchema3 = new Schema({
