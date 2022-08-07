@@ -35,6 +35,11 @@ const UserSchema = new Schema({
         required: true,
          default:0
     },
+    Votes:{
+        type: Number,
+        required: true,
+         default:0
+    },
    likes:[String],
    profileComment:[String],
    Comment:[String],

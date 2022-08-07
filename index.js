@@ -662,24 +662,32 @@ app.get('/payment_callback/:userName', async (req, res) => {
         res.redirect('/')
   }
 });
-app.get('/Votting_CallBack/:userName', async (req, res) => {
-
+app.get('/Votting_CallBack/:userId', async (req, res) => {
+  let userID=req.params.userId
   let user=req.user
-  console.log(user)
    const transactionDetailsM = await UserModel.find({paymentId:user.paymentId});
    if (transactionDetailsM.length >0){
       const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].paymentId});
       if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
-       req.flash('message1','Ntiwatoye Antabwo ijwi ryawe ntiribarwa')
+       req.flash('message1','Ntiwishyuye Antabwo ijwi ryawe ntiribarwa')
        res.redirect('/')
      }else{
-       paymentMonth.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
-         if (err) {
-           console.log(err)
-         }
-         req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
-         res.redirect('/')
-       })
+      UserModel.findById(userID).then((results)=>{
+        let NewVotes=results.Votes+1
+        UserModel.updateOne({ paymentId: results.paymentId }, { Votes:NewVotes }, function (err, docs) {
+          if (err) {
+            console.log(err)
+          }
+        })
+        recordings.updateOne({ userId: results.id }, { Votes:NewVotes }, function (err, docs) {
+          if (err) {
+            console.log(err)
+          }
+          req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+          res.redirect('/')
+        })
+      })
+      
      }
    } else{
      req.flash('message1','Ntiwishyuye')

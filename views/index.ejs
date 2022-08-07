@@ -399,6 +399,24 @@
             <%if (stories.length>0){%>
 
               <%stories.reverse().forEach(element=> {%>
+                <%
+         if(user){
+         if (messages.VoteAuth){%>
+          <div style="display: block;"  id="oop<%=element.userId%>" class="w3-modal">
+          <div  class="w3-modal-content w3-card-4 w3-animate-zoom" >
+            <span
+              onclick="document.getElementById('oop<%=element.userId%>').style.display='none';"
+              class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+              <center>
+               <h3>kora confirm ya nimero Wishyure Na MTN</h3>
+               <iframe style="width: 50%;height:70%;" src="<%=messages.VoteAuth%>" frameborder="0"></iframe>
+               <br>
+              <a href="/Votting_CallBack/<%=element.userId%>"><button  class="w3-card w3-button  w3-teal">Kanda hano kwemeza ijwi ryawe</button></a>
+            </center>
+
+            </div>
+            </div>
+         <%}}%>
                 <div id="id303<%=element.id%>" class="w3-modal">
                   <span onclick="document.getElementById('id303<%=element.id%>').style.display='none'"
                     class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
@@ -1018,24 +1036,7 @@
 
         <!-- Footer -->
 
-         <%
-         if(user){
-         if (messages.VoteAuth){%>
-          <div style="display: block;"  id="oop" class="w3-modal">
-          <div  class="w3-modal-content w3-card-4 w3-animate-zoom" >
-            <span
-              onclick="document.getElementById('oop').style.display='none';"
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-              <center>
-               <h3>kora confirm ya nimero Wishyure Na MTN</h3>
-               <iframe style="width: 50%;height:70%;" src="<%=messages.VoteAuth%>" frameborder="0"></iframe>
-               <br>
-              <a href="/Votting_CallBack/<%=user.userName%>"><button  class="w3-card w3-button  w3-teal">Kanda hano kwemeza ijwi ryawe</button></a>
-            </center>
-
-            </div>
-            </div>
-         <%}}%>
+         
         <button id="recordButton" style="font-size: 300%;" class="w3-card w3-circle w3-teal">
           <i class="fa-solid fa-microphone-lines"></i>
         </button>

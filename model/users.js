@@ -32,7 +32,7 @@ const UserSchema = new Schema({
      default:0
 
     },
-    Views:{
+    Votes:{
         type:Number,
         required:true,
         default:0
