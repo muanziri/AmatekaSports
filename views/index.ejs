@@ -1082,11 +1082,8 @@
               class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
               <center><h2>Ntabwo igihe cya withdraw cyari cyagera</h2></center>
          </div>
-         </div>     
-        <footer
-          style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
-          class="w3-card w3-container w3-theme-d3 ">
-          <%
+         </div>  
+         <%
           const d = new Date('2022-08-06T14:26:01.367+00:00');
           const dp=d.getDate()
           const p=new Date('2022-08-02T14:26:01.367+00:00')
@@ -1186,6 +1183,10 @@
             class="w3-card w3-circle ">
             <b>BIKUZA</b></button>
               <%}}%>
+            
+        <footer
+          style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
+          class="w3-card w3-container w3-theme-d3 ">
           <button id="BTN8" onclick="document.getElementById('id20').style.display='block';
           window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id20'){
