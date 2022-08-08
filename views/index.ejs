@@ -1153,7 +1153,7 @@
             
               <%}%>
               
-          <button style="z-index: 2;" id="BTN4" onclick="document.getElementById('id03').style.display='block'
+          <button style="z-index: 2;" style="position:absolute;bottom:15%" onclick="document.getElementById('id03').style.display='block'
           window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id03'){
 
@@ -1166,8 +1166,8 @@
             const nextURL1 = `id03`;
             const nextTitle1= 'id03';
             const nextState = { additionalInformation: 'id03' };
-            window.history.pushState(nextState, nextTitle1, nextURL1);
-          "
+            window.history.pushState(nextState, nextTitle1, nextURL1);"
+          
             class="w3-card w3-circle w3-teal">
             <b>BIKUZA</b></button>
             <%}else{%>
