@@ -1075,20 +1075,84 @@
           <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
           </p>
         </button>
-
+        <div id="id03" class="w3-modal">
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <span
+              onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
+              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+              <center><h2>Ntabwo igihe cya withdraw cyari cyagera</h2></center>
+         </div>
+         </div>     
         <footer
           style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
           class="w3-card w3-container w3-theme-d3 ">
           <%
           const d = new Date('2022-08-06T14:26:01.367+00:00');
           const dp=d.getDate()
-          const p=new Date()
+          const p=new Date('2022-09-01T14:26:01.367+00:00')
           const op=p.getDate()
           const dayDiff=dp-op
           console.log(dayDiff)
           if(user){
           if (payment>0){%>
             <%if(dayDiff== -5||dayDiff== -4||dayDiff== -3||dayDiff== -2||dayDiff== -1||dayDiff== 0){%>
+              <% if(dayDiff== -5){%>
+                <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
+                class="w3-panel w3-teal w3-card w3-animate-right ">
+                <span onclick="document.getElementById('message1Id').style.display='none'; "
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+              <p>
+                usigaje iminsi  itanu yo kubikuza
+               </p>
+               </div>
+              <%}else if(dayDiff== -4){%>
+                <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
+                class="w3-panel w3-teal w3-card w3-animate-right ">
+                <span onclick="document.getElementById('message1Id').style.display='none'; "
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+              <p>
+                usigaje iminsi  ine yo kubikuza
+               </p>
+               </div>
+              <%}else if(dayDiff== -3){%>
+                <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
+                class="w3-panel w3-teal w3-card w3-animate-right ">
+                <span onclick="document.getElementById('message1Id').style.display='none'; "
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+              <p>
+                usigaje iminsi  itatu yo kubikuza
+               </p>
+               </div>
+              <%}else if(dayDiff== -2){%>
+                <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
+                class="w3-panel w3-teal w3-card w3-animate-right ">
+                <span onclick="document.getElementById('message1Id').style.display='none'; "
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+              <p>
+                usigaje iminsi  ibiri yo kubikuza
+               </p>
+               </div>
+              <%}else if(dayDiff== -1){%>
+                <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
+                class="w3-panel w3-teal w3-card w3-animate-right ">
+                <span onclick="document.getElementById('message1Id').style.display='none'; "
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+              <p>
+               usigaje umunsi umwe wo kubikuza
+               </p>
+               </div>
+              <%}else if(dayDiff== 0){%>
+                <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
+                class="w3-panel w3-teal w3-card w3-animate-right ">
+                <span onclick="document.getElementById('message1Id').style.display='none'; "
+                class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+              <p>
+               Ntaminsi usigaranye yo kubikuza nutabikuza uyu munsi ingaruka urazirengera
+               </p>
+               </div>
+            
+              <%}%>
+              
           <button id="BTN4" onclick="document.getElementById('id03').style.display='block'
           window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id03'){
@@ -1108,6 +1172,7 @@
             <b>BIKUZA</b></button>
             <%}else{%>
               <button id="BTN4" 
+              onclick="document.getElementById('pool').style.display='block'"
               style="background-color:#709E90"
             class="w3-card w3-circle ">
             <b>BIKUZA</b></button>
