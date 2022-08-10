@@ -79,22 +79,19 @@ app.get('/', (req, res) => {
   commentModel.find().then((comm)=>{
   recordings.find().then((recordings)=>{
   if(req.user){
-  paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
     paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
-      paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
         ClickableLink.find().then((response)=>{
-          if (paymentres.length >0){
-            res.render('index', {   links:response,comments:comm,user: req.user,payment:paymentres[0],stories:recordings})
-          }else if(paymentres2.length >0){
+          if(paymentres2.length >0){
             res.render('index', {  links:response,comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
            
-          }else if(paymentres3.length >0){
-            res.render('index', {  links:response,comments:comm,user: req.user,payment:paymentres3[0],stories:recordings})
           }else{
+            new paymentMonth({
+              userName:profile.displayName,
+            }).save(); 
             res.render('index', {  links:response,comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
           }
         })
-   }) })})
+   }) 
   }else{
     res.render('index', { comments:comm,user:req.user,stories:recordings})
   }
@@ -795,11 +792,13 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   let kid=req.body.kid.trim();
   let amount=req.body.Amount
   console.log(kid)
-   paymentYear.find({tx_ref:kid}).then((paymentres)=>{
+  
     paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
-      paymentWeek.find({tx_ref:kid}).then((paymentres3)=>{
-       if (paymentres.length >0){
-      let ceck=paymentres[0].CashLeft-amount
+      new paymentMonth({
+        userName:req.user.displayName,
+      }).save();
+       if (paymentres2.length >0){
+      let ceck=paymentres2[0].CashLeft-amount
         if (ceck>0){
           let payload = {
     
@@ -821,54 +820,8 @@ app.post('/flutterWaveWithDraw', (req, res) => {
         req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
         res.redirect('/');
       }
-    }else if(paymentres2.length >0){
-      let ceck=paymentres2[0].CashLeft-amount
-      if (ceck>0){
-       
-          let payload = {
-    
-     account_bank: "MPS",
-        account_number: req.user.phoneNumber.slice(1),
-        amount: req.body.Amount,
-        currency: "RWF",
-        beneficiary_name: req.user.userName,
-        meta: {
-          "sender": "DutereStory Developers",
-          "sender_country": "RWA",
-          "mobile_number": "250790457824"
-        }
-  }
-  transferTobeneficiary(payload)
-  req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
-  res.redirect('/');
-      }else{req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres2[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
-      res.redirect('/');}
-    }else if(paymentres3.length >0){
-     let  ceck=paymentres3[0].CashLeft-amount
-     if (ceck>0){
-      
-          let payload = {
-    
-     account_bank: "MPS",
-        account_number: req.user.phoneNumber.slice(1),
-        amount: req.body.Amount,
-        currency: "RWF",
-        beneficiary_name: req.user.userName,
-        meta: {
-          "sender": "DutereStory Developers",
-          "sender_country": "RWA",
-          "mobile_number": "250790457824"
-        }
-  }
-  transferTobeneficiary(payload)
-  req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
-  res.redirect('/');
-    }else{req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres3[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
-    res.redirect('/');}
     }
-   }) })})
-  
-})
+   }) })
 app.post('/addViews', (req, res) => {
   let Recordingid = req.body.audioTitleViews;
   let UserName = req.body.audioTitleViews2;
