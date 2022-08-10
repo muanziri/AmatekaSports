@@ -794,16 +794,14 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   console.log(kid)
   
     paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
-      new paymentMonth({
-        userName:req.user.displayName,
-      }).save();
+     
        if (paymentres2.length >0){
       let ceck=paymentres2[0].CashLeft-amount
         if (ceck>0){
           let payload = {
     
      account_bank: "MPS",
-        account_number: req.user.phoneNumber.slice(1),
+        account_number: req.user.phoneNumber.paymentres2slice(1),
         amount: req.body.Amount,
         currency: "RWF",
         beneficiary_name: req.user.userName,
@@ -816,6 +814,9 @@ app.post('/flutterWaveWithDraw', (req, res) => {
   transferTobeneficiary(payload)
           req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
           res.redirect('/');
+          paymentMonth.findByIdAndDelete(paymentres2.id).then(()=>{
+            console.log('deleted')
+          })
         }else{ 
         req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
         res.redirect('/');
