@@ -244,7 +244,7 @@
             <!-- Profile -->
             <% if(user){%>
               <span
-                onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
+                onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'; document.getElementById('BTN4').style.display='block';window.history.back()"
                 class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
               <img onclick="document.getElementById('ChangeProfilePic').style.display='block'" src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
               <div id="ChangeProfilePic" class="w3-modal w3-padding">
@@ -1054,6 +1054,7 @@
 
         <button id="MENUBTN"
           onclick="document.getElementById('MENU').style.display='block';
+          document.getElementById('BTN4').style.display='none';
           document.getElementById('MENUBTN').style.display='none';
           let url3=window.location.href;
             const nextURL3 = `sideDiv`;
@@ -1066,7 +1067,8 @@
                       document.getElementById('MENU').style.display='none';
                       ChangeToStories();
                       document.getElementById('id04').style.display='none';
-                      document.getElementById('BTN4').style.display='none';
+                      document.getElementById('BTN4').style.display='block';
+                      
                  }
                   })
 
