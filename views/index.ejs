@@ -1094,8 +1094,10 @@
           const dp=d.getDate()
           const p=new Date()
           const op=p.getDate()
-          const dayDiff=op-dp%>
-            
+          const dayDiff=op-dp
+          console.log(dayDiff);
+          %>
+           
             <%if(dayDiff== -5||dayDiff== -4||dayDiff== -3||dayDiff== -2||dayDiff== -1||dayDiff== 0){%>
               <% if(dayDiff== -5){%>
                 <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
