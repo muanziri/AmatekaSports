@@ -1087,15 +1087,13 @@
          </div>
          </div>  
          <%if(user){ 
-          
-          
           if (payment){
           const d = new Date(payment.Date);
           const dp=d.getDate()
           const p=new Date()
           const op=p.getDate()
           const dayDiff=op-dp
-          console.log(dayDiff);
+          console.log(payment.Date);
           %>
            
             <%if(dayDiff== -5||dayDiff== -4||dayDiff== -3||dayDiff== -2||dayDiff== -1||dayDiff== 0){%>
