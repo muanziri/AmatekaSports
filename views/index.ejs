@@ -625,7 +625,9 @@
                 <span onclick="document.getElementById('id<%=element.id%>').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright"
                   >×</span>
                   <center><h1><b><%=element.newsBody%></b></h1></center>
-                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element.Title%></h4></center>
+                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element.Title..slice(0,100)%></h4></center>
+                   <center><div style="width: 70%; height: 30%; background-color: black;"><h3>Kwamaza</h3></div></center>
+                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element.Title..slice(100)%></h4></center>
                   </div>
                   </div>
 
