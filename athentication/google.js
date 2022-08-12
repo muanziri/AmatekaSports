@@ -43,7 +43,7 @@ var GOOGLE_CLIENT_SECRET='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'
 passport.use(new GoogleStrategy({
     clientID:     GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://dutere-story.herokuapp.com/google/auth/callback",
+    callbackURL: "https://tipstalk.herokuapp.com/google/auth/callback",
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
