@@ -45,23 +45,25 @@
       animation-iteration-count: infinite;
 
     }
+
     audio::-webkit-media-controls-play-button,
     audio::-webkit-media-controls-panel {
       background-color: teal;
 
     }
+
     #BTN22 {
 
-     margin-top: -5%;
-     margin-left: 45%;
-     color: white;
-     width: 100px;
-     height: 100px;
-     z-index: 1;
-     border: none;
-     display: none;
+      margin-top: -5%;
+      margin-left: 45%;
+      color: white;
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      border: none;
+      display: none;
 
-     }
+    }
 
     #BTN7 {
 
@@ -95,7 +97,7 @@
       left: 3%;
       margin-top: -4%;
 
-      
+
       width: 100px;
       height: 100px;
       z-index: 1;
@@ -191,7 +193,7 @@
         right: 2%;
         margin-top: -15%;
 
-       
+
         width: 100px;
         height: 100px;
         z-index: 1;
@@ -218,45 +220,47 @@
 
     }
   </style>
-   <style>
-
-    *, *:before, *:after {
+  <style>
+    *,
+    *:before,
+    *:after {
       box-sizing: inherit;
     }
-    
+
     .column {
       float: left;
       width: 33.3%;
       margin-bottom: 16px;
       padding: 0 8px;
     }
-    
+
     .card {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       margin: 8px;
     }
-    
+
     .about-section {
       padding: 50px;
       text-align: center;
       background-color: #474e5d;
       color: white;
     }
-    
+
     .container {
       padding: 0 16px;
     }
-    
-    .container::after, .row::after {
+
+    .container::after,
+    .row::after {
       content: "";
       clear: both;
       display: table;
     }
-    
+
     .title {
       color: grey;
     }
-    
+
     .button {
       border: none;
       outline: 0;
@@ -268,18 +272,18 @@
       cursor: pointer;
       width: 100%;
     }
-    
+
     .button:hover {
       background-color: #555;
     }
-    
+
     @media screen and (max-width: 650px) {
       .column {
         width: 100%;
         display: block;
       }
     }
-             </style>
+  </style>
 
 </head>
 
@@ -294,7 +298,7 @@
       <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
         class="w3-panel w3-teal w3-card w3-animate-right ">
         <span onclick="document.getElementById('message1Id').style.display='none'; "
-          class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+          class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
         <p>
           <%=messages.message1%>
         </p>
@@ -307,141 +311,187 @@
             <% if(user){%>
               <span
                 onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'; document.getElementById('BTN4').style.display='block';window.history.back()"
-                class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-              <img onclick="document.getElementById('ChangeProfilePic').style.display='block'" src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+                class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+              <img onclick="document.getElementById('ChangeProfilePic').style.display='block'"
+                src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
               <div id="ChangeProfilePic" class="w3-modal w3-padding">
 
 
                 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                 <br>
-                 <span
-                onclick="document.getElementById('ChangeProfilePic').style.display='none';"
-                class="w3-button  w3-xlarge  w3-display-topright" >×</span>
-                <center><h1 style="color: teal;">Hindura Profile pic</h1></center>
-
-                 <center><div id="preview"></div>
-                  <h2>Hindura Profile Pic</h2>
-                <form onsubmit="setTimeout(()=>{ window.stop()},10000);" action="/ChangeProfilePic" method="post" enctype="multipart/form-data">
-                  <input type="file" id="fileInput" name="image" accept="image/*" />
                   <br>
-                  <br>
-                  <button  style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>Kanda hano Gukomeza</b></button>
-                </form></center>
-                <script>
-                  function FileListItem(a) {
-                  a = [].slice.call(Array.isArray(a) ? a : arguments)
-                  for (var c, b = c = a.length, d = !0; b-- && d;) d = a[b] instanceof File
-                  if (!d) throw new TypeError("expected argument to FileList is File or array of File objects")
-                  for (b = (new ClipboardEvent("")).clipboardData || new DataTransfer; c--;) b.items.add(a[c])
-                  return b.files
-                }
+                  <span onclick="document.getElementById('ChangeProfilePic').style.display='none';"
+                    class="w3-button  w3-xlarge  w3-display-topright">×</span>
+                  <center>
+                    <h1 style="color: teal;">Hindura Profile pic</h1>
+                  </center>
 
-                fileInput.onchange = async function change() {
-                  const maxWidth = 320
-                  const maxHeight = 240
-                  const result = []
+                  <center>
+                    <div id="preview"></div>
+                    <h2>Hindura Profile Pic</h2>
+                    <form onsubmit="setTimeout(()=>{ window.stop()},10000);" action="/ChangeProfilePic" method="post"
+                      enctype="multipart/form-data">
+                      <input type="file" id="fileInput" name="image" accept="image/*" />
+                      <br>
+                      <br>
+                      <button style="background-color: rgb(0, 77, 77); display: block; " class="w3-center w3-button ">
+                        <b>Kanda hano Gukomeza</b></button>
+                    </form>
+                  </center>
+                  <script>
+                    function FileListItem(a) {
+                      a = [].slice.call(Array.isArray(a) ? a : arguments)
+                      for (var c, b = c = a.length, d = !0; b-- && d;) d = a[b] instanceof File
+                      if (!d) throw new TypeError("expected argument to FileList is File or array of File objects")
+                      for (b = (new ClipboardEvent("")).clipboardData || new DataTransfer; c--;) b.items.add(a[c])
+                      return b.files
+                    }
 
-                  for (const file of this.files) {
-                    const canvas = document.createElement('canvas')
-                    const ctx = canvas.getContext('2d')
-                    const img = await file.image()
+                    fileInput.onchange = async function change() {
+                      const maxWidth = 320
+                      const maxHeight = 240
+                      const result = []
 
-                    // native alternetive way (don't take care of exif rotation)
-                    // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap
-                    // const img = await createImageBitmap(file)
+                      for (const file of this.files) {
+                        const canvas = document.createElement('canvas')
+                        const ctx = canvas.getContext('2d')
+                        const img = await file.image()
 
-                    // calculate new size
-                    const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
-                    const width = img.width * ratio -  80
-                    const height = img.height * ratio -  80
+                        // native alternetive way (don't take care of exif rotation)
+                        // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap
+                        // const img = await createImageBitmap(file)
 
-                    // resize the canvas to the new dimensions
-                    canvas.width = width
-                    canvas.height = height
+                        // calculate new size
+                        const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
+                        const width = img.width * ratio - 80
+                        const height = img.height * ratio - 80
 
-                    // scale & draw the image onto the canvas
-                    ctx.drawImage(img, 0, 0, width, height)
+                        // resize the canvas to the new dimensions
+                        canvas.width = width
+                        canvas.height = height
 
-                    // just to preview
-                    document.getElementById('preview').appendChild(canvas)
+                        // scale & draw the image onto the canvas
+                        ctx.drawImage(img, 0, 0, width, height)
 
-                    // Get the binary (aka blob)
-                    const blob = await new Promise(rs => canvas.toBlob(rs, 1))
-                    const resizedFile = new File([blob], file.name, file)
-                    result.push(resizedFile)
-                  }
+                        // just to preview
+                        document.getElementById('preview').appendChild(canvas)
 
-                  const fileList = new FileListItem(result)
+                        // Get the binary (aka blob)
+                        const blob = await new Promise(rs => canvas.toBlob(rs, 1))
+                        const resizedFile = new File([blob], file.name, file)
+                        result.push(resizedFile)
+                      }
 
-                  // temporary remove event listener since
-                  // assigning a new filelist to the input
-                  // will trigger a new change event...
-                  fileInput.onchange = null
-                  fileInput.files = fileList
-                  fileInput.onchange = change
-                }
-                </script>
+                      const fileList = new FileListItem(result)
+
+                      // temporary remove event listener since
+                      // assigning a new filelist to the input
+                      // will trigger a new change event...
+                      fileInput.onchange = null
+                      fileInput.files = fileList
+                      fileInput.onchange = change
+                    }
+                  </script>
                 </div>
               </div>
 
 
-              <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Story Zawe <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.Recordings.length%></i></h6></b></center>
-              <center> <b> <h6   style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zumvishwe <i style="background-color: white; color: teal;position: absolute;border-radius: 5px;padding-left: 2px;padding-right: 2px;right:2px;"><%=user.Views%></i></h6></b></center>
-             <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zasomwe <i style="background-color: white;color:teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.likes%></i></h6></b></center>
+              <center><b>
+                  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;"
+                    class=" w3-card  w3-round w3-margin w3-margin">Story Zawe <i
+                      style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">
+                      <%=user.Recordings.length%>
+                    </i></h6>
+                </b></center>
+              <center> <b>
+                  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;"
+                    class=" w3-card  w3-round w3-margin w3-margin">Zumvishwe <i
+                      style="background-color: white; color: teal;position: absolute;border-radius: 5px;padding-left: 2px;padding-right: 2px;right:2px;">
+                      <%=user.Views%>
+                    </i></h6>
+                </b></center>
+              <center><b>
+                  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;"
+                    class=" w3-card  w3-round w3-margin w3-margin">Zasomwe <i
+                      style="background-color: white;color:teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">
+                      <%=user.likes%>
+                    </i></h6>
+                </b></center>
               <% if(payment.PaymentStatus=="payed" ) {%>
                 <% if(payment.PackageDuration=="7" ) {%>
 
 
-               <center> <b><h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Pack wishyuye niy'iminsi <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">7</i></h6></b></center>
+                  <center> <b>
+                      <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;"
+                        class=" w3-card  w3-round w3-margin w3-margin">Pack wishyuye niy'iminsi <i
+                          style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">7</i>
+                      </h6>
+                    </b></center>
 
 
-               <% }else if(payment.PackageDuration=="30"){ %>
+                  <% }else if(payment.PackageDuration=="30" ){ %>
 
-               <center><b> <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Pack wishyuye niy'iminsi <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">180</i></h6></b></center>
-
-
-                <% }else if(payment.PackageDuration=="360"){ %>
-
-               <center><b> <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Pack wishyuye niy'iminsi <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">Umwaka</i></h6></b></center>
-
-
-                <% }else{ %>
-               <b>   <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin"> Nta Package wishyuye</h6></b>
-                <% } %>
-
-               <b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Ayo Winjije <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=payment.CashLeft%> RWF</i></h6></b>
+                    <center><b>
+                        <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;"
+                          class=" w3-card  w3-round w3-margin w3-margin">Pack wishyuye niy'iminsi <i
+                            style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">180</i>
+                        </h6>
+                      </b></center>
 
 
+                    <% }else if(payment.PackageDuration=="360" ){ %>
+
+                      <center><b>
+                          <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;"
+                            class=" w3-card  w3-round w3-margin w3-margin">Pack wishyuye niy'iminsi <i
+                              style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">Umwaka</i>
+                          </h6>
+                        </b></center>
+
+
+                      <% }else{ %>
+                        <b>
+                          <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;"
+                            class=" w3-card  w3-round w3-margin w3-margin"> Nta Package wishyuye</h6>
+                        </b>
+                        <% } %>
+
+                          <b>
+                            <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;"
+                              class=" w3-card  w3-round w3-margin w3-margin">Ayo Winjije <i
+                                style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">
+                                <%=payment.CashLeft%> RWF
+                              </i></h6>
+                          </b>
 
 
 
-              <div id="BTN1">
-                <% } %>
-                  <br>
-                  <br>
-                  <a href="/Logout"><button  style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>LOG OUT</b></button>
-                  <br></a>
-                  <button  onclick="document.getElementById('AboutUs').style.display='block'" style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>Abo turibo</b></button>
-                  
-                  <br>
-                   <button id="BTN6" onclick="ChangeToKash();" style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>KORERA CASH</b>
-                  </button>
-
-                <button onclick="ChangeToStories()" id="BTN5" style="background-color: rgb(0, 77, 77); display:none"
-                  class="w3-center w3-button ">
-                  <b>Umva Stories</b>
-                </button>
 
 
-              </div>
+                          <div id="BTN1">
+                            <% } %>
+                              <br>
+                              <br>
+                              <a href="/Logout"><button style="background-color: rgb(0, 77, 77); display: block; "
+                                  class="w3-center w3-button ">
+                                  <b>LOG OUT</b></button>
+                                <br></a>
+                              <button onclick="document.getElementById('AboutUs').style.display='block'"
+                                style="background-color: rgb(0, 77, 77); display: block; " class="w3-center w3-button ">
+                                <b>Abo turibo</b></button>
+
+                              <br>
+                              <button id="BTN6" onclick="ChangeToKash();"
+                                style="background-color: rgb(0, 77, 77); display: block; " class="w3-center w3-button ">
+                                <b>KORERA CASH</b>
+                              </button>
+
+                              <button onclick="ChangeToStories()" id="BTN5"
+                                style="background-color: rgb(0, 77, 77); display:none" class="w3-center w3-button ">
+                                <b>Umva Stories</b>
+                              </button>
+
+
+                          </div>
 
 
 
@@ -457,301 +507,351 @@
         <!-- Middle Column -->
         <div style="width:100%;" class="w3-col m7">
           <script>
-            let inter=null;
-            let dop=null;
-            let startN=null;
+            let inter = null;
+            let dop = null;
+            let startN = null;
           </script>
-          <div style="display: flex;flex-direction:row;flex-wrap: wrap;"  id="stories">
+          <div style="display: flex;flex-direction:row;flex-wrap: wrap;" id="stories">
 
             <%if (stories.length>0){%>
 
               <%stories.reverse().forEach(element=> {%>
-                <%
-         if(user){
-         if (messages.VoteAuth){%>
-          <div style="display: block;"  id="oop<%=element.userId%>" class="w3-modal">
-          <div  class="w3-modal-content w3-card-4 w3-animate-zoom" >
-            <span
-              onclick="document.getElementById('oop<%=element.userId%>').style.display='none';window.history.back()"
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-              <center>
-               <h3>kora confirm ya nimero Wishyure Na MTN</h3>
-               <iframe style="width: 50%;height:70%;" src="<%=messages.VoteAuth%>" frameborder="0"></iframe>
-               <br>
-              <a href="/Votting_CallBack/<%=element.userId%>"><button  class="w3-card w3-button  w3-teal">Kanda hano kwemeza ijwi ryawe</button></a>
-            </center>
+                <% if(user){ if (messages.VoteAuth){%>
+                  <div style="display: block;" id="oop<%=element.userId%>" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+                      <span
+                        onclick="document.getElementById('oop<%=element.userId%>').style.display='none';window.history.back()"
+                        class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+                      <center>
+                        <h3>kora confirm ya nimero Wishyure Na MTN</h3>
+                        <iframe style="width: 50%;height:70%;" src="<%=messages.VoteAuth%>" frameborder="0"></iframe>
+                        <br>
+                        <a href="/Votting_CallBack/<%=element.userId%>"><button class="w3-card w3-button  w3-teal">Kanda
+                            hano kwemeza ijwi ryawe</button></a>
+                      </center>
 
-            </div>
-            </div>
-         <%}}%>
-                <div id="id303<%=element.id%>" class="w3-modal">
-                  <span onclick="document.getElementById('id303<%=element.id%>').style.display='none';window.history.back()"
-                    class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-                  <center><form method="post" action="/addComments" style="width: 60%;" class="w3-container w3-white w3-card-4">
-                      <h2>kora comment</h2>
-                    <p>
-                    <textarea class="w3-input" type="text" name="comment" style="width:90%" required></textarea>
-                    <label>comment</label></p>
-                    <input value="<%=element.UserName%>" name="UserName" style="display: none;" type="text">
-                    <input value="<%=element.UserProfile%>" name="UserProfile" style="display: none;" type="text">
-                    <input value="<%=element.id%>" name="RecordingId" style="display: none;" type="text">
+                    </div>
+                  </div>
+                  <%}}%>
+                    <div id="id303<%=element.id%>" class="w3-modal">
+                      <span
+                        onclick="document.getElementById('id303<%=element.id%>').style.display='none';window.history.back()"
+                        class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+                      <center>
+                        <form method="post" action="/addComments" style="width: 60%;"
+                          class="w3-container w3-white w3-card-4">
+                          <h2>kora comment</h2>
+                          <p>
+                            <textarea class="w3-input" type="text" name="comment" style="width:90%" required></textarea>
+                            <label>comment</label>
+                          </p>
+                          <input value="<%=element.UserName%>" name="UserName" style="display: none;" type="text">
+                          <input value="<%=element.UserProfile%>" name="UserProfile" style="display: none;" type="text">
+                          <input value="<%=element.id%>" name="RecordingId" style="display: none;" type="text">
 
 
-                    <p>
-                      <button class="w3-button w3-section w3-teal w3-ripple">kora comment iyi nkuru:<br><%=element.newsBody%></button></p>
-                    </form></center>
+                          <p>
+                            <button class="w3-button w3-section w3-teal w3-ripple">kora comment iyi nkuru:<br>
+                              <%=element.newsBody%>
+                            </button>
+                          </p>
+                        </form>
+                      </center>
 
-                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-height: 500px;overflow-y: scroll;">
-                    <% if(comments.length>0) {
-                      let co=comments
+                      <div class="w3-modal-content w3-card-4 w3-animate-zoom"
+                        style="max-width:600px; max-height: 500px;overflow-y: scroll;">
+                        <% if(comments.length>0) {
+                          let co=comments
 
                           function filterCom(com) {
 
-                            return com.RecorderId == element.id;
+                          return com.RecorderId == element.id;
                           }
 
-                         let pl= co.filter(filterCom)
+                          let pl= co.filter(filterCom)
 
-                         if (pl<0){%>
+                          if (pl<0){%>
 
 
-                          <%}else{pl.forEach(elementa => {%>
+                            <%}else{pl.forEach(elementa=> {%>
 
-                    <div class="w3-row w3-margin">
+                              <div class="w3-row w3-margin">
 
-                      <div class="w3-third">
-                        <img src="<%=elementa.userProfile%>"  class="w3-left w3-circle w3-margin-right" >
+                                <div class="w3-third">
+                                  <img src="<%=elementa.userProfile%>" class="w3-left w3-circle w3-margin-right">
+                                </div>
+                                <div class="w3-twothird w3-container">
+                                  <h2>
+                                    <%=elementa.userName%>
+                                  </h2>
+                                  <p>
+                                    <%=elementa.Comments%>
+                                  </p>
+                                </div>
+
+                              </div>
+                              <% })}} %>
                       </div>
-                      <div class="w3-twothird w3-container">
-                        <h2><%=elementa.userName%></h2>
-                        <p>
-                          <%=elementa.Comments%>
-                      </p>
-                      </div>
+                    </div>
+                    <script>
+                      window.addEventListener('popstate', function () {
+                        if (window.location.href !== window.location.href + "id0222") {
 
-                      </div>
-                      <%  })}} %>
-                  </div>
-                  </div>
-                 <script>
-                  window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+"id0222"){
+                          document.getElementById("id0222<%=element.UserName%>").style.display = 'none';
+                          ChangeToKash()
+                          document.getElementById('id04').style.display = 'none';
 
-                   document.getElementById("id0222<%=element.UserName%>").style.display='none';
-                   ChangeToKash()
-                   document.getElementById('id04').style.display='none';
-
-                 }
-                  })
-                 </script>
-
-                <div   id="id0222<%=element.UserName%>"   class="w3-modal">
-                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
-                    <span onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none';window.history.back()"
-                      class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-                    <center>
-                      <h5>Stories by <%=element.UserName%>
-                      </h5>
-                      <div>
-                        <% let Inkuru=stories
-
-                        function InkuruZawe(Inkuru) {
-                          return Inkuru.UserName==element.UserName;
                         }
-                       let op= Inkuru.filter(InkuruZawe)
-                        //inkuruNshya.push(Inkuru);
-                        op.forEach(element2 => {
+                      })
+                    </script>
 
-                        %>
-                        <audio  controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
-                       </audio>
-                       <p style="height: 300px;width:90%;background-color:aquamarine;"><%=element2.audioTitle%></p>
-                       <button onclick="document.getElementById('ida<%=element2.id%>').style.display='block'"  style="width:90%" class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
-                       <div id="audio">
+                    <div id="id0222<%=element.UserName%>" class="w3-modal">
+                      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
+                        <span
+                          onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none';window.history.back()"
+                          class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+                        <center>
+                          <h5>Stories by <%=element.UserName%>
+                          </h5>
+                          <div>
+                            <% let Inkuru=stories function InkuruZawe(Inkuru) { return
+                              Inkuru.UserName==element.UserName; } let op=Inkuru.filter(InkuruZawe)
+                              //inkuruNshya.push(Inkuru); op.forEach(element2=> {
+
+                              %>
+                              <audio controls
+                                src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
+                              </audio>
+                              <p style="height: 300px;width:90%;background-color:aquamarine;">
+                                <%=element2.audioTitle%>
+                              </p>
+                              <button onclick="document.getElementById('ida<%=element2.id%>').style.display='block'"
+                                style="width:90%" class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru
+                                yose</button>
+                              <div id="audio">
 
 
+                              </div>
+                              <div id="ida<%=element2.id%>" class="w3-modal">
+                                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                                  <span
+                                    onclick="document.getElementById('ida<%=element2.id%>').style.display='none';window.history.back()"
+                                    class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+                                  <center>
+                                    <h3>
+                                      <%=element2.Title%>
+                                    </h3>
+                                  </center>
+                                  <center>
+                                    <p>
+                                      <%=element2.Title%>
+                                    </p>
+                                  </center>
+                                </div>
+                              </div>
+                              <%})%>
+                          </div>
                       </div>
-                      <div id="ida<%=element2.id%>" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="document.getElementById('ida<%=element2.id%>').style.display='none';window.history.back()" class="w3-button w3-xlarge w3-transparent w3-display-topright"
-                  >×</span>
-                  <center><h3><%=element2.Title%></h3></center>
-                   <center><p><%=element2.Title%></p></center>
-                  </div>
-                  </div>
-                        <%})%>
-                      </div>
-                  </div>
-                  </center>
-                </div>
+                      </center>
+                    </div>
 
-                <div style="width: 325px;" class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                  <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block' ;
+                    <div style="width: 325px;" class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                      <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block' ;
                   let ul=window.location.href;
                   const netURL = `id0222`;
                   const netTitle = '&{url}id0222<%=element.UserName%>';
                    const netState = { additionalInformation: 'id0222<%=element.UserName%>' };
                      window.history.pushState(netState, netTitle, netURL);
-                  "
-                  src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
-                    style="width:60px;cursor: pointer;">
+                  " src="<%=element.UserProfile%>" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-cursor"
+                        style="width:60px;cursor: pointer;">
 
-                  <span id="demo<%=element.Date%>" class="w3-right w3-opacity"></span>
-                  <script>
+                      <span id="demo<%=element.Date%>" class="w3-right w3-opacity"></span>
+                      <script>
 
-                      if(new Date().getMonth()!==new Date("<%=element.Date%>").getMonth()){
-                         document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getMonth()-new Date("<%=element.Date%>").getMonth()+" months ago";
-                      }else if(new Date().getDate()!==new Date("<%=element.Date%>").getDate()){
-                        document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getDate()-new Date("<%=element.Date%>").getDate()+" days ago";
-                      }else if(new Date().getHours()!==new Date("<%=element.Date%>").getHours()){
-                       document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getHours()-new Date("<%=element.Date%>").getHours()+" hours ago";
-                      }else if(new Date().getMinutes() !==new Date("<%=element.Date%>").getMinutes()){
-                        document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getMinutes()-new Date("<%=element.Date%>").getMinutes()+" minutes ago";
-                      }
+                        if (new Date().getMonth() !== new Date("<%=element.Date%>").getMonth()) {
+                          document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getMonth() - new Date("<%=element.Date%>").getMonth() + " months ago";
+                        } else if (new Date().getDate() !== new Date("<%=element.Date%>").getDate()) {
+                          document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getDate() - new Date("<%=element.Date%>").getDate() + " days ago";
+                        } else if (new Date().getHours() !== new Date("<%=element.Date%>").getHours()) {
+                          document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getHours() - new Date("<%=element.Date%>").getHours() + " hours ago";
+                        } else if (new Date().getMinutes() !== new Date("<%=element.Date%>").getMinutes()) {
+                          document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getMinutes() - new Date("<%=element.Date%>").getMinutes() + " minutes ago";
+                        }
                       </script>
-                  <h4>
-                    <%=element.UserName%>
-                  </h4><br>
-                  <hr class="w3-clear">
-                  <form id="viewsForm<%=element.RecordingId%>" style="display:none" method="post" action="/addViews">
-                    <input type="text" value="<%=element.UserName%>" name="audioTitleViews2"/>
-                    <input type="text" value="<%=element.RecordingId%>" name="audioTitleViews"/>
-                  </form>
+                      <h4>
+                        <%=element.UserName%>
+                      </h4><br>
+                      <hr class="w3-clear">
+                      <form id="viewsForm<%=element.RecordingId%>" style="display:none" method="post"
+                        action="/addViews">
+                        <input type="text" value="<%=element.UserName%>" name="audioTitleViews2" />
+                        <input type="text" value="<%=element.RecordingId%>" name="audioTitleViews" />
+                      </form>
 
 
 
-                  <div style="display: block;" class="audio_3g">
-                    <audio  id="odi<%=element.RecordingId%>" src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
-                    <p id="metaa<%=element.RecordingId%>"></p>
-                    <div style="height: 150px;width:90%;background-color:aquamarine; text-overflow: ellipsis;
+                      <div style="display: block;" class="audio_3g">
+                        <audio id="odi<%=element.RecordingId%>"
+                          src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>"
+                          controls></audio>
+                        <p id="metaa<%=element.RecordingId%>"></p>
+                        <div style="height: 150px;width:90%;background-color:aquamarine; text-overflow: ellipsis;
                                      white-space: wrap;
                          overflow: hidden; ">
 
 
 
-                    <center><h3><b><%=element.newsBody%></b></h3></center>
-                      <p><%=element.Title%></p>
-                      </div>
+                          <center>
+                            <h3><b>
+                                <%=element.newsBody%>
+                              </b></h3>
+                          </center>
+                          <p>
+                            <%=element.Title%>
+                          </p>
+                        </div>
 
-                  </div>
-                  <button  style="width:90%" onclick="document.getElementById('id<%=element.id%>').style.display='block';startTime();
+                      </div>
+                      <button style="width:90%" onclick="document.getElementById('id<%=element.id%>').style.display='block';startTime();
                     " class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
 
-                  <div style=" width: 100%;">
-                    <button
-                      onclick=" setTimeout(()=>{ window.stop()},10000);let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
-                      type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i
-                        id="<%=element.id%>">
-                        <%=element.likes.length%>
-                      </i></button>
-                      <button
-                      onclick="document.getElementById('id303<%=element.id%>').style.display='block'"
-                      type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa-solid fa-comment-dots"></i>  comments</button>
-                    <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
-                      Yasomwe <%=element.views%>
-                    </div>
-                    <button onclick="document.getElementById('yitore<%=element.id%>').style.display='block'" type="p" class="w3-button w3-theme-d2 w3-margin-bottom">
-                      Yitore
-                    </button>
-                    <div id="yitore<%=element.id%>" class="w3-modal">
-                      <center>
-                    <div style="padding:3px;" class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <div class="w3-section">
-                        <form action="/Votting" method="post">
-                    <b>
-                      <lable>Phone yawe</lable>
-                    </b>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                       placeholder="078(MTN GUSA)-----" />
-                    <br>
-                    <b>
-                      <lable>Amajwi</lable>
-                    </b>
-                    <input class="w3-input w3-border w3-margin-bottom" value="1" type="Number" name="Vote"
-                         placeholder="Numbers only" />
-                    <br>
-                    <button  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda Gutora</button>
-                  </form>
+                      <div style=" width: 100%;">
+                        <button
+                          onclick=" setTimeout(()=>{ window.stop()},10000);let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
+                          type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like
+                          <i id="<%=element.id%>">
+                            <%=element.likes.length%>
+                          </i></button>
+                        <button onclick="document.getElementById('id303<%=element.id%>').style.display='block'" type="p"
+                          class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa-solid fa-comment-dots"></i>
+                           comments</button>
+                        <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
+                          Yasomwe <%=element.views%>
+                        </div>
+                        <button onclick="document.getElementById('yitore<%=element.id%>').style.display='block'"
+                          type="p" class="w3-button w3-theme-d2 w3-margin-bottom">
+                          Yitore
+                        </button>
+                        <div id="yitore<%=element.id%>" class="w3-modal">
+                          <center>
+                            <div style="padding:3px;" class="w3-modal-content w3-card-4 w3-animate-zoom"
+                              style="max-width:600px">
+                              <div class="w3-section">
+                                <form action="/Votting" method="post">
+                                  <b>
+                                    <lable>Phone yawe</lable>
+                                  </b>
+                                  <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                                    placeholder="078(MTN GUSA)-----" />
+                                  <br>
+                                  <b>
+                                    <lable>Amajwi</lable>
+                                  </b>
+                                  <input class="w3-input w3-border w3-margin-bottom" value="1" type="Number" name="Vote"
+                                    placeholder="Numbers only" />
+                                  <br>
+                                  <button id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda
+                                    Gutora</button>
+                                </form>
+
+                              </div>
+                            </div>
+                          </center>
+
+                          <form action="/addLikes" id="likeForm<%=element.id%>" method="post">
+                            <input style="display: none;" value="<%=element.UserName%>" name="identity" type="text" />
+                            <input style="display: none;" value="<%=element.RecordingId%>" name="Id" type="text" />
+                          </form>
+                        </div>
+                        <div id="id<%=element.id%>" class="w3-modal">
+                          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                            <span onclick="document.getElementById('id<%=element.id%>').style.display='none'"
+                              class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+                            <center>
+                              <h1><b>
+                                  <%=element.newsBody%>
+                                </b></h1>
+                            </center>
+                            <center>
+                              <h4 style="padding-left: 3px;padding-right: 3px;">
+                                <%=element.Title.slice(0,1000)%>
+                              </h4>
+                            </center>
+                            <center>
+                              <div style="width: 90%; height: 30vw; background-color: black;color: rgb(255, 255, 255);">
+                                <h3>Kwamaza</h3>
+                              </div>
+                            </center>
+                            <center>
+                              <h4 style="padding-left: 3px;padding-right: 3px;">
+                                <%=element.Title.slice(1000)%>
+                              </h4>
+                            </center>
+                            <center>
+                              <h4 style="padding-left: 3px;padding-right: 3px;">yanditswe na <%=element.UserName%>
+                              </h4>
+                            </center>
+                          </div>
+                        </div>
+
+                        <br>
+                        <script>
+                          function startio(params) {
+                            inter = setInterval(() => {
+
+                              if (document.getElementById('odi<%=element.RecordingId%>').duration) {
+                                document.getElementById('metaa<%=element.RecordingId%>').innerText = 'loaded'
+                                clearInterval(inter)
+                              } else {
+                                document.getElementById('metaa<%=element.RecordingId%>').innerText = 'loading...'
+
+                              }
+                            }, 100);
+                          }
+                          startio();
+                          function postReads() {
+                            setTimeout(() => { window.stop() }, 10000); document.getElementById('viewsForm<%=element.RecordingId%>').submit()
+                          }
+                          function startTime() {
+                            startN = 180;
+                            dop = setInterval(() => {
+                              startN = startN - 1
+                              if (getComputedStyle(document.getElementById('id<%=element.id%>')).display == 'block') {
+                                console.log(startN)
+                                if (startN == 1) {
+                                  clearTimeout(dop);
+                                  postReads();
+                                }
+                              } else { clearTimeout(dop); }
+                            }, 1000);
+                          }
+
+
+
+                        </script>
+
+
+                      </div>
+
 
                     </div>
-                    </div>
-                  </center>
-                  
-                    <form action="/addLikes" id="likeForm<%=element.id%>" method="post">
-                    <input style="display: none;" value="<%=element.UserName%>" name="identity" type="text"/>
-                    <input style="display: none;" value="<%=element.RecordingId%>" name="Id" type="text"/>
-                    </form>
-                  </div>
-                  <div id="id<%=element.id%>" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="document.getElementById('id<%=element.id%>').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright"
-                  >×</span>
-                  <center><h1><b><%=element.newsBody%></b></h1></center>
-                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element.Title.slice(0,1000)%></h4></center>
-                   <center><div style="width: 90%; height: 30vw; background-color: black;color: rgb(255, 255, 255);"><h3>Kwamaza</h3></div></center>
-                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element.Title.slice(1000)%></h4></center>
-                   <center><h4 style="padding-left: 3px;padding-right: 3px;">yanditswe na <%=element.UserName%></h4></center>
-                  </div>
-                  </div>
-
-                  <br>
-                  <script>
-                   function startio(params) {
-                    inter=setInterval(() => {
-
-          if(document.getElementById('odi<%=element.RecordingId%>').duration){
-        document.getElementById('metaa<%=element.RecordingId%>').innerText='loaded'
-            clearInterval(inter)
-              }else{
-              document.getElementById('metaa<%=element.RecordingId%>').innerText='loading...'
-
-               }
-               }, 100);
-                   }
-                   startio();
-                      function postReads() {
-                      setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()
-                    }
-                    function startTime() {
-                       startN=180;
-                      dop=setInterval(()=>{
-                        startN= startN-1
-                      if(getComputedStyle(document.getElementById('id<%=element.id%>')).display=='block'){
-                        console.log(startN)
-                        if(startN==1){
-                          clearTimeout(dop);
-                          postReads();
-                        }
-                       }else{clearTimeout(dop);}
-                    },1000);
-                    }
-
-                    
-
-                    </script>
-                
-
-                </div>
-
-                
-                </div>
-                <% });%>
-                  <%}%>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+                    <% });%>
+                      <%}%>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 
           </div>
-      
-          <div style="display: none;"  id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin">
-          
+
+          <div style="display: none;" id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin">
+
             <button id="Ohereza" onclick="document.getElementById('id11').style.display='block'
             window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id11'){
@@ -765,96 +865,100 @@
             const nextTitle11 = 'id11';
             const nextState11 = { additionalInformation: 'id11' };
             window.history.pushState(nextState, nextTitle, nextURL);
-            " style="position:absolute;top:0%;right:0%;display: block;" class="w3-button w3-card w3-round w3-margin w3-teal">
-              Ohereza  views
+            " style="position:absolute;top:0%;right:0%;display: block;"
+              class="w3-button w3-card w3-round w3-margin w3-teal">
+              Ohereza views
             </button>
             <div>
-           
-
-            <h3>Kanda gukora Copy Ukore Share Iyo Link</h3>
 
 
-          
-             <ol>
-              <%if (user) {
-                if (links.length>0) {
-                %>
+              <h3>Kanda gukora Copy Ukore Share Iyo Link</h3>
 
-             
-              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
+
+
+              <ol>
+                <%if (user) { if (links.length>0) {
+                  %>
+
+
+                  <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                    <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b>
-             <p>
-              <%=links[0].Discription%>
-            </p>
-             </li>
-             </div>
+                      <p>
+                        <%=links[0].Discription%>
+                      </p>
+                    </li>
+                  </div>
 
-             <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
+                  <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                    <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/2/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/2/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link2"><b>https://dutere-story.herokuapp.com/2/<%=user.userName%></b>
-             <p>
-              <%=links[1].Discription%>
-            </p>
-             </li>
-             </div>
-             <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
+                      <p>
+                        <%=links[1].Discription%>
+                      </p>
+                    </li>
+                  </div>
+                  <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                    <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/3/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/3/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link3"><b>https://dutere-story.herokuapp.com/3/<%=user.userName%></b>
-             <p>
-              <%=links[2].Discription%>
-            </p>
-             </li>
-            </div>
-             <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
+                      <p>
+                        <%=links[2].Discription%>
+                      </p>
+                    </li>
+                  </div>
+                  <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                    <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/4/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/4/<%=user.userName%>'+'   '+'yabaye copied');
              } copy()" id="link4"><b>https://dutere-story.herokuapp.com/4/<%=user.userName%></b>
-             <p>
-              <%=links[3].Discription%>
-            </p>
-             </li>
-            </div>
-              
+                      <p>
+                        <%=links[3].Discription%>
+                      </p>
+                    </li>
+                  </div>
 
-            <%}else{%>
-              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <h1>Nta links zari zaboneka</h1>
-             </div>
-              
-              <%}}%>
-            </ol>
+
+                  <%}else{%>
+                    <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+                      <h1>Nta links zari zaboneka</h1>
+                    </div>
+
+                    <%}}%>
+              </ol>
             </div>
-            </div>
-            <center> <div id="Itangazo" style="display: none;" class="w3-card w3-round w3-margin w3-teal w3-animate">
-            <p><b> Kugirango clicks ziyongere Mukoreshe VPN,Mushobora gukoresha </b>
-              <br>
-              <a style="color: white;text-decoration: none;" href="https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US">https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US </a>
-              <br>
-              <b> cyangwa </b>
-             <br>
-             <a style="color: white;text-decoration: none;" href="https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US"> https://m.apkpure.com/http-injector-ssh-proxy-v2ray-vpn/com.evozi.injector </a>
+          </div>
+          <center>
+            <div id="Itangazo" style="display: none;" class="w3-card w3-round w3-margin w3-teal w3-animate">
+              <p><b> Kugirango clicks ziyongere Mukoreshe VPN,Mushobora gukoresha </b>
+                <br>
+                <a style="color: white;text-decoration: none;"
+                  href="https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US">https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US
+                </a>
+                <br>
+                <b> cyangwa </b>
+                <br>
+                <a style="color: white;text-decoration: none;"
+                  href="https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US">
+                  https://m.apkpure.com/http-injector-ssh-proxy-v2ray-vpn/com.evozi.injector </a>
               </p>
-          </div></center>
+            </div>
+          </center>
 
 
-            <div id="id02" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="ChangeToStories()" class="w3-button w3-xlarge w3-transparent w3-display-topright"
-                  >×</span>
-                <center>
-                  <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
-                </center>
-                <center>
-                  <form method="post" action="/flutterWaveSubWeek"
-                    onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='none'
+          <div id="id02" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+              <span onclick="ChangeToStories()" class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+              <center>
+                <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
+              </center>
+              <center>
+                <form method="post" action="/flutterWaveSubWeek" onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='none'
                     window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id09'){
 
@@ -866,85 +970,84 @@
             const nextTitle4= 'id06';
             const nextStat4 = { additionalInformation: 'id06' };
             window.history.pushState(nextURL4, nextTitle4, nextStat4);
-                    "
-                    id="formPayment" class="w3-container w3-margin">
-                    <div class="w3-section">
-                      <b>
-                        <lable>Phone yawe</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                        placeholder="078(MTN GUSA)-----" />
-                      <br>
+                    " id="formPayment" class="w3-container w3-margin">
+                  <div class="w3-section">
+                    <b>
+                      <lable>Phone yawe</lable>
+                    </b>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                      placeholder="078(MTN GUSA)-----" />
+                    <br>
 
-                      <b><label>hitamo package wishyura</label></b>
-                      <select onchange="myFunction(this.value)" id="select" class="w3-input w3-teal"
-                        name="package" >
-                        <option value="500">500 RWF kucyumweru</option>
-                        <option value="1000">1000 RWF kukwezi</option>
-                        <option value="10000">10000 RWF Kumwaka</option>
-                      </select>
-                    </div>
+                    <b><label>hitamo package wishyura</label></b>
+                    <select onchange="myFunction(this.value)" id="select" class="w3-input w3-teal" name="package">
+                      <option value="500">500 RWF kucyumweru</option>
+                      <option value="1000">1000 RWF kukwezi</option>
+                      <option value="10000">10000 RWF Kumwaka</option>
+                    </select>
+                  </div>
 
-                    <button class="w3-button w3-block w3-teal w3-section w3-padding">ISHYURA</button>
-                  </form>
+                  <button class="w3-button w3-block w3-teal w3-section w3-padding">ISHYURA</button>
+                </form>
+              </center>
+
+            </div>
+          </div>
+          <div id="id11" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+              <span onclick="document.getElementById('id11').style.display='none';window.history.back()"
+                class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+              <center>
+                <h5 style="color:rgb(0, 68, 68)"><b>Uzuzamo Views wagize na screenshot</b></h5>
+              </center>
+              <center>
+                <form enctype="multipart/form-data" method="post" action="/FromWhatsapp" id="formPaymentW"
+                  class="w3-container w3-margin">
+                  <div class="w3-section">
+                    <b>
+                      <lable>Views wagize</lable>
+                    </b>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="Views"
+                      placeholder="Views Wagize" />
+                    <br>
+                    <b>
+                      <lable>ScreenShot</lable>
+                    </b>
+                    <input class="w3-input w3-border w3-margin-bottom" name="image" type="file" />
+                    <br>
+
+                  </div>
+                  <button class="w3-button w3-block w3-teal w3-section w3-padding">Komeza</button>
+                </form>
+              </center>
+
+            </div>
+          </div>
+
+
+        </div>
+
+        <% if (user){%>
+          <% if (messages.messageURL){%>
+            <div id="id09" style="display: block;" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:450px">
+                <iframe src="<%=messages.messageURL%>"
+                  style="height:500px;width:450px;border:none; background-color: aliceblue;"></iframe>
+                <center> <a href="/payment_callback/<%=user.id%> "><button
+                      class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza Niba Wishyuye</button></a>
                 </center>
-
               </div>
             </div>
-            <div id="id11" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="document.getElementById('id11').style.display='none';window.history.back()"
-                  class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-                <center>
-                  <h5 style="color:rgb(0, 68, 68)"><b>Uzuzamo Views wagize na screenshot</b></h5>
-                </center>
-                <center>
-                  <form enctype="multipart/form-data" method="post" action="/FromWhatsapp" id="formPaymentW"
-                    class="w3-container w3-margin">
-                    <div class="w3-section">
-                      <b>
-                        <lable>Views wagize</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" type="text" name="Views"
-                        placeholder="Views Wagize" />
-                      <br>
-                      <b>
-                        <lable>ScreenShot</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" name="image" type="file" />
-                      <br>
-
-                    </div>
-                    <button class="w3-button w3-block w3-teal w3-section w3-padding">Komeza</button>
-                  </form>
-                </center>
-
-              </div>
-            </div>
-
-
-                    </div>
-
-          <% if (user){%>
-            <% if (messages.messageURL){%>
-              <div id="id09" style="display: block;" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:450px">
-                  <iframe src="<%=messages.messageURL%>"
-                    style="height:500px;width:450px;border:none; background-color: aliceblue;"></iframe>
-                  <center> <a href="/payment_callback/<%=user.id%> "><button
-                        class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza Niba Wishyuye</button></a>
-                  </center>
-                </div>
-              </div>
+            <%}%>
               <%}%>
-                <%}%>
-             
-                  <div id="id07" class="w3-modal w3-padding">
+
+                <div id="id07" class="w3-modal w3-padding">
 
 
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <center> <img style="width:100%;height:300px;" src="../static/image/handsome-man.jpg" alt=""></center>
-                      <button onclick="
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                    <center> <img style="width:100%;height:300px;" src="../static/image/handsome-man.jpg" alt="">
+                    </center>
+                    <button onclick="
                       document.getElementById('SHARESTATUS').innerText='rindira amasegonda atanu';
                       document.getElementById('SHARESTATUS').disabled='true';
                      async function shareImage() {
@@ -972,75 +1075,75 @@
                          };
                    navigator.share(shareData);
                  };shareImage()" id="SHARESTATUS" class="w3-button w3-teal w3-margin-bottom">share</button>
-                    </div>
                   </div>
+                </div>
+  </div>
+  <div id="AboutUs" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:80%;height: 600px;">
+
+
+
+
+      <div class="about-section">
+        <h1>About Us Page</h1>
+        <p>Some text about who we are and what we do.</p>
+        <p>Resize the browser window to see that this page is responsive by the way.</p>
+      </div>
+
+      <h2 style="text-align:center">Our Team</h2>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+            <div class="container">
+              <h2>Jane Doe</h2>
+              <p class="title">CEO & Founder</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>jane@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
         </div>
-        <div id="AboutUs" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-           
 
+        <div class="column">
+          <div class="card">
+            <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+            <div class="container">
+              <h2>Mike Ross</h2>
+              <p class="title">Art Director</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>mike@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
 
-
-<div class="about-section">
-  <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
-</div>
-
-<h2 style="text-align:center">Our Team</h2>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Jane Doe</h2>
-        <p class="title">CEO & Founder</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>jane@example.com</p>
-        <p><button class="button">Contact</button></p>
+        <div class="column">
+          <div class="card">
+            <img src="/w3images/team3.jpg" alt="John" style="width:100%">
+            <div class="container">
+              <h2>John Doe</h2>
+              <p class="title">Designer</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>john@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
-  </div>
 
-  <div class="column">
-    <div class="card">
-      <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Mike Ross</h2>
-        <p class="title">Art Director</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>mike@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="/w3images/team3.jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>John Doe</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>john@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
- </div>
- </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-  </div>
-
-  <!-- Right C
+    <!-- Right C
 
   <!-- End Grid -->
   </div>
@@ -1074,107 +1177,116 @@
         </div>
       </div>
       <%}%>
-      <% if (user) {%>
-        <div id="id20" class="w3-modal w3-padding">
-                    <span onclick="document.getElementById('id20').style.display='none';window.history.back()"
-                      class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+        <% if (user) {%>
+          <div id="id20" class="w3-modal w3-padding">
+            <span onclick="document.getElementById('id20').style.display='none';window.history.back()"
+              class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
 
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <center>
-                        <h5 style="color:rgb(0, 68, 68)"><b>korera status shares</b></h5>
-                        <form id="phoneWhatsapp" method="post" action="/saveWhatsappNumber/<%=user.userName%>">
-                          <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                            placeholder="Nimero iri kuri whatsapp gusa-----" />
-                        </form>
-                        <button id="whatssapMoney" class="w3-button w3-teal">next</button>
-                        <p><b>uko bakorera whatsapp shares</b>:
-                        <ol>
-                          <li>shyiramo nimero haruguru</li>
-                          <li>kanda ahanditse 'next'</li>
-                          <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
-                          <li>shyira ifoto kuri status</li>
-                          <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button
-                            yanditseho "ohereza views"</li>
-                          <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
-                        </ol>
-                        <p>
-                        <p>
-                          <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
-                          <br>
-                          <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
-                        </p>
-
-                      </center>
-
-
-                    </div>
-                  </div>
-           <%if (payment){%>       
-        <div id="id03" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <span
-              onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-            <center>
-              <h2 style="color:rgb(0, 68, 68)"><b>Bikuza</b></h2>
-            </center>
-            <div>
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
               <center>
-                <form method="post" action="/flutterWaveWithDraw" class="w3-container w3-margin">
-                  <div class="w3-section">
-                    <b>
-                      <lable>Phone yawe</lable>
-                    </b>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
-                      disabled  value="<%=user.phoneNumber%>" placeholder="078(MTN GUSA)-----" />
-                    <br>
-                    <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
-                      <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
-                   <p>Bikuza Amafaranga ari hejuru ya 2000</p>
-                    </div>
-                    <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
-                    <% if (user) {%>
-                      <% if(payment.PaymentStatus=='payed' ) {%>
-                    <input value="
+                <h5 style="color:rgb(0, 68, 68)"><b>korera status shares</b></h5>
+                <form id="phoneWhatsapp" method="post" action="/saveWhatsappNumber/<%=user.userName%>">
+                  <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
+                    placeholder="Nimero iri kuri whatsapp gusa-----" />
+                </form>
+                <button id="whatssapMoney" class="w3-button w3-teal">next</button>
+                <p><b>uko bakorera whatsapp shares</b>:
+                <ol>
+                  <li>shyiramo nimero haruguru</li>
+                  <li>kanda ahanditse 'next'</li>
+                  <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
+                  <li>shyira ifoto kuri status</li>
+                  <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button
+                    yanditseho "ohereza views"</li>
+                  <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
+                </ol>
+                <p>
+                <p>
+                  <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
+                  <br>
+                  <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
+                </p>
+
+              </center>
+
+
+            </div>
+          </div>
+          <%if (payment){%>
+            <div id="id03" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                <span
+                  onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
+                  class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+                <center>
+                  <h2 style="color:rgb(0, 68, 68)"><b>Bikuza</b></h2>
+                </center>
+                <div>
+                  <center>
+                    <form method="post" action="/flutterWaveWithDraw" class="w3-container w3-margin">
+                      <div class="w3-section">
+                        <b>
+                          <lable>Phone yawe</lable>
+                        </b>
+                        <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN" disabled
+                          value="<%=user.phoneNumber%>" placeholder="078(MTN GUSA)-----" />
+                        <br>
+                        <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
+                          <h6 onclick="document.getElementById('alerY').style.display='none'"
+                            class="w3-display-topright">x</h6>
+                          <p>Bikuza Amafaranga ari hejuru ya 2000</p>
+                        </div>
+                        <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
+                        <% if (user) {%>
+                          <% if(payment.PaymentStatus=='payed' ) {%>
+                            <input value="
                         <%=payment.tx_ref%>
-                    " name="kid" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
-                    <%}%>
-                      <%}%>
-                    <input onkeyup="
+                    " name="kid" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;"
+                              type="text" placeholder="----" />
+                            <%}%>
+                              <%}%>
+                                <input onkeyup="
                     if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
-                  </div>
-                  <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
-                    <h6 onclick="document.getElementById('alerT').style.display='none'" class="w3-display-topright">x</h6>
-                   <p>Bikuza Ayo Wakoreye yose</p>
-                   <p> wakoreye <b><% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%></b>RWF</p>
-                    </div>
+                      </div>
+                      <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
+                        <h6 onclick="document.getElementById('alerT').style.display='none'" class="w3-display-topright">
+                          x</h6>
+                        <p>Bikuza Ayo Wakoreye yose</p>
+                        <p> wakoreye <b>
+                            <% if (user) {%>
+                              <% if(payment.PaymentStatus=="payed" ) {%>
+                                <%=payment.CashLeft%>
+                                  <%}%>
+                                    <%}%>
+                          </b>RWF</p>
+                      </div>
 
-                  <button style="display: none;"  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
+                      <button style="display: none;" id="sunmit"
+                        class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
 
-                </form>
-              </center>
+                    </form>
+                  </center>
+                </div>
+
+
+              </div>
             </div>
+            <%}%>
+              <%}%>
+
+                <!-- Footer -->
 
 
-          </div>
-        </div>
-        <%}%>
-       <%}%>
-
-        <!-- Footer -->
-
-         
-        <button id="recordButton" style="font-size: 300%;" class="w3-card w3-circle w3-teal">
-          <i class="fa-solid fa-microphone-lines"></i>
-        </button>
+                <button id="recordButton" style="font-size: 300%;" class="w3-card w3-circle w3-teal">
+                  <i class="fa-solid fa-microphone-lines"></i>
+                </button>
 
 
 
 
 
-        <button id="MENUBTN"
-          onclick="document.getElementById('MENU').style.display='block';
+                <button id="MENUBTN" onclick="document.getElementById('MENU').style.display='block';
           document.getElementById('BTN4').style.display='none';
           document.getElementById('MENUBTN').style.display='none';
           let url3=window.location.href;
@@ -1193,90 +1305,83 @@
                  }
                   })
 
-          "
-          style="border:none;position:fixed;top:2%;left:2%;width:60px;height:60px; z-index:1;"
-          class="w3-card w3-circle w3-teal  w3-animate-zoom">
-          <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
-          </p>
-        </button>
-        <div id="id03" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <span
-              onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-              <center><h2>Ntabwo igihe cya withdraw cyari cyagera</h2></center>
-         </div>
-         </div>  
-         <%if(user){ 
-          if (payment){
-          const d = new Date(payment.createdAt);
-          const dp=d.getDate()
-          const p=new Date()
-          const op=p.getDate()
-          const dayDiff=op-dp
-          %>
-           
-            <%if(dayDiff== -5||dayDiff== -4||dayDiff== -3||dayDiff== -2||dayDiff== -1||dayDiff== 0){%>
-              <% if(dayDiff== -5){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-right ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-                usigaje iminsi  itanu yo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== -4){
-                console.log('hello');
-                %>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-top ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-                usigaje iminsi  ine yo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== -3){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-top ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-                usigaje iminsi  itatu yo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== -2){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-right ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-                usigaje iminsi  ibiri yo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== -1){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-right ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-               usigaje umunsi umwe wo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== 0){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-right ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-               Ntaminsi usigaranye yo kubikuza nutabikuza uyu munsi ingaruka urazirengera
-               </p>
-               </div>
-            
-              <%}%>
-              
-          <button id="BTN4"  style="position:absolute;bottom:12.5%;z-index: 2;" onclick="document.getElementById('id03').style.display='block'
+          " style="border:none;position:fixed;top:2%;left:2%;width:60px;height:60px; z-index:1;"
+                  class="w3-card w3-circle w3-teal  w3-animate-zoom">
+                  <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
+                  </p>
+                </button>
+                <div id="id03" class="w3-modal">
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                    <span
+                      onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
+                      class="w3-button w3-xlarge w3-transparent w3-display-topright">×</span>
+                    <center>
+                      <h2>Ntabwo igihe cya withdraw cyari cyagera</h2>
+                    </center>
+                  </div>
+                </div>
+                <%if(user){ if (payment){ const d=new Date(payment.createdAt); const dp=d.getDate() const p=new Date()
+                  const op=p.getDate() const dayDiff=op-dp %>
+
+                  <%if(dayDiff== -5||dayDiff==-4||dayDiff==-3||dayDiff==-2||dayDiff==-1||dayDiff==0){%>
+                    <% if(dayDiff==-5){%>
+                      <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
+                        class="w3-panel w3-teal w3-card w3-animate-right ">
+                        <span onclick="document.getElementById('message1Id').style.display='none'; "
+                          class="w3-button w3-xlarge w3-transparent w3-display-top">×</span>
+                        <p>
+                          usigaje iminsi itanu yo kubikuza
+                        </p>
+                      </div>
+                      <%}else if(dayDiff==-4){ console.log('hello'); %>
+                        <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
+                          class="w3-panel w3-teal w3-card w3-animate-top ">
+                          <span onclick="document.getElementById('message1Id').style.display='none'; "
+                            class="w3-button w3-xlarge w3-transparent w3-display-top">×</span>
+                          <p>
+                            usigaje iminsi ine yo kubikuza
+                          </p>
+                        </div>
+                        <%}else if(dayDiff==-3){%>
+                          <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
+                            class="w3-panel w3-teal w3-card w3-animate-top ">
+                            <span onclick="document.getElementById('message1Id').style.display='none'; "
+                              class="w3-button w3-xlarge w3-transparent w3-display-top">×</span>
+                            <p>
+                              usigaje iminsi itatu yo kubikuza
+                            </p>
+                          </div>
+                          <%}else if(dayDiff==-2){%>
+                            <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
+                              class="w3-panel w3-teal w3-card w3-animate-right ">
+                              <span onclick="document.getElementById('message1Id').style.display='none'; "
+                                class="w3-button w3-xlarge w3-transparent w3-display-top">×</span>
+                              <p>
+                                usigaje iminsi ibiri yo kubikuza
+                              </p>
+                            </div>
+                            <%}else if(dayDiff==-1){%>
+                              <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
+                                class="w3-panel w3-teal w3-card w3-animate-right ">
+                                <span onclick="document.getElementById('message1Id').style.display='none'; "
+                                  class="w3-button w3-xlarge w3-transparent w3-display-top">×</span>
+                                <p>
+                                  usigaje umunsi umwe wo kubikuza
+                                </p>
+                              </div>
+                              <%}else if(dayDiff==0){%>
+                                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
+                                  class="w3-panel w3-teal w3-card w3-animate-right ">
+                                  <span onclick="document.getElementById('message1Id').style.display='none'; "
+                                    class="w3-button w3-xlarge w3-transparent w3-display-top">×</span>
+                                  <p>
+                                    Ntaminsi usigaranye yo kubikuza nutabikuza uyu munsi ingaruka urazirengera
+                                  </p>
+                                </div>
+
+                                <%}%>
+
+                                  <button id="BTN4" style="position:absolute;bottom:12.5%;z-index: 2;" onclick="document.getElementById('id03').style.display='block'
           window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id03'){
 
@@ -1289,28 +1394,24 @@
             const nextURL1 = `id03`;
             const nextTitle1= 'id03';
             const nextState = { additionalInformation: 'id03' };
-            window.history.pushState(nextState, nextTitle1, nextURL1);"
-          
-            class="w3-card w3-circle w3-teal">
-            <b>BIKUZA</b></button>
-            <%}else{%>
-              <button id="BTN4"  style="position:static;bottom:12.5%;z-index: 2;" 
-              onclick="document.getElementById('pool').style.display='block'"
-              style="background-color:#709E90"
-            class="w3-card w3-circle ">
-            <b>BIKUZA</b></button>
-              <%}%>
-            <%}else{%>
-              <button id="BTN4"  style="position:static;bottom:12.5%;z-index: 2;" 
-              style="background-color:#709E90"
-            class="w3-card w3-circle ">
-            <b>BIKUZA</b></button>
-              <%}}%>
-            
-        <footer
-          style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
-          class="w3-card w3-container w3-theme-d3 ">
-          <button id="BTN8" onclick="document.getElementById('id20').style.display='block';
+            window.history.pushState(nextState, nextTitle1, nextURL1);" class="w3-card w3-circle w3-teal">
+                                    <b>BIKUZA</b></button>
+                                  <%}else{%>
+                                    <button id="BTN4" style="position:static;bottom:12.5%;z-index: 2;"
+                                      onclick="document.getElementById('pool').style.display='block'"
+                                      style="background-color:#709E90" class="w3-card w3-circle ">
+                                      <b>BIKUZA</b></button>
+                                    <%}%>
+                                      <%}else{%>
+                                        <button id="BTN4" style="position:static;bottom:12.5%;z-index: 2;"
+                                          style="background-color:#709E90" class="w3-card w3-circle ">
+                                          <b>BIKUZA</b></button>
+                                        <%}}%>
+
+                                          <footer
+                                            style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
+                                            class="w3-card w3-container w3-theme-d3 ">
+                                            <button id="BTN8" onclick="document.getElementById('id20').style.display='block';
           window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id20'){
 
@@ -1324,161 +1425,167 @@
             const nextTitle2= 'id20';
             const nextStat2 = { additionalInformation: 'id20' };
             window.history.pushState(nextURL2, nextTitle2, nextStat2);
-          "
-            class="w3-card w3-circle w3-teal">
-            <b>Korera status shares</b> </button>
-          <button id="BTN2" class="w3-card w3-circle w3-animate-zoom">
-            <b>TURIKUMVA</b>
-            <b id="time67"></b>
-           
-          <button id="BTN7" on class="w3-card w3-circle w3-animate-zoom">
-            <b>Upload</b>
-          </button>
+          " class="w3-card w3-circle w3-teal">
+                                              <b>Korera status shares</b> </button>
+                                            <button id="BTN2" class="w3-card w3-circle w3-animate-zoom">
+                                              <b>TURIKUMVA</b>
+                                              <b id="time67"></b>
 
-          <br>
-          <p>
-            <br>
-            <center>
-               <input onkeypress="updateScript()" style="display:none;width:80%;  " id="Title2"  placeholder="Munutwe winkuru" type="title">
-               <br>
-              <textarea  style="display:none;width:80%;height: 70px;"   placeholder="Inkuru Yose.........." type="text"
-                name="Title"  id="Title"></textarea>
+                                              <button id="BTN7" on class="w3-card w3-circle w3-animate-zoom">
+                                                <b>Upload</b>
+                                              </button>
 
-              </center>
-            <center>
-              <ul style="padding-bottom: 30px; display:none;list-style: none;" id="recordingsList">
+                                              <br>
+                                              <p>
+                                                <br>
+                                                <center>
+                                                  <input onkeypress="updateScript()" style="display:none;width:80%;  "
+                                                    id="Title2" placeholder="Munutwe winkuru" type="title">
+                                                  <br>
+                                                  <textarea style="display:none;width:80%;height: 70px;"
+                                                    placeholder="Inkuru Yose.........." type="text" name="Title"
+                                                    id="Title"></textarea>
 
-              </ul>
-            </center>
+                                                </center>
+                                                <center>
+                                                  <ul style="padding-bottom: 30px; display:none;list-style: none;"
+                                                    id="recordingsList">
 
-          </p>
+                                                  </ul>
+                                                </center>
 
-          <div style="display:none ;width:100%;position:absolute;top:0;" id="ReacorderBTN">
-            <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:4%;font-size: 40px; "
-              class="fa fa-stop"></i>
-            <i id="pauseButton"
-              onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';"
-              style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px; "
-              class="fa fa-pause"></i>
-            <i id="pauseButton2" onclick="pauseRecording()"
-              style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px;display:none; "
-              class="fa fa-play"></i>
-          </div>
+                                              </p>
 
-
-    <center> <h4 style="margin-bottom: 0%;"><b>DutereStory.Com</b></h4></center>
-        </footer>
-
-        <script id="appjs" src="../static/recorder/app.js"></script>
-        <script src="../static/recorder/recorder.js"></script>
-       <script>
-         function updateScript(){
-             $("#appjs").load(location.href + " #appjs");
-          }
-
-          // $.getJSON('https://ipinfo.io/json', function(data) {
-            //console.log(JSON.stringify(data, null, 2));
-          //});
-           function pauseOthers(ele) {
-
-                $("audio").not(ele).each(function (index, audio) {
-                    audio.pause();
-                });
-            }
+                                              <div style="display:none ;width:100%;position:absolute;top:0;"
+                                                id="ReacorderBTN">
+                                                <i id="stopButton"
+                                                  style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:4%;font-size: 40px; "
+                                                  class="fa fa-stop"></i>
+                                                <i id="pauseButton"
+                                                  onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';"
+                                                  style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px; "
+                                                  class="fa fa-pause"></i>
+                                                <i id="pauseButton2" onclick="pauseRecording()"
+                                                  style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px;display:none; "
+                                                  class="fa fa-play"></i>
+                                              </div>
 
 
-        </script>
+                                              <center>
+                                                <h4 style="margin-bottom: 0%;"><b>DutereStory.Com</b></h4>
+                                              </center>
+                                          </footer>
 
-        <script>
-      //     function stoperror() {
-      //   return true;
-      // }
-      // window.onerror = stoperror;
-          // Accordio
-        //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
+                                          <script id="appjs" src="../static/recorder/app.js"></script>
+                                          <script src="../static/recorder/recorder.js"></script>
+                                          <script>
+                                            function updateScript() {
+                                              $("#appjs").load(location.href + " #appjs");
+                                            }
 
-          function myFunction() {
-            var x = document.getElementById("select").value;
-            let y;
-            if (x == 500) {
-              y = '/flutterWaveSubWeek'
-            } else if (x == 1000) {
-              y = '/flutterWaveSubMonth';
-            } else if (x == 10000) {
-              y = '/flutterWaveSubYear';
-            }
-            document.getElementById("formPayment").action = y;
+                                            // $.getJSON('https://ipinfo.io/json', function(data) {
+                                            //console.log(JSON.stringify(data, null, 2));
+                                            //});
+                                            function pauseOthers(ele) {
 
-          }
-          function whatsappViewsSubmit(){
-            setTimeout(()=>{ window.stop()},10000)
-            document.getElementById('phoneWhatsapp').submit();
-          }
-          let whatssapMoney = document.getElementById('whatssapMoney');
-          whatssapMoney.addEventListener('click', () => {
-            whatsappViewsSubmit();
-            document.getElementById('id07').style.display = 'block';
-            window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+'id07'){
-
-                      document.getElementById('id07').style.display='none';
-                 }
-                  })
-            let url2=window.location.href;
-            const nextURL2 = `id07`;
-            const nextTitle2= 'id07';
-            const nextStat2 = { additionalInformation: 'id07' };
-            window.history.pushState(nextURL2, nextTitle2, nextStat2);
-            document.getElementById('id06').style.display = 'block';
-          })
-          function ChangeToStories() {
-            document.getElementById('Itangazo').style.display = 'none'
-            document.getElementById('BTN8').style.display = 'none';
-            document.getElementById('BTN4').style.display = 'none'
-            document.getElementById('KORERAKASH').style.display = 'none'
-            document.getElementById('BTN5').style.display = 'none'
-            document.getElementById('MENUBTN').style.display = 'block'
-            document.getElementById('BTN6').style.display = 'block'
-            document.getElementById('stories').style.display = 'flex'
-            document.getElementById('ReacorderBTN').style.display = 'none'
-            document.getElementById('BTN2').style.display = 'none'
-            document.getElementById('recordButton').style.display = 'block'
-            document.getElementById('MENU').style.display = 'none'
-            document.getElementById('id02').style.display = 'none'
-          }
-
-          function ChangeToKash() {
+                                              $("audio").not(ele).each(function (index, audio) {
+                                                audio.pause();
+                                              });
+                                            }
 
 
-            document.getElementById('Itangazo').style.display = 'block'
-           
-            document.getElementById('BTN4').style.display = 'block'
-            document.getElementById('Ohereza').style.display = 'block'
-            document.getElementById('BTN8').style.display = 'block'
-            document.getElementById('KORERAKASH').style.display = 'block'
-            document.getElementById('BTN5').style.display = 'block'
-            document.getElementById('MENUBTN').style.display = 'block'
-            document.getElementById('BTN6').style.display = 'none'
-            document.getElementById('stories').style.display = 'none'
-            document.getElementById('ReacorderBTN').style.display = 'none'
-            document.getElementById('BTN2').style.display = 'none'
-            document.getElementById('recordButton').style.display = 'none'
-            document.getElementById('MENU').style.display = 'none'
-            document.getElementById('recorded').style.display = 'none'
-            document.getElementById('BTN7').style.display = 'none'
+                                          </script>
 
-          }
+                                          <script>
+                                            //     function stoperror() {
+                                            //   return true;
+                                            // }
+                                            // window.onerror = stoperror;
+                                            // Accordio
+                                            //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
+
+                                            function myFunction() {
+                                              var x = document.getElementById("select").value;
+                                              let y;
+                                              if (x == 500) {
+                                                y = '/flutterWaveSubWeek'
+                                              } else if (x == 1000) {
+                                                y = '/flutterWaveSubMonth';
+                                              } else if (x == 10000) {
+                                                y = '/flutterWaveSubYear';
+                                              }
+                                              document.getElementById("formPayment").action = y;
+
+                                            }
+                                            function whatsappViewsSubmit() {
+                                              setTimeout(() => { window.stop() }, 10000)
+                                              document.getElementById('phoneWhatsapp').submit();
+                                            }
+                                            let whatssapMoney = document.getElementById('whatssapMoney');
+                                            whatssapMoney.addEventListener('click', () => {
+                                              whatsappViewsSubmit();
+                                              document.getElementById('id07').style.display = 'block';
+                                              window.addEventListener('popstate', function () {
+                                                if (window.location.href !== window.location.href + 'id07') {
+
+                                                  document.getElementById('id07').style.display = 'none';
+                                                }
+                                              })
+                                              let url2 = window.location.href;
+                                              const nextURL2 = `id07`;
+                                              const nextTitle2 = 'id07';
+                                              const nextStat2 = { additionalInformation: 'id07' };
+                                              window.history.pushState(nextURL2, nextTitle2, nextStat2);
+                                              document.getElementById('id06').style.display = 'block';
+                                            })
+                                            function ChangeToStories() {
+                                              document.getElementById('Itangazo').style.display = 'none'
+                                              document.getElementById('BTN8').style.display = 'none';
+                                              document.getElementById('BTN4').style.display = 'none'
+                                              document.getElementById('KORERAKASH').style.display = 'none'
+                                              document.getElementById('BTN5').style.display = 'none'
+                                              document.getElementById('MENUBTN').style.display = 'block'
+                                              document.getElementById('BTN6').style.display = 'block'
+                                              document.getElementById('stories').style.display = 'flex'
+                                              document.getElementById('ReacorderBTN').style.display = 'none'
+                                              document.getElementById('BTN2').style.display = 'none'
+                                              document.getElementById('recordButton').style.display = 'block'
+                                              document.getElementById('MENU').style.display = 'none'
+                                              document.getElementById('id02').style.display = 'none'
+                                            }
+
+                                            function ChangeToKash() {
 
 
-       async function share(content){
-            try {
-            await navigator.share(content)
-            alert('MDN shared successfully')
-          } catch(err) {
-            console.log(err)
-          }
-          }
-        </script>
+                                              document.getElementById('Itangazo').style.display = 'block'
+
+                                              document.getElementById('BTN4').style.display = 'block'
+                                              document.getElementById('Ohereza').style.display = 'block'
+                                              document.getElementById('BTN8').style.display = 'block'
+                                              document.getElementById('KORERAKASH').style.display = 'block'
+                                              document.getElementById('BTN5').style.display = 'block'
+                                              document.getElementById('MENUBTN').style.display = 'block'
+                                              document.getElementById('BTN6').style.display = 'none'
+                                              document.getElementById('stories').style.display = 'none'
+                                              document.getElementById('ReacorderBTN').style.display = 'none'
+                                              document.getElementById('BTN2').style.display = 'none'
+                                              document.getElementById('recordButton').style.display = 'none'
+                                              document.getElementById('MENU').style.display = 'none'
+                                              document.getElementById('recorded').style.display = 'none'
+                                              document.getElementById('BTN7').style.display = 'none'
+
+                                            }
+
+
+                                            async function share(content) {
+                                              try {
+                                                await navigator.share(content)
+                                                alert('MDN shared successfully')
+                                              } catch (err) {
+                                                console.log(err)
+                                              }
+                                            }
+                                          </script>
 
 </body>
 
