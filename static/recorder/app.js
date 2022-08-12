@@ -78,6 +78,7 @@ class Timer {
   const timer = new Timer(); 
  
 function startRecording() {
+	window.history.back();
 	document.getElementById('BTN2').style.display="block";
 	document.getElementById('recordButton').style.display="none";
 	document.getElementById('ReacorderBTN').style.display="block";
