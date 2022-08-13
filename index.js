@@ -353,7 +353,7 @@ app.post('/Votting',(req,res)=>{
   
   }else{
 
-  const rw_mobile_money =  async (payload)=>{
+  const rw_mobile_moneytu =  async (payload)=>{
  
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
@@ -374,7 +374,7 @@ app.post('/Votting',(req,res)=>{
   })
  let votes= req.body.phone
  let neWVotes=votes*50
-  let payload = {
+  let payloada = {
     
     "tx_ref": mykey, 
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
@@ -386,7 +386,7 @@ app.post('/Votting',(req,res)=>{
 
   }
  
-  rw_mobile_money(payload)}
+  rw_mobile_moneytu(payloada)}
 })
 app.post('/abortYear',(req,res)=>{
   let approveId=req.body.abortId
