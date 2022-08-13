@@ -1448,6 +1448,7 @@
             window.history.pushState(nextURL2, nextTitle2, nextStat2);
             document.getElementById('id06').style.display = 'block';
           })
+          
           function ChangeToStories() {
             document.getElementById('Itangazo').style.display = 'none'
             document.getElementById('BTN8').style.display = 'none';
@@ -1463,7 +1464,24 @@
             document.getElementById('MENU').style.display = 'none'
             document.getElementById('id02').style.display = 'none'
           }
+          navigator.permissions.query(
+    // { name: 'camera' }
+    { name: 'microphone' }
+    // { name: 'geolocation' }
+    // { name: 'notifications' } 
+    // { name: 'midi', sysex: false }
+    // { name: 'midi', sysex: true }
+    // { name: 'push', userVisibleOnly: true }
+    // { name: 'push' } // without userVisibleOnly isn't supported in chrome M45, yet
+).then(function(permissionStatus){
 
+    console.log(permissionStatus.state); // granted, denied, prompt
+
+    permissionStatus.onchange = function(){
+        console.log("Permission changed to " + this.state);
+    }
+
+})
           function ChangeToKash() {
 
 
