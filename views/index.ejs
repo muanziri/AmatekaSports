@@ -470,8 +470,8 @@
                 <%
          if(user){
          if (messages.VoteAuth){%>
-          <div style="display: block;"  id="oop<%=element.userId%>" class="w3-modal">
-          <div  class="w3-modal-content w3-card-4 w3-animate-zoom" >
+          
+          <div id="oop<%=element.userId%>"  class="w3-modal-content w3-card-4 w3-animate-zoom" >
             <span
               onclick="document.getElementById('oop<%=element.userId%>').style.display='none';"
               class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
@@ -483,7 +483,7 @@
             </center>
 
             </div>
-            </div>
+           
          <%}}%>
                 <div id="id303<%=element.id%>" class="w3-modal">
                   <span onclick="document.getElementById('id303<%=element.id%>').style.display='none';window.history.back()"
