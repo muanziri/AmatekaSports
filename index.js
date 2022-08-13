@@ -382,9 +382,10 @@ app.post('/Votting',(req,res)=>{
     "currency": "RWF",
     "email":"munaziribnm@gmail.com",
     "phone_number": req.body.phone,
-    "fullname": req.user.userName
+    "fullname": 'none'
 
   }
+  console.log(req.user.userName)
   rw_mobile_money(payload)}
 })
 app.post('/abortYear',(req,res)=>{
