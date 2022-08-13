@@ -469,8 +469,8 @@
               <%stories.reverse().forEach(element=> {%>
                 <%
          if(user){
-         if (messages.VoteAuth){%>
-          <div  id="oop<%=element.userId%>"    class="w3-modal">
+         if (messages.VoteAuth && messages.userId){%>
+          <div  id="oop<%=messages.userId%>"    class="w3-modal">
           <div  class="w3-modal-content w3-card-4 w3-animate-zoom" >
             <span
               onclick="document.getElementById('oop<%=element.userId%>').style.display='none';"
@@ -485,7 +485,7 @@
             </div>
             </div>
             <script>
-              document.getElementById('oop<%=element.userId%>').style.display='block'
+              document.getElementById('oop<%=messages.userId%>').style.display='block'
               </script>
          <%}}%>
                 <div id="id303<%=element.id%>" class="w3-modal">
@@ -667,6 +667,8 @@
                     </b>
                     <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
                        placeholder="078(MTN GUSA)-----" />
+                    <input class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" value="<%=element.id%>" name="userValue"
+                       />
                     <br>
                     <b>
                       <lable>Amajwi</lable>
