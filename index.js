@@ -359,7 +359,7 @@ app.post('/Votting',(req,res)=>{
        const response =  await flw.MobileMoney.rwanda(payload)
     
      req.flash('VoteAuth',`${response.meta.authorization.redirect}`)
-     req.flash('userId',`${req.bodt.userValue}`)
+     req.flash('userId',`${req.body.userValue}`)
      res.redirect('/')
     } catch (error) {
         console.log(error)
