@@ -1224,74 +1224,6 @@
               <center><h2>Ntabwo igihe cya withdraw cyari cyagera</h2></center>
          </div>
          </div>  
-         <%if(user){ 
-          if (payment){
-          const d = new Date(payment.createdAt);
-          const dp=d.getDate()
-          const p=new Date()
-          const op=p.getDate()
-          const dayDiff=op-dp
-          %>
-           
-            <%if(dayDiff== -5||dayDiff== -4||dayDiff== -3||dayDiff== -2||dayDiff== -1||dayDiff== 0){%>
-              <% if(dayDiff== -5){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-right ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-                usigaje iminsi  itanu yo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== -4){
-                console.log('hello');
-                %>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-top ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-                usigaje iminsi  ine yo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== -3){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-top ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-                usigaje iminsi  itatu yo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== -2){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-right ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-                usigaje iminsi  ibiri yo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== -1){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-right ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-               usigaje umunsi umwe wo kubikuza
-               </p>
-               </div>
-              <%}else if(dayDiff== 0){%>
-                <div id="message1Id" style="width:50%;position:absolute;right:15%; top:0%;z-index:2;"
-                class="w3-panel w3-teal w3-card w3-animate-right ">
-                <span onclick="document.getElementById('message1Id').style.display='none'; "
-                class="w3-button w3-xlarge w3-transparent w3-display-top" >×</span>
-              <p>
-               Ntaminsi usigaranye yo kubikuza nutabikuza uyu munsi ingaruka urazirengera
-               </p>
-               </div>
-            
-              <%}%>
               
           <button id="BTN4"  style="position:absolute;bottom:12.5%;z-index: 2;" onclick="document.getElementById('id03').style.display='block'
           window.addEventListener('popstate',function (){
@@ -1310,19 +1242,11 @@
           
             class="w3-card w3-circle w3-teal">
             <b>BIKUZA</b></button>
-            <%}else{%>
-              <button id="BTN4"  style="position:static;bottom:12.5%;z-index: 2;" 
-              onclick="document.getElementById('pool').style.display='block'"
-              style="background-color:#709E90"
-            class="w3-card w3-circle ">
-            <b>BIKUZA</b></button>
-              <%}%>
-            <%}else{%>
-              <button id="BTN4"  style="position:static;bottom:12.5%;z-index: 2;" 
-              style="background-color:#709E90"
-            class="w3-card w3-circle ">
-            <b>BIKUZA</b></button>
-              <%}}%>
+          
+             
+          
+             
+  
             
         <footer
           style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
