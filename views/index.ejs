@@ -596,6 +596,8 @@
                   </div>
                   </center>
                 </div>
+              </div>
+            
 
                 <div style="width: 325px;" class="w3-container w3-card w3-white w3-round w3-margin" ><br>
                   <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block' ;
@@ -812,7 +814,7 @@
                 if (links.length>0) {
                 %>
 
-             <%if (links.length=1){%>
+             <%if (links.length==1){%>
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
@@ -824,7 +826,7 @@
              </li>
              </div>
              <%}%>
-             <%if (links.length=2){%>
+             <%if (links.length==2){%>
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
