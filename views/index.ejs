@@ -664,10 +664,11 @@
                      const shareData = {
                      
                      title: 'Tipstalk',
-                     text: `
-                    <%=element.Title.slice(0,100)%>
+                     text: 'Inkuru: ' + `<%=element.Title.newsBody%>
 
-                    yanditswe na  <%=element.UserName%>sura tipstalk.herokuapp.com  usome inkuru yose`,
+                    <%=element.Title.slice(0,500)%>
+
+                    yanditswe na  <%=element.UserName%> sura tipstalk.herokuapp.com  usome inkuru yose`,
                      };
                    navigator.share(shareData);
                  };shareImage()" type="p" class="w3-button w3-theme-d2 w3-margin-bottom">
