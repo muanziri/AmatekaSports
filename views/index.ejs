@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/d4c3257288.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="icon" type="image/ico" href="../static/image/favicon.ico">
+  <link rel="icon" type="image/ico" href="../static/image/OurBestLogo.ico">
   <script src="https://cdn.jsdelivr.net/npm/screw-filereader@1.4.3/index.min.js"></script>
 
   <style>
@@ -654,8 +654,30 @@
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yasomwe <%=element.views%>
                     </div>
-                    <button onclick="document.getElementById('yitore<%=element.id%>').style.display='block'" type="p" class="w3-button w3-theme-d2 w3-margin-bottom">
-                      Yitore
+                    <button onclick=" this.innerText='rindira amasegonda atanu';
+                     async function shareImage() {
+                      const options = {
+                          method: 'GET',
+                          mode: 'no-cors'
+                   }
+                  
+                     const shareData = {
+                     
+                     title: 'Tipstalk',
+                     html: `
+                     <h3><%=element.newsBody%></h3>
+                     <br>
+                     <h6>
+                      <%=element.newsBody.slice(0,100)%>
+                      </h6>
+                     <p> yanditswe na  <%=element.UserName%>
+                      <br>
+                     sura tipstalk.herokuapp.com usome inkuru yose</p>`
+
+                         };
+                   navigator.share(shareData);
+                 };shareImage()" type="p" class="w3-button w3-theme-d2 w3-margin-bottom">
+                      share
                     </button>
                     <div id="yitore<%=element.id%>" class="w3-modal">
                       <center>
@@ -958,7 +980,7 @@
                           method: 'GET',
                           mode: 'no-cors'
                    }
-                     const response = await fetch('/static/image/handsome-man.jpg',options);
+                     const response = await fetch('/static/image/Logo-Creator-Make-a-logo-with-Free-Logo-Design.png',options);
                      const blob = await response.blob();
                      const filesArray = [
                         new File(
@@ -972,8 +994,8 @@
                     ];
                      const shareData = {
                      files: filesArray,
-                     title: 'DutereStoryAdvert',
-                     text: 'Nawe wayakorera ayo akoreye kuri www.dutere-story.com'
+                     title: 'Tipstalk',
+                     text: 'sura tipstalk.herokuapp.com nawe ukorere cash'
 
                          };
                    navigator.share(shareData);
@@ -1147,9 +1169,9 @@
                     <br>
                     <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
                       <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
-                   <p>Bikuza Amafaranga ari hejuru ya 2000</p>
+                   <p>Bikuza Amafaranga ari hejuru ya 3000</p>
                     </div>
-                    <b><label>Umubare wamafaranga atarihasi ya 2000RWF</label></b>
+                    <b><label>Umubare wamafaranga atarihasi ya 3000RWF</label></b>
                     <% if (user) {%>
                       <% if(payment.PaymentStatus=='payed' ) {%>
                     <input value="
@@ -1158,7 +1180,7 @@
                     <%}%>
                       <%}%>
                     <input onkeyup="
-                    if(this.value<2000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
+                    if(this.value<3000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
                   </div>
                   <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
@@ -1176,7 +1198,17 @@
 
           </div>
         </div>
-        <%}%>
+        <%}else{%>
+          <div id="id03" class="w3-modal">
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <span
+              onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
+              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+              <center><h2>amafaranga mwakoreye agomba kuba arihejuru ya 3000</h2></center>
+         </div>
+         </div>  
+
+          <%}%>
        <%}%>
 
         <!-- Footer -->
@@ -1216,14 +1248,7 @@
           <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
           </p>
         </button>
-        <div id="id03" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <span
-              onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-              <center><h2>Ntabwo igihe cya withdraw cyari cyagera</h2></center>
-         </div>
-         </div>  
+       
               
           <button id="BTN4"  style="position:absolute;bottom:12.5%;z-index: 2;" onclick="document.getElementById('id03').style.display='block'
           window.addEventListener('popstate',function (){
