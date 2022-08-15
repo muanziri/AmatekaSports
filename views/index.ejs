@@ -1126,7 +1126,7 @@
 
                     </div>
                   </div>
-           <%if (payment){%>       
+           <%if (payment.CashLeft>0){%>       
         <div id="id03" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <span
@@ -1137,13 +1137,13 @@
             </center>
             <div>
               <center>
-                <form method="post" action="/flutterWaveWithDraw" class="w3-container w3-margin">
+                <form method="post" action="/flutterWaveWithDraw2" class="w3-container w3-margin">
                   <div class="w3-section">
                     <b>
                       <lable>Phone yawe</lable>
                     </b>
                     <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
-                      disabled  value="<%=user.phoneNumber%>" placeholder="078(MTN GUSA)-----" />
+                      disabled   placeholder="078(MTN GUSA)-----" />
                     <br>
                     <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
                       <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>

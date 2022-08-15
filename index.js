@@ -825,6 +825,29 @@ app.post('/flutterWaveWithDraw', (req, res) => {
       }
     }
    }) })
+   app.post('/flutterWaveWithDraw2', (req, res) => {
+   
+    let kid=req.body.kid.trim();
+    let amount=req.body.Amount
+    console.log(kid)
+    
+      paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
+       
+         if (paymentres2.length >0){
+        let ceck=paymentres2[0].CashLeft-amount
+          if (ceck>0){
+           
+            req.flash('message1',`Amafaranga aroherezwa mbere  yamasaha 24 narenga mutarayabona muhamagare +250790457824`);
+            res.redirect('/');
+            paymentMonth.findByIdAndDelete(paymentres2.id).then(()=>{
+              console.log('deleted')
+            })
+          }else{ 
+          req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+          res.redirect('/');
+        }
+      }
+     }) })
 app.post('/addViews', (req, res) => {
   let Recordingid = req.body.audioTitleViews;
   let UserName = req.body.audioTitleViews2;
