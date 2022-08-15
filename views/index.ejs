@@ -390,8 +390,33 @@
               <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Story Zawe <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.Recordings.length%></i></h6></b></center>
               <center> <b> <h6   style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zasomwe <i style="background-color: white; color: teal;position: absolute;border-radius: 5px;padding-left: 2px;padding-right: 2px;right:2px;"><%=user.Views%></i></h6></b></center>
              <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zakunzwe <i style="background-color: white;color:teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.likes%></i></h6></b></center>
-    
+      
+              <% if(payment.PaymentStatus=="payed" ) {%>
+                <% if(payment.PackageDuration=="7" ) {%>
+
+
+               <center> <b><h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Pack wishyuye niy'iminsi <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">7</i></h6></b></center>
+
+
+               <% }else if(payment.PackageDuration=="30"){ %>
+
+               <center><b> <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Paki imara iminsi <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">30</i></h6></b></center>
+
+
+                <% }else if(payment.PackageDuration=="360"){ %>
+
+               <center><b> <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Pack wishyuye niy'iminsi <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;">Umwaka</i></h6></b></center>
+
+
+                <% }else{ %>
+               <b>   <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin"> Nta Package wishyuye</h6></b>
+                <% } %>
+
                <b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Ayo Winjije <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=payment.CashLeft%> RWF</i></h6></b>
+
+
+
+
 
               <div id="BTN1">
                 <% } %>
