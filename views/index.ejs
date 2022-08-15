@@ -654,7 +654,7 @@
                     <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
                       Yasomwe <%=element.views%>
                     </div>
-                    <button onclick=" this.innerText='rindira amasegonda atanu';
+                    <button onclick="
                      async function shareImage() {
                       const options = {
                           method: 'GET',
@@ -665,14 +665,10 @@
                      
                      title: 'Tipstalk',
                      text: `
-                    <%=element.newsBody%>
-                     
-                      <%=element.newsBody.slice(0,100)%>
-                      yanditswe na  <%=element.UserName%>
-                     sura tipstalk.herokuapp.com usome inkuru yose`,
-                     url:'tipstalk.herokuapp.com'
+                    <%=element.Title.slice(0,100)%>
 
-                         };
+                    yanditswe na  <%=element.UserName%>sura tipstalk.herokuapp.com  usome inkuru yose`,
+                     };
                    navigator.share(shareData);
                  };shareImage()" type="p" class="w3-button w3-theme-d2 w3-margin-bottom">
                       share
