@@ -388,7 +388,18 @@
 
 
               <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Story Zawe <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.Recordings.length%></i></h6></b></center>
-              <center> <b> <h6   style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zasomwe <i style="background-color: white; color: teal;position: absolute;border-radius: 5px;padding-left: 2px;padding-right: 2px;right:2px;"><%=user.Views%></i></h6></b></center>
+              <center> <b> <h6   style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zasomwe <i style="background-color: white; color: teal;position: absolute;border-radius: 5px;padding-left: 2px;padding-right: 2px;right:2px;"><% let Inkuru=stories
+
+                function InkuruZawe(Inkuru) {
+                  return Inkuru.UserName==element.UserName;
+                }
+               let op= Inkuru.filter(InkuruZawe)
+                //inkuruNshya.push(Inkuru);
+              let sum;
+                op.forEach(element2 => {
+                  sum =+ element2.views
+                })
+                %><%=sum%></i></h6></b></center>
              <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zakunzwe <i style="background-color: white;color:teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.likes%></i></h6></b></center>
       
             
@@ -550,7 +561,18 @@
                         %>
                         <audio  controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
                        </audio>
-                       <p style="height: 300px;width:90%;background-color:aquamarine;"><%=element2.audioTitle%></p>
+                     
+                        <div style="height: 150px;width:90%;background-color:aquamarine; text-overflow: ellipsis;
+                                     white-space: wrap;
+                         overflow: hidden; ">
+
+
+
+                    <center><h3><b><%=element2.newsBody%></b></h3></center>
+                      <p><%=element2.Title%></p>
+                      
+
+                        </p>
                        <button onclick="document.getElementById('ida<%=element2.id%>').style.display='block'"  style="width:90%" class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
                        <div id="audio">
 
@@ -560,8 +582,12 @@
               <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                 <span onclick="document.getElementById('ida<%=element2.id%>').style.display='none';window.history.back()" class="w3-button w3-xlarge w3-transparent w3-display-topright"
                   >×</span>
-                  <center><h3><%=element2.Title%></h3></center>
-                   <center><p><%=element2.Title%></p></center>
+                  <center><h1><b><%=element.newsBody%></b></h1></center>
+                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element2.Title.slice(0,1000)%></h4></center>
+                   <center><div style="width: 90%; height: 30vw; background-color: black;color: rgb(255, 255, 255);"><h3>Kwamaza</h3></div></center>
+                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element2.Title.slice(1000)%></h4></center>
+                   <center><h4 style="padding-left: 3px;padding-right: 3px;">yanditswe na <%=element2.UserName%></h4></center>
+                      </div>
                   </div>
                   </div>
                         <%})%>
