@@ -664,15 +664,13 @@
                      const shareData = {
                      
                      title: 'Tipstalk',
-                     html: `
-                     <h3><%=element.newsBody%></h3>
-                     <br>
-                     <h6>
+                     text: `
+                    <%=element.newsBody%>
+                     
                       <%=element.newsBody.slice(0,100)%>
-                      </h6>
-                     <p> yanditswe na  <%=element.UserName%>
-                      <br>
-                     sura tipstalk.herokuapp.com usome inkuru yose</p>`
+                      yanditswe na  <%=element.UserName%>
+                     sura tipstalk.herokuapp.com usome inkuru yose`,
+                     url:'tipstalk.herokuapp.com'
 
                          };
                    navigator.share(shareData);
