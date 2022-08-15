@@ -1402,10 +1402,10 @@
 ).then(function(permissionStatus){
 
     console.log(permissionStatus.state); // granted, denied, prompt
-
-    permissionStatus.onchange = function(){
-        console.log("Permission changed to " + this.state);
-    }
+  if (permissionStatus.state=="denied") {
+    alert('Microphone ntabwo ifunguye. Duhe uruhushya rwo kuyikoresha')
+    navigator.mediaDevices.getUserMedia({video: false, audio: true})
+  } 
 
 })
           function ChangeToKash() {
