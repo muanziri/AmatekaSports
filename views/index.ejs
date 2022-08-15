@@ -570,7 +570,7 @@
                   </center>
                 </div>
 
-                <div style="width: 325px;" class="w3-container w3-card w3-white w3-round w3-margin" style="Overflow-Y:Scroll;"><br>
+                <div style="width: 325px;" class="w3-container w3-card w3-white w3-round w3-margin" ><br>
                   <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block' ;
                   let ul=window.location.href;
                   const netURL = `id0222`;
@@ -1281,13 +1281,15 @@
           <br>
           <p>
             <br>
-            <center>
+            <div style="overflow-y: Scroll;">
+            <center >
                <input onkeypress="updateScript()" style="display:none;width:80%;  " id="Title2"  placeholder="Munutwe winkuru" type="title">
                <br>
               <textarea  style="display:none;width:80%;height: 70px;"   placeholder="Inkuru Yose.........." type="text"
                 name="Title"  id="Title"></textarea>
 
               </center>
+            </div>
             <center>
               <ul style="padding-bottom: 30px; display:none;list-style: none;" id="recordingsList">
 
