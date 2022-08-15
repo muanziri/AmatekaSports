@@ -389,7 +389,7 @@
 
               <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Story Zawe <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.Recordings.length%></i></h6></b></center>
               <center> <b> <h6   style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zasomwe <i style="background-color: white; color: teal;position: absolute;border-radius: 5px;padding-left: 2px;padding-right: 2px;right:2px;"><% let Inkuru=stories
-
+                  stories.reverse().forEach(element=> {
                 function InkuruZawe(Inkuru) {
                   return Inkuru.UserName==element.UserName;
                 }
@@ -398,7 +398,7 @@
               let sum;
                 op.forEach(element2 => {
                   sum =+ element2.views
-                })
+                })})
                 %><%=sum%></i></h6></b></center>
              <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zakunzwe <i style="background-color: white;color:teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.likes%></i></h6></b></center>
       
