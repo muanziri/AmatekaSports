@@ -1395,7 +1395,7 @@
           let whatssapMoney = document.getElementById('whatssapMoney');
           whatssapMoney.addEventListener('click', () => {
             whatsappViewsSubmit();
-            document.getElementById('id07').style.display = 'none';
+            document.getElementById('id07').style.display = 'block';
             window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id07'){
 
@@ -1407,7 +1407,7 @@
             const nextTitle2= 'id07';
             const nextStat2 = { additionalInformation: 'id07' };
             window.history.pushState(nextURL2, nextTitle2, nextStat2);
-            document.getElementById('id06').style.display = 'block';
+            document.getElementById('id06').style.display = 'none';
           })
           window.onbeforeunload=()=>{
             window.location.href = "https://tipstalk.herokuapp.com/";
