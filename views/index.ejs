@@ -189,8 +189,7 @@
       #BTN4 {
         position: absolute;
         right: 2%;
-        margin-top: -15%;
-
+        
        
         width: 100px;
         height: 100px;
@@ -809,9 +808,9 @@
              <%if(links.length==1){%>
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
-             navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
+             navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>'+'                   '+'<%=links[0].Discription%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b>
+             } copy()" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
              <p>
               <%=links[0].Discription%>
             </p>
