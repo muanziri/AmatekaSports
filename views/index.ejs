@@ -806,7 +806,7 @@
                 if (links.length>0) {
                 %>
 
-             
+             <%if(links.length==1){%>
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
@@ -817,7 +817,38 @@
             </p>
              </li>
              </div>
-
+             <%}else if(links.length==2){%>
+              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+              <li onclick="function copy() {
+             navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
+             alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
+             } copy()" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b>
+             <p>
+              <%=links[0].Discription%>
+            </p>
+             </li>
+             </div>
+             <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+              <li onclick="function copy() {
+             navigator.clipboard.writeText('https://dutere-story.herokuapp.com/2/<%=user.userName%>');
+             alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/2/<%=user.userName%>'+'   '+'yabaye copied');
+             } copy()" id="link2"><b>https://dutere-story.herokuapp.com/2/<%=user.userName%></b>
+             <p>
+              <%=links[1].Discription%>
+            </p>
+             </li>
+             </div>
+             <%}else if(links.length==3){%>
+              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+              <li onclick="function copy() {
+             navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
+             alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
+             } copy()" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b>
+             <p>
+              <%=links[0].Discription%>
+            </p>
+             </li>
+             </div>
              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/2/<%=user.userName%>');
@@ -838,7 +869,38 @@
             </p>
              </li>
             </div>
+            <%}else if(links.length==4){%>
+              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+              <li onclick="function copy() {
+             navigator.clipboard.writeText('https://dutere-story.herokuapp.com/1/<%=user.userName%>');
+             alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
+             } copy()" id="link1"><b>https://dutere-story.herokuapp.com/1/<%=user.userName%></b>
+             <p>
+              <%=links[0].Discription%>
+            </p>
+             </li>
+             </div>
              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+              <li onclick="function copy() {
+             navigator.clipboard.writeText('https://dutere-story.herokuapp.com/2/<%=user.userName%>');
+             alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/2/<%=user.userName%>'+'   '+'yabaye copied');
+             } copy()" id="link2"><b>https://dutere-story.herokuapp.com/2/<%=user.userName%></b>
+             <p>
+              <%=links[1].Discription%>
+            </p>
+             </li>
+             </div>
+             <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
+              <li onclick="function copy() {
+             navigator.clipboard.writeText('https://dutere-story.herokuapp.com/3/<%=user.userName%>');
+             alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/3/<%=user.userName%>'+'   '+'yabaye copied');
+             } copy()" id="link3"><b>https://dutere-story.herokuapp.com/3/<%=user.userName%></b>
+             <p>
+              <%=links[2].Discription%>
+            </p>
+             </li>
+            </div>
+            <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="function copy() {
              navigator.clipboard.writeText('https://dutere-story.herokuapp.com/4/<%=user.userName%>');
              alert('link yawe'+'    '+'https://dutere-story.herokuapp.com/4/<%=user.userName%>'+'   '+'yabaye copied');
@@ -848,7 +910,8 @@
             </p>
              </li>
             </div>
-              
+            <%}%>
+            
 
             <%}else{%>
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
