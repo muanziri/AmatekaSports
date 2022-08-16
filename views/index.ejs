@@ -534,7 +534,58 @@
                   })
                  </script>
 
-              
+                <div   id="id0222<%=element.UserName%>"   class="w3-modal">
+                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
+                    <span onclick="document.getElementById('id0222<%=element.UserName%>').style.display='none';window.history.back()"
+                      class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
+                    <center>
+                      <h5>Stories by <%=element.UserName%>
+                      </h5>
+                      <div>
+                        <% let Inkuru=stories
+
+                        function InkuruZawe(Inkuru) {
+                          return Inkuru.UserName==element.UserName;
+                        }
+                       let op= Inkuru.filter(InkuruZawe)
+                        //inkuruNshya.push(Inkuru);
+                        op.forEach(element2 => {
+
+                        %>
+                        <audio  controls src="https://drive.google.com/uc?export=download&id=<%=element2.RecordingId%>">
+                       </audio>
+                     
+                        <div style="height: 150px;width:90%;background-color:aquamarine; text-overflow: ellipsis;
+                                     white-space: wrap;
+                         overflow: hidden; ">
+
+
+
+                    <center><h3><b><%=element2.newsBody%></b></h3></center>
+                      <p><%=element2.Title%></p>
+                      
+                    
+                        
+                       <button onclick="document.getElementById('ida<%=element2.id%>').style.display='block'"  style="width:90%" class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
+                       <div id="audio">
+
+
+                      </div>
+                      <div id="ida<%=element2.id%>" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                <span onclick="document.getElementById('ida<%=element2.id%>').style.display='none';window.history.back()" class="w3-button w3-xlarge w3-transparent w3-display-topright"
+                  >×</span>
+                  <center><h1><b><%=element.newsBody%></b></h1></center>
+                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element2.Title.slice(0,1000)%></h4></center>
+                   <center><div style="width: 90%; height: 30vw; background-color: black;color: rgb(255, 255, 255);"><h3>Kwamaza</h3></div></center>
+                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element2.Title.slice(1000)%></h4></center>
+                   <center><h4 style="padding-left: 3px;padding-right: 3px;">yanditswe na <%=element2.UserName%></h4></center>
+                      </div>
+                  </div>
+                  </div>
+                        <%})%>
+                      </div>
+                  </div>
                   </center>
                 </div>
 
