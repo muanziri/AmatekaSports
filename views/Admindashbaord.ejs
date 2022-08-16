@@ -237,118 +237,8 @@
       </div>
 
     </div>
-    <div class="w3-container w3-half w3-margin-top">
-      <header class="w3-container w3-card-4 w3-theme">
-        <h1>Status Approve Board(week)</h1>
-      </header>
-
-      <div style="overflow-y: scroll;max-height: 350px;" class="w3-panel">
-        <%usersWeek.forEach(element=> {%>
-          <div class="w3-row w3-card-4">
-            <div class="w3-col s9 w3-container">
-              <h5>
-                <%=element.userName%>
-              </h5>
-              <button onclick="document.getElementById('<%=element.id%>').style.display='block'"
-                class="w3-button w3-section w3-teal w3-ripple">watch and Approve</button>
-            </div>
-            <div id="<%=element.id%>" class="w3-modal">
-              <span onclick="document.getElementById('<%=element.id%>').style.display='none'"
-                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
-                <h5>
-                  posted by <%=element.userName%>
-                </h5>
-                <%element.WhatsappScreenShotPosts.forEach(element2=> {
-                  // console.log(element.WhatsappScreenShotPosts)
-                  %>
-                  <div class="w3-card">
-                    <div>
-                      <img src="https://drive.google.com/uc?export=download&id=<%element2%>" style="width:100%">
-                    </div>
-                    <br>
-                    <div style="display: none;">
-                      <form action="/aprroved" id="aprrovedWeek" method="post">
-                        <input type="text" value="<%=element2%>" name="approveId" />
-                      </form>
-                      <form action="/abortWeek" id="abortWeek" method="post">
-                        <input type="text" value="<%=element2%>" name="approveId" />
-                      </form>
-                    </div>
-                    <button onclick="document.getElementById('aprrovedWeek').submit()"
-                      class="w3-button w3-green w3-padding-large">Approve</button>
-                    <button onclick="document.getElementById('abortWeek').submit()"
-                      class="w3-button w3-green w3-padding-large">Abort</button>
-
-                  </div>
-
-                  <br>
-                  <%});%>
-              </div>
-            </div>
-          </div>
-          <% });%>
-            <hr>
-      </div>
-
-    </div>
-    <div class="w3-container w3-half w3-margin-top">
-      <header class="w3-container w3-card-4 w3-theme">
-        <h1>Status Approve Board(year)</h1>
-      </header>
-
-      <div style="overflow-y: scroll;max-height: 350px;" class="w3-panel">
-        <%usersYear.forEach(element=> {
-
-          %>
-          <div class="w3-row w3-card-4">
-            <div class="w3-col s9 w3-container">
-              <h5>
-                <%=element.userName%>
-              </h5>
-              <button onclick="document.getElementById('<%=element.id%>').style.display='block'"
-                class="w3-button w3-section w3-teal w3-ripple">watch and Approve</button>
-            </div>
-            <div id="<%=element.id%>" class="w3-modal">
-              <span onclick="document.getElementById('<%=element.id%>').style.display='none'"
-                class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-width:700px;">
-                <h5>
-                  posted by <%=element.userName%>
-                </h5>
-                <%element.WhatsappScreenShotPosts.forEach(element2=> {
-                  // console.log(element.WhatsappScreenShotPosts)
-                  %>
-                  <div class="w3-card">
-                    <div>
-                      <img src="https://drive.google.com/uc?export=download&id=<%element2%>" style="width:100%">
-                    </div>
-                    <br>
-                    <div style="display: none;">
-                      <form action="/approved" id="approveYear" method="post">
-                        <input type="text" value="<%=element2%>" name="approveId" />
-                      </form>
-                      <form action="/abort" id="abortYear" method="post">
-                        <input type="text" value="<%=element2%>" name="approveId" />
-                      </form>
-                    </div>
-                    <button onclick="document.getElementById('approveYear').submit()"
-                      class="w3-button w3-green w3-padding-large">Approve</button>
-                    <button onclick="document.getElementById('abortYear').submit()"
-                      class="w3-button w3-green w3-padding-large">Abort</button>
-
-                  </div>
-
-                  <br>
-                  <%});%>
-              </div>
-            </div>
-          </div>
-          <% });%>
-            <hr>
-      </div>
-
-    </div>
+   >
+  
 
 
 
@@ -388,6 +278,35 @@
                   <td style="width:25%;">Week</th>
                   </tr>
               <% })%>
+          </table>
+        </div>
+     
+        </div>
+
+      </div>
+    </div>
+    <div style="max-height: 1000px;overflow-y:scroll;" class="w3-container w3-half w3-margin-top">
+      <div class="w3-container w3-card-4">
+        <div class="w3-container">
+          <h2>Users packageStatus and clicks Collected</h2>
+          <p>Search for a name in the input field.</p>
+
+          <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput2"
+            onkeyup="myFunction()">
+           <div style="max-height: 200px;overflow:scroll;">
+          <table  class="w3-table-all w3-margin-top" id="myTable2">
+            <tr>
+              <th style="width:50%;">Name</th>
+              <th style="width:25%;">amount</th>
+             
+            </tr>
+            <%withdrawers.forEach(element => {%>
+                <tr>
+                  <td style="width:50%;"><%=element.userName%></th>
+                  <td style="width:25%;"><%=element.amount%></th>
+                  </tr>
+              <% })%>
+      
           </table>
         </div>
      
@@ -452,6 +371,24 @@
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function myFunction2() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable2");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];

@@ -1190,6 +1190,7 @@
                     <input onkeyup="
                     if(this.value<3000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
                     " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
+                    <input style="display:none;" value="<%=user.userName%>" class="w3-input w3-border w3-margin-bottom" type="text" name="idl" placeholder="----" />
                   </div>
                   <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
                     <h6 onclick="document.getElementById('alerT').style.display='none'" class="w3-display-topright">x</h6>

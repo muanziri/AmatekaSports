@@ -7,6 +7,7 @@ const flw = new Flutterwave("FLWPUBK-018d6455d86cf9de77610745943fad8b-X", "FLWSE
 const passport = require('passport')
 const multer = require('multer')
 let uniqid = require('uniqid'); 
+const bikuza=require('./model/bikuza')
 const uresad = multer();
 const Readable = require('stream').Readable;
 const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic,DeleteFile} = require('./googleDrive')
@@ -231,11 +232,12 @@ app.get('/Admin', (req, res) => {
           paymentWeek.find().then((usersWeek)=>{
             UserModel.find().then((results)=>{
             ClickableLink.find().then((links)=>{
-              res.render('Admindashbaord',{users:results,usersYear:usersYear,usersMonth:usersMonth,usersWeek:usersWeek,link:links})
+              bikuza.find().then((withdrawers)=>{
+              res.render('Admindashbaord',{users:results,usersYear:usersYear,usersMonth:usersMonth,usersWeek:usersWeek,link:links,withdrawers:withdrawers})
             })
             })
        }) })})
-})
+})})
 
 app.post('/saveWhatsappNumber/:Name',(req,res)=>{
   let Name=req.params.Name
@@ -830,7 +832,11 @@ app.post('/flutterWaveWithDraw', (req, res) => {
     let kid=req.body.kid.trim();
     let amount=req.body.Amount
     console.log(kid)
-    
+    new bikuza({
+          userName:req.body.idl,
+          Phone:req.body.phoneN,
+          Ammount:req.body.Amount
+        })
       paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
        
          if (paymentres2.length >0){
