@@ -94,7 +94,7 @@
       position: absolute;
       left: 3%;
       margin-top: -4%;
-      
+
       width: 100px;
       height: 100px;
       z-index: 1;
@@ -189,7 +189,7 @@
         position: absolute;
         right: 2%;
         margin-top: -4%;
-       
+
         width: 100px;
         height: 100px;
         z-index: 1;
@@ -221,40 +221,40 @@
     *, *:before, *:after {
       box-sizing: inherit;
     }
-    
+
     .column {
       float: left;
       width: 33.3%;
       margin-bottom: 16px;
       padding: 0 8px;
     }
-    
+
     .card {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       margin: 8px;
     }
-    
+
     .about-section {
       padding: 50px;
       text-align: center;
       background-color: teal;
       color: white;
     }
-    
+
     .container {
       padding: 0 16px;
     }
-    
+
     .container::after, .row::after {
       content: "";
       clear: both;
       display: table;
     }
-    
+
     .title {
       color: grey;
     }
-    
+
     .button {
       border: none;
       outline: 0;
@@ -266,11 +266,11 @@
       cursor:pointer;
       width: 100%;
     }
-    
+
     .button:hover {
       background-color: #555;
     }
-    
+
     @media screen and (max-width: 650px) {
       .column {
         width: 100%;
@@ -394,8 +394,8 @@
                   sum =+ element.views
                 })}%><%=sum%></i></h6></b></center>
              <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zakunzwe <i style="background-color: white;color:teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.likes%></i></h6></b></center>
-      
-            
+
+
 
                <b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Ayo Winjije <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=payment.CashLeft%> RWF</i></h6></b>
 
@@ -404,7 +404,7 @@
 
 
               <div id="BTN1">
-            
+
                   <br>
                   <br>
                   <a href="/Logout"><button  style="background-color: rgb(0, 77, 77); display: block; "
@@ -414,7 +414,7 @@
                   <button  onclick="document.getElementById('AboutUs').style.display='block'" style="background-color: rgb(0, 77, 77); display: block; "
                     class="w3-center w3-button ">
                     <b>Abo turibo</b></button>
-                  
+
                   <br>
                    <button id="BTN6" onclick="ChangeToKash();" style="background-color: rgb(0, 77, 77); display: block; "
                     class="w3-center w3-button ">
@@ -534,9 +534,9 @@
                   })
                  </script>
 
-               
-    
-              
+
+
+
 
                 <div style="width: 325px;" class="w3-container w3-card w3-white w3-round w3-margin" ><br>
                   <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block' ;
@@ -609,9 +609,9 @@
                           method: 'GET',
                           mode: 'no-cors'
                    }
-                  
+
                      const shareData = {
-                     
+
                      title: 'Tipstalk',
                      text: 'Inkuru: ' + `<%=element.newsBody%>
 
@@ -649,7 +649,7 @@
                     </div>
                     </div>
                   </center>
-                  
+
                     <form action="/addLikes" id="likeForm<%=element.id%>" method="post">
                     <input style="display: none;" value="<%=element.UserName%>" name="identity" type="text"/>
                     <input style="display: none;" value="<%=element.RecordingId%>" name="Id" type="text"/>
@@ -699,14 +699,14 @@
                     },1000);
                     }
 
-                    
+
 
                     </script>
-                
+
 
                 </div>
 
-                
+
                 </div>
                 <% });%>
                   <%}%>
@@ -722,9 +722,9 @@
             <br>
 
           </div>
-      
+
           <div style="display: none;"  id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin">
-          
+
             <button id="Ohereza" onclick="document.getElementById('id11').style.display='block'
             window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id11'){
@@ -742,12 +742,12 @@
               Ohereza  views
             </button>
             <div>
-           
+
 
             <h3>Kanda gukora Copy Ukore Share Iyo Link</h3>
 
 
-          
+
              <ol>
               <%if (user) {
                 if (links.length>0) {
@@ -755,13 +755,7 @@
 
              <%if(links.length==1){%>
               <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="  
-              let content ={
-                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
-                text:' <%=links[0].Discription%>'
-              }
-              navigator.share(content);
-              " id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
+              <li onclick="alert('hell')" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
              <p>
               <%=links[0].Discription%>
             </p>
@@ -870,13 +864,13 @@
              </li>
             </div>
             <%}%>
-            
+
 
             <%}else{%>
               <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
               <h1>Nta links zari zaboneka</h1>
              </div>
-              
+
               <%}}%>
             </ol>
             </div>
@@ -986,7 +980,7 @@
               </div>
               <%}%>
                 <%}%>
-             
+
                   <div id="id07" class="w3-modal w3-padding">
 
 
@@ -1025,7 +1019,7 @@
         </div>
         <div id="AboutUs" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:80%;height: fit-content">
-           
+
 
 
 
@@ -1040,7 +1034,7 @@
 
     Iyi project kandi ifite ikindi gice cyo gusharinga links, amafoto n'ama videos kuri whatsapp, facebook n'izindi mbuga nkoranyambaga. Izo links iyo
     uzi sharinze hakagira umuntu uzikandaho ubona amafaranga ajya kuri account yawe. Nujya ahanditse "Korera cash" ugasanga harimo link ujye uyi sharinga
-    abazayikandaho uzahembwa. 
+    abazayikandaho uzahembwa.
 
     Amafoto na video byo ubishyira kuri status, hanyuma nyuma y'amasaha 24h umaze kubona views ugakora screenshoot ya views wagize ukayishyora (Upload) muri system.
     nabyo urabihemberwa.
@@ -1063,11 +1057,11 @@
           </p>
         <p>benirabok@gmail.com</p>
         <p>(+250) 783 987 223</p>
-        
+
         <p><button class="button"><a href="wa.me/+250783987223" style="text-decoration:none; color: white; ">Contact</a></button></p>
       </div>
     </div>
-  </div>  
+  </div>
   <div class="column w3-col m6 ">
     <div class="card">
       <center><img src="../static/image/muna.jpg" alt="MUNAZIRI Bienaime" style="width:40%; border-radius: 50%;"></center>
@@ -1075,12 +1069,12 @@
         <h2>MUNAZIRI Bienaime</h2>
         <p class="title">CO-CEO, Developer</p>
         <p>MUNAZIRI Bienaime ni CO-CEO wa Nebelu co.ltd akaba ari nawe wakoze<br>
-          Iyi system. Ni umu developer w'ama system, websites ziri resposive <br> 
-          
+          Iyi system. Ni umu developer w'ama system, websites ziri resposive <br>
+
           </p>
         <p>munaziriBNM@gmail.com</p>
         <p><button class="button"><a href="wa.me/+250790457824" style="text-decoration:none; color: white; ">Contact</a></button></p>
-   
+
       </div>
     </div>
  </div>
@@ -1168,7 +1162,7 @@
 
                     </div>
                   </div>
-           <%if (payment.CashLeft>0){%>       
+           <%if (payment.CashLeft>0){%>
         <div id="id03" class="w3-modal">
           <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
             <span
@@ -1227,14 +1221,14 @@
               class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
               <center><h2>amafaranga mwakoreye agomba kuba arihejuru ya 3000</h2></center>
          </div>
-         </div>  
+         </div>
 
           <%}%>
        <%}%>
 
         <!-- Footer -->
 
-         
+
         <button id="recordButton" style="font-size: 300%;" class="w3-card w3-circle w3-teal">
           <i class="fa-solid fa-microphone-lines"></i>
         </button>
@@ -1259,7 +1253,7 @@
                       ChangeToStories();
                       document.getElementById('id04').style.display='none';
                       document.getElementById('BTN4').style.display='block';
-                      
+
                  }
                   })
 
@@ -1269,18 +1263,18 @@
           <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
           </p>
         </button>
-       
-         
-          
-             
-          
-             
-  
-            
+
+
+
+
+
+
+
+
         <footer
           style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
           class="w3-card w3-container w3-theme-d3 ">
-               
+
           <button id="BTN4"  style="z-index: 2;margin-top: -4%;" onclick="document.getElementById('id03').style.display='block'
           window.addEventListener('popstate',function (){
                     if(window.location.href!==window.location.href+'id03'){
@@ -1295,7 +1289,7 @@
             const nextTitle1= 'id03';
             const nextState = { additionalInformation: 'id03' };
             window.history.pushState(nextState, nextTitle1, nextURL1);"
-          
+
             class="w3-card w3-circle w3-teal">
             <b>BIKUZA</b></button>
           <button id="BTN8" onclick="document.getElementById('id20').style.display='block';
@@ -1318,7 +1312,7 @@
           <button id="BTN2" class="w3-card w3-circle w3-animate-zoom">
             <b>TURIKUMVA</b>
             <b id="time67"></b>
-           
+
           <button id="BTN7" on class="w3-card w3-circle w3-animate-zoom">
             <b>Upload</b>
           </button>
@@ -1443,7 +1437,7 @@
     // { name: 'camera' }
     { name: 'microphone' }
     // { name: 'geolocation' }
-    // { name: 'notifications' } 
+    // { name: 'notifications' }
     // { name: 'midi', sysex: false }
     // { name: 'midi', sysex: true }
     // { name: 'push', userVisibleOnly: true }
@@ -1454,14 +1448,14 @@
   if (permissionStatus.state=="denied") {
     alert('Microphone ntabwo ifunguye. Duhe uruhushya rwo kuyikoresha')
     navigator.mediaDevices.getUserMedia({video: false, audio: true})
-  } 
+  }
 
 })
           function ChangeToKash() {
 
 
             document.getElementById('Itangazo').style.display = 'block'
-           
+
             document.getElementById('BTN4').style.display = 'block'
             document.getElementById('Ohereza').style.display = 'block'
             document.getElementById('BTN8').style.display = 'block'
