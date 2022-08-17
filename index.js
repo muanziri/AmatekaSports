@@ -112,7 +112,7 @@ app.get('/1/:Name',(req,res)=>{
       ClickableLink.find().then((links)=>{
         if(results1!= null){
           let NewClicks1= results1.clicks+1;
-          let newCash1= results1.CashLeft+5;
+          let newCash1= results1.CashLeft+3;
           paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
             paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
             res.redirect(links[0].link);
@@ -129,7 +129,7 @@ app.get('/2/:Name',(req,res)=>{
       ClickableLink.find().then((links)=>{
         if(results1!= null){
           let NewClicks1= results1.clicks+1;
-          let newCash1= results1.CashLeft+5;
+          let newCash1= results1.CashLeft+3;
           paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
             paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
             res.redirect(links[1].link);
@@ -146,7 +146,7 @@ app.get('/3/:Name',(req,res)=>{
       ClickableLink.find().then((links)=>{
         if(results1!= null){
           let NewClicks1= results1.clicks+1;
-          let newCash1= results1.CashLeft+5;
+          let newCash1= results1.CashLeft+3;
           paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
             paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
             res.redirect(links[2].link);
@@ -163,7 +163,7 @@ app.get('/4/:Name',(req,res)=>{
       ClickableLink.find().then((links)=>{
         if(results1!= null){
           let NewClicks1= results1.clicks+1;
-          let newCash1= results1.CashLeft+5;
+          let newCash1= results1.CashLeft+3;
           paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
             paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
             res.redirect(links[3].link);
