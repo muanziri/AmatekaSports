@@ -755,28 +755,26 @@
 
              <%if(links.length==1){%>
               <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick=" 
-                 let content00 ={
-                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
-                text:' <%=links[0].Discription%>'
-              }
-              navigator.share(content00);
-            " id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
-             <p>
-              <%=links[0].Discription%>
-            </p>
-             </li>
-             </div>
+                <li onclick="let content66 ={
+                  url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                  text:' <%=links[0].Discription%>'
+                }
+                navigator.share(content66);" id="link2"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
+               <p>
+                <%=links[0].Discription%>
+              </p>
+               </li>
+               </div>
              <%}else if(links.length==2){%>
            
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
               <li onclick="let content3 ={
                 url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
-                text:' <%=links[1].Discription%>'
+                text:' <%=links[0].Discription%>'
               }
-              navigator.share(content3);" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
+              navigator.share(content3);" id="link2"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
              <p>
-              <%=links[1].Discription%>
+              <%=links[0].Discription%>
             </p>
              </li>
              </div>
