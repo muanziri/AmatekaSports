@@ -587,7 +587,18 @@
                       </div>
 
                   </div>
-                  <button  style="width:90%" onclick="document.getElementById('id<%=element.id%>').style.display='block';startTime();
+                  <button  style="width:90%" onclick="document.getElementById('id<%=element.id%>').style.display='block';
+                   startN=30;
+                      dop=setInterval(()=>{
+                        startN= startN-1
+                      if(getComputedStyle(document.getElementById('id<%=element.id%>')).display=='block'){
+                        console.log(startN)
+                        if(startN==1){
+                          clearTimeout(dop);
+                          postReads();
+                        }
+                       }else{clearTimeout(dop);}
+                    },1000)
                     " class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
 
                   <div style=" width: 100%;">
@@ -685,19 +696,7 @@
                       function postReads() {
                       setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()
                     }
-                    function startTime() {
-                       startN=180;
-                      dop=setInterval(()=>{
-                        startN= startN-1
-                      if(getComputedStyle(document.getElementById('id<%=element.id%>')).display=='block'){
-                        console.log(startN)
-                        if(startN==1){
-                          clearTimeout(dop);
-                          postReads();
-                        }
-                       }else{clearTimeout(dop);}
-                    },1000);
-                    }
+                    
 
 
 
