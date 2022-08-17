@@ -175,7 +175,7 @@ app.get('/4/:Name',(req,res)=>{
 
 app.get('/Admin', (req, res) => {
       const user=req.user
-      if(user.Email=='munaziribnm@gmail.com'||user.Email=='Nebelucoltd@gmail.com'){
+      if(user.Email=='munaziribnm@gmail.com'||user.Email=='nebelucoltd@gmail.com'){
       paymentYear.find().then((usersYear)=>{
         paymentMonth.find().then((usersMonth)=>{
           paymentWeek.find().then((usersWeek)=>{

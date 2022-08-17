@@ -758,8 +758,10 @@
               <li onclick="  
               let content ={
                 url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
-                text:''
-              }" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
+                text:' <%=links[0].Discription%>'
+              }
+              navigator.share(content);
+              " id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
              <p>
               <%=links[0].Discription%>
             </p>
@@ -767,20 +769,22 @@
              </div>
              <%}else if(links.length==2){%>
               <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/1/<%=user.userName%>'+'                   '+'<%=links[0].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
+              <li onclick=" let content2 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[0].Discription%>'
+              }
+              navigator.share(content2);" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
              <p>
               <%=links[0].Discription%>
             </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/2/<%=user.userName%>'+'                   '+'<%=links[1].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/2/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
+              <li onclick="let content3 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[1].Discription%>'
+              }
+              navigator.share(content3);" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
              <p>
               <%=links[1].Discription%>
             </p>
@@ -788,30 +792,33 @@
              </div>
              <%}else if(links.length==3){%>
               <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/1/<%=user.userName%>'+'                   '+'<%=links[0].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
+              <li onclick="let content4 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[0].Discription%>'
+              }
+              navigator.share(content4);" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
              <p>
               <%=links[0].Discription%>
             </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/2/<%=user.userName%>'+'                   '+'<%=links[1].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/2/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
+              <li onclick="let content5 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[1].Discription%>'
+              }
+              navigator.share(content5);" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
              <p>
               <%=links[1].Discription%>
             </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/3/<%=user.userName%>'+'                   '+'<%=links[2].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/3/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link3"><b>https://tipstalk.herokuapp.com/3/<%=user.userName%></b>
+              <li onclick="let content6 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[2].Discription%>'
+              }
+              navigator.share(content6);" id="link3"><b>https://tipstalk.herokuapp.com/3/<%=user.userName%></b>
              <p>
               <%=links[2].Discription%>
             </p>
@@ -819,40 +826,44 @@
             </div>
             <%}else if(links.length==4){%>
               <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/1/<%=user.userName%>'+'                   '+'<%=links[0].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/1/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
+              <li onclick="let content7 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[0].Discription%>'
+              }
+              navigator.share(content7);"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
              <p>
               <%=links[0].Discription%>
             </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/2/<%=user.userName%>'+'                   '+'<%=links[1].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/2/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
+              <li onclick="let content8 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[1].Discription%>'
+              }
+              navigator.share(content8);" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
              <p>
               <%=links[1].Discription%>
             </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/3/<%=user.userName%>'+'                   '+'<%=links[2].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/3/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link3"><b>https://tipstalk.herokuapp.com/3/<%=user.userName%></b>
+              <li onclick="let content9 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[2].Discription%>'
+              }
+              navigator.share(content9);" id="link3"><b>https://tipstalk.herokuapp.com/3/<%=user.userName%></b>
              <p>
               <%=links[2].Discription%>
             </p>
              </li>
             </div>
             <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="function copy() {
-             navigator.clipboard.writeText('https://tipstalk.herokuapp.com/4/<%=user.userName%>'+'                   '+'<%=links[3].Discription%>');
-             alert('link yawe'+'    '+'https://tipstalk.herokuapp.com/4/<%=user.userName%>'+'   '+'yabaye copied');
-             } copy()" id="link4"><b>https://tipstalk.herokuapp.com/4/<%=user.userName%></b>
+              <li onclick="let content10 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[3].Discription%>'
+              }
+              navigator.share(content510);" id="link4"><b>https://tipstalk.herokuapp.com/4/<%=user.userName%></b>
              <p>
               <%=links[3].Discription%>
             </p>
