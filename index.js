@@ -358,7 +358,7 @@ app.post('/approveMonth',(req,res)=>{
   let filter={id:approveId};
    paymentMonth.findById(approveId).then((results)=>{
     let Views=results.clicks+parseInt(views)
-    let newMoney=Views*5
+    let newMoney=Views*2
     paymentMonth.updateOne(filter,{clicks:Views},(err,doc)=>{
       if(err)throw err
       console.log('done')
