@@ -592,10 +592,11 @@
                       dop=setInterval(()=>{
                         startN= startN-1
                       if(getComputedStyle(document.getElementById('id<%=element.id%>')).display=='block'){
+                       
                         console.log(startN)
                         if(startN==1){
                           clearTimeout(dop);
-                          postReads();
+                          setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()
                         }
                        }else{clearTimeout(dop);}
                     },1000)
@@ -693,9 +694,7 @@
                }, 100);
                    }
                    startio();
-                      function postReads() {
-                      setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()
-                    }
+                      
                     
 
 
