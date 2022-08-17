@@ -487,7 +487,7 @@
 
 
                     <p>
-                      <button class="w3-button w3-section w3-teal w3-ripple">kora comment </button></p>
+                      <button class="w3-button w3-section w3-teal w3-ripple">kora comment iyi nkuru:<br><%=element.newsBody%></button></p>
                     </form></center>
 
                   <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-height: 500px;overflow-y: scroll;">
@@ -758,7 +758,9 @@
                   text:' <%=links[0].Discription%>'
                 }
                 navigator.share(content66);" id="link2"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
-               
+               <p>
+                <%=links[0].Discription%>
+              </p>
                </li>
                </div>
              <%}else if(links.length==2){%>
@@ -769,21 +771,21 @@
                   text:' <%=links[0].Discription%>'
                 }
                 navigator.share(content67);" id="link2"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
-               <div>
+               <p>
                 <%=links[0].Discription%>
-               </div>
+              </p>
                </li>
                </div>
              
                <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-                <li onclick="
-                navigator.share({
+                <li onclick="let content68 ={
                   url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
                   text:' <%=links[1].Discription%>'
-                });" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
-               <div>
-                <%=links[1].Discription%>
-               </div>
+                }
+                navigator.share(content68);" id="link2"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
+               <p>
+                <%=links[0].Discription%>
+              </p>
                </li>
                </div>
              <%}else if(links.length==3){%>
@@ -793,9 +795,9 @@
                 text:' <%=links[0].Discription%>'
               }
               navigator.share(content4);" id="link1"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
-             <div>
+             <p>
               <%=links[0].Discription%>
-             </div>
+            </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
@@ -804,9 +806,9 @@
                 text:' <%=links[1].Discription%>'
               }
               navigator.share(content5);" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
-             <div>
+             <p>
               <%=links[1].Discription%>
-             </div>
+            </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
@@ -815,9 +817,9 @@
                 text:' <%=links[2].Discription%>'
               }
               navigator.share(content6);" id="link3"><b>https://tipstalk.herokuapp.com/3/<%=user.userName%></b>
-             <div>
+             <p>
               <%=links[2].Discription%>
-             </div>
+            </p>
              </li>
             </div>
             <%}else if(links.length==4){%>
@@ -827,9 +829,9 @@
                 text:' <%=links[0].Discription%>'
               }
               navigator.share(content7);"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
-             <div>
+             <p>
               <%=links[0].Discription%>
-             </div>
+            </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
@@ -838,9 +840,9 @@
                 text:' <%=links[1].Discription%>'
               }
               navigator.share(content8);" id="link2"><b>https://tipstalk.herokuapp.com/2/<%=user.userName%></b>
-             <div>
+             <p>
               <%=links[1].Discription%>
-             </div>
+            </p>
              </li>
              </div>
              <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
@@ -849,9 +851,9 @@
                 text:' <%=links[2].Discription%>'
               }
               navigator.share(content9);" id="link3"><b>https://tipstalk.herokuapp.com/3/<%=user.userName%></b>
-             <div>
+             <p>
               <%=links[2].Discription%>
-             </div>
+            </p>
              </li>
             </div>
             <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
@@ -860,9 +862,9 @@
                 text:' <%=links[3].Discription%>'
               }
               navigator.share(content510);" id="link4"><b>https://tipstalk.herokuapp.com/4/<%=user.userName%></b>
-             <div>
+             <p>
               <%=links[3].Discription%>
-             </div>
+            </p>
              </li>
             </div>
             <%}%>
