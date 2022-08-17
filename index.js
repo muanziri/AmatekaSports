@@ -116,6 +116,9 @@ app.get('/1/:Name',(req,res)=>{
           paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
             paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
             res.redirect(links[0].link);
+            ClickableLink.updateOne({userName:Name},{clicks:NewClicks1},function(){
+
+            })
           }) })
         }
       })
@@ -133,6 +136,9 @@ app.get('/2/:Name',(req,res)=>{
           paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
             paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
             res.redirect(links[1].link);
+            ClickableLink.updateOne({userName:Name},{clicks:NewClicks1},function(){
+
+            })
           }) })
         }
       })
@@ -150,6 +156,9 @@ app.get('/3/:Name',(req,res)=>{
           paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
             paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
             res.redirect(links[2].link);
+            ClickableLink.updateOne({userName:Name},{clicks:NewClicks1},function(){
+
+            })
           }) })
         }
       })
@@ -167,6 +176,9 @@ app.get('/4/:Name',(req,res)=>{
           paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
             paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
             res.redirect(links[3].link);
+            ClickableLink.updateOne({userName:Name},{clicks:NewClicks1},function(){
+
+            })
           }) })
         }
       })
@@ -251,7 +263,7 @@ app.get('/Advertiser',(req,res)=>{
 //   main(message);
 //})
 app.post('/addLikes', (req, res) => {
-  let userID = req.user.id;
+  let userID = req.user.userName;
   let d=req.body.identity;
   
   let idF=req.body.Id;
