@@ -104,7 +104,7 @@ app.get('/Logout', function(req, res){
     res.redirect('/');
   });
 });
-app.get('/1/:Name',(req,res)=>{
+app.get('/0/:Name',(req,res)=>{
   let Name=req.params.Name
   paymentWeek.findOne({userName:Name}).then((results)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
@@ -124,7 +124,7 @@ app.get('/1/:Name',(req,res)=>{
       })
   })})})
 })
-app.get('/2/:Name',(req,res)=>{
+app.get('/1/:Name',(req,res)=>{
   let Name=req.params.Name
   paymentWeek.findOne({userName:Name}).then((results)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
@@ -144,7 +144,7 @@ app.get('/2/:Name',(req,res)=>{
       })
   })})})
 })
-app.get('/3/:Name',(req,res)=>{
+app.get('/2/:Name',(req,res)=>{
   let Name=req.params.Name
   paymentWeek.findOne({userName:Name}).then((results)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
@@ -164,7 +164,7 @@ app.get('/3/:Name',(req,res)=>{
       })
   })})})
 })
-app.get('/4/:Name',(req,res)=>{
+app.get('/3/:Name',(req,res)=>{
   let Name=req.params.Name
   paymentWeek.findOne({userName:Name}).then((results)=>{
     paymentMonth.findOne({userName:Name}).then((results1)=>{
