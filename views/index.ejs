@@ -758,11 +758,11 @@
                 <%=links[0].Discription%>
               </p>
                </li>
-               <button onclick="let content66 ={
+               <button onclick="
+              navigator.share({
                 url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
                 text:' <%=links[0].Discription%>'
-              }
-              navigator.share(content66);" class="w3-button w3-card w3-round w3-margin w3-teal">share</button>
+              });" class="w3-button w3-card w3-round w3-margin w3-teal">share</button>
                </div>
              <%}else if(links.length==2){%>
            
