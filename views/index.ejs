@@ -753,15 +753,16 @@
 
              <%if(links.length==1){%>
               <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-                <li onclick="let content66 ={
-                  url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
-                  text:' <%=links[0].Discription%>'
-                }
-                navigator.share(content66);" id="link2"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
+                <li  id="link2"><b>https://tipstalk.herokuapp.com/1/<%=user.userName%></b>
                <p>
                 <%=links[0].Discription%>
               </p>
                </li>
+               <button onclick="let content66 ={
+                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
+                text:' <%=links[0].Discription%>'
+              }
+              navigator.share(content66);" class="w3-button w3-card w3-round w3-margin w3-teal">share</button>
                </div>
              <%}else if(links.length==2){%>
            
