@@ -394,7 +394,7 @@ app.post('/approveMonth',(req,res)=>{
  app.post('/UpdatePhoneNumber',(req,res)=>{
   let user=req.user.userName;
   let filter={userName:user}
-  let newPhone='+25'+req.body.UpdatePhoneNumber
+  let newPhone='+25'+req.body.phoneNum
   UserModel.updateOne(filter,{phoneNumber:newPhone},(err,doc)=>{
     if(err)throw err
    // console.log('done')
@@ -816,7 +816,7 @@ app.post('/flutterWaveWithDraw', (req, res) => {
     console.log(kid)
     new bikuza({
           userName:req.body.idl,
-          Phone:req.body.phoneN,
+          Phone:req.user.phoneNumber,
           Ammount:req.body.Amount
         })
       paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
