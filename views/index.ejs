@@ -1,1391 +1,917 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Tipstalk.online - Welcome</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://kit.fontawesome.com/d4c3257288.js" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="icon" type="image/ico" href="../static/image/OurBestLogo.ico">
-  <script src="https://cdn.jsdelivr.net/npm/screw-filereader@1.4.3/index.min.js"></script>
-
-  <style>
-    html,
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      font-family: "Open Sans", sans-serif
-    }
-
-    #BTN1 {
-      position: inherit;
-      bottom: 5%;
-      left: 1%
-    }
-
-    #BTN2 {
-
-      margin-top: -5%;
-      margin-left: 45%;
-      color: white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display: none;
-      animation-name: example;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-
-    }
-    audio::-webkit-media-controls-play-button,
-    audio::-webkit-media-controls-panel {
-      background-color: teal;
-
-    }
-    #BTN22 {
-
-     margin-top: -5%;
-     margin-left: 45%;
-     color: white;
-     width: 100px;
-     height: 100px;
-     z-index: 1;
-     border: none;
-     display: none;
-
-     }
-
-    #BTN7 {
-
-      margin-top: -5%;
-      margin-left: 45%;
-      color: white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display: none;
-      animation-name: example;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-
-    }
-
-    #recordButton {
-      position: fixed;
-      bottom: 12.5%;
-      left: 45%;
-      width: 100px;
-      height: 100px;
-      z-index: 2;
-      border: none;
-      display: display
-    }
-
-    #BTN4 {
-      position: absolute;
-      left: 3%;
-      margin-top: -4%;
-
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display: none;
-
-    }
-
-    #BTN8 {
-      position: absolute;
-      right: 3%;
-      margin-top: -4%;
-
-      color: white;
-      width: 100px;
-      height: 100px;
-      z-index: 1;
-      border: none;
-      display: none;
-
-    }
-
-
-    #MENU {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 20%;
-      height: 100%;
-      display: none;
-      z-index: 2;
-    }
-
-    centering body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    @keyframes example {
-      0% {
-        background-color: rgb(1, 54, 54)
-      }
-
-      20% {
-        background-color: teal;
-      }
-
-      40% {
-        background-color: rgb(1, 54, 54);
-      }
-
-      60% {
-        background-color: teal;
-      }
-
-      80% {
-        background-color: rgb(1, 54, 54);
-      }
-
-      100% {
-        background-color: teal;
-      }
-    }
-
-    @media screen and (max-width:600px) {
-      #MENU {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 40%;
-        height: 100%;
-        display: none;
-        z-index: 2;
-      }
-
-      #BTN8 {
-        position: absolute;
-        right: 2%;
-        margin-top: -15%;
-
-        color: white;
-        width: 100px;
-        height: 100px;
-        z-index: 1;
-        border: none;
-        display: none;
-      }
-
-      #BTN4 {
-        position: absolute;
-        right: 2%;
-        margin-top: -4%;
-
-        width: 100px;
-        height: 100px;
-        z-index: 1;
-        border: none;
-        display: none;
-      }
-
-      #recordButton {
-        position: fixed;
-        bottom: 13%;
-        left: 36.5%;
-      }
-
-      #BTN2,
-      #BTN7 {
-        margin-top: -10%;
-        margin-left: 37.5%;
-      }
-
-      #BTN1 {
-        position: inherit;
-        left: 0;
-      }
-
-    }
-  </style>
-   <style>
-
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
-
-    .column {
-      float: left;
-      width: 33.3%;
-      margin-bottom: 16px;
-      padding: 0 8px;
-    }
-
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      margin: 8px;
-    }
-
-    .about-section {
-      padding: 50px;
-      text-align: center;
-      background-color: teal;
-      color: white;
-    }
-
-    .container {
-      padding: 0 16px;
-    }
-
-    .container::after, .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-
-    .title {
-      color: grey;
-    }
-
-    .button {
-      border: none;
-      outline: 0;
-      display: inline-block;
-      padding: 8px;
-      color: white;
-      background-color: teal;
-      text-align: center;
-      cursor:pointer;
-      width: 100%;
-    }
-
-    .button:hover {
-      background-color: #555;
-    }
-
-    @media screen and (max-width: 650px) {
-      .column {
-        width: 100%;
-        display: block;
-      }
-    }
-             </style>
-
-</head>
-
-<body class="w3-theme-l5">
-
-
-
-  <!-- Page Container -->
-  <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px; z-index: 2;">
-    <!-- The Grid -->
-    <% if(messages.message1) {%>
-      <div id="message1Id" style="width:50%;position:absolute;right:2%; top:0%;z-index:2;"
-        class="w3-panel w3-teal w3-card w3-animate-right ">
-        <span onclick="document.getElementById('message1Id').style.display='none'; "
-          class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-        <p>
-          <%=messages.message1%>
-        </p>
-      </div>
-      <% }%>
-        <div class="w3-row">
-          <!-- Left Column -->
-          <div id="MENU" class="w3-card w3-col m3 w3-teal w3-animate-left">
-            <!-- Profile -->
-            <% if(user){%>
-              <span
-                onclick="document.getElementById('MENU').style.display='none';document.getElementById('MENUBTN').style.display='block'; document.getElementById('BTN4').style.display='block';window.history.back()"
-                class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-              <img onclick="document.getElementById('ChangeProfilePic').style.display='block'" src="<%=user.ProfilePhotoUrl%>" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
-              <div id="ChangeProfilePic" class="w3-modal w3-padding">
-
-
-                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                 <br>
-                 <span
-                onclick="document.getElementById('ChangeProfilePic').style.display='none';"
-                class="w3-button  w3-xlarge  w3-display-topright" >×</span>
-                <center><h1 style="color: teal;">Hindura Profile pic</h1></center>
-
-                 <center><div id="preview"></div>
-                  <h2>Hindura Profile Pic</h2>
-                <form onsubmit="setTimeout(()=>{ window.stop()},10000);" action="/ChangeProfilePic" method="post" enctype="multipart/form-data">
-                  <input type="file" id="fileInput" name="image" accept="image/*" />
-                  <br>
-                  <br>
-                  <button  style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>Kanda hano Gukomeza</b></button>
-                </form></center>
-                <script>
-                  function FileListItem(a) {
-                  a = [].slice.call(Array.isArray(a) ? a : arguments)
-                  for (var c, b = c = a.length, d = !0; b-- && d;) d = a[b] instanceof File
-                  if (!d) throw new TypeError("expected argument to FileList is File or array of File objects")
-                  for (b = (new ClipboardEvent("")).clipboardData || new DataTransfer; c--;) b.items.add(a[c])
-                  return b.files
-                }
-
-                fileInput.onchange = async function change() {
-                  const maxWidth = 320
-                  const maxHeight = 240
-                  const result = []
-
-                  for (const file of this.files) {
-                    const canvas = document.createElement('canvas')
-                    const ctx = canvas.getContext('2d')
-                    const img = await file.image()
-
-                    // native alternetive way (don't take care of exif rotation)
-                    // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap
-                    // const img = await createImageBitmap(file)
-
-                    // calculate new size
-                    const ratio = Math.min(maxWidth / img.width, maxHeight / img.height)
-                    const width = img.width * ratio -  80
-                    const height = img.height * ratio -  80
-
-                    // resize the canvas to the new dimensions
-                    canvas.width = width
-                    canvas.height = height
-
-                    // scale & draw the image onto the canvas
-                    ctx.drawImage(img, 0, 0, width, height)
-
-                    // just to preview
-                    document.getElementById('preview').appendChild(canvas)
-
-                    // Get the binary (aka blob)
-                    const blob = await new Promise(rs => canvas.toBlob(rs, 1))
-                    const resizedFile = new File([blob], file.name, file)
-                    result.push(resizedFile)
-                  }
-
-                  const fileList = new FileListItem(result)
-
-                  // temporary remove event listener since
-                  // assigning a new filelist to the input
-                  // will trigger a new change event...
-                  fileInput.onchange = null
-                  fileInput.files = fileList
-                  fileInput.onchange = change
-                }
-                </script>
-                </div>
-              </div>
-
-
-              <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Story Zawe <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.Recordings.length%></i></h6></b></center>
-              <center> <b> <h6   style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zasomwe <i style="background-color: white; color: teal;position: absolute;border-radius: 5px;padding-left: 2px;padding-right: 2px;right:2px;"><%
-              let sum;
-              if (stories.length>0){
-
-                stories.forEach(element=> {
-                  sum =+ element.views
-                })}%><%=sum%></i></h6></b></center>
-             <center><b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Zakunzwe <i style="background-color: white;color:teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=user.likes%></i></h6></b></center>
-
-
-
-               <b>  <h6 style="background-color: rgb(1, 64, 64);color:aliceblue;" class=" w3-card  w3-round w3-margin w3-margin">Ayo Winjije <i style="background-color: white;color: teal; position: absolute;border-radius: 5px; padding-left: 2px;padding-right: 2px;right:2px;"><%=payment.CashLeft%> RWF</i></h6></b>
-
-
-
-
-
-              <div id="BTN1">
-
-                  <br>
-                  <br>
-                  <a href="/Logout"><button  style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>LOG OUT</b></button>
-                  <br></a>
-                  <button  onclick="document.getElementById('AboutUs').style.display='block'" style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>Abo turibo</b></button>
-
-                  <br>
-                   <button id="BTN6" onclick="ChangeToKash();" style="background-color: rgb(0, 77, 77); display: block; "
-                    class="w3-center w3-button ">
-                    <b>KORERA CASH</b>
-                  </button>
-
-                <button onclick="ChangeToStories()" id="BTN5" style="background-color: rgb(0, 77, 77); display:none"
-                  class="w3-center w3-button ">
-                  <b>Umva Stories</b>
-                </button>
-
-
-              </div>
-
-
-
-          </div>
-
-
-
-
-          <% } %>
-            <!-- End Left Column -->
-        </div>
-
-        <!-- Middle Column -->
-        <div style="width:100%;" class="w3-col m7">
-          <script>
-            let inter=null;
-            let dop=null;
-            let startN=null;
-          </script>
-          <div style="display: flex;flex-direction:row;flex-wrap: wrap;"  id="stories">
-
-            <%if (stories.length>0){%>
-
-              <%stories.reverse().forEach(element=> {%>
-                <%
-         if(user){
-         if (messages.VoteAuth && messages.userId){%>
-          <div  id="oop<%=messages.userId%>"    class="w3-modal">
-          <div  class="w3-modal-content w3-card-4 w3-animate-zoom" >
-            <span
-              onclick="document.getElementById('oop<%=messages.userId%>').style.display='none';"
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-              <center>
-               <h3>kora confirm ya nimero Wishyure Na MTN</h3>
-               <iframe style="width: 50%;height:70%;" src="<%=messages.VoteAuth%>" frameborder="0"></iframe>
-               <br>
-              <a href="/Votting_CallBack/<%=element.userId%>"><button  class="w3-card w3-button  w3-teal">Kanda hano kwemeza ijwi ryawe</button></a>
-            </center>
-
-            </div>
-            </div>
-            <script>
-              document.getElementById('oop<%=messages.userId%>').style.display='block'
-              </script>
-         <%}}%>
-                <div id="id303<%=element.id%>" class="w3-modal">
-                  <span onclick="document.getElementById('id303<%=element.id%>').style.display='none';window.history.back()"
-                    class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-                  <center><form method="post" action="/addComments" style="width: 60%;" class="w3-container w3-white w3-card-4">
-                      <h2>kora comment</h2>
-                    <p>
-                    <textarea class="w3-input" type="text" name="comment" style="width:90%" required></textarea>
-                    <label>comment</label></p>
-                    <input value="<%=element.UserName%>" name="UserName" style="display: none;" type="text">
-                    <input value="<%=element.UserProfile%>" name="UserProfile" style="display: none;" type="text">
-                    <input value="<%=element.id%>" name="RecordingId" style="display: none;" type="text">
-
-
-                    <p>
-                      <button class="w3-button w3-section w3-teal w3-ripple">kora comment iyi nkuru:<br><%=element.newsBody%></button></p>
-                    </form></center>
-
-                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; max-height: 500px;overflow-y: scroll;">
-                    <% if(comments.length>0) {
-                      let co=comments
-
-                          function filterCom(com) {
-
-                            return com.RecorderId == element.id;
-                          }
-
-                         let pl= co.filter(filterCom)
-
-                         if (pl<0){%>
-
-
-                          <%}else{pl.forEach(elementa => {%>
-
-                    <div class="w3-row w3-margin">
-
-                      <div class="w3-third">
-                        <img src="<%=elementa.userProfile%>"  class="w3-left w3-circle w3-margin-right" >
-                      </div>
-                      <div class="w3-twothird w3-container">
-                        <h2><%=elementa.userName%></h2>
-                        <p>
-                          <%=elementa.Comments%>
-                      </p>
-                      </div>
-
-                      </div>
-                      <%  })}} %>
-                  </div>
-                  </div>
-                 <script>
-                  window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+"id0222"){
-
-                   document.getElementById("id0222<%=element.UserName%>").style.display='none';
-                   ChangeToKash()
-                   document.getElementById('id04').style.display='none';
-
-                 }
-                  })
-                 </script>
-
-
-
-
-
-                <div style="width: 325px;" class="w3-container w3-card w3-white w3-round w3-margin" ><br>
-                  <img onclick="document.getElementById('id0222<%=element.UserName%>').style.display='block' ;
-                  let ul=window.location.href;
-                  const netURL = `id0222`;
-                  const netTitle = '&{url}id0222<%=element.UserName%>';
-                   const netState = { additionalInformation: 'id0222<%=element.UserName%>' };
-                     window.history.pushState(netState, netTitle, netURL);
-                  "
-                  src="<%=element.UserProfile%>" alt="Profile" class="w3-left w3-circle w3-margin-right w3-cursor"
-                    style="width:60px;cursor: pointer;">
-
-                  <span id="demo<%=element.Date%>" class="w3-right w3-opacity"></span>
-                  <script>
-
-                      if(new Date().getMonth()!==new Date("<%=element.Date%>").getMonth()){
-                         document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getMonth()-new Date("<%=element.Date%>").getMonth()+" months ago";
-                      }else if(new Date().getDate()!==new Date("<%=element.Date%>").getDate()){
-                        document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getDate()-new Date("<%=element.Date%>").getDate()+" days ago";
-                      }else if(new Date().getHours()!==new Date("<%=element.Date%>").getHours()){
-                       document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getHours()-new Date("<%=element.Date%>").getHours()+" hours ago";
-                      }else if(new Date().getMinutes() !==new Date("<%=element.Date%>").getMinutes()){
-                        document.getElementById("demo<%=element.Date%>").innerHTML = new Date().getMinutes()-new Date("<%=element.Date%>").getMinutes()+" minutes ago";
-                      }
-                      </script>
-                  <h4>
-                    <%=element.UserName%>
-                  </h4><br>
-                  <hr class="w3-clear">
-                  <form id="viewsForm<%=element.RecordingId%>" style="display:none" method="post" action="/addViews">
-                    <input type="text" value="<%=element.UserName%>" name="audioTitleViews2"/>
-                    <input type="text" value="<%=element.RecordingId%>" name="audioTitleViews"/>
-                  </form>
-
-
-
-                  <div style="display: block;" class="audio_3g">
-                    <audio  id="odi<%=element.RecordingId%>" src="https://drive.google.com/uc?export=download&id=<%=element.RecordingId%>" controls></audio>
-                    <p id="metaa<%=element.RecordingId%>"></p>
-                    <div style="height: 150px;width:90%;background-color:aquamarine; text-overflow: ellipsis;
-                                     white-space: wrap;
-                         overflow: hidden; ">
-
-
-
-                    <center><h3><b><%=element.newsBody%></b></h3></center>
-                      <p><%=element.Title%></p>
-                      </div>
-
-                  </div>
-                  <button  style="width:90%" onclick="document.getElementById('id<%=element.id%>').style.display='block';
-                   startN=30;
-                      dop=setInterval(()=>{
-                        startN= startN-1
-                      if(getComputedStyle(document.getElementById('id<%=element.id%>')).display=='block'){
-                       
-                        console.log(startN)
-                        if(startN==1){
-                          clearTimeout(dop);
-                          setTimeout(()=>{ window.stop()},10000);document.getElementById('viewsForm<%=element.RecordingId%>').submit()
-                        }
-                       }else{clearTimeout(dop);}
-                    },1000)
-                    " class="w3-button w3-theme-d1 w3-margin-bottom">Soma inkuru yose</button>
-
-                  <div style=" width: 100%;">
-                    <button
-                      onclick=" setTimeout(()=>{ window.stop()},10000);let x='<%=element.likes.length+1%>'; document.getElementById('<%=element.id%>').innerHTML=x; document.getElementById('likeForm<%=element.id%>').submit();"
-                      type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like <i
-                        id="<%=element.id%>">
-                        <%=element.likes.length%>
-                      </i></button>
-                      <button
-                      onclick="document.getElementById('id303<%=element.id%>').style.display='block'"
-                      type="p" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa-solid fa-comment-dots"></i>  comments</button>
-                    <div type="p" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-headphones"></i>
-                      Yasomwe <%=element.views%>
-                    </div>
-                    <button onclick="
-                     async function shareImage() {
-                      const options = {
-                          method: 'GET',
-                          mode: 'no-cors'
-                   }
-
-                     const shareData = {
-
-                     title: 'Tipstalk',
-                     text: 'Inkuru: ' + `<%=element.newsBody%>
-
-                    <%=element.Title.slice(0,500)%> (...Irakomeza)
-                    sura tipstalk.herokuapp.com  usome inkuru yose
-
-                    yanditswe na  <%=element.UserName%>`,
-                     };
-                   navigator.share(shareData);
-                 };shareImage()" type="p" class="w3-button w3-theme-d2 w3-margin-bottom">
-                      share
-                    </button>
-                    <div id="yitore<%=element.id%>" class="w3-modal">
-                      <center>
-                    <div style="padding:3px;" class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <div class="w3-section">
-                        <form action="/Votting" method="post">
-                    <b>
-                      <lable>Phone yawe</lable>
-                    </b>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                       placeholder="078(MTN GUSA)-----" />
-                    <input class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" value="<%=element.id%>" name="userValue"
-                       />
-                    <br>
-                    <b>
-                      <lable>Amajwi</lable>
-                    </b>
-                    <input class="w3-input w3-border w3-margin-bottom" value="1" type="Number" name="Vote"
-                         placeholder="Numbers only" />
-                    <br>
-                    <button  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda Gutora</button>
-                  </form>
-
-                    </div>
-                    </div>
-                  </center>
-
-                    <form action="/addLikes" id="likeForm<%=element.id%>" method="post">
-                    <input style="display: none;" value="<%=element.UserName%>" name="identity" type="text"/>
-                    <input style="display: none;" value="<%=element.RecordingId%>" name="Id" type="text"/>
-                    </form>
-                  </div>
-                  <div id="id<%=element.id%>" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="document.getElementById('id<%=element.id%>').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright"
-                  >×</span>
-                  <center><h1><b><%=element.newsBody%></b></h1></center>
-                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element.Title.slice(0,1000)%></h4></center>
-                   <center><div style="width: 90%; height: 30vw; background-color: black;color: rgb(255, 255, 255);"><h3>Kwamaza</h3></div></center>
-                   <center><h4 style="padding-left: 3px;padding-right: 3px;"><%=element.Title.slice(1000)%></h4></center>
-                   <center><h4 style="padding-left: 3px;padding-right: 3px;">yanditswe na <%=element.UserName%></h4></center>
-                  </div>
-                  </div>
-
-                  <br>
-                  <script>
-                   function startio(params) {
-                    inter=setInterval(() => {
-
-          if(document.getElementById('odi<%=element.RecordingId%>').duration){
-        document.getElementById('metaa<%=element.RecordingId%>').innerText='loaded'
-            clearInterval(inter)
-              }else{
-              document.getElementById('metaa<%=element.RecordingId%>').innerText='loading...'
-
-               }
-               }, 100);
-                   }
-                   startio();
-                      
-                    
-
-
-
-                    </script>
-
-
-                </div>
-
-
-                </div>
-                <% });%>
-                  <%}%>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-          </div>
-
-          <div style="display: none;"  id="KORERAKASH" class="w3-container w3-card w3-white w3-round w3-margin">
-
-            <button id="Ohereza" onclick="document.getElementById('id11').style.display='block'
-            window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+'id11'){
-
-                      document.getElementById('id11').style.display='none';
-                      ChangeToKash();
-                      document.getElementById('id04').style.display='none';
-                  }})
-            let url11=window.location.href;
-            const nextURL11 = `id11`;
-            const nextTitle11 = 'id11';
-            const nextState11 = { additionalInformation: 'id11' };
-            window.history.pushState(nextState, nextTitle, nextURL);
-            " style="position:absolute;top:0%;right:0%;display: block;" class="w3-button w3-card w3-round w3-margin w3-teal">
-              Ohereza  views
-            </button>
-            <div>
-
-
-            <h3>Kanda gukora Copy Ukore Share Iyo Link</h3>
-
-
-
-             <ol>
-              <%if (user) {
-                if (links.length>0) {
-                %>
-                <%links.forEach((element,index) => {%>
-                  
-                  <div style="cursor:pointer;word-wrap: break-word; height: fit-content;" class="w3-card w3-round w3-margin w3-teal">
-              <li onclick="
-              navigator.share({
-                url:'https://tipstalk.herokuapp.com/1/<%=user.userName%>',
-                text:' <%=element.Discription%>'
-              });" id="link4"><b>https://tipstalk.herokuapp.com/<%=index%>/<%=user.userName%></b>
-             <p>
-              <%=element.Discription%>
-            </p>
-             </li>
-            </div>
-            
-               <%});%>
- 
-
-
-            <%}else{%>
-              <div style="cursor:pointer" class="w3-card w3-round w3-margin w3-teal">
-              <h1>Nta links zari zaboneka</h1>
-             </div>
-
-              <%}}%>
-            </ol>
-            </div>
-            </div>
-            <center> <div id="Itangazo" style="display: none;" class="w3-card w3-round w3-margin w3-teal w3-animate">
-            <p><b> Kugirango clicks ziyongere Mukoreshe VPN,Mushobora gukoresha </b>
-              <br>
-              <a style="color: white;text-decoration: none;" href="https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US">https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US </a>
-              <br>
-              <b> cyangwa </b>
-             <br>
-             <a style="color: white;text-decoration: none;" href="https://play.google.com/store/apps/details?id=com.evozi.injector&hl=en&gl=US"> https://m.apkpure.com/http-injector-ssh-proxy-v2ray-vpn/com.evozi.injector </a>
-              </p>
-          </div></center>
-
-
-            <div id="id02" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="ChangeToStories()" class="w3-button w3-xlarge w3-transparent w3-display-topright"
-                  >×</span>
-                <center>
-                  <h5 style="color:rgb(0, 68, 68)"><b>Shyiramo nimero, uhitamo package</b></h5>
-                </center>
-                <center>
-                  <form method="post" action="/flutterWaveSubWeek"
-                    onsubmit="document.getElementById('id09').style.display='block';document.getElementById('id02').style.display='none'
-                    window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+'id09'){
-
-                      ChangeToStories();
-                 }
-                  })
-            let url4=window.location.href;
-            const nextURL4 = `id06`;
-            const nextTitle4= 'id06';
-            const nextStat4 = { additionalInformation: 'id06' };
-            window.history.pushState(nextURL4, nextTitle4, nextStat4);
-                    "
-                    id="formPayment" class="w3-container w3-margin">
-                    <div class="w3-section">
-                      <b>
-                        <lable>Phone yawe</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                        placeholder="078(MTN GUSA)-----" />
-                      <br>
-
-                      <b><label>hitamo package wishyura</label></b>
-                      <select onchange="myFunction(this.value)" id="select" class="w3-input w3-teal"
-                        name="package" >
-                        <option value="500">500 RWF kucyumweru</option>
-                        <option value="1000">1000 RWF kukwezi</option>
-                        <option value="10000">10000 RWF Kumwaka</option>
-                      </select>
-                    </div>
-
-                    <button class="w3-button w3-block w3-teal w3-section w3-padding">ISHYURA</button>
-                  </form>
-                </center>
-
-              </div>
-            </div>
-            <div id="id11" class="w3-modal">
-              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                <span onclick="document.getElementById('id11').style.display='none';window.history.back()"
-                  class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-                <center>
-                  <h5 style="color:rgb(0, 68, 68)"><b>Uzuzamo Views wagize na screenshot</b></h5>
-                </center>
-                <center>
-                  <form enctype="multipart/form-data" method="post" action="/FromWhatsapp" id="formPaymentW"
-                    class="w3-container w3-margin">
-                    <div class="w3-section">
-                      <b>
-                        <lable>Views wagize</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" type="text" name="Views"
-                        placeholder="Views Wagize" />
-                      <br>
-                      <b>
-                        <lable>ScreenShot</lable>
-                      </b>
-                      <input class="w3-input w3-border w3-margin-bottom" name="image" type="file" />
-                      <br>
-
-                    </div>
-                    <button class="w3-button w3-block w3-teal w3-section w3-padding">Komeza</button>
-                  </form>
-                </center>
-
-              </div>
-            </div>
-
-
-                    </div>
-
-          <% if (user){%>
-            <% if (messages.messageURL){%>
-              <div id="id09" style="display: block;" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:450px">
-                  <iframe src="<%=messages.messageURL%>"
-                    style="height:500px;width:450px;border:none; background-color: aliceblue;"></iframe>
-                  <center> <a href="/payment_callback/<%=user.id%> "><button
-                        class="w3-button w3-teal w3-margin-bottom">Kanda Hano Gukomeza Niba Wishyuye</button></a>
-                  </center>
-                </div>
-              </div>
-              <%}%>
-                <%}%>
-
-                  <div id="id07" class="w3-modal w3-padding">
-
-
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;z-index: 2;">
-                      <center> <img style="width:100%;height:300px;" src="../static/image/Logo-Creator-Make-a-logo-with-Free-Logo-Design.png" alt=""></center>
-                      <button onclick="
-                      document.getElementById('SHARESTATUS').innerText='rindira amasegonda atanu';
-                      document.getElementById('SHARESTATUS').disabled='true';
-                     async function shareImage() {
-                      const options = {
-                          method: 'GET',
-                          mode: 'no-cors'
-                   }
-                     const response = await fetch('/static/image/Logo-Creator-Make-a-logo-with-Free-Logo-Design.png',options);
-                     const blob = await response.blob();
-                     const filesArray = [
-                        new File(
-                        [blob],
-                      'meme.jpg',
-                      {
-                        type: 'image/jpeg',
-                      lastModified: new Date().getTime()
-                         }
-                        )
-                    ];
-                     const shareData = {
-                     files: filesArray,
-                     title: 'Tipstalk',
-                     text: 'sura http://tipstalk.herokuapp.com nawe ukorere cash'
-
-                         };
-                   navigator.share(shareData);
-                 };shareImage()" id="SHARESTATUS" class="w3-button w3-teal w3-margin-bottom">share</button>
-                    </div>
-                  </div>
-        </div>
-        <div id="AboutUs" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:80%;height: fit-content">
-
-
-
-
-<div class="about-section">
-  <span onclick="document.getElementById('AboutUs').style.display='none';window.history.back()"
-                  class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-  <h1><b>Abo turibo</b></b></h1>
-  <p>Tipstalk.online ni website ya Nebelu co.ltd ikorera mu mujyi wa Kigali. Ni website ifite ibice bibiri: Igice cya mbere ni igice gifite intego
-    yo gufasha abantu cyane cyane abanyarwanda bafite impano zo kwandika inkuru. Twabashyiriyeho uru rubuga kugira ngo bajye bakora inkuru zanditse,
-    banazivuge muri make muburyo bwa audio hanyuma bazishyire kuri iyi website yacu, izizakundwa zitorwe. Tuzajya duhemba inkuru yatowe cyane nyuma
-    y'amezi 3. Igihembo kizajya gihabwa inkuru 3 zambere.
-
-    Iyi project kandi ifite ikindi gice cyo gusharinga links, amafoto n'ama videos kuri whatsapp, facebook n'izindi mbuga nkoranyambaga. Izo links iyo
-    uzi sharinze hakagira umuntu uzikandaho ubona amafaranga ajya kuri account yawe. Nujya ahanditse "Korera cash" ugasanga harimo link ujye uyi sharinga
-    abazayikandaho uzahembwa.
-
-    Amafoto na video byo ubishyira kuri status, hanyuma nyuma y'amasaha 24h umaze kubona views ugakora screenshoot ya views wagize ukayishyora (Upload) muri system.
-    nabyo urabihemberwa.
-    </p>
-
-</div>
-
-<h2 style="text-align:center">TEAM YACU</h2>
-<div class="row" style="overflow-y: scroll;">
-  <div class="column w3-col m6">
-    <div class="card">
-      <center><img src="../static/image/BENIR.jpg" alt="Benir Benjamin IRA." style="width:30%; border-radius: 50%;"></center>
-      <div class="container">
-        <h2>Benir Benjamin IRA.</h2>
-        <p class="title">CO-CEO, Founder</p>
-        <p>Benir Benjamin IRABISOHOJE afite impamyabushobozi <br>
-          Ya Kaminuza mu ikoranabuhanga (Software engineering)<br>
-          Yakuye muri Kaminuza y'u Rwanda. Ni CO-CEO akaba na <br>
-          Founder wa Nebelu co.ltd akaba atuye mu mujyi wa Kigali, Gasabo, Kimironko.
-          </p>
-        <p>benirabok@gmail.com</p>
-        <p>(+250) 783 987 223</p>
-
-        <p><button class="button"><a href="wa.me/+250783987223" style="text-decoration:none; color: white; ">Contact</a></button></p>
-      </div>
-    </div>
-  </div>
-  <div class="column w3-col m6 ">
-    <div class="card">
-      <center><img src="../static/image/muna.jpg" alt="MUNAZIRI Bienaime" style="width:40%; border-radius: 50%;"></center>
-      <div class="container">
-        <h2>MUNAZIRI Bienaime</h2>
-        <p class="title">CO-CEO, Developer</p>
-        <p>MUNAZIRI Bienaime ni CO-CEO wa Nebelu co.ltd akaba ari nawe wakoze<br>
-          Iyi system. Ni umu developer w'ama system, websites ziri resposive <br>
-
-          </p>
-        <p>munaziriBNM@gmail.com</p>
-        <p><button class="button"><a href="wa.me/+250790457824" style="text-decoration:none; color: white; ">Contact</a></button></p>
-
-      </div>
-    </div>
- </div>
- </div>
-          </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-  </div>
-
-  <!-- Right C
-
-  <!-- End Grid -->
-  </div>
-
-  <!-- End Page Container -->
-  </div>
-  <br>
-  <% if (user) {%>
-
-    <%} else{%>
-      <div id="id01" style="display: block;" class="w3-modal">
-        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-          <center>
-            <h1 style="color:rgb(0, 68, 68)"><b>MURAKAZA NEZA</b></h1>
-          </center>
-          <center>
-            <h2 style="color:rgb(0, 68, 68)"><b>Komeza Na <b>Google</b></h2>
-          </center>
-          <div>
-            <center>
-
-              <br>
-              <a href="/auth/google"> <i style="font-size: 10vw; color:teal; "
-                  class="fa fa-google w3-hover-opacity"></i></a>
-              <br>
-              <br>
-            </center>
-          </div>
-
-
-        </div>
-      </div>
-      <%}%>
-      <% if (user) {%>
-        <div id="id20" class="w3-modal w3-padding">
-                    <span onclick="document.getElementById('id20').style.display='none';window.history.back()"
-                      class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                      <center>
-                        <h5 style="color:rgb(0, 68, 68)"><b>korera status shares</b></h5>
-                        <form id="phoneWhatsapp" method="post" action="/saveWhatsappNumber/<%=user.userName%>">
-                          <input class="w3-input w3-border w3-margin-bottom" type="text" name="phone"
-                            placeholder="Nimero iri kuri whatsapp gusa-----" />
-                        </form>
-                        <button id="whatssapMoney" class="w3-button w3-teal">komeza</button>
-                        <p><b>uko bakorera whatsapp shares</b>:
-                        <ol>
-                          <li>shyiramo nimero haruguru</li>
-                          <li>kanda ahanditse 'next'</li>
-                          <li>kanda ahanditse share kugirango usharinge ifoto ubona</li>
-                          <li>shyira ifoto kuri status</li>
-                          <li>nyuma yamasaha 24 ukora screenshoot yayafoto igaragaza views hanyuma ugakanda kuri button
-                            yanditseho "ohereza views"</li>
-                          <li>buri foto iri kuri status view yayo ibarirwa amafaranga 1 gusa</li>
-                        </ol>
-                        <p>
-                        <p>
-                          <b>ikitonderwa: ntaguhisha views kuko byaganisha kugufungwa kwa konti yanyu</b>
-                          <br>
-                          <b>Views Mwagize zemezwa nyuma yi cyumweru zikongerwa kuri clicks zanyu</b>
-                        </p>
-
-                      </center>
-
-
-                    </div>
-                  </div>
-           <%if (payment.CashLeft>0){%>
-        <div id="id03" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <span
-              onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-            <center>
-              <h2 style="color:rgb(0, 68, 68)"><b>Bikuza</b></h2>
-            </center>
-            <div>
-              <center>
-                <form method="post" action="/flutterWaveWithDraw2" class="w3-container w3-margin">
-                  <div class="w3-section">
-                    <b>
-                      <lable>Phone yawe</lable>
-                    </b>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" name="phoneN"
-                      disabled   placeholder="078(MTN GUSA)-----" />
-                    <br>
-                    <div style="display: none;" id="alerY" class="w3-panel w3-yellow">
-                      <h6 onclick="document.getElementById('alerY').style.display='none'" class="w3-display-topright">x</h6>
-                   <p>Bikuza Amafaranga ari hejuru ya 3000</p>
-                    </div>
-                    <b><label>Umubare wamafaranga atarihasi ya 3000RWF</label></b>
-                    <% if (user) {%>
-                      <% if(payment.PaymentStatus=='payed' ) {%>
-                    <input value="
-                        <%=payment.tx_ref%>
-                    " name="kid" id="AmountWorked" class="w3-input w3-border w3-margin-bottom" style="display: none;" type="text" placeholder="----" />
-                    <%}%>
-                      <%}%>
-                    <input onkeyup="
-                    if(this.value<3000){document.getElementById('alerY').style.display='block';}else{document.getElementById('alerY').style.display='none';document.getElementById('sunmit').style.display='block'}
-                    " class="w3-input w3-border w3-margin-bottom" type="text" name="Amount" placeholder="----" />
-                    <input style="display:none;" value="<%=user.userName%>" class="w3-input w3-border w3-margin-bottom" type="text" name="idl" placeholder="----" />
-                  </div>
-                  <div style="display: none;" id="alerT" class="w3-panel w3-yellow">
-                    <h6 onclick="document.getElementById('alerT').style.display='none'" class="w3-display-topright">x</h6>
-                   <p>Bikuza Ayo Wakoreye yose</p>
-                   <p> wakoreye <b><% if (user) {%> <% if(payment.PaymentStatus=="payed" ) {%><%=payment.CashLeft%><%}%><%}%></b>RWF</p>
-                    </div>
-
-                  <button style="display: none;"  id="sunmit" class="w3-button w3-block w3-teal w3-section w3-padding">kanda gukomeza</button>
-
-                </form>
-              </center>
-            </div>
-
-
-          </div>
-        </div>
-        <%}else{%>
-          <div id="id03" class="w3-modal">
-          <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-            <span
-              onclick="document.getElementById('id03').style.display='none';document.getElementById('MENUBTN').style.display='block';window.history.back()"
-              class="w3-button w3-xlarge w3-transparent w3-display-topright" >×</span>
-              <center><h2>amafaranga mwakoreye agomba kuba arihejuru ya 3000</h2></center>
-         </div>
-         </div>
-
-          <%}%>
-       <%}%>
-
-        <!-- Footer -->
-
-
-        <button id="recordButton" style="font-size: 300%;" class="w3-card w3-circle w3-teal">
-          <i class="fa-solid fa-microphone-lines"></i>
-        </button>
-
-
-
-
-
-        <button id="MENUBTN"
-          onclick="document.getElementById('MENU').style.display='block';
-          document.getElementById('BTN4').style.display='none';
-          document.getElementById('MENUBTN').style.display='none';
-          let url3=window.location.href;
-            const nextURL3 = `sideDiv`;
-            const nextTitle3= 'sideDiv';
-            const nextStat3 = { additionalInformation: 'sideDiv' };
-            window.history.pushState(nextURL3, nextTitle3, nextStat3);
-          window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+'MENU'){
-
-                      document.getElementById('MENU').style.display='none';
-                      ChangeToStories();
-                      document.getElementById('id04').style.display='none';
-                      document.getElementById('BTN4').style.display='block';
-
-                 }
-                  })
-
-          "
-          style="border:none;position:fixed;top:2%;left:2%;width:60px;height:60px; z-index:1;"
-          class="w3-card w3-circle w3-teal  w3-animate-zoom">
-          <p style="background-color: rgba(255, 255, 255, 0); width:100%;width:100%"><b>MENU</b>
-          </p>
-        </button>
-
-
-
-
-
-
-
-
-        <footer
-          style="position: fixed;bottom:0;margin-bottom:0;width:100%;min-height:100px;height:fit-content;border-radius: 20px 20px 0 0 ; z-index:1"
-          class="w3-card w3-container w3-theme-d3 ">
-
-          <button id="BTN4"  style="z-index: 2;margin-top: -4%;" onclick="document.getElementById('id03').style.display='block'
-          window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+'id03'){
-
-                      document.getElementById('id03').style.display='none';
-                      ChangeToKash();
-                      document.getElementById('id04').style.display='none';
-                 }
-                  })
-            let url1=window.location.href;
-            const nextURL1 = `id03`;
-            const nextTitle1= 'id03';
-            const nextState = { additionalInformation: 'id03' };
-            window.history.pushState(nextState, nextTitle1, nextURL1);"
-
-            class="w3-card w3-circle w3-teal">
-            <b>BIKUZA</b></button>
-          <button id="BTN8" onclick="document.getElementById('id20').style.display='block';
-          window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+'id20'){
-
-                     document.getElementById('id20').style.display='none';
-                      ChangeToKash();
-                      document.getElementById('id04').style.display='none';
-                 }
-                  })
-            let url2=window.location.href;
-            const nextURL2 = 'id20';
-            const nextTitle2= 'id20';
-            const nextStat2 = { additionalInformation: 'id20' };
-            window.history.pushState(nextURL2, nextTitle2, nextStat2);
-          "
-            class="w3-card w3-circle w3-teal">
-            <b>Korera status shares</b> </button>
-          <button id="BTN2" class="w3-card w3-circle w3-animate-zoom">
-            <b>TURIKUMVA</b>
-            <b id="time67"></b>
-
-          <button id="BTN7" on class="w3-card w3-circle w3-animate-zoom">
-            <b>Upload</b>
-          </button>
-
-          <br>
-          <p>
-            <br>
-            <div id="closeFooter" style="height: 20%;overflow-y: Scroll;" >
-            <center >
-               <input onkeypress="updateScript()" style="display:none;width:80%;  " id="Title2"  placeholder="Munutwe winkuru" type="title">
-               <br>
-              <textarea  style="display:none;width:80%;height: 70px;"   placeholder="Inkuru Yose.........." type="text"
-                name="Title"  id="Title"></textarea>
-
-              </center>
-            </div>
-            <center>
-              <ul style="padding-bottom: 30px; display:none;list-style: none;" id="recordingsList">
-
-              </ul>
-            </center>
-
-          </p>
-
-          <div style="display:none ;width:100%;position:absolute;top:0;" id="ReacorderBTN">
-            <i id="stopButton" style="color:rgb(1, 218, 218);position:absolute;left:22%; bottom:4%;font-size: 40px; "
-              class="fa fa-stop"></i>
-            <i id="pauseButton"
-              onclick="document.getElementById('pauseButton2').style.display='block';document.getElementById('pauseButton').style.display='none';"
-              style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px; "
-              class="fa fa-pause"></i>
-            <i id="pauseButton2" onclick="pauseRecording()"
-              style="color:rgb(1, 218, 218);position:absolute;right:22%; bottom:4%;font-size: 40px;display:none; "
-              class="fa fa-play"></i>
-          </div>
-
-
-    <center> <h4 style="margin-bottom: 0%;"><b>Tipstalk.online © Nebelu co.ltd 2022</b></h4></center>
-        </footer>
-
-        <script id="appjs" src="../static/recorder/app.js"></script>
-        <script src="../static/recorder/recorder.js"></script>
-       <script>
-         function updateScript(){
-             $("#appjs").load(location.href + " #appjs");
-          }
-
-          // $.getJSON('https://ipinfo.io/json', function(data) {
-            //console.log(JSON.stringify(data, null, 2));
-          //});
-           function pauseOthers(ele) {
-
-                $("audio").not(ele).each(function (index, audio) {
-                    audio.pause();
-                });
-            }
-
-
-        </script>
-
-        <script>
-      //     function stoperror() {
-      //   return true;
-      // }
-      // window.onerror = stoperror;
-          // Accordio
-        //  setInterval(function () { document.querySelectorAll('#audio').load() }, 120000);
-
-          function myFunction() {
-            var x = document.getElementById("select").value;
-            let y;
-            if (x == 500) {
-              y = '/flutterWaveSubWeek'
-            } else if (x == 1000) {
-              y = '/flutterWaveSubMonth';
-            } else if (x == 10000) {
-              y = '/flutterWaveSubYear';
-            }
-            document.getElementById("formPayment").action = y;
-
-          }
-          function whatsappViewsSubmit(){
-            setTimeout(()=>{ window.stop()},10000)
-            document.getElementById('phoneWhatsapp').submit();
-          }
-          let whatssapMoney = document.getElementById('whatssapMoney');
-          whatssapMoney.addEventListener('click', () => {
-            whatsappViewsSubmit();
-            document.getElementById('id07').style.display = 'block';
-            window.addEventListener('popstate',function (){
-                    if(window.location.href!==window.location.href+'id07'){
-
-                      document.getElementById('id07').style.display='none';
-                 }
-                  })
-            let url2=window.location.href;
-            const nextURL2 = `id07`;
-            const nextTitle2= 'id07';
-            const nextStat2 = { additionalInformation: 'id07' };
-            window.history.pushState(nextURL2, nextTitle2, nextStat2);
-            document.getElementById('id20').style.display = 'none';
-          })
-          window.onbeforeunload=()=>{
-            window.location.href = "https://tipstalk.herokuapp.com/";
-          }
-          function ChangeToStories() {
-            document.getElementById('Itangazo').style.display = 'none'
-            document.getElementById('BTN8').style.display = 'none';
-            document.getElementById('BTN4').style.display = 'none'
-            document.getElementById('KORERAKASH').style.display = 'none'
-            document.getElementById('BTN5').style.display = 'none'
-            document.getElementById('MENUBTN').style.display = 'block'
-            document.getElementById('BTN6').style.display = 'block'
-            document.getElementById('stories').style.display = 'flex'
-            document.getElementById('ReacorderBTN').style.display = 'none'
-            document.getElementById('BTN2').style.display = 'none'
-            document.getElementById('recordButton').style.display = 'block'
-            document.getElementById('MENU').style.display = 'none'
-            document.getElementById('id02').style.display = 'none'
-          }
-          navigator.permissions.query(
-    // { name: 'camera' }
-    { name: 'microphone' }
-    // { name: 'geolocation' }
-    // { name: 'notifications' }
-    // { name: 'midi', sysex: false }
-    // { name: 'midi', sysex: true }
-    // { name: 'push', userVisibleOnly: true }
-    // { name: 'push' } // without userVisibleOnly isn't supported in chrome M45, yet
-).then(function(permissionStatus){
-
-    console.log(permissionStatus.state); // granted, denied, prompt
-  if (permissionStatus.state=="denied") {
-    alert('Microphone ntabwo ifunguye. Duhe uruhushya rwo kuyikoresha')
-    navigator.mediaDevices.getUserMedia({video: false, audio: true})
+const express = require('express')
+const mongoose = require('mongoose')
+const session = require('express-session')
+const flash = require('express-flash')
+const Flutterwave = require('flutterwave-node-v3');
+const flw = new Flutterwave("FLWPUBK-018d6455d86cf9de77610745943fad8b-X", "FLWSECK-5539581ab7050a9aef8bee516bb454ae-X"  );
+const passport = require('passport')
+const multer = require('multer')
+let uniqid = require('uniqid');
+const bikuza=require('./model/bikuza')
+const uresad = multer();
+const Readable = require('stream').Readable;
+const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic} = require('./googleDrive')
+const commentModel=require('./model/comments');
+const {ClickableLink}=require('./model/ClickableLinks');
+const {transferTobeneficiary} = require('./flutterWave')
+const {paymentWeek,paymentMonth,paymentYear} = require('./model/moneyMakers');
+const recordings = require('./model/recordings');
+
+const { UserModel } = require('./model/users');
+
+require('./athentication/google')
+
+
+const DB = "mongodb+srv://DutereStory:DutereStory@cluster0.zo6ti8b.mongodb.net/DutereStory1?retryWrites=true&w=majority";
+mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((results) => {
+
+
+    console.log('connected....');
+  })
+  .catch((err) => {
+    console.warn(err)
+  })
+
+function bufferToStream(buffer) {
+  var stream = new Readable();
+  stream.push(buffer);
+  stream.push(null);
+
+  return stream;
+}
+const app = express()
+app.set('view engine', 'ejs')
+app.use(express.urlencoded({ extended: true }))
+app.use(session({
+  secret: 'keyboard.com',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 1000 * 60 * 60 * 24 }
+}))
+app.use(flash())
+app.set('view engine', 'ejs');
+app.use('/static', express.static(__dirname + '/static'))
+app.use(express.urlencoded({ extended: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+app.get('/auth/google',
+  passport.authenticate('google', {
+    scope:
+      ['email', 'profile']
   }
+  ));
+app.get('/google/auth/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function (req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+app.get('/auth/google/success', (req, res) => {
+  res.redirect('/')
+})
+app.get('/', (req, res) => {
+
+  let user=req.user
+
+  commentModel.find().then((comm)=>{
+  recordings.find().then((recordings)=>{
+  if(req.user){
+    paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
+        ClickableLink.find().then((response)=>{
+          if(paymentres2.length >0){
+            res.render('index', {  links:response,comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
+
+          }else{
+            new paymentMonth({
+              userName:profile.displayName,
+            }).save();
+            res.render('index', {  links:response,comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
+          }
+        })
+   })
+  }else{
+    res.render('index', { comments:comm,user:req.user,stories:recordings})
+  }
+}) })
+})
+app.get('/Logout', function(req, res){
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
+});
+app.get('/0/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      ClickableLink.find().then((links)=>{
+        if(results1!= null){
+          let NewClicks1= results1.clicks+1;
+          let newCash1= results1.CashLeft+3;
+          paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+            paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
+            res.redirect(links[0].link);
+            ClickableLink.updateOne({userName:Name},{clicks:NewClicks1},function(){
+
+            })
+          }) })
+        }
+      })
+  })})})
+})
+app.get('/1/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      ClickableLink.find().then((links)=>{
+        if(results1!= null){
+          let NewClicks1= results1.clicks+1;
+          let newCash1= results1.CashLeft+3;
+          paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+            paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
+            res.redirect(links[1].link);
+            ClickableLink.updateOne({userName:Name},{clicks:NewClicks1},function(){
+
+            })
+          }) })
+        }
+      })
+  })})})
+})
+app.get('/2/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      ClickableLink.find().then((links)=>{
+        if(results1!= null){
+          let NewClicks1= results1.clicks+1;
+          let newCash1= results1.CashLeft+3;
+          paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+            paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
+            res.redirect(links[2].link);
+            ClickableLink.updateOne({userName:Name},{clicks:NewClicks1},function(){
+
+            })
+          }) })
+        }
+      })
+  })})})
+})
+app.get('/3/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      ClickableLink.find().then((links)=>{
+        if(results1!= null){
+          let NewClicks1= results1.clicks+1;
+          let newCash1= results1.CashLeft+3;
+          paymentMonth.updateOne({userName:Name},{clicks:NewClicks1},function(){
+            paymentMonth.updateOne({userName:Name},{CashLeft:newCash1},function(){
+            res.redirect(links[3].link);
+            ClickableLink.updateOne({userName:Name},{clicks:NewClicks1},function(){
+
+            })
+          }) })
+        }
+      })
+  })})})
+})
+
+app.get('/Admin', (req, res) => {
+      const user=req.user
+      if(user.Email=='munaziribnm@gmail.com'||user.Email=='nebelucoltd@gmail.com'){
+      paymentYear.find().then((usersYear)=>{
+        paymentMonth.find().then((usersMonth)=>{
+          paymentWeek.find().then((usersWeek)=>{
+            UserModel.find().then((results)=>{
+            ClickableLink.find().then((links)=>{
+              bikuza.find().then((withdrawers)=>{
+              res.render('Admindashbaord',{users:results,usersYear:usersYear,usersMonth:usersMonth,usersWeek:usersWeek,link:links,withdrawers:withdrawers})
+            })
+            })
+       }) })})
+})}else{res.redirect('/')}})
+
+app.post('/saveWhatsappNumber/:Name',(req,res)=>{
+  let Name=req.params.Name
+  paymentWeek.findOne({userName:Name}).then((results)=>{
+    paymentMonth.findOne({userName:Name}).then((results1)=>{
+    paymentYear.findOne({userName:Name}).then((results2)=>{
+      if(results!= null){
+        let newNumber="+25"+req.body.phone
+       paymentWeek.updateOne({userName:Name},{PhoneNumber:newNumber},function(err,doc){
+        if(err){
+          console.log(err)
+        }
+       })
+      }else if(results1!= null){
+        let newNumber="+25"+req.body.phone
+        paymentMonth.updateOne({userName:Name},{PhoneNumber:newNumber},function(err,doc){
+         if(err){
+           console.log(err)
+         }
+        })
+      }else if(results2!= null){
+        let newNumber="+25"+req.body.phone
+       paymentYear.updateOne({userName:Name},{PhoneNumber:newNumber},function(err,doc){
+        if(err){
+          console.log(err)
+        }
+       })
+      }
+  })})})
+})
+app.get('/Advertiser',(req,res)=>{
+  if(req.user){
+    paymentYear.find({tx_ref:user.paymentId}).then((paymentres)=>{
+      paymentMonth.find({tx_ref:user.paymentId}).then((paymentres2)=>{
+        paymentWeek.find({tx_ref:user.paymentId}).then((paymentres3)=>{
+         if (paymentres.length >0){
+          res.render('Advertiser', { user: req.user,paymentAD:paymentres[0]})
+      }else if(paymentres2.length >0){
+        res.render('Advertiser', { user: req.user,paymentAD:paymentres2[0]})
+
+      }else if(paymentres3.length >0){
+        res.render('Advertiser', { user: req.user,paymentAD:paymentres3[0]})
+      }else{
+        res.render('Advertiser', { user: req.user,paymentAD:{PaymentStatus:"unpayed"}})
+      }
+
+     }) })})
+    }else{
+      res.render('Advertiser',{user:req.user})
+    }
+})
+
+
+//app.post('/SendMessageIndividual',(req,res)=>{
+//let message={
+//             from: 'duterestory@gmail.com', // sender address
+//             to: req.body.Email, // list of receivers
+//             subject: req.body.title, // Subject line
+//             text: req.body.message, // plain text body
+//             html: "<b>Hello world?</b>", // html body
+//           }
+//   main(message);
+//})
+app.post('/addLikes', (req, res) => {
+  let userID = req.user.userName;
+  let d=req.body.identity;
+
+  let idF=req.body.Id;
+
+  recordings.updateOne({RecordingId:idF}, { $addToSet: { likes: userID } }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    }
+  })
+
+   UserModel.findOne({userName:d}).then((results)=>{
+     let newLikes = results.likes+1
+     UserModel.updateOne({userName:d},{likes:newLikes},function (err, docs) {
+       if (err) {
+         console.log(err)
+       }
+     })
+   })
 
 })
-          function ChangeToKash() {
+app.post('/approveYear',(req,res)=>{
+  let approveId=req.body.approveId
+  let ida=req.body.approveIda
+  let views=req.body.views
+  let filter={id:approveId};
+   paymentYear.findById(approveId).then((results)=>{
+    let Views=results.clicks+parseInt(views)
+    let newMoney=Views*5
+    paymentYear.updateOne(filter,{clicks:Views},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentYear.updateOne(filter,{CashLeft:newMoney},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentYear.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+   })
+   res.redirect('/Admin')
+})
+app.post('/Votting',(req,res)=>{
+  let user=req.user
+  if(req.body.Vote==0){
+    req.flash('message1','shyiramo amajwi atangana na zero')
+    req.redirect('/')
 
 
-            document.getElementById('Itangazo').style.display = 'block'
+  }else{
 
-            document.getElementById('BTN4').style.display = 'block'
-            document.getElementById('Ohereza').style.display = 'block'
-            document.getElementById('BTN8').style.display = 'block'
-            document.getElementById('KORERAKASH').style.display = 'block'
-            document.getElementById('BTN5').style.display = 'block'
-            document.getElementById('MENUBTN').style.display = 'block'
-            document.getElementById('BTN6').style.display = 'none'
-            document.getElementById('stories').style.display = 'none'
-            document.getElementById('ReacorderBTN').style.display = 'none'
-            document.getElementById('BTN2').style.display = 'none'
-            document.getElementById('recordButton').style.display = 'none'
-            document.getElementById('MENU').style.display = 'none'
-            document.getElementById('recorded').style.display = 'none'
-            document.getElementById('BTN7').style.display = 'none'
+  const rw_mobile_moneytu =  async (payload)=>{
 
-          }
+    try {
+       const response =  await flw.MobileMoney.rwanda(payload)
+
+     req.flash('VoteAuth',`${response.meta.authorization.redirect}`)
+     req.flash('userId',`${req.body.userValue}`)
+     res.redirect('/')
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+  var mykey = uniqid()
+  var mykey2 = uniqid()
+  UserModel.updateOne({ userName: user.userName }, { paymentId:mykey }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    }
+  })
+ let votes= req.body.phone
+ let neWVotes=votes*50
+  let payloada = {
+
+    "tx_ref": mykey,
+    "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "amount": neWVotes,
+    "currency": "RWF",
+    "email":"munaziribnm@gmail.com",
+    "phone_number": req.body.phone,
+    "fullname": req.user.userName
+
+  }
+
+  rw_mobile_moneytu(payloada)}
+})
+app.post('/abortYear',(req,res)=>{
+  let approveId=req.body.abortId
+  let ida=req.body.abortIda
+  let filter={id:approveId};
+  paymentYear.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+    if(err)throw err
+    console.log('done')
+  })
+  DeleteFile(ida)
+  res.redirect('/Admin')
+})
+app.post('/approveMonth',(req,res)=>{
+  let approveId=req.body.approveId
+  let ida=req.body.approveIda
+  let views=req.body.views
+ 
+
+   paymentMonth.findById(approveId).then((results)=>{
+    let filter={userName:results.userName};
+    let Views=parseInt(results.clicks)+parseInt(views)
+    let newMoney=Views*2
+
+     console.log(results)
+
+    paymentMonth.updateOne(filter,{clicks:Views},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentMonth.updateOne(filter,{CashLeft:newMoney},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentMonth.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+   })
+   res.redirect('/Admin')
+ })
+ app.post('/UpdatePhoneNumber',(req,res)=>{
+  let user=req.user.userName;
+  let filter={userName:user}
+  let newPhone='+25'+req.body.UpdatePhoneNumber
+  UserModel.updateOne(filter,{phoneNumber:newPhone},(err,doc)=>{
+    if(err)throw err
+   // console.log('done')
+   res.redirect('/')
+  })
+ })
+ app.post('/abortMonth',(req,res)=>{
+  let approveId=req.body.abortId
+  let ida=req.body.abortIda
+ 
+   paymentMonth.findById(approveId).then((results)=>{
+    let filter={userName:results.userName};
+  paymentMonth.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+    if(err)throw err
+    console.log('done')
+  })})
+    res.redirect('/Admin')
+ })
+ app.get('/Inkuru/:id',(req,res)=>{
+  let id=req.params.id
+  req.flash('inkuruShared',id)
+  res.redirect('/')
+ })
+ app.post('/NewUrlTobeShared',(req,res)=>{
+  ClickableLink({
+    link:req.body.NewUrlTobeSharedred,
+    Discription:req.body.DescriptionH
+  }).save();
+  res.redirect('/Admin')
+
+ })
+ app.post('/DeleteTheLink',(req,res)=>{
+  let id=req.body.identify
+  ClickableLink.findByIdAndDelete(id,function (err, docs) {
+    if (err){
+        console.log(err)
+    }
+    else{
+      res.redirect('/Admin');
+    }
+});
+
+ })
+ app.post('/DeleteTheUser',(req,res)=>{
+  ClickableLink({
+    link:req.body.NewUrlTobeSharedred,
+    Discription:req.body.DescriptionH
+  }).save();
+
+ })
+ app.post('/approveWeek',(req,res)=>{
+  let approveId=req.body.approveId
+  let ida=req.body.approveIda
+  let views=req.body.views
+  let filter={id:approveId};
+   paymentWeek.findById(approveId).then((results)=>{
+    let Views=results.clicks+parseInt(views)
+    let newMoney=Views*5
+    paymentWeek.updateOne(filter,{clicks:Views},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentWeek.updateOne(filter,{CashLeft:newMoney},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+    paymentWeek.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+      if(err)throw err
+      console.log('done')
+    })
+   })
+   res.redirect('/Admin')
+ })
+ app.post('/abortWeek',(req,res)=>{
+  let approveId=req.body.abortId
+  let ida=req.body.abortIda
+  let filter={id:approveId};
+  paymentWeek.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
+    if(err)throw err
+    console.log('done')
+  })
+  DeleteFile(ida)
+  res.redirect('/Admin')
+ })
+app.post('/addComments', (req, res) => {
+   let Profile=req.user.ProfilePhotoUrl;
+   let Name=req.user.userName;
+   let id=req.body.RecordingId;
+   let Comment=req.body.comment
+   new commentModel({
+    RecorderId:id,
+    userName:Name,
+    userProfile:Profile,
+     links:res,Comments:Comment
+   }).save()
+
+})
+app.post('/flutterWaveSubWeek', (req, res) => {
+
+  const rw_mobile_money =  async (payload)=>{
+
+    try {
+       const response =  await flw.MobileMoney.rwanda(payload)
+
+     req.flash('messageURL',`${response.meta.authorization.redirect}`)
+     res.redirect('/')
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+  var mykey = uniqid()
+  var mykey2 = uniqid()
+  new paymentWeek({
+    userName:req.user.userName,
+    tx_ref:mykey,
+    Oder_Id:mykey2,
+    PhoneNumber:req.body.phone
+  }).save()
+  UserModel.updateOne({ userName: user.userName }, { paymentId:mykey }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    }
+  })
+  let payload = {
+
+    "tx_ref": mykey,
+    "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "amount": "500",
+    "currency": "RWF",
+    "email":"munaziribnm@gmail.com",
+    "phone_number": req.body.phone,
+    "fullname": req.user.userName
+
+  }
+  rw_mobile_money(payload)
+})
 
 
-       async function share(content){
-            try {
-            await navigator.share(content)
-            alert('MDN shared successfully')
-          } catch(err) {
+app.post('/flutterWaveSubMonth', (req, res) => {
+  let user=req.user
+  const rw_mobile_money =  async (payload)=>{
+
+    try {
+       const response =  await flw.MobileMoney.rwanda(payload)
+
+     req.flash('messageURL',`${response.meta.authorization.redirect}`)
+     res.redirect('/')
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+  var mykey = uniqid()
+  var mykey2 = uniqid()
+
+  UserModel.updateOne({ userName: user.userName }, { paymentId:mykey }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    }
+  })
+  let payload = {
+
+    "tx_ref": mykey,
+    "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "amount": "1000",
+    "currency": "RWF",
+    "email":"munaziribnm@gmail.com",
+    "phone_number": req.body.phone,
+    "fullname": req.user.userName
+
+  }
+  rw_mobile_money(payload)
+})
+
+app.post('/FromWhatsapp',uresad.any(),(req,res)=>{
+  console.log(req.files)
+  let views=req.body.Views;
+  const user = req.user;
+  const d = new Date();
+let text = d.toISOString();
+  let originalname = user.userName+" "+views+" "+text+'.png'
+  var folderId = user.folderId;
+  var fileMetadata = {
+    'name': [originalname],
+    parents: [folderId]
+  };
+  var media = {
+    mimeType: req.files[0].mimetype,
+    body: bufferToStream(req.files[0].buffer)
+  };
+
+  totheDriversWhatsapp(fileMetadata, media, user);
+  req.flash('message1','Yoherejwe tegereza iminsi itatu')
+  res.redirect('/')
+
+})
+app.get('/payment_callback/:userName', async (req, res) => {
+
+ let user=req.user
+  const transactionDetailsM = await paymentMonth.find({tx_ref:user.paymentId});
+  const transactionDetailsW= await paymentWeek.find({tx_ref:user.paymentId});
+  const transactionDetailsY=await paymentYear.find({tx_ref:user.paymentId});
+  if (transactionDetailsM.length >0){
+     const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
+     if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
+      req.flash('message1','Ntiwatoye Antabwo ijwi ryawe ntiribarwa')
+      res.redirect('/')
+    }else{
+      paymentMonth.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
+        if (err) {
+          console.log(err)
+        }
+        req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+        res.redirect('/')
+      })
+    }
+  }else if(transactionDetailsW.length >0){
+    const responseW = await flw.Transaction.verify({id:transactionDetailsW[0].tx_ref});
+    if(responseM.message=="No transaction was found for this id" || responseW.status=="failed"){
+      req.flash('message1','Ntiwishyuye')
+      res.redirect('/')
+    }else{
+      paymentWeek.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
+        if (err) {
+          console.log(err)
+        }
+        req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+        res.redirect('/')
+      })
+    }
+  }else if(transactionDetailsY.length >0){
+    const responseY = await flw.Transaction.verify({id:transactionDetailsY[0].tx_ref});
+    if(responseM.message=="No transaction was found for this id" ||responseY.status=="failed"){
+      req.flash('message1','Ntiwishyuye')
+      res.redirect('/')
+    }else{
+      paymentYear.updateOne({tx_ref:user.paymentId}, { PaymentStatus:"payed" }, function (err, docs) {
+        if (err) {
+          console.log(err)
+        }
+        req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash Za Shares')
+        res.redirect('/')
+      })
+    }
+  } else{
+    req.flash('message1','Ntiwishyuye')
+        res.redirect('/')
+  }
+});
+app.get('/Votting_CallBack/:userId', async (req, res) => {
+  let userID=req.params.userId
+  let user=req.user
+   const transactionDetailsM = await UserModel.find({paymentId:user.paymentId});
+   if (transactionDetailsM.length >0){
+      const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].paymentId});
+      if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
+       req.flash('message1','Ntiwishyuye Antabwo ijwi ryawe ntiribarwa')
+       res.redirect('/')
+     }else{
+      UserModel.findById(userID).then((results)=>{
+        let NewVotes=results.Votes+1
+        UserModel.updateOne({ paymentId: results.paymentId }, { Votes:NewVotes }, function (err, docs) {
+          if (err) {
             console.log(err)
           }
+        })
+        recordings.updateOne({ userId: results.id }, { Votes:NewVotes }, function (err, docs) {
+          if (err) {
+            console.log(err)
           }
-        </script>
+          req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+          res.redirect('/')
+        })
+      })
 
-</body>
+     }
+   } else{
+     req.flash('message1','Ntiwishyuye')
+         res.redirect('/')
+   }
+ });
+app.get('/payment_callback_Advert/:userName', async (req, res) => {
 
-</html>
+  let user=req.user
+   const transactionDetailsM = await paymentMonthAdvert.find({tx_ref:user.paymentIdAdvert});
+   const transactionDetailsW= await paymentWeekAdvert.find({tx_ref:user.paymentIdAdvert});
+   const transactionDetailsY=await paymentYearAdvert.find({tx_ref:user.paymentIdAdvert});
+   if (transactionDetailsM.length >0){
+      const responseM= await flw.Transaction.verify({id:transactionDetailsM[0].tx_ref});
+      if(responseM.message=="No transaction was found for this id" || responseM.status=="failed"){
+       req.flash('message1','Ntiwishyuye')
+       res.redirect('/')
+     }else{
+      paymentMonthAdvert.updateOne({ tx_ref: user.paymentIdAdvert }, { PaymentStatus:"payed" }, function (err, docs) {
+         if (err) {
+           console.log(err)
+         }
+         req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+         res.redirect('/')
+       })
+     }
+   }else if(transactionDetailsW.length >0){
+     const responseW = await flw.Transaction.verify({id:transactionDetailsW[0].tx_ref});
+     if(responseM.message=="No transaction was found for this id" || responseW.status=="failed"){
+       req.flash('message1','Ntiwishyuye')
+       res.redirect('/')
+     }else{
+      paymentWeekAdvert.updateOne({ tx_ref: user.paymentIdAdvert }, { PaymentStatus:"payed" }, function (err, docs) {
+         if (err) {
+           console.log(err)
+         }
+         req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash')
+         res.redirect('/')
+       })
+     }
+   }else if(transactionDetailsY.length >0){
+     const responseY = await flw.Transaction.verify({id:transactionDetailsY[0].tx_ref});
+     if(responseM.message=="No transaction was found for this id" ||responseY.status=="failed"){
+       req.flash('message1','Ntiwishyuye')
+       res.redirect('/')
+     }else{
+       paymentYear.updateOne({ tx_ref: user.paymentIdAdvert }, { PaymentStatus:"payed" }, function (err, docs) {
+         if (err) {
+           console.log(err)
+         }
+         req.flash('message1','Urakoze kwishyura Muryoherwe Na Cash Za Shares')
+         res.redirect('/')
+       })
+     }
+   } else{
+     req.flash('message1','Ntiwishyuye')
+         res.redirect('/')
+   }
+ });
+
+app.post('/flutterWaveSubYear', (req, res) => {
+ let user=req.user
+  const rw_mobile_money =  async (payload)=>{
+
+    try {
+       const response =  await flw.MobileMoney.rwanda(payload)
+
+     req.flash('messageURL',`${response.meta.authorization.redirect}`)
+     res.redirect('/')
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+  var mykey = uniqid()
+  var mykey2 = uniqid()
+  new paymentYear({
+    userName:req.user.userName,
+    tx_ref:mykey,
+    Oder_Id:mykey2,
+    PhoneNumber:req.body.phone
+  }).save()
+  UserModel.updateOne({ userName: user.userName }, { paymentId:mykey }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    }
+  })
+  let payload = {
+
+    "tx_ref": mykey,
+    "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
+    "amount": "10000",
+    "currency": "RWF",
+    "email":"munaziribnm@gmail.com",
+    "phone_number": req.body.phone,
+    "fullname": req.user.userName
+
+  }
+  rw_mobile_money(payload)
+})
+
+
+app.post('/flutterWaveWithDraw', (req, res) => {
+
+  let kid=req.body.kid.trim();
+  let amount=req.body.Amount
+  console.log(kid)
+
+    paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
+
+       if (paymentres2.length >0){
+      let ceck=paymentres2[0].CashLeft-amount
+        if (ceck>0){
+          let payload = {
+
+     account_bank: "MPS",
+        account_number: req.user.phoneNumber.paymentres2slice(1),
+        amount: req.body.Amount,
+        currency: "RWF",
+        beneficiary_name: req.user.userName,
+        meta: {
+          "sender": "DutereStory Developers",
+          "sender_country": "RWA",
+          "mobile_number": "250790457824"
+        }
+  }
+  transferTobeneficiary(payload)
+          req.flash('message1',`Kubikuza ${amount} byarangiye niba ugiza ikibazo hamagara kuri +250709457824`);
+          res.redirect('/');
+          paymentMonth.findByIdAndDelete(paymentres2.id).then(()=>{
+            console.log('deleted')
+          })
+        }else{
+        req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+        res.redirect('/');
+      }
+    }
+   }) })
+   app.post('/flutterWaveWithDraw2', (req, res) => {
+
+    let kid=req.body.kid.trim();
+    let amount=req.body.Amount
+    console.log(kid)
+    new bikuza({
+          userName:req.body.idl,
+          Phone:req.body.phoneN,
+          Ammount:req.body.Amount
+        })
+      paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
+
+         if (paymentres2.length >0){
+        let ceck=paymentres2[0].CashLeft-amount
+          if (ceck>0){
+
+            req.flash('message1',`Amafaranga aroherezwa mbere  yamasaha 24 narenga mutarayabona muhamagare +250790457824`);
+            res.redirect('/');
+            paymentMonth.findByIdAndDelete(paymentres2.id).then(()=>{
+              console.log('deleted')
+            })
+          }else{
+          req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
+          res.redirect('/');
+        }
+      }
+     }) })
+app.post('/addViews', (req, res) => {
+  let Recordingid = req.body.audioTitleViews;
+  let UserName = req.body.audioTitleViews2;
+
+  recordings.findOne({ RecordingId: Recordingid }).then((results) => {
+    let newViews = results.views+1
+    recordings.updateOne({ RecordingId: Recordingid }, { views: newViews }, function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+    })
+  })
+  UserModel.findOne({userName:UserName}).then((results)=>{
+    let newViews = results.Views+1
+
+    UserModel.updateOne({userName:UserName},{Views:newViews},function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+    })
+  })
+
+})
+app.post('/addViewsStatus', (req, res) => {
+  let id = req.body.id
+  recordings.findOne({ userId: id }).then((results) => {
+    let newViews = results.views++
+    recordings.updateOne({ userId: id }, { views: newViews }, function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+    })
+  })
+
+})
+app.post('/ChangeProfilePic',uresad.any(),(req,res)=>{
+  const user = req.user;
+  const originalname=req.user.userName
+  var folderId = user.folderId;
+  var fileMetadata = {
+    'name': [originalname],
+    parents: [folderId]
+  };
+  var media = {
+    mimeType: req.files[0].mimetype,
+    body: bufferToStream(req.files[0].buffer)
+  };
+  ChangeProfilePic(fileMetadata,media,user);
+})
+app.post('/ToTheDrive', uresad.any(), (req, res,next) => {
+  const user = req.user;
+  let files =req.files.reverse()[0];
+  let RecordTitle=req.body.Title;
+  let NewsBody=req.body.Title2;
+  let filepath = "./audioUresads/";
+  let originalname = files.originalname + '.aac'
+  let stringedFilePath = filepath + originalname;
+  var folderId = user.folderId;
+  var fileMetadata = {
+    'name': [originalname],
+    parents: [folderId]
+  };
+  var media = {
+    mimeType: 'audio/aac',
+    body: bufferToStream(files.buffer)
+  };
+
+  totheDrivers(fileMetadata, media,RecordTitle, stringedFilePath, user, folderId,NewsBody);
+  next();
+
+})
+
+
+
+
+const port = process.env.PORT || 3330
+app.listen(port, () => {
+  console.log('heard from port')
+})

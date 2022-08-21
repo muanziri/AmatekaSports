@@ -6,11 +6,11 @@ const Flutterwave = require('flutterwave-node-v3');
 const flw = new Flutterwave("FLWPUBK-018d6455d86cf9de77610745943fad8b-X", "FLWSECK-5539581ab7050a9aef8bee516bb454ae-X"  );
 const passport = require('passport')
 const multer = require('multer')
-let uniqid = require('uniqid'); 
+let uniqid = require('uniqid');
 const bikuza=require('./model/bikuza')
 const uresad = multer();
 const Readable = require('stream').Readable;
-const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic,DeleteFile} = require('./googleDrive')
+const {totheDrivers,totheDriversWhatsapp,ChangeProfilePic} = require('./googleDrive')
 const commentModel=require('./model/comments');
 const {ClickableLink}=require('./model/ClickableLinks');
 const {transferTobeneficiary} = require('./flutterWave')
@@ -74,9 +74,9 @@ app.get('/auth/google/success', (req, res) => {
   res.redirect('/')
 })
 app.get('/', (req, res) => {
-  
+
   let user=req.user
-  
+
   commentModel.find().then((comm)=>{
   recordings.find().then((recordings)=>{
   if(req.user){
@@ -84,19 +84,19 @@ app.get('/', (req, res) => {
         ClickableLink.find().then((response)=>{
           if(paymentres2.length >0){
             res.render('index', {  links:response,comments:comm,user: req.user,payment:paymentres2[0],stories:recordings})
-           
+
           }else{
             new paymentMonth({
               userName:profile.displayName,
-            }).save(); 
+            }).save();
             res.render('index', {  links:response,comments:comm,user: req.user,payment:{PaymentStatus:"unpayed"},stories:recordings})
           }
         })
-   }) 
+   })
   }else{
     res.render('index', { comments:comm,user:req.user,stories:recordings})
   }
-}) })   
+}) })
 })
 app.get('/Logout', function(req, res){
   req.logout(function(err) {
@@ -238,13 +238,13 @@ app.get('/Advertiser',(req,res)=>{
           res.render('Advertiser', { user: req.user,paymentAD:paymentres[0]})
       }else if(paymentres2.length >0){
         res.render('Advertiser', { user: req.user,paymentAD:paymentres2[0]})
-       
+
       }else if(paymentres3.length >0){
         res.render('Advertiser', { user: req.user,paymentAD:paymentres3[0]})
       }else{
         res.render('Advertiser', { user: req.user,paymentAD:{PaymentStatus:"unpayed"}})
       }
-     
+
      }) })})
     }else{
       res.render('Advertiser',{user:req.user})
@@ -265,7 +265,7 @@ app.get('/Advertiser',(req,res)=>{
 app.post('/addLikes', (req, res) => {
   let userID = req.user.userName;
   let d=req.body.identity;
-  
+
   let idF=req.body.Id;
 
   recordings.updateOne({RecordingId:idF}, { $addToSet: { likes: userID } }, function (err, docs) {
@@ -273,7 +273,7 @@ app.post('/addLikes', (req, res) => {
       console.log(err)
     }
   })
-  
+
    UserModel.findOne({userName:d}).then((results)=>{
      let newLikes = results.likes+1
      UserModel.updateOne({userName:d},{likes:newLikes},function (err, docs) {
@@ -313,21 +313,21 @@ app.post('/Votting',(req,res)=>{
     req.flash('message1','shyiramo amajwi atangana na zero')
     req.redirect('/')
 
-  
+
   }else{
 
   const rw_mobile_moneytu =  async (payload)=>{
- 
+
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
-    
+
      req.flash('VoteAuth',`${response.meta.authorization.redirect}`)
      req.flash('userId',`${req.body.userValue}`)
      res.redirect('/')
     } catch (error) {
         console.log(error)
-    }                            
-   
+    }
+
 }
   var mykey = uniqid()
   var mykey2 = uniqid()
@@ -339,8 +339,8 @@ app.post('/Votting',(req,res)=>{
  let votes= req.body.phone
  let neWVotes=votes*50
   let payloada = {
-    
-    "tx_ref": mykey, 
+
+    "tx_ref": mykey,
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": neWVotes,
     "currency": "RWF",
@@ -349,7 +349,7 @@ app.post('/Votting',(req,res)=>{
     "fullname": req.user.userName
 
   }
- 
+
   rw_mobile_moneytu(payloada)}
 })
 app.post('/abortYear',(req,res)=>{
@@ -367,10 +367,15 @@ app.post('/approveMonth',(req,res)=>{
   let approveId=req.body.approveId
   let ida=req.body.approveIda
   let views=req.body.views
-  let filter={id:approveId};
+ 
+
    paymentMonth.findById(approveId).then((results)=>{
-    let Views=results.clicks+parseInt(views)
+    let filter={userName:results.userName};
+    let Views=parseInt(results.clicks)+parseInt(views)
     let newMoney=Views*2
+
+     console.log(results)
+
     paymentMonth.updateOne(filter,{clicks:Views},(err,doc)=>{
       if(err)throw err
       console.log('done')
@@ -386,16 +391,32 @@ app.post('/approveMonth',(req,res)=>{
    })
    res.redirect('/Admin')
  })
+ app.post('/UpdatePhoneNumber',(req,res)=>{
+  let user=req.user.userName;
+  let filter={userName:user}
+  let newPhone='+25'+req.body.UpdatePhoneNumber
+  UserModel.updateOne(filter,{phoneNumber:newPhone},(err,doc)=>{
+    if(err)throw err
+   // console.log('done')
+   res.redirect('/')
+  })
+ })
  app.post('/abortMonth',(req,res)=>{
   let approveId=req.body.abortId
   let ida=req.body.abortIda
-  let filter={id:approveId};
+ 
+   paymentMonth.findById(approveId).then((results)=>{
+    let filter={userName:results.userName};
   paymentMonth.updateOne(filter,{$pull :{WhatsappScreenShotPosts:ida}},(err,doc)=>{
     if(err)throw err
     console.log('done')
-  })
-  DeleteFile(ida)
-  res.redirect('/Admin')
+  })})
+    res.redirect('/Admin')
+ })
+ app.get('/Inkuru/:id',(req,res)=>{
+  let id=req.params.id
+  req.flash('inkuruShared',id)
+  res.redirect('/')
  })
  app.post('/NewUrlTobeShared',(req,res)=>{
   ClickableLink({
@@ -469,21 +490,21 @@ app.post('/addComments', (req, res) => {
     userProfile:Profile,
      links:res,Comments:Comment
    }).save()
-  
+
 })
 app.post('/flutterWaveSubWeek', (req, res) => {
-  
+
   const rw_mobile_money =  async (payload)=>{
- 
+
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
-    
+
      req.flash('messageURL',`${response.meta.authorization.redirect}`)
      res.redirect('/')
     } catch (error) {
         console.log(error)
-    }                            
-   
+    }
+
 }
   var mykey = uniqid()
   var mykey2 = uniqid()
@@ -499,8 +520,8 @@ app.post('/flutterWaveSubWeek', (req, res) => {
     }
   })
   let payload = {
-    
-    "tx_ref": mykey, 
+
+    "tx_ref": mykey,
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "500",
     "currency": "RWF",
@@ -516,28 +537,28 @@ app.post('/flutterWaveSubWeek', (req, res) => {
 app.post('/flutterWaveSubMonth', (req, res) => {
   let user=req.user
   const rw_mobile_money =  async (payload)=>{
- 
+
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
-    
+
      req.flash('messageURL',`${response.meta.authorization.redirect}`)
      res.redirect('/')
     } catch (error) {
         console.log(error)
-    }                            
-   
+    }
+
 }
   var mykey = uniqid()
   var mykey2 = uniqid()
-  
+
   UserModel.updateOne({ userName: user.userName }, { paymentId:mykey }, function (err, docs) {
     if (err) {
       console.log(err)
     }
   })
   let payload = {
-    
-    "tx_ref": mykey, 
+
+    "tx_ref": mykey,
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "1000",
     "currency": "RWF",
@@ -565,7 +586,7 @@ let text = d.toISOString();
     mimeType: req.files[0].mimetype,
     body: bufferToStream(req.files[0].buffer)
   };
- 
+
   totheDriversWhatsapp(fileMetadata, media, user);
   req.flash('message1','Yoherejwe tegereza iminsi itatu')
   res.redirect('/')
@@ -649,7 +670,7 @@ app.get('/Votting_CallBack/:userId', async (req, res) => {
           res.redirect('/')
         })
       })
-      
+
      }
    } else{
      req.flash('message1','Ntiwishyuye')
@@ -713,16 +734,16 @@ app.get('/payment_callback_Advert/:userName', async (req, res) => {
 app.post('/flutterWaveSubYear', (req, res) => {
  let user=req.user
   const rw_mobile_money =  async (payload)=>{
- 
+
     try {
        const response =  await flw.MobileMoney.rwanda(payload)
-    
+
      req.flash('messageURL',`${response.meta.authorization.redirect}`)
      res.redirect('/')
     } catch (error) {
         console.log(error)
-    }                            
-   
+    }
+
 }
   var mykey = uniqid()
   var mykey2 = uniqid()
@@ -738,8 +759,8 @@ app.post('/flutterWaveSubYear', (req, res) => {
     }
   })
   let payload = {
-    
-    "tx_ref": mykey, 
+
+    "tx_ref": mykey,
     "order_id":mykey2,//This is a unique reference, unique to the particular transaction being carried out. It is generated when it is not provided by the merchant for every transaction.
     "amount": "10000",
     "currency": "RWF",
@@ -753,18 +774,18 @@ app.post('/flutterWaveSubYear', (req, res) => {
 
 
 app.post('/flutterWaveWithDraw', (req, res) => {
-   
+
   let kid=req.body.kid.trim();
   let amount=req.body.Amount
   console.log(kid)
-  
+
     paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
-     
+
        if (paymentres2.length >0){
       let ceck=paymentres2[0].CashLeft-amount
         if (ceck>0){
           let payload = {
-    
+
      account_bank: "MPS",
         account_number: req.user.phoneNumber.paymentres2slice(1),
         amount: req.body.Amount,
@@ -782,14 +803,14 @@ app.post('/flutterWaveWithDraw', (req, res) => {
           paymentMonth.findByIdAndDelete(paymentres2.id).then(()=>{
             console.log('deleted')
           })
-        }else{ 
+        }else{
         req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
         res.redirect('/');
       }
     }
    }) })
    app.post('/flutterWaveWithDraw2', (req, res) => {
-   
+
     let kid=req.body.kid.trim();
     let amount=req.body.Amount
     console.log(kid)
@@ -799,17 +820,17 @@ app.post('/flutterWaveWithDraw', (req, res) => {
           Ammount:req.body.Amount
         })
       paymentMonth.find({tx_ref:kid}).then((paymentres2)=>{
-       
+
          if (paymentres2.length >0){
         let ceck=paymentres2[0].CashLeft-amount
           if (ceck>0){
-           
+
             req.flash('message1',`Amafaranga aroherezwa mbere  yamasaha 24 narenga mutarayabona muhamagare +250790457824`);
             res.redirect('/');
             paymentMonth.findByIdAndDelete(paymentres2.id).then(()=>{
               console.log('deleted')
             })
-          }else{ 
+          }else{
           req.flash('message1',`Bikuza atari hejuru yayo wakoreye,Wakoreye ${paymentres[0].CashLeft}RWF,ibyo bindi n' ubujura, tuzafunga account yawe niwongera`);
           res.redirect('/');
         }
@@ -818,7 +839,7 @@ app.post('/flutterWaveWithDraw', (req, res) => {
 app.post('/addViews', (req, res) => {
   let Recordingid = req.body.audioTitleViews;
   let UserName = req.body.audioTitleViews2;
-  
+
   recordings.findOne({ RecordingId: Recordingid }).then((results) => {
     let newViews = results.views+1
     recordings.updateOne({ RecordingId: Recordingid }, { views: newViews }, function (err, docs) {
@@ -829,7 +850,7 @@ app.post('/addViews', (req, res) => {
   })
   UserModel.findOne({userName:UserName}).then((results)=>{
     let newViews = results.Views+1
-    
+
     UserModel.updateOne({userName:UserName},{Views:newViews},function (err, docs) {
       if (err) {
         console.log(err)
